@@ -15,9 +15,15 @@ MonoBehaviour:
   SheetName: 2019CKAPPGameSheet
   WorksheetName: Char_Script
   dataArray:
-  - key: 1
+  - character: NULL
+    key: 1
     command: test1
-  - key: 2
-    command: test2
-  - key: 3
+  - character: Character1
+    key: 2
+    command: NULL
+  - character: Character1
+    key: 0
     command: "`\uC548\uB155`"
+  - character: Character1
+    key: 4
+    command: TT

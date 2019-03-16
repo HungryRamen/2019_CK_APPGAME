@@ -10,24 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bdb4931813a361148a6651be452ff88e, type: 3}
-  m_Name: New Import Setting
+  m_Name: New Import Setting 1
   m_EditorClassIdentifier: 
   templatePath: QuickSheet/GDataPlugin/Templates
   scriptFilePath: QuickSheet/GDataPlugin/Runtime/
   editorScriptFilePath: QuickSheet/GDataPlugin/Editor/
   sheetName: 2019CKAPPGameSheet
-  workSheetName: Char_Script
+  workSheetName: Recipe
   columnHeaderList:
   - type: 1
-    name: Character
-    isEnable: 0
-    isArray: 0
-  - type: 3
-    name: Key
+    name: FoodImageID
     isEnable: 0
     isArray: 0
   - type: 1
-    name: Command
+    name: FoodMaterial
     isEnable: 0
     isArray: 0
   AccessCode: 

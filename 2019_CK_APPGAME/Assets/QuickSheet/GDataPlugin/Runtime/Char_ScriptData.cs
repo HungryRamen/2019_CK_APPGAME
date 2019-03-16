@@ -9,6 +9,10 @@ using System.Collections;
 public class Char_ScriptData
 {
   [SerializeField]
+  string character;
+  public string Character { get {return character; } set { character = value;} }
+  
+  [SerializeField]
   int key;
   public int Key { get {return key; } set { key = value;} }
   
