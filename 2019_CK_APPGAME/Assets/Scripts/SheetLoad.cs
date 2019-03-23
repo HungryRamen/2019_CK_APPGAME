@@ -13,150 +13,168 @@ namespace SheetData
         TextColor,          //문자색깔
     }
 
-    public struct TextSet//Text Queu 구현용
+    class ErrorDataStructer
     {
-        public char mCh;          //문자
-        public string mColor;     //문자색깔
-        public int mSize;        //문자크기
-
+        private int mIndex;
+        private string mWorkSheetName;
+        public ErrorDataStructer(int index, string workSheetName)
+        {
+            mIndex = index;
+            mWorkSheetName = workSheetName;
+        }
     }
 
+    public class TextType              //TextListQueue 구현용
+    {
+        public Queue<TextSet> mTextQueue;    //대사큐
+        private string mCharID;              //캐릭터ID
+        private string mTalkerName;          //대화자
+        private int mIndex;                  //순서 절댓값
+
+        public TextType()
+        {
+            mCharID = "";
+            mTalkerName = "";
+            mIndex = -1;
+            mTextQueue = new Queue<TextSet>();
+        }
+
+        public string CharID { get => mCharID; set => mCharID = value; }
+        public string TalkerName { get => mTalkerName; set => mTalkerName = value; }
+        public int Index { get => mIndex; set => mIndex = value; }
+    }
+
+    public class TextSet         //TextQueu 구현용
+    {
+        private char mCh;          //문자
+        private float mTextOutputTime; //문자출력속도
+        private int mTextSize; //문자크기
+        private string mTextColor; //문자색상
+
+        public TextSet()
+        {
+            mCh = ' ';
+            mTextOutputTime = 1.0f;
+            mTextSize = 40;
+            mTextColor = "black";
+        }
+
+        public TextSet(TextSet textSet)
+        {
+            mCh = textSet.Ch;
+            mTextOutputTime = textSet.TextOutputTime;
+            mTextSize = textSet.TextSize;
+            mTextColor = textSet.TextColor;
+        }
+
+        public char Ch { get => mCh; set => mCh = value; }
+        public float TextOutputTime { get => mTextOutputTime; set => mTextOutputTime = value; }
+        public int TextSize { get => mTextSize; set => mTextSize = value; }
+        public string TextColor { get => mTextColor; set => mTextColor = value; }
+    }
+    public static class DialogTextData
+    {
+        public static Dictionary<string, List<TextType>> TextDictionaryListQueue = new Dictionary<string, List<TextType>>(); //모든장면을 관리하는 딕셔너리
+    }
     public class SheetLoad : MonoBehaviour
     {
-        private Char_Script mCharScript;
-        private List<Queue<TextSet>> mTextQueueList;
-        private List<int> mErrorList;
-        private TextSet mTextSet;
-        private int mCharIndex = 0;
-        private int mDynamicTextSize;
-        private StringBuilder mDynamicColor;
+        private List<ErrorDataStructer> ErrorList;
+        private DialogStory DialogStroyResource;
         void Awake()
         {
-            TextSetDefault();
-            mErrorList = new List<int>();
-            mTextQueueList = new List<Queue<TextSet>>();
-            mCharScript = Resources.Load<Char_Script>("Data/New Char_Script");
-            //for(int index = 0; index < charScript.dataArray.Length; index++)
-            //{
-            //    Debug.LogFormat("{0} : {1}", charScript.dataArray[index].Key, charScript.dataArray[index].Command);
-            //}
-            //StringBuilder stringBuilder = new StringBuilder("`이미지`");
-            //for (int index = 0; index < stringBuilder.Length; index++)
-            //{
-            //    Debug.Log(stringBuilder[index]);
-            //
-            //}
-            //Chat(0);
+            ErrorList = new List<ErrorDataStructer>();
+            DialogStroyResource = Resources.Load<DialogStory>("Data/SheetData/DialogStory");
+            DialogStoryDataLoad();
         }
 
-        //Sheet ErrorChecking
-        //public bool ErrorCheck()
-        //{
-        //    bool bCheck = true;
-        //    for (int index = 0; index < mCharScript.dataArray.Length; index++)
-        //    {
-        //        if (!Chat(index))
-        //        {
-        //            mErrorList.Add(index);
-        //            bCheck = false;
-        //        }
-        //    }
-        //    return bCheck;
-        //}
-        public bool TextCopyQueue(int index)
+        //다이얼로그스토리 워크시트 불러오기
+        private void DialogStoryDataLoad()
         {
-            if (index < mTextQueueList.Count && index >= 0)
+            for (int index = 0; index < DialogStroyResource.dataArray.Length; index++)
             {
-                //if(Dialog.TextQueue != null)
-                //{
-                //
-                //}
-                //Dialog.TextQueue = new Queue<TextSet>(mTextQueueList[index]); 얕은복사가 되버린다면 이걸로 바꾸고 메모리해체 하는 방법찾기
-                //DaialogSystem::Dialog.TextQueue = mTextQueueList[index];
-                return true;
-            }
-            return false;
-        }
-        //dialog main
-        public bool TextAllLoad()
-        {
-            StringBuilder stringBuilder = new StringBuilder();
-            mCharIndex = 0;
-            for(int index = 0; index < mCharScript.dataArray.Length; index++)
-            {
-                stringBuilder.Append(mCharScript.dataArray[index].Command);
-                TextSetDefault();
-                while (mCharIndex < stringBuilder.Length)
+                //텍스트딕셔너리리스트에 TextType 셋팅 
+                TextType textType = TextLoad(DialogStroyResource.dataArray[index].Command,DialogStroyResource.dataArray[index].Index,DialogStroyResource.WorksheetName);
+                textType.TalkerName = DialogStroyResource.dataArray[index].Talkername;
+                textType.CharID = DialogStroyResource.dataArray[index].Charid;
+                //텍스트딕셔너리에 기존 ID 값이 있는지 확인 없으면 새로 생성
+                if (!DialogTextData.TextDictionaryListQueue.ContainsKey(DialogStroyResource.dataArray[index].ID))
                 {
-                    switch (CommandTypeCheck(stringBuilder))
-                    {
-                        case eTextCommandType.Text:
-                            //Dialog.TextQueue.Enqueue(mTextSet);
-                            break;
-                        case eTextCommandType.TextSize:
-                            
-                            break;
-                        case eTextCommandType.TextColor:
-                            break;
-                    }
+                    DialogTextData.TextDictionaryListQueue.Add(DialogStroyResource.dataArray[index].ID, new List<TextType>());
                 }
-                stringBuilder.Clear();
+                DialogTextData.TextDictionaryListQueue[DialogStroyResource.dataArray[index].ID].Add(textType);
             }
-            return true;
         }
 
-        //CommandType Checking
-        private eTextCommandType CommandTypeCheck(StringBuilder stringBuilder)
+        //커맨드String, 워크시트인덱스, 워크시트이름
+        private TextType TextLoad(string str, int listIndex, string workSheetName)
         {
-            int Charindex = mCharIndex;
-            if (stringBuilder[Charindex] == '{')
+            int startIndex; //시작인덱스 { = 1
+            int midFirstIndex;   //:: 중간 첫인덱스
+            int midLastIndex;
+            int lastIndex;   //} 끝 인덱스
+            string commandStr; //커맨드 타입 분별
+            string valueStr;
+            TextType textType = new TextType
             {
-                StringBuilder tempString = new StringBuilder();
-                int index;
-                for (index = Charindex + 1; index < Charindex + 6; index++)
-                {
-                    tempString.Append(stringBuilder[index]);
-                }
-                if (tempString.ToString() == "텍스트크기")
-                {
-                    mCharIndex = index + 1;
-                    return eTextCommandType.TextSize;
-                }
-                else if (tempString.ToString() == "텍스트색상")
-                {
-                    return eTextCommandType.TextColor;
-                }
-            }
-            else if (stringBuilder[Charindex] == '`')
-            {
-                for (int index = Charindex + 1; index < stringBuilder.Length; index++)
-                {
-                    if (stringBuilder[index] == '`')
-                    {
-                        return eTextCommandType.Text;
-                    }
-                }
-            }
-            return eTextCommandType.None;
-        }
-
-        private void TextSetDefault()       //문장이 시작할때
-        {
-            mTextSet = new TextSet()  //이부분도 구글스프레드 시트에서 불러오도록 하자
-            {
-                mCh = ' ',
-                mColor = "black",
-                mSize = 21
+                Index = listIndex
             };
-            mDynamicColor = new StringBuilder(mTextSet.mColor);
-            mDynamicTextSize = mTextSet.mSize;
-        }
-
-        private void TextSetDynamic()     //총문장이 넘어가기전에 또 다음 문장이오면
-        {
-            mTextSet.mCh = ' ';
-            mTextSet.mColor = mDynamicColor.ToString();
-            mTextSet.mSize = mDynamicTextSize;
+            TextSet textSet = new TextSet();
+            for (int index = 0; index < str.Length; index++)
+            {
+                if (str[index] == '{')
+                {
+                    startIndex = index + 1; //시작인덱스 { = 1
+                    midFirstIndex = str.IndexOf("::", index);   //:: 중간 첫인덱스
+                    midLastIndex = midFirstIndex + 2;      //:: 중간 끝인덱스
+                    lastIndex = str.IndexOf("}", index);   //} 끝 인덱스
+                    commandStr = str.Substring(startIndex, midFirstIndex - startIndex); //커맨드 타입 분별
+                    valueStr = str.Substring(midLastIndex, lastIndex - midLastIndex);  //값 분별
+                    if (commandStr == "출력속도")
+                    {
+                        if (valueStr != "")                   //Default 확인
+                            textSet.TextOutputTime = System.Convert.ToSingle(valueStr);
+                        else
+                            textSet.TextOutputTime = 1.0f;
+                    }
+                    else if(commandStr == "크기")
+                    {
+                        if (valueStr != "")                   //Default 확인
+                            textSet.TextSize = System.Convert.ToInt32(valueStr);
+                        else
+                            textSet.TextSize = 40;
+                    }
+                    else if(commandStr == "색상")
+                    {
+                        if (valueStr != "")                   //Default 확인
+                            textSet.TextColor = valueStr;
+                        else
+                            textSet.TextColor = "black";
+                    }
+                    else if(commandStr == "이미지")
+                    {
+                    }
+                    else
+                    {
+                        ErrorList.Add(new ErrorDataStructer(listIndex, workSheetName));     //읽어들이기 실패시 에러리스트에 추가
+                        break;
+                    }
+                    index += lastIndex - index;          //인식한 커맨드 문장 건너뛰기
+                }
+                else
+                {
+                    if (str[index] == '`')  //다음줄로 이동 인식
+                    {
+                        if (str[++index] == 'ㄷ')
+                        {
+                            textSet.Ch = '\n';
+                        }
+                    }
+                    else
+                        textSet.Ch = str[index];
+                    textType.mTextQueue.Enqueue(new TextSet(textSet));  //텍스트큐에 문자넣기
+                }
+            }
+            return textType;
         }
     }
 }

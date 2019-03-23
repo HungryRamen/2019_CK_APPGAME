@@ -3,56 +3,42 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Text;
-
+using System;
+using SheetData;
 namespace DialogSystem
 {
-    public class TextType//Text Queu 구현용
-    {
-        private char mCh;          //문자
-        private float mTextOutputTime; //문자출력속도
-
-        public TextType(char ch, float textOutputTime)
-        {
-            mCh = ch;
-            mTextOutputTime = textOutputTime;
-        }
-
-        public char Ch { get => mCh; set => mCh = value; }
-        public float TextOutputTime { get => mTextOutputTime; set => mTextOutputTime = value; }
-    }
     public class Dialog : MonoBehaviour
     {
         public GameObject TextObj;      //TextUI
-        private Dictionary<string, List<Queue<TextType>>> mTextDictionaryListQueue; //모든장면을 관리하는 딕셔너리
-        private List<Queue<TextType>> mTextListQueue; //하나의 장면의 대사를 관리하는 리스트
-        private Queue<TextType> TextQueue; //한대사의 문자를 관리하는 큐
-        private TextType TextTypeNow;   //현재 출력되고 있는 문자
+        private List<TextType> TextListQueue; //하나의 장면의 대사를 관리하는 리스트
+        private Queue<TextSet> TextQueue; //한대사의 문자를 관리하는 큐
+        private TextSet TextTypeNow;   //현제 출력되고 있는 문자
+        private TextSet TextTypeChange; //문자 속성이 바뀌었는지 확인
         private bool bTextFullLoad;     //대사가 모두 출력되었는가 판별
         private StringBuilder TextStringBuilder; //대사용 스트링빌더
         private float TextElapsedTime;      //문자출력 경과시간
-        private int TextListQueueIndex;    //대사 출력 순서 Index;
+        private int TextListQueueIndex;    //대사 출력 순서 Index
+        private int TextIndex;            //텍스트 InsertIndex
+        private string StrSizeText;       //RichText 텍스트 크기용 string
+        private string StrColorText;      //RichText 텍스트 색상용 string
         void Awake()
         {
+            StrSizeText = "</size>";
+            StrColorText = "</color>";
             TextElapsedTime = 0.0f;
             TextListQueueIndex = 0;
+            TextIndex = 0;
             bTextFullLoad = true;
             TextQueue = null;
             TextTypeNow = null;
-            mTextDictionaryListQueue = new Dictionary<string, List<Queue<TextType>>>();
-            mTextListQueue = new List<Queue<TextType>>();
+            TextTypeChange = null;
+            TextListQueue = null;
             TextStringBuilder = new StringBuilder();
-            Test();
         }
 
-        void Test()
+        private void Start()
         {
-            Queue<TextType> textQueue = new Queue<TextType>();
-            textQueue.Enqueue(new TextType('안', 0.0f));
-            textQueue.Enqueue(new TextType('녕', 1.0f));
-            textQueue.Enqueue(new TextType('하', 1.0f));
-            textQueue.Enqueue(new TextType('세', 1.0f));
-            textQueue.Enqueue(new TextType('요', 1.0f));
-            mTextListQueue.Add(textQueue);
+            NextText();
         }
 
         // Update is called once per frame
@@ -61,11 +47,10 @@ namespace DialogSystem
             DialogOutput();
         }
 
-        void DialogOutput()
+        void DialogOutput()   //다이얼로그 출력
         {
-            if (bTextFullLoad && ScreenReaction())
+            if (bTextFullLoad && ScreenReaction()) //텍스트가 전부 나왔는가? + 화면에 반응을 줬는가
             {
-                bTextFullLoad = false;
                 NextText();
             }
             else if (!bTextFullLoad)
@@ -84,31 +69,40 @@ namespace DialogSystem
             return false;
         }
 
-        void NextText()
+        void NextText() //다음대사
         {
-            if (mTextListQueue.Count > TextListQueueIndex)
+            bTextFullLoad = false;
+            if(TextListQueue == null)
             {
-                TextQueue = mTextListQueue[TextListQueueIndex++];
-                TextTypeNow = TextQueue.Dequeue();
+                TextListQueue = new List<TextType>(DialogTextData.TextDictionaryListQueue["C00_D00"]);
+                TextListQueueIndex = 0;
             }
-            //else TextListQueueIndex가 끝나면 다음 것을 불러오자 mTextDictionaryListQueue는 sheetload에서 불러오고
+            TextStringBuilder.Clear();
+            TextTypeChange = new TextSet();
+            TextQueue = new Queue<TextSet>(TextListQueue[TextListQueueIndex++].mTextQueue);
+            TextIndex = 0;
+            TextTypeNow = TextQueue.Dequeue();
+            if(TextListQueue.Count <= TextListQueueIndex)
+            {
+                TextListQueue = null;
+            }
         }
 
-        void PassText()
+        void PassText()  //대사스킵
         {
             while (TextQueue.Count > 0)
             {
-                TextStringBuilder.Append(TextTypeNow.Ch);
+                RichTextMgr();
                 TextTypeNow = TextQueue.Dequeue();
             }
-            TextStringBuilder.Append(TextTypeNow.Ch);
+            RichTextMgr();
             TextElapsedTime = 0.0f;
             bTextFullLoad = true;
         }
 
-        void TextOutput(bool bPass)
+        void TextOutput(bool bPass) //문자출력
         {
-            if (bPass)
+            if (bPass)   //대사 스킵여부
             {
                 PassText();
             }
@@ -117,16 +111,63 @@ namespace DialogSystem
                 TextElapsedTime += Time.deltaTime;
                 if (TextElapsedTime >= TextTypeNow.TextOutputTime)
                 {
-                    TextStringBuilder.Append(TextTypeNow.Ch);
+                    RichTextMgr();
                     if (TextQueue.Count == 0)
                     {
                         bTextFullLoad = true;
                         return;
                     }
                     TextTypeNow = TextQueue.Dequeue();
+                    if (TextTypeNow.Ch == '\n')
+                        TextTypeNow.TextOutputTime = 0.0f;
                     TextElapsedTime = 0.0f;
                 }
             }
+        }
+
+        //RichText를 위한 TextQueue의문자 정리함수
+        void RichTextMgr()
+        {
+            if(TextTypeNow.TextSize != TextTypeChange.TextSize)  //텍스트 사이즈가 바뀌었는가?
+            {
+                TextTypeChange.TextSize = TextTypeNow.TextSize;
+                StringBuilder strSize = new StringBuilder("<size=");
+                strSize.AppendFormat("{0}>", TextTypeNow.TextSize);
+                RichTextIndexMgr(strSize.ToString(), StrSizeText);
+                int EndIndex = TextStringBuilder.ToString().IndexOf(StrColorText, TextIndex);
+                if(EndIndex >= 0)
+                {
+                    TextStringBuilder.Remove(EndIndex, StrColorText.Length);
+                    TextStringBuilder.Append(StrColorText);
+                }
+                TextIndex += (TextStringBuilder.ToString().IndexOf(">", TextIndex) + 1) - TextIndex;
+            }
+            if (TextTypeNow.TextColor != TextTypeChange.TextColor) //텍스트 색상이 바뀌었는가?
+            {
+                TextTypeChange.TextColor = TextTypeNow.TextColor;
+                StringBuilder strSize = new StringBuilder("<color=");
+                strSize.AppendFormat("{0}>", TextTypeNow.TextColor);
+                RichTextIndexMgr(strSize.ToString(), StrColorText);
+                int EndIndex = TextStringBuilder.ToString().IndexOf(StrSizeText, TextIndex);
+                if (EndIndex >= 0)
+                {
+                    TextStringBuilder.Remove(EndIndex, StrSizeText.Length);
+                    TextStringBuilder.Append(StrSizeText);
+                }
+                TextIndex += (TextStringBuilder.ToString().IndexOf(">", TextIndex) + 1) - TextIndex;
+            }
+            TextStringBuilder.Insert(TextIndex++, TextTypeNow.Ch);
+        }
+
+        void RichTextIndexMgr(string strFormat,string str) //</>정리
+        {
+            int EndIndex = TextStringBuilder.ToString().IndexOf(str, TextIndex);
+            if (EndIndex >= 0)
+            {
+                TextIndex += EndIndex + str.Length - TextIndex;
+            }
+            TextStringBuilder.Insert(TextIndex++, strFormat);
+            TextStringBuilder.Append(str);
         }
 
         void VoiceOutput(string voice)

@@ -8,7 +8,15 @@ public class tt//Text Queu 구현용
     public char mCh;          //문자
     public string mColor;     //문자색깔
     public int mSize;        //문자크기
-
+    public tt()
+    {
+    }
+    public tt(tt t)
+    {
+        mCh = t.mCh;
+        mColor = t.mColor;
+        mSize = t.mSize;
+    }
 }
 
 public class Test : MonoBehaviour
@@ -24,11 +32,11 @@ public class Test : MonoBehaviour
         t.mCh = 'd';
         t.mColor = "red";
         t.mSize = 10;
-        testQueue.Enqueue(t);
+        testQueue.Enqueue(new tt(t));
         t.mCh = 'f';
         t.mColor = "cc";
         t.mSize = 50;
-        testQueue.Enqueue(t);
+        testQueue.Enqueue(new tt(t));
         testQueueList.Add(testQueue);
         Queue<tt> test = new Queue<tt>(testQueueList[0]);
         tt t2 = test.Dequeue();
