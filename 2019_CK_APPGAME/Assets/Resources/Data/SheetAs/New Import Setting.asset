@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: New Import Setting
   m_EditorClassIdentifier: 
   templatePath: QuickSheet/GDataPlugin/Templates
-  scriptFilePath: Resources/Data/Runtime/
-  editorScriptFilePath: Resources/Data/Editor/
+  scriptFilePath: Resources/Data/Runtime
+  editorScriptFilePath: Resources/Data/Editor
   sheetName: 2019CKAPPGameSheet
   workSheetName: DialogStory
   columnHeaderList:

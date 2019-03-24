@@ -10,6 +10,7 @@ namespace DialogSystem
     public class Dialog : MonoBehaviour
     {
         public GameObject TextObj;      //TextUI
+        public GameObject TalkerTextObj; //TalkerTextUI;
         private List<TextType> TextListQueue; //하나의 장면의 대사를 관리하는 리스트
         private Queue<TextSet> TextQueue; //한대사의 문자를 관리하는 큐
         private TextSet TextTypeNow;   //현제 출력되고 있는 문자
@@ -57,7 +58,6 @@ namespace DialogSystem
             {
                 TextOutput(ScreenReaction());
             }
-            TextObj.GetComponent<Text>().text = TextStringBuilder.ToString();
         }
 
         bool ScreenReaction()
@@ -78,7 +78,9 @@ namespace DialogSystem
                 TextListQueueIndex = 0;
             }
             TextStringBuilder.Clear();
+            TextObj.GetComponent<Text>().text = TextStringBuilder.ToString();
             TextTypeChange = new TextSet();
+            TalkerTextObj.GetComponent<Text>().text = TextListQueue[TextListQueueIndex].TalkerName;
             TextQueue = new Queue<TextSet>(TextListQueue[TextListQueueIndex++].mTextQueue);
             TextIndex = 0;
             TextTypeNow = TextQueue.Dequeue();
@@ -118,8 +120,11 @@ namespace DialogSystem
                         return;
                     }
                     TextTypeNow = TextQueue.Dequeue();
-                    if (TextTypeNow.Ch == '\n')
-                        TextTypeNow.TextOutputTime = 0.0f;
+                    if(TextTypeNow.Ch == '\n')
+                    {
+                        RichTextMgr();
+                        TextTypeNow = TextQueue.Dequeue();
+                    }
                     TextElapsedTime = 0.0f;
                 }
             }
@@ -157,6 +162,7 @@ namespace DialogSystem
                 TextIndex += (TextStringBuilder.ToString().IndexOf(">", TextIndex) + 1) - TextIndex;
             }
             TextStringBuilder.Insert(TextIndex++, TextTypeNow.Ch);
+            TextObj.GetComponent<Text>().text = TextStringBuilder.ToString();
         }
 
         void RichTextIndexMgr(string strFormat,string str) //</>정리

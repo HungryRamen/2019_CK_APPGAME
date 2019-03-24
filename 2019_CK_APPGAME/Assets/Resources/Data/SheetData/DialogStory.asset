@@ -9,19 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a63339d549f5447bbecdc8d17065f3, type: 3}
+  m_Script: {fileID: 11500000, guid: efeaceed90c06b1459a4489bea330d80, type: 3}
   m_Name: DialogStory
   m_EditorClassIdentifier: 
   SheetName: 2019CKAPPGameSheet
   WorksheetName: DialogStory
   dataArray:
   - id: C00_D00
+    index: 0
+    charid: "\uCCA0\uC218[0]&\uC601\uD76C[3]"
+    talkername: "\uCCA0\uC218"
+    command: "{\uCD9C\uB825\uC18D\uB3C4::0.3}\uC73C{\uC0C9\uC0C1::blue}\uC544{\uD06C\uAE30::150}\uC544{\uD06C\uAE30::75}\uC545{\uD06C\uAE30::150}\uCDE4{\uC0C9\uC0C1::}\uCDE4\uCDCC[\u314B"
+  - id: C00_D00
     index: 1
     charid: "\uCCA0\uC218[0]&\uC601\uD76C[3]"
     talkername: "\uCCA0\uC218"
-    command: "{\uCD9C\uB825\uC18D\uB3C4::0.3}\uC73C{\uC0C9\uC0C1::blue}\uC544{\uD06C\uAE30::150}\uC544{\uD06C\uAE30::75}\uC545{\uD06C\uAE30::200}\uCDE4{\uC0C9\uC0C1::}\uCDE4\uCDCC[\u314B"
-  - id: C00_D00
-    index: 2
-    charid: "\uCCA0\uC218[0]&\uC601\uD76C[3]"
-    talkername: "\uCCA0\uC218"
-    command: "\uB2E4\uC74C \uB0B4\uC6A9\uB3C4 \uB098 `\u3137 \uC624\uB098\uC694"
+    command: "\uB2E4\uC74C \uB0B4\uC6A9\uB3C4 \uB098 `\u3137\uC624\uB098\uC694"

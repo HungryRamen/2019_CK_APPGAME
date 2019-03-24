@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Google Data Settings
   m_EditorClassIdentifier: 
   TemplatePath: QuickSheet/GDataPlugin/Templates
-  RuntimePath: Resources/Data/Runtime/
-  EditorPath: Resources/Data/Editor/
+  RuntimePath: Resources/Data/Runtime
+  EditorPath: Resources/Data/Editor
   OAuth2Data:
     client_id: 22111793425-hqq7rjmi1sub6kd0bscgmmhsq31tinke.apps.googleusercontent.com
     auth_uri: 
@@ -22,6 +22,6 @@ MonoBehaviour:
     auth_provider_x509_cert_url: 
     client_secret: WsIgaY33BzBvcbOe5Yvl7DQe
     redirect_uris: []
-  _AccessCode: 4/FgEE66FBORpOCd3xZGNKa1MFQMgxtifI2Fczk3v8AKPwHIShB3TaxqE
-  _RefreshToken: 1/wuEalkRGyE4UMtU8lffxmnN32bFTP_7gDfqYJifAshw
-  _AccessToken: ya29.GlvVBm-5RFIn_MdUVU0DKFFlQGgtwoX2mKzF4Ov-LYNuPKRhKvgB6DNVvFsqlVy5giv6uJA2oiLKDVcXRwOiT89w4LhDGpac34Hfb7XaedKUeeoLwaBF2WiQO1eY
+  _AccessCode: 4/FwEmPQLwTzd8LPSLp-OYPo2Qxhi3DwY-zL7boZpSgxZsynswMLLhi20
+  _RefreshToken: 1/1_EJZHaqUIl9DnX7B1FECDt3hI7iS-sSZpWTdpVckwg
+  _AccessToken: ya29.GlvWBhD39vgy4kIWGy8tLGukdcRSvWk6Xqsp9ezrr_wx--qRErMcaGqeBbt_y4o6Gd0C2IzHLR0ogWSQou6cC4lD_OlydoM-u_60Ksj5xq9_gTopWyIg22jMW-mW
