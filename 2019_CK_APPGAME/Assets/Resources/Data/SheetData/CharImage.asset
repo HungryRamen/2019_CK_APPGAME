@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d138bb0548e61842b448772b5c8495c, type: 3}
+  m_Name: CharImage
+  m_EditorClassIdentifier: 
+  SheetName: 2019CKAPPGameSheet
+  WorksheetName: CharImage
+  dataArray:
+  - index: 0
+    id: CH_02
+    state: 0
+    imagelocation: CharImg/CH02/CH_02_Idle01
+    name: "\uC1A1\uC544\uC5F0"
+  - index: 1
+    id: CH_02
+    state: 1
+    imagelocation: CharImg/CH02/CH_02_Idle02
+    name: "\uC1A1\uC544\uC5F0"
+  - index: 2
+    id: CH_04
+    state: 0
+    imagelocation: CharImg/CH04/CH_04_Idle01
+    name: "\uC7AD \uBC14\uD1A8\uB85C\uBBA4"

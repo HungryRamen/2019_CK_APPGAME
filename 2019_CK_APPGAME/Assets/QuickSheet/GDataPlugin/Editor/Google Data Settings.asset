@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Google Data Settings
   m_EditorClassIdentifier: 
   TemplatePath: QuickSheet/GDataPlugin/Templates
-  RuntimePath: Resources/Data/Runtime
-  EditorPath: Resources/Data/Editor
+  RuntimePath: QuickSheet/GDataPlugin/Runtime
+  EditorPath: QuickSheet/GDataPlugin/Editor
   OAuth2Data:
     client_id: 22111793425-hqq7rjmi1sub6kd0bscgmmhsq31tinke.apps.googleusercontent.com
     auth_uri: 
