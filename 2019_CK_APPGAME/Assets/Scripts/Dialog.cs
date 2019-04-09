@@ -77,7 +77,7 @@ namespace DialogSystem
             bTextFullLoad = false;
             if (TextListQueue == null)
             {
-                TextListQueue = new List<TextType>(DataSheetSet.TextDictionaryListQueue["C00_D00"]);
+                TextListQueue = new List<TextType>(DataSheetSet.TextDictionary["C00_D00"]);
                 TextListQueueIndex = 0;
             }
             TextStringBuilder.Clear();
