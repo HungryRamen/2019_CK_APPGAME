@@ -94,12 +94,37 @@ namespace SheetData
         public int State { get => mState; set => mState = value; }
     }
 
+    public class CommandScreenShake
+    {
+        private float mScreenShakeTime; //화면흔드는 시간
+        private float mScreenShakeOffSet; //화면흔들림 크기
+        private bool mbOneTime; //1회성 화면흔들림 
+        public CommandScreenShake(float time,float offSet)
+        {
+            mScreenShakeOffSet = time;
+            mScreenShakeOffSet = offSet;
+            bOneTime = false;
+        }
+
+        public CommandScreenShake(CommandScreenShake cmdScreenShake)
+        {
+            mScreenShakeOffSet = cmdScreenShake.mScreenShakeOffSet;
+            mScreenShakeTime = cmdScreenShake.mScreenShakeTime;
+            bOneTime = cmdScreenShake.bOneTime;
+        }
+
+        public float ScreenShakeTime { get => mScreenShakeTime; set => mScreenShakeTime = value; }
+        public float ScreenShakeOffSet { get => mScreenShakeOffSet; set => mScreenShakeOffSet = value; }
+        public bool bOneTime { get => mbOneTime; set => mbOneTime = value; }
+    }
+
     public class TextSet         //TextQueu 구현용 자료구조
     {
         private char mCh;          //문자
         private float mTextOutputTime; //문자출력속도
         private int mTextSize; //문자크기
         private string mTextColor; //문자색상
+        public CommandScreenShake mCmdScreenShake; //화면흔들기
         public CommandCharImage mCmdCharImg; //캐릭터 불러오기
 
         public TextSet()
@@ -108,6 +133,7 @@ namespace SheetData
             mTextOutputTime = 0.2f;
             mTextSize = 40;
             mTextColor = "black";
+            mCmdScreenShake = new CommandScreenShake(1.0f, 10.0f);
             mCmdCharImg = new CommandCharImage("CH_02", 0);
         }
 
@@ -117,6 +143,7 @@ namespace SheetData
             mTextOutputTime = textSet.TextOutputTime;
             mTextSize = textSet.TextSize;
             mTextColor = textSet.TextColor;
+            mCmdScreenShake = new CommandScreenShake(textSet.mCmdScreenShake);
             mCmdCharImg = new CommandCharImage(textSet.mCmdCharImg);
         }
 

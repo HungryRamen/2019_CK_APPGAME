@@ -13,6 +13,7 @@ namespace DialogSystem
         public GameObject TalkerTextObj; //TalkerTextUI;
         public GameObject NpcImageObjSong;  //송아연 이미지 오브젝트 후에 정리되면 LeftObj로
         public GameObject NpcImageObjJack;  //잭 이미지 오브젝트 후에 정리되면 RightObj로
+        public GameObject UIDlgObj;      //씬전환, 흔들기용 부모오브젝트
 
         private List<TextType> TextListQueue; //하나의 장면의 대사를 관리하는 리스트
         private Queue<TextSet> TextQueue; //한대사의 문자를 관리하는 큐
@@ -38,6 +39,7 @@ namespace DialogSystem
             TextTypeChange = null;
             TextListQueue = null;
             TextStringBuilder = new StringBuilder();
+            UIDlgObj = transform.parent.gameObject;
         }
 
         private void Start()
@@ -119,17 +121,13 @@ namespace DialogSystem
                 if (TextElapsedTime >= TextTypeNow.TextOutputTime)
                 {
                     RichTextMgr();
+                    ScreenShake(TextTypeNow);
                     if (TextQueue.Count == 0)
                     {
                         bTextFullLoad = true;
                         return;
                     }
                     TextTypeNow = TextQueue.Dequeue();
-                    if (TextTypeNow.Ch == '\n')
-                    {
-                        RichTextMgr();
-                        TextTypeNow = TextQueue.Dequeue();
-                    }
                     NpcImageLoad(TextTypeNow.mCmdCharImg.ID, TextTypeNow.mCmdCharImg.State);
                     TextElapsedTime = 0.0f;
                 }
@@ -169,6 +167,14 @@ namespace DialogSystem
             }
             TextStringBuilder.Insert(TextIndex++, TextTypeNow.Ch);
             TextObj.GetComponent<Text>().text = TextStringBuilder.ToString();
+        }
+
+        void ScreenShake(TextSet textSet)
+        {
+            if (textSet.mCmdScreenShake.bOneTime)
+            {
+                UIDlgObj.GetComponent<ObjectShake>().StartShake(textSet.mCmdScreenShake.ScreenShakeTime, textSet.mCmdScreenShake.ScreenShakeOffSet);
+            }
         }
 
         void RichTextIndexMgr(string strFormat, string str) //</>정리

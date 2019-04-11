@@ -16,7 +16,7 @@ MonoBehaviour:
   scriptFilePath: QuickSheet/GDataPlugin/Runtime
   editorScriptFilePath: QuickSheet/GDataPlugin/Editor
   sheetName: 2019CKAPPGameSheet
-  workSheetName: DialogStory
+  workSheetName: OldDialogStory
   columnHeaderList:
   - type: 1
     name: ID

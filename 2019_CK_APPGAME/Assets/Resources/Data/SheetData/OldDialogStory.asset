@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efeaceed90c06b1459a4489bea330d80, type: 3}
-  m_Name: DialogStory
+  m_Script: {fileID: 11500000, guid: 579b26b46465076499011b73c926e1a1, type: 3}
+  m_Name: OldDialogStory
   m_EditorClassIdentifier: 
   SheetName: 2019CKAPPGameSheet
-  WorksheetName: DialogStory
+  WorksheetName: OldDialogStory
   dataArray:
   - id: C00_D00
     index: 0
     charid: CH_02
     talkername: "\uC1A1\uC544\uC5F0"
     command: "{\uC774\uBBF8\uC9C0::CH_02::0}{\uCD9C\uB825\uC18D\uB3C4::0.2}\uC800...
-      \uC774 \uC2DD\uB2F9\uC5D0\uB294... {\uC0C9\uC0C1::blue}\uBA54\uB274\uD310{\uC0C9\uC0C1::}\uC774
+      \uC774 {\uD654\uBA74\uD754\uB4E4\uAE30::2::20}\uC2DD\uB2F9\uC5D0\uB294... {\uC0C9\uC0C1::blue}\uBA54\uB274\uD310{\uC0C9\uC0C1::}\uC774
       \uC5C6\uB098\uC694...?"
   - id: C00_D00
     index: 1

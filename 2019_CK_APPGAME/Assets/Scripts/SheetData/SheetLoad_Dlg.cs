@@ -6,12 +6,17 @@ using SheetData;
 
 public class SheetLoad_Dlg : SheetLoad
 {
-    private DialogStory dialogStroyResource;
-
+    private OldDialogStory dialogStroyResource;
+    Dictionary<string, DlgCmd> commandDictionary = new Dictionary<string, DlgCmd>();
     public override void SheetDataLoad()
     {
         base.SheetDataLoad();
-        dialogStroyResource = Resources.Load<DialogStory>("Data/SheetData/DialogStory");
+        dialogStroyResource = Resources.Load<OldDialogStory>("Data/SheetData/OldDialogStory");
+        commandDictionary.Add("출력속도", GetComponent<DlgCmd_TextTime>());
+        commandDictionary.Add("크기", GetComponent<DlgCmd_TextSize>());
+        commandDictionary.Add("색상", GetComponent<DlgCmd_TextColor>());
+        commandDictionary.Add("이미지", GetComponent<DlgCmd_CharImg>());
+        commandDictionary.Add("화면흔들기", GetComponent<DlgCmd_ScreenShake>());
         for (int index = 0; index < dialogStroyResource.dataArray.Length; index++)
         {
             //텍스트딕셔너리리스트에 TextType 셋팅 
@@ -33,12 +38,9 @@ public class SheetLoad_Dlg : SheetLoad
     //커맨드String, 워크시트인덱스, 워크시트이름
     public TextType TextLoad(string str, int listIndex, string workSheetName)
     {
-        int startIndex; //시작인덱스 { = 1
-        int midFirstIndex;   //:: 중간 첫인덱스
-        int midLastIndex;
-        int lastIndex;   //} 끝 인덱스
-        string commandStr; //커맨드 타입 분별
-        string valueStr;
+        int lastIndex;
+        float tempTextTime;
+        string[] strTypeClass; //커맨드 타입 분별
         TextType textType = new TextType
         {
             Index = listIndex
@@ -50,46 +52,11 @@ public class SheetLoad_Dlg : SheetLoad
             {
                 if (str[index] == '{')
                 {
-                    startIndex = index + 1; //시작인덱스 { = 1
-                    midFirstIndex = str.IndexOf("::", index);   //:: 중간 첫인덱스
-                    midLastIndex = midFirstIndex + 2;      //:: 중간 끝인덱스
                     lastIndex = str.IndexOf("}", index);   //} 끝 인덱스
-                    commandStr = str.Substring(startIndex, midFirstIndex - startIndex); //커맨드 타입 분별
-                    valueStr = str.Substring(midLastIndex, lastIndex - midLastIndex);  //값 분별
-                    if (commandStr == "출력속도")
+                    strTypeClass = CommandSubstring(str, index, lastIndex);
+                    if(commandDictionary.ContainsKey(strTypeClass[0]))
                     {
-                        if (valueStr != "")                   //Default 확인
-                            textSet.TextOutputTime = System.Convert.ToSingle(valueStr);
-                        else
-                            textSet.TextOutputTime = 1.0f;
-                    }
-                    else if (commandStr == "크기")
-                    {
-                        if (valueStr != "")                   //Default 확인
-                            textSet.TextSize = System.Convert.ToInt32(valueStr);
-                        else
-                            textSet.TextSize = 40;
-                    }
-                    else if (commandStr == "색상")
-                    {
-                        if (valueStr != "")                   //Default 확인
-                            textSet.TextColor = valueStr;
-                        else
-                            textSet.TextColor = "black";
-                    }
-                    else if (commandStr == "이미지")
-                    {
-                        if (valueStr == "")
-                        {
-                            sheetManager.ErrorAdd(listIndex, workSheetName);
-                            break;
-                        }
-                        midFirstIndex = valueStr.IndexOf("::");
-                        midLastIndex = midFirstIndex + 2;
-                        commandStr = valueStr.Substring(0, midFirstIndex);
-                        valueStr = valueStr.Substring(midLastIndex, valueStr.Length - midLastIndex);
-                        textSet.mCmdCharImg.ID = commandStr;
-                        textSet.mCmdCharImg.State = System.Convert.ToInt32(valueStr);
+                        commandDictionary[strTypeClass[0]].CommandClass(textSet, strTypeClass[1]);
                     }
                     else
                     {
@@ -100,11 +67,13 @@ public class SheetLoad_Dlg : SheetLoad
                 }
                 else
                 {
+                    tempTextTime = textSet.TextOutputTime;
                     if (str[index] == '`')  //다음줄로 이동 인식
                     {
                         if (str[++index] == 'ㄷ')
                         {
                             textSet.Ch = '\n';
+                            textSet.TextOutputTime = 0.0f;
                         }
                         else
                         {
@@ -114,15 +83,26 @@ public class SheetLoad_Dlg : SheetLoad
                     else
                         textSet.Ch = str[index];
                     textType.mTextQueue.Enqueue(new TextSet(textSet));  //텍스트큐에 문자넣기
+                    textSet.TextOutputTime = tempTextTime;
+                    textSet.mCmdScreenShake.bOneTime = false;
                 }
             }
         }
-        catch(NullReferenceException ex)
+        catch (NullReferenceException ex)
         {
             Debug.Log(ex);
         }
         return textType;
     }
 
-
+    string[] CommandSubstring(string str, int index, int lastIndex)
+    {
+        string[] tempStr = new string[2];
+        int startIndex = index + 1;
+        int midFirstIndex = str.IndexOf("::", index);   //:: 중간 첫인덱스
+        int midLastIndex = midFirstIndex + 2;      //:: 중간 끝인덱스
+        tempStr[0] = str.Substring(startIndex, midFirstIndex - startIndex); //커맨드 타입 분별
+        tempStr[1] = str.Substring(midLastIndex, lastIndex - midLastIndex);  //값 분별
+        return tempStr;
+    }
 }
