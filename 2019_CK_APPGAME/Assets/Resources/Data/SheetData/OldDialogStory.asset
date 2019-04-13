@@ -20,14 +20,14 @@ MonoBehaviour:
     charid: CH_02
     talkername: "\uC1A1\uC544\uC5F0"
     command: "{\uC774\uBBF8\uC9C0::CH_02::0}{\uCD9C\uB825\uC18D\uB3C4::0.2}\uC800...
-      \uC774 {\uD654\uBA74\uD754\uB4E4\uAE30::2::20}\uC2DD\uB2F9\uC5D0\uB294... {\uC0C9\uC0C1::blue}\uBA54\uB274\uD310{\uC0C9\uC0C1::}\uC774
+      \uC774 {\uD654\uBA74\uD754\uB4E4\uAE30::5::100}\uC2DD\uB2F9\uC5D0\uB294... {\uC0C9\uC0C1::blue}\uBA54\uB274\uD310{\uC0C9\uC0C1::}\uC774
       \uC5C6\uB098\uC694...?"
   - id: C00_D00
     index: 1
     charid: CH_02
     talkername: "\uC1A1\uC544\uC5F0"
     command: "{\uC774\uBBF8\uC9C0::CH_02::1}\uADF8...\uC81C\uAC00 \uBA39\uACE0\uC2F6\uC740\uAC78
-      \uB9D0\uD558\uBA74 \uB418\uB294\uAC70\uC5D0\uC694?"
+      {\uC8FC\uBB38}\uB9D0\uD558\uBA74 \uB418\uB294\uAC70\uC5D0\uC694?"
   - id: C00_D00
     index: 2
     charid: CH_02

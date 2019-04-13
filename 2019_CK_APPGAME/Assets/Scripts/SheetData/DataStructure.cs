@@ -124,6 +124,7 @@ namespace SheetData
         private float mTextOutputTime; //문자출력속도
         private int mTextSize; //문자크기
         private string mTextColor; //문자색상
+        private bool mbOrderButtonEnable;
         public CommandScreenShake mCmdScreenShake; //화면흔들기
         public CommandCharImage mCmdCharImg; //캐릭터 불러오기
 
@@ -135,6 +136,7 @@ namespace SheetData
             mTextColor = "black";
             mCmdScreenShake = new CommandScreenShake(1.0f, 10.0f);
             mCmdCharImg = new CommandCharImage("CH_02", 0);
+            mbOrderButtonEnable = false;
         }
 
         public TextSet(TextSet textSet)
@@ -145,12 +147,14 @@ namespace SheetData
             mTextColor = textSet.TextColor;
             mCmdScreenShake = new CommandScreenShake(textSet.mCmdScreenShake);
             mCmdCharImg = new CommandCharImage(textSet.mCmdCharImg);
+            mbOrderButtonEnable = textSet.IsOrderButtonEnable;
         }
 
         public char Ch { get => mCh; set => mCh = value; }
         public float TextOutputTime { get => mTextOutputTime; set => mTextOutputTime = value; }
         public int TextSize { get => mTextSize; set => mTextSize = value; }
         public string TextColor { get => mTextColor; set => mTextColor = value; }
+        public bool IsOrderButtonEnable { get => mbOrderButtonEnable; set => mbOrderButtonEnable = value; }
     }
 
     public class DataStructure
