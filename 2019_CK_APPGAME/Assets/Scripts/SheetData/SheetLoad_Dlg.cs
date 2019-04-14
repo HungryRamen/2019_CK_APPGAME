@@ -17,7 +17,6 @@ public class SheetLoad_Dlg : SheetLoad
         commandDictionary.Add("색상", GetComponent<DlgCmd_TextColor>());
         commandDictionary.Add("이미지", GetComponent<DlgCmd_CharImg>());
         commandDictionary.Add("화면흔들기", GetComponent<DlgCmd_ScreenShake>());
-        commandDictionary.Add("주문", GetComponent<DlgCmd_Order>());
         for (int index = 0; index < dialogStroyResource.dataArray.Length; index++)
         {
             //텍스트딕셔너리리스트에 TextType 셋팅 
@@ -101,11 +100,6 @@ public class SheetLoad_Dlg : SheetLoad
         string[] tempStr = new string[2];
         int startIndex = index + 1;
         int midFirstIndex = str.IndexOf("::", index);   //:: 중간 첫인덱스
-        if (midFirstIndex == -1)
-        {
-            tempStr[0] = str.Substring(startIndex, lastIndex - startIndex);
-            return tempStr;
-        }
         int midLastIndex = midFirstIndex + 2;      //:: 중간 끝인덱스
         tempStr[0] = str.Substring(startIndex, midFirstIndex - startIndex); //커맨드 타입 분별
         tempStr[1] = str.Substring(midLastIndex, lastIndex - midLastIndex);  //값 분별

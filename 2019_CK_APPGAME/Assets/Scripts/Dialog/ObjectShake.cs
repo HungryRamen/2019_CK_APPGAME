@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ObjectShake
+public class ObjectShake : MonoBehaviour
 {
-    public static IEnumerator Shake(Transform pos,float time, float offSet) //흔들릴 오브젝트의 transform 흔들리는시간 흔들리는 강도 
+
+    public void StartShake(float time, float offSet)
+    {
+        StartCoroutine(Shake(time, offSet));
+    }
+
+    public IEnumerator Shake(float time, float offSet)
     {
         float elapsedTime = 0.0f;
-        Vector2 tempPos = pos.position;
+        Vector2 tempPos = transform.position;
         bool bCheck = false;
         while (elapsedTime <= time)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += 0.1f;
             if (!bCheck)
             {
                 float randX = Random.Range(0.0f, offSet + 1);
@@ -26,15 +32,15 @@ public static class ObjectShake
                 {
                     randY *= -1;
                 }
-                pos.position = new Vector2(tempPos.x + randX, tempPos.y + randY);
+                transform.position = new Vector2(tempPos.x + randX, tempPos.y + randY);
             }
             else
             {
-                pos.position = tempPos;
+                transform.position = tempPos;
             }
             bCheck = !bCheck;
-            yield return null;
+            yield return new WaitForSeconds(0.1f);
         }
-        pos.position = tempPos;
+        transform.position = tempPos;
     }
 }
