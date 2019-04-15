@@ -1,12 +1,13 @@
-﻿using System.Collections;
+﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: SheetLoadMgr
+using SheetData;
 using System.Collections.Generic;
 using UnityEngine;
-using SheetData;
 
-public class SheetLoadMgr : MonoBehaviour
+public sealed class SheetLoadMgr : MonoBehaviour
 {
-    List<ErrorDataStructer> errorList = new List<ErrorDataStructer>();
-    List<SheetLoad> SheetDataTypeList = new List<SheetLoad>(); //시트데이터들을 관리하는 리스트
+    private List<ErrorDataStructer> errorList = new List<ErrorDataStructer>();
+
+    private List<SheetLoad> SheetDataTypeList = new List<SheetLoad>();
 
     private void Awake()
     {
@@ -20,24 +21,24 @@ public class SheetLoadMgr : MonoBehaviour
         ErrorOutput();
     }
 
-    void DataAllLoad()
+    private void DataAllLoad()
     {
-        for (int index = 0; index < SheetDataTypeList.Count; index++)
+        for (int i = 0; i < SheetDataTypeList.Count; i++)
         {
-            SheetDataTypeList[index].SheetDataLoad();
+            SheetDataTypeList[i].SheetDataLoad();
         }
     }
 
     private void ErrorOutput()
     {
-        for (int index = 0; index < errorList.Count; index++)
+        for (int i = 0; i < errorList.Count; i++)
         {
-            Debug.LogFormat("WorkSheetName: {0}\nSheetIndex: {1}", errorList[index].WorkSheetName, errorList[index].Index);
+            UnityEngine.Debug.LogFormat("WorkSheetName: {0}\nSheetIndex: {1}", errorList[i].WorkSheetName, errorList[i].Index);
         }
     }
 
-    public void ErrorAdd(int listIndex,string workSheetName)
+    public void ErrorAdd(int listIndex, string workSheetName)
     {
-        errorList.Add(new ErrorDataStructer(listIndex, workSheetName));     //읽어들이기 실패시 에러리스트에 추가
+        errorList.Add(new ErrorDataStructer(listIndex, workSheetName));
     }
 }

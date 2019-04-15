@@ -1,19 +1,47 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using SheetData;
-using UnityEngine;
+﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_ScreenShake
+using System;
 
-public class DlgCmd_ScreenShake : DlgCmd
+public sealed class DlgCmd_ScreenShake : DlgCmd
 {
-    public override void CommandClass(TextSet textSet, string value)
+    private float shakeTime;
+
+    private float shakeOffSet;
+
+    public override void CommandAdd(string value)
     {
-        base.CommandClass(textSet, value);
-        int midFirstIndex = value.IndexOf("::");
-        int midLastIndex = midFirstIndex + 2;
-        string commandStr = value.Substring(0, midFirstIndex);
-        string valueStr = value.Substring(midLastIndex, value.Length - midLastIndex);
-        textSet.mCmdScreenShake.ScreenShakeTime = System.Convert.ToSingle(commandStr);
-        textSet.mCmdScreenShake.ScreenShakeOffSet = System.Convert.ToSingle(valueStr);
-        textSet.mCmdScreenShake.bOneTime = true;
+        base.CommandAdd(value);
+        int num = value.IndexOf("::");
+        int num2 = num + 2;
+        string value2 = value.Substring(0, num);
+        string value3 = value.Substring(num2, value.Length - num2);
+        shakeTime = Convert.ToSingle(value2);
+        shakeOffSet = Convert.ToSingle(value3);
+    }
+
+    public override void CommandPerform(bool bPass)
+    {
+        base.CommandPerform(bPass);
+        if (!bPass)
+        {
+            uiManager.ScreenShake(shakeTime, shakeOffSet);
+        }
+    }
+
+    public override DlgCmd Copy()
+    {
+        return new DlgCmd_ScreenShake(this);
+    }
+
+    public DlgCmd_ScreenShake()
+        : base()
+    {
+
+    }
+
+    public DlgCmd_ScreenShake(DlgCmd_ScreenShake dlgCmd)
+        : base(dlgCmd)
+    {
+        shakeTime = dlgCmd.shakeTime;
+        shakeOffSet = dlgCmd.shakeOffSet;
     }
 }

@@ -1,16 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using SheetData;
-using UnityEngine;
-
-public class DlgCmd_TextSize : DlgCmd
+﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_TextSize
+public sealed class DlgCmd_TextSize : DlgCmd
 {
-    public override void CommandClass(TextSet textSet, string value)
+    private string textSize;
+
+    public override void CommandAdd(string value)
     {
-        base.CommandClass(textSet, value);
-        if (value != "")                   //Default 확인
-            textSet.TextSize = System.Convert.ToInt32(value);
+        base.CommandAdd(value);
+        if (value != "")
+        {
+            textSize = value;
+        }
         else
-            textSet.TextSize = 40;
+        {
+            textSize = "40";
+        }
+    }
+
+    public override void CommandPerform(bool bPass)
+    {
+        base.CommandPerform(bPass);
+        uiManager.RichTextEditor("size", textSize);
+    }
+
+    public override DlgCmd Copy()
+    {
+        return new DlgCmd_TextSize(this);
+    }
+
+    public DlgCmd_TextSize() :
+        base()
+    {
+    }
+
+    public DlgCmd_TextSize(DlgCmd_TextSize dlgCmd)
+        : base(dlgCmd)
+    {
+        textSize = dlgCmd.textSize;
     }
 }

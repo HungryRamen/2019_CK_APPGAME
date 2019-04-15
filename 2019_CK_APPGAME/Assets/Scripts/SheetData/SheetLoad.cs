@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: SheetLoad
 using UnityEngine;
-using System.Text;
 
 public class SheetLoad : MonoBehaviour
 {
     public SheetLoadMgr sheetManager;
-    void Awake()
+
+    private void Awake()
     {
         sheetManager = GetComponent<SheetLoadMgr>();
     }

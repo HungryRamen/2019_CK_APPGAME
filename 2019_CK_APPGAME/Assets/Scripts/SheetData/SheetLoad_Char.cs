@@ -1,26 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: SheetLoad_Char
+using LitJson;
 using SheetData;
+using System;
+using System.Collections.Generic;
 
-public class SheetLoad_Char : SheetLoad
+public sealed class SheetLoad_Char : SheetLoad
 {
-    private CharImage charImageResource;
-
     public override void SheetDataLoad()
     {
         base.SheetDataLoad();
-        charImageResource = Resources.Load<CharImage>("Data/SheetData/CharImage");
-        for (int index = 0; index < charImageResource.dataArray.Length; index++)
+        JsonData jsonData = SundryUtil.JsonDataLoad("/CharImage");
+        for (int i = 0; i < jsonData.Count; i++)
         {
-            if (!DataSheetSet.CharImageDictionary.ContainsKey(charImageResource.dataArray[index].ID))
+            string key = jsonData[i]["ID"].ToString();
+            if (!DataJsonSet.CharImageDictionary.ContainsKey(key))
             {
-                DataSheetSet.CharImageDictionary.Add(charImageResource.dataArray[index].ID, new List<CharImageType>());
+                DataJsonSet.CharImageDictionary.Add(key, new List<CharImageType>());
             }
-            DataSheetSet.CharImageDictionary[charImageResource.dataArray[index].ID].Add(new CharImageType(
-            charImageResource.dataArray[index].State,
-            charImageResource.dataArray[index].Imagelocation,
-            charImageResource.dataArray[index].Name));
+            DataJsonSet.CharImageDictionary[key].Add(new CharImageType(Convert.ToInt32(jsonData[i]["State"].ToString()), jsonData[i]["ImageLocation"].ToString(), jsonData[i]["Name"].ToString()));
         }
     }
 }

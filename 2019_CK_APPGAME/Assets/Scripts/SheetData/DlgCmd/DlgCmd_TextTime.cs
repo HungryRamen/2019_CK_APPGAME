@@ -1,16 +1,43 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using SheetData;
-using UnityEngine;
+﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_TextTime
+using System;
 
-public class DlgCmd_TextTime : DlgCmd
+public sealed class DlgCmd_TextTime : DlgCmd
 {
-    public override void CommandClass(TextSet textSet,string value)
+    private float textOutputTime;
+
+    public override void CommandAdd(string value)
     {
-        base.CommandClass(textSet, value);
-        if (value != "")                   //Default 확인
-            textSet.TextOutputTime = System.Convert.ToSingle(value);
+        base.CommandAdd(value);
+        if (value != "")
+        {
+            textOutputTime = Convert.ToSingle(value);
+        }
         else
-            textSet.TextOutputTime = 1.0f;
+        {
+            textOutputTime = 0.07f;
+        }
+    }
+
+    public override void CommandPerform(bool bPass)
+    {
+        base.CommandPerform(bPass);
+        uiManager.textOutputTime = textOutputTime;
+    }
+
+    public override DlgCmd Copy()
+    {
+        return new DlgCmd_TextTime(this);
+    }
+
+    public DlgCmd_TextTime():
+        base()
+    {
+
+    }
+
+    public DlgCmd_TextTime(DlgCmd_TextTime dlgCmd)
+        : base(dlgCmd)
+    {
+        textOutputTime = dlgCmd.textOutputTime;
     }
 }

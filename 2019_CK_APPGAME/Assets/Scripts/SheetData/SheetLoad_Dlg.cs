@@ -1,108 +1,105 @@
-﻿using System.Collections;
+﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: SheetLoad_Dlg
+using LitJson;
+using SheetData;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
-using SheetData;
 
-public class SheetLoad_Dlg : SheetLoad
+public sealed class SheetLoad_Dlg : SheetLoad
 {
-    private OldDialogStory dialogStroyResource;
-    Dictionary<string, DlgCmd> commandDictionary = new Dictionary<string, DlgCmd>();
+    private Dictionary<string, DlgCmd> commandDictionary = new Dictionary<string, DlgCmd>();
+
     public override void SheetDataLoad()
     {
         base.SheetDataLoad();
-        dialogStroyResource = Resources.Load<OldDialogStory>("Data/SheetData/OldDialogStory");
-        commandDictionary.Add("출력속도", GetComponent<DlgCmd_TextTime>());
-        commandDictionary.Add("크기", GetComponent<DlgCmd_TextSize>());
-        commandDictionary.Add("색상", GetComponent<DlgCmd_TextColor>());
-        commandDictionary.Add("이미지", GetComponent<DlgCmd_CharImg>());
-        commandDictionary.Add("화면흔들기", GetComponent<DlgCmd_ScreenShake>());
-        for (int index = 0; index < dialogStroyResource.dataArray.Length; index++)
+        JsonData jsonData = SundryUtil.JsonDataLoad("/OldDialogStory");
+        commandDictionary.Add("출력속도",new DlgCmd_TextTime());
+        commandDictionary.Add("크기", new DlgCmd_TextSize());
+        commandDictionary.Add("색상", new DlgCmd_TextColor());
+        commandDictionary.Add("이미지", new DlgCmd_CharImg());
+        commandDictionary.Add("화면흔들기", new DlgCmd_ScreenShake());
+        commandDictionary.Add("주문", new DlgCmd_Order());
+        commandDictionary.Add("ch", new DlgCmd_Ch());
+        for (int i = 0; i < jsonData.Count; i++)
         {
-            //텍스트딕셔너리리스트에 TextType 셋팅 
-            TextType textType = TextLoad(
-                dialogStroyResource.dataArray[index].Command,
-                dialogStroyResource.dataArray[index].Index,
-                dialogStroyResource.WorksheetName);
-            textType.TalkerName = dialogStroyResource.dataArray[index].Talkername;
-            textType.CharID = dialogStroyResource.dataArray[index].Charid;
-            //텍스트딕셔너리에 기존 ID 값이 있는지 확인 없으면 새로 생성
-            if (!DataSheetSet.TextDictionary.ContainsKey(dialogStroyResource.dataArray[index].ID))
+            TextType textType = TextLoad(jsonData[i]["Command"].ToString(), Convert.ToInt32(jsonData[i]["Index"].ToString()), "DialogStroy");
+            textType.TalkerName = jsonData[i]["TalkerName"].ToString();
+            textType.CharID = jsonData[i]["CharID"].ToString();
+            string key = jsonData[i]["ID"].ToString();
+            if (!DataJsonSet.TextDictionary.ContainsKey(key))
             {
-                DataSheetSet.TextDictionary.Add(dialogStroyResource.dataArray[index].ID, new List<TextType>());
+                DataJsonSet.TextDictionary.Add(key, new List<TextType>());
             }
-            DataSheetSet.TextDictionary[dialogStroyResource.dataArray[index].ID].Add(textType);
+            DataJsonSet.TextDictionary[key].Add(textType);
         }
     }
 
-    //커맨드String, 워크시트인덱스, 워크시트이름
     public TextType TextLoad(string str, int listIndex, string workSheetName)
     {
-        int lastIndex;
-        float tempTextTime;
-        string[] strTypeClass; //커맨드 타입 분별
         TextType textType = new TextType
         {
             Index = listIndex
         };
-        TextSet textSet = new TextSet();
         try
         {
-            for (int index = 0; index < str.Length; index++)
+            for (int i = 0; i < str.Length; i++)
             {
-                if (str[index] == '{')
+                if (str[i] == '{')
                 {
-                    lastIndex = str.IndexOf("}", index);   //} 끝 인덱스
-                    strTypeClass = CommandSubstring(str, index, lastIndex);
-                    if(commandDictionary.ContainsKey(strTypeClass[0]))
-                    {
-                        commandDictionary[strTypeClass[0]].CommandClass(textSet, strTypeClass[1]);
-                    }
-                    else
+                    int num = str.IndexOf("}", i);
+                    string[] array = CommandSubstring(str, i, num);
+                    if (!commandDictionary.ContainsKey(array[0]))
                     {
                         sheetManager.ErrorAdd(listIndex, workSheetName);
-                        break;
+                        return textType;
                     }
-                    index += lastIndex - index;          //인식한 커맨드 문장 건너뛰기
+                    commandDictionary[array[0]].CommandAdd(array[1]);
+                    textType.mTextQueue.Enqueue(commandDictionary[array[0]].Copy());
+                    i += num - i;
                 }
                 else
                 {
-                    tempTextTime = textSet.TextOutputTime;
-                    if (str[index] == '`')  //다음줄로 이동 인식
+                    if (str[i] == '`')
                     {
-                        if (str[++index] == 'ㄷ')
+                        if (str[++i] == 'ㄷ')
                         {
-                            textSet.Ch = '\n';
-                            textSet.TextOutputTime = 0.0f;
+                            commandDictionary["ch"].CommandAdd("\n");
                         }
                         else
                         {
-                            --index;
+                            commandDictionary["ch"].CommandAdd("`");
+                            i--;
                         }
                     }
                     else
-                        textSet.Ch = str[index];
-                    textType.mTextQueue.Enqueue(new TextSet(textSet));  //텍스트큐에 문자넣기
-                    textSet.TextOutputTime = tempTextTime;
-                    textSet.mCmdScreenShake.bOneTime = false;
+                    {
+                        commandDictionary["ch"].CommandAdd(str[i].ToString());
+                    }
+                    textType.mTextQueue.Enqueue(commandDictionary["ch"].Copy());
                 }
             }
+            return textType;
         }
-        catch (NullReferenceException ex)
+        catch (NullReferenceException message)
         {
-            Debug.Log(ex);
+            UnityEngine.Debug.Log(message);
+            return textType;
         }
-        return textType;
     }
 
-    string[] CommandSubstring(string str, int index, int lastIndex)
+    private string[] CommandSubstring(string str, int index, int lastIndex)
     {
-        string[] tempStr = new string[2];
-        int startIndex = index + 1;
-        int midFirstIndex = str.IndexOf("::", index);   //:: 중간 첫인덱스
-        int midLastIndex = midFirstIndex + 2;      //:: 중간 끝인덱스
-        tempStr[0] = str.Substring(startIndex, midFirstIndex - startIndex); //커맨드 타입 분별
-        tempStr[1] = str.Substring(midLastIndex, lastIndex - midLastIndex);  //값 분별
-        return tempStr;
+        string[] array = new string[2];
+        int num = index + 1;
+        int num2 = str.IndexOf("::", index);
+        if (num2 == -1)
+        {
+            array[0] = str.Substring(num, lastIndex - num);
+            return array;
+        }
+        int num3 = num2 + 2;
+        array[0] = str.Substring(num, num2 - num);
+        array[1] = str.Substring(num3, lastIndex - num3);
+        return array;
     }
 }

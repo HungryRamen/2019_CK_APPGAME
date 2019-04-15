@@ -1,0 +1,20 @@
+{
+  "0" : {
+    "ID" : "CH_02",
+    "State" : 0,
+    "ImageLocation" : "CharImg/CH02/CH_02_Idle01",
+    "Name" : "송아연"
+  },
+  "1" : {
+    "ID" : "CH_02",
+    "State" : 1,
+    "ImageLocation" : "CharImg/CH02/CH_02_Idle02",
+    "Name" : "송아연"
+  },
+  "2" : {
+    "ID" : "CH_04",
+    "State" : 0,
+    "ImageLocation" : "CharImg/CH04/CH_04_Idle01",
+    "Name" : "잭 바톨로뮤"
+  }
+}
