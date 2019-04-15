@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_TextSize
-public sealed class DlgCmd_TextSize : DlgCmd
+﻿public sealed class DlgCmd_TextSize : DlgCmd
 {
     private string textSize;
 
@@ -19,7 +18,7 @@ public sealed class DlgCmd_TextSize : DlgCmd
     public override void CommandPerform(bool bPass)
     {
         base.CommandPerform(bPass);
-        uiManager.RichTextEditor("size", textSize);
+        UIMgrSingleton.GetuiMgrSingleton().RichTextEditor("size", textSize);
     }
 
     public override DlgCmd Copy()

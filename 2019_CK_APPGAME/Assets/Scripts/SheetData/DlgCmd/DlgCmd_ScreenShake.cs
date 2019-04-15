@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_ScreenShake
-using System;
+﻿using System;
 
 public sealed class DlgCmd_ScreenShake : DlgCmd
 {
@@ -23,7 +22,7 @@ public sealed class DlgCmd_ScreenShake : DlgCmd
         base.CommandPerform(bPass);
         if (!bPass)
         {
-            uiManager.ScreenShake(shakeTime, shakeOffSet);
+            UIMgrSingleton.GetuiMgrSingleton().ScreenShake(shakeTime, shakeOffSet);
         }
     }
 

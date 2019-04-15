@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: SheetLoad
-using UnityEngine;
+﻿using UnityEngine;
 
 public class SheetLoad : MonoBehaviour
 {

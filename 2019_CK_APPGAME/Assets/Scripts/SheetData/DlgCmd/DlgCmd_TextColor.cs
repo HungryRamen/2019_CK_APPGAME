@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_TextColor
-public sealed class DlgCmd_TextColor : DlgCmd
+﻿public sealed class DlgCmd_TextColor : DlgCmd
 {
     private string textColor;
 
@@ -19,7 +18,7 @@ public sealed class DlgCmd_TextColor : DlgCmd
     public override void CommandPerform(bool bPass)
     {
         base.CommandPerform(bPass);
-        uiManager.RichTextEditor("color", textColor);
+        UIMgrSingleton.GetuiMgrSingleton().RichTextEditor("color",textColor);
     }
 
     public override DlgCmd Copy()

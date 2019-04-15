@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: ObjectShake
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public static class ObjectShake

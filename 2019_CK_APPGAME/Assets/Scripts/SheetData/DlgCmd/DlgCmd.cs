@@ -1,10 +1,7 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd
-using UnityEngine;
+﻿using UnityEngine;
 
 public abstract class DlgCmd
 {
-    public UIMgr uiManager;
-
     public virtual void CommandAdd(string value)
     {
     }
@@ -20,11 +17,9 @@ public abstract class DlgCmd
 
     public DlgCmd()
     {
-        uiManager = GameObject.FindWithTag("UIMgr").GetComponent<UIMgr>();
     }
 
     public DlgCmd(DlgCmd dlgCmd)
     {
-        uiManager = dlgCmd.uiManager;
     }
 }

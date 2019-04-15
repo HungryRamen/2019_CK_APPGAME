@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_Order
-public sealed class DlgCmd_Order : DlgCmd
+﻿public sealed class DlgCmd_Order : DlgCmd
 {
     public override void CommandAdd(string value)
     {
@@ -9,7 +8,7 @@ public sealed class DlgCmd_Order : DlgCmd
     public override void CommandPerform(bool bPass)
     {
         base.CommandPerform(bPass);
-        uiManager.btnCook.SetActive(value: true);
+        UIMgrSingleton.GetuiMgrSingleton().btnCook.SetActive(true);
     }
 
     public override DlgCmd Copy()

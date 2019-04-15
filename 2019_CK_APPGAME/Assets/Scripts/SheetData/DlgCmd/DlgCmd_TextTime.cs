@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_TextTime
-using System;
+﻿using System;
 
 public sealed class DlgCmd_TextTime : DlgCmd
 {
@@ -21,7 +20,7 @@ public sealed class DlgCmd_TextTime : DlgCmd
     public override void CommandPerform(bool bPass)
     {
         base.CommandPerform(bPass);
-        uiManager.textOutputTime = textOutputTime;
+        UIMgrSingleton.GetuiMgrSingleton().textOutputTime = textOutputTime;
     }
 
     public override DlgCmd Copy()

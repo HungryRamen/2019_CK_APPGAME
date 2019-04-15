@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_CharImg
-using System;
+﻿using System;
 
 public sealed class DlgCmd_CharImg : DlgCmd
 {
@@ -21,7 +20,7 @@ public sealed class DlgCmd_CharImg : DlgCmd
     public override void CommandPerform(bool bPass)
     {
         base.CommandPerform(bPass);
-        uiManager.NpcImageLoad(id, state);
+        UIMgrSingleton.GetuiMgrSingleton().NpcImageLoad(id, state);
     }
 
     public override DlgCmd Copy()

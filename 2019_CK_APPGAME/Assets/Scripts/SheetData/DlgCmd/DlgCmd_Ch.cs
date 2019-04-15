@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: DlgCmd_Ch
-public sealed class DlgCmd_Ch : DlgCmd
+﻿public sealed class DlgCmd_Ch : DlgCmd
 {
     private char ch;
 
@@ -12,7 +11,7 @@ public sealed class DlgCmd_Ch : DlgCmd
     public override void CommandPerform(bool bPass)
     {
         base.CommandPerform(bPass);
-        uiManager.ChAppend(ch);
+        UIMgrSingleton.GetuiMgrSingleton().ChAppend(ch);
     }
 
     public override DlgCmd Copy()

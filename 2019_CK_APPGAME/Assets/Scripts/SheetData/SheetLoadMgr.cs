@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: SheetLoadMgr
-using SheetData;
+﻿using SheetData;
 using System.Collections.Generic;
 using UnityEngine;
 

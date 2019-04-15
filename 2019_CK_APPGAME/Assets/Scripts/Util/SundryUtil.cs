@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: SundryUtil
-using LitJson;
+﻿using LitJson;
 using System.IO;
 using UnityEngine;
 

@@ -1,5 +1,4 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: SheetLoad_Dlg
-using LitJson;
+﻿using LitJson;
 using SheetData;
 using System;
 using System.Collections.Generic;

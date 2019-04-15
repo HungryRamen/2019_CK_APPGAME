@@ -1,12 +1,11 @@
-﻿// ILSpy5Preivew1 decompiler from Assembly-CSharp.dll class: UIMgr
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using SheetData;
 public class UIMgr : MonoBehaviour
 {
-    public int textIndex;
+    public int textIndex;                      
 
     public float textOutputTime;
 
@@ -60,13 +59,13 @@ public class UIMgr : MonoBehaviour
     {
         if (id == "CH_02")
         {
-            imageNpcSong.GetComponent<RawImage>().texture = (Resources.Load(DataJsonSet.CharImageDictionary[id][state].ImagePath, typeof(Texture)) as Texture);
+            imageNpcSong.GetComponent<RawImage>().texture = Resources.Load(DataJsonSet.CharImageDictionary[id][state].ImagePath, typeof(Texture)) as Texture;
             imageNpcSong.SetActive(value: true);
             imageNpcJack.SetActive(value: false);
         }
         else if (id == "CH_04")
         {
-            imageNpcJack.GetComponent<RawImage>().texture = (Resources.Load(DataJsonSet.CharImageDictionary[id][state].ImagePath, typeof(Texture)) as Texture);
+            imageNpcJack.GetComponent<RawImage>().texture = Resources.Load(DataJsonSet.CharImageDictionary[id][state].ImagePath, typeof(Texture)) as Texture;
             imageNpcJack.SetActive(value: true);
             imageNpcSong.SetActive(value: false);
         }
