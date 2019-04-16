@@ -363,7 +363,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 365674984}
-  - component: {fileID: 365674983}
+  - component: {fileID: 365674981}
   m_Layer: 0
   m_Name: DataLoad
   m_TagString: Untagged
@@ -371,7 +371,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &365674983
+--- !u!114 &365674981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -380,7 +380,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 365674980}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 170df67271b7d8548866abed1c23da37, type: 3}
+  m_Script: {fileID: 11500000, guid: d0053fb398eeee84cb286493dc11a80c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &365674984
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 416749734}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9da5567ff88e7894ba898d1dbb3b2838, type: 3}
+  m_Script: {fileID: 11500000, guid: 5542657c08e5a7d47a1db361af92ff67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textIndex: 0
@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 782105210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3da5174805aadfd4e98f37fe9958c789, type: 3}
+  m_Script: {fileID: 11500000, guid: f1dd57294b05a04418e19a9b359a26ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dialogTextUI: []
