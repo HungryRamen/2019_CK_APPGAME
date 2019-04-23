@@ -146,11 +146,11 @@ namespace GameScene
 
         public void IndexJump(int index)
         {
-            if(textListQueue.Count > index)
+            if (textListQueue.Count > index)
             {
                 textListQueueIndex = index;
             }
-            foreach(GameObject obj in SelectBtnList)
+            foreach (GameObject obj in SelectBtnList)
             {
                 Destroy(obj);
             }
@@ -159,27 +159,34 @@ namespace GameScene
 
         public void BackGroundClick()
         {
-            if(!btnCook.activeSelf && SelectBtnList.Count <= 0)
+            if (!btnCook.activeSelf && SelectBtnList.Count <= 0)
                 bBackGroundClick = true;
         }
 
-        public void CreateSelectBtn(string btnText,int index)
+        public void CreateSelectBtn(string btnText, int index)
         {
             SelectBtnList.Add(Instantiate(Resources.Load("Prefebs/SelectBtn")) as GameObject);
             int count = SelectBtnList.Count - 1;
             SelectBtnList[count].transform.SetParent(uiDialog.transform);
             SelectBtnList[count].transform.localPosition = new Vector2(400, 480 - (80 * count));
-            SelectBtnList[count].transform.localScale = new Vector2(1,1);
+            SelectBtnList[count].transform.localScale = new Vector2(1, 1);
             SelectBtnList[count].GetComponentInChildren<Text>().text = btnText;
             SelectBtnList[count].GetComponent<Button>().onClick.AddListener(() => IndexJump(index));
         }
 
         public bool ScreenReaction()
         {
-            if (bBackGroundClick ||Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+            if (bBackGroundClick)
             {
                 bBackGroundClick = false;
                 return true;
+            }
+            else if (!btnCook.activeSelf && SelectBtnList.Count <= 0)
+            {
+                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+                {
+                    return true;
+                }
             }
             return false;
         }
