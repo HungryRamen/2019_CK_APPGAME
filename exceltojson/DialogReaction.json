@@ -1,0 +1,394 @@
+{
+  "0" : {
+    "ID" : "CH01_FD01",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "오, 닭꼬치네요. 오랜만에 보는 요리에요."
+  },
+  "1" : {
+    "ID" : "CH01_FD01",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "닭꼬치라는 음식은 쉽게 떠오르면서도, 생각보다 자주 먹지 않는 음식이지 않아요?"
+  },
+  "2" : {
+    "ID" : "CH01_FD01",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "사실, 닭을 구워먹는 일 자체도 그리 많지 않은데, 꼬치까지 끼워서 구워야 '꼬치'가 되니까, 생각보다 더 희귀한 요리가 되는 것 같아요. 만들기 귀찮기도 하고…"
+  },
+  "3" : {
+    "ID" : "CH01_FD01",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "근데 사실, 굳이 고기에 꼬치를 끼우면 더 맛있어질까요?"
+  },
+  "4" : {
+    "ID" : "CH01_FD01",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "아주 오래전 막 선사시대나 중..세까지도 포함되려나?"
+  },
+  "5" : {
+    "ID" : "CH01_FD01",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "아무튼 그렇게 오래전이면, 꼬챙이에 고기를 끼워서 직화로 굽는 모습이 연상되잖아요?"
+  },
+  "6" : {
+    "ID" : "CH01_FD01",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "하지만 요즘은 막 그렇게 직화로 안 굽고 그냥 프라이팬에 굽기도 하고..직화로 굽는 방법이 꼬치구이만 있는 것도 아니고..."
+  },
+  "7" : {
+    "ID" : "CH01_FD01",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그래서, 사실 꼬치에 끼우는건 맛 보다는 먹는 방법의 재미를 위해서이지 않나 하는 생각이 들어요."
+  },
+  "8" : {
+    "ID" : "CH01_FD01",
+    "Index" : 8,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "음~..."
+  },
+  "9" : {
+    "ID" : "CH01_FD01",
+    "Index" : 9,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "육즙 가득히 잘 구워졌고, 간도 적절하고... 딱 좋네요!"
+  },
+  "10" : {
+    "ID" : "CH01_FD01",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "오, 닭꼬치네요. 오랜만에 보는 요리에요."
+  },
+  "11" : {
+    "ID" : "CH01_FD01",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "닭꼬치라는 음식은 쉽게 떠오르면서도, 생각보다 자주 먹지 않는 음식이지 않아요?"
+  },
+  "12" : {
+    "ID" : "CH01_FD01",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "사실, 닭을 구워먹는 일 자체도 그리 많지 않은데, 꼬치까지 끼워서 구워야 '꼬치'가 되니까, 생각보다 더 희귀한 요리가 되는 것 같아요. 만들기 귀찮기도 하고…"
+  },
+  "13" : {
+    "ID" : "CH01_FD01",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "근데 사실, 굳이 고기에 꼬치를 끼우면 더 맛있어질까요?"
+  },
+  "14" : {
+    "ID" : "CH01_FD01",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "아주 오래전 막 선사시대나 중..세까지도 포함되려나?"
+  },
+  "15" : {
+    "ID" : "CH01_FD01",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "아무튼 그렇게 오래전이면, 꼬챙이에 고기를 끼워서 직화로 굽는 모습이 연상되잖아요?"
+  },
+  "16" : {
+    "ID" : "CH01_FD01",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "하지만 요즘은 막 그렇게 직화로 안 굽고 그냥 프라이팬에 굽기도 하고..직화로 굽는 방법이 꼬치구이만 있는 것도 아니고..."
+  },
+  "17" : {
+    "ID" : "CH01_FD01",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "그래서, 사실 꼬치에 끼우는건 맛 보다는 먹는 방법의 재미를 위해서이지 않나 하는 생각이 들어요."
+  },
+  "18" : {
+    "ID" : "CH01_FD01",
+    "Index" : 9,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "음~...{IF::3::10}{점프::15}"
+  },
+  "19" : {
+    "ID" : "CH01_FD01",
+    "Index" : 10,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "육즙 가득히 잘 구워졌고, 간도 적절하고... 딱 좋네요!"
+  },
+  "20" : {
+    "ID" : "CH01_FD01",
+    "Index" : 11,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "음~ 아, 이 요리는 제 만화에 꼭 등장시켜야겠어요!"
+  },
+  "21" : {
+    "ID" : "CH01_FD01",
+    "Index" : 12,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "주인공이 노역에 시달리며 힘들어할 때, 시원한 맥주와 한캔하고 닭꼬치 안주를 먹으면서 행복해 하는거죠."
+  },
+  "22" : {
+    "ID" : "CH01_FD01",
+    "Index" : 13,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "하지만 이내 곧 그런 사치에 월급을 다 써버린걸 깨닫고.. 이대로는 빚을 갚을 수 있을 지 좌절하고…"
+  },
+  "23" : {
+    "ID" : "CH01_FD01",
+    "Index" : 14,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "좋아! 돌아가면 콘티로 만들어야겠어요.{종료}"
+  },
+  "24" : {
+    "ID" : "CH01_FD01",
+    "Index" : 15,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "육즙 가득히 잘 구워졌고, 간도 적절하고... 딱 좋네요!{종료}"
+  },
+  "25" : {
+    "ID" : "CH01_FD02",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "많이 맵지는 않죠? 저 매운걸 잘 못 먹는 편이거든요."
+  },
+  "26" : {
+    "ID" : "CH01_FD02",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "그나저나 이 요리 이름을 뭐라고 부르시나요? 닭도리탕이랑 닭볶음탕 중에.{선택지::닭볶음탕::2}{선택지::닭도리탕::8}"
+  },
+  "27" : {
+    "ID" : "CH01_FD02",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "그거 때문이죠? 일제의 잔재로 생긴 이름이라는거. 저도 중학생 때인가 학교에서도 배웠던거 같아요."
+  },
+  "28" : {
+    "ID" : "CH01_FD02",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "그런데 닭도리탕이 일제 때문에 생긴 잘못된 말이 아니라 순 우리말이라는 이야기도 있더라고요."
+  },
+  "29" : {
+    "ID" : "CH01_FD02",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "도려내다'나 '도리다','도려치다' 라는 단어가 사용된 거라고 하면서, 일제합병기 이전에 조선시대 문헌에서도 '닭도리탕'이라는 이름이 나온다고 하더라고요."
+  },
+  "30" : {
+    "ID" : "CH01_FD02",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "생각해 보면, 닭'볶음'탕이라고 하기에는, 요리 과정에서 닭을 볶는 과정도 없지 않나요?"
+  },
+  "31" : {
+    "ID" : "CH01_FD02",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "전 닭도리탕이라고 하고 다니는 편인데.. 사실 어떻게 쓰든 무슨 상관인가 싶기도 해요. 이곳저곳에서 다 닭볶음탕이라고 하기도 하고... 어쩌면 제가 틀린 거일수도 있잖아요?"
+  },
+  "32" : {
+    "ID" : "CH01_FD02",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "아무튼, 말은 그만하고 이제 먹어 볼까요?{점프::10}"
+  },
+  "33" : {
+    "ID" : "CH01_FD02",
+    "Index" : 8,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "저도 닭도리탕이라고 말해요."
+  },
+  "34" : {
+    "ID" : "CH01_FD02",
+    "Index" : 9,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "일본어로 새를 뜻하는 '도리'에서 비롯된 잘못된 말이라고 말하기도 하지만, 오히려 닭도리탕은 순 우리말이 맞다고 하는 주장도 있거든요. 그리고 근거도 나쁘지 않았구요.{점프::4}"
+  },
+  "35" : {
+    "ID" : "CH01_FD02",
+    "Index" : 10,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "…......"
+  },
+  "36" : {
+    "ID" : "CH01_FD02",
+    "Index" : 11,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "스읍......하아...."
+  },
+  "37" : {
+    "ID" : "CH01_FD02",
+    "Index" : 12,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "좀…쓰읍…맵네요…하하… 이 정도면 괜찮..쓰읍..괜찮아요"
+  },
+  "38" : {
+    "ID" : "CH01_FD02",
+    "Index" : 13,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "어후 땀까지 나네"
+  },
+  "39" : {
+    "ID" : "CH01_FD02",
+    "Index" : 14,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "하아....좀 어지럽지만 확실히 스트레스는 풀리는 느낌이에요."
+  },
+  "40" : {
+    "ID" : "CH01_FD03",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "내용없음"
+  },
+  "41" : {
+    "ID" : "CH01_FD07",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "내용없음"
+  },
+  "42" : {
+    "ID" : "CH01_FD08",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "윽......!"
+  },
+  "43" : {
+    "ID" : "CH01_FD08",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "이걸 먹으라고요...?"
+  },
+  "44" : {
+    "ID" : "CH01_FD08",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "….............................."
+  },
+  "45" : {
+    "ID" : "CH01_FD08",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "….............................."
+  },
+  "46" : {
+    "ID" : "CH01_FD08",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "읍....! 으읍......! 큽!...!!"
+  },
+  "47" : {
+    "ID" : "CH01_FD08",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "으윽...."
+  },
+  "48" : {
+    "ID" : "CH01_FD08",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "저..전 이정도만 먹어도 충분할 것 같아요. 하하…"
+  },
+  "49" : {
+    "ID" : "CH01_FD09",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "내용없음"
+  },
+  "50" : {
+    "ID" : "CH01_FD10",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "내용없음"
+  },
+  "51" : {
+    "ID" : "CH01_FD11",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "냉무"
+  },
+  "52" : {
+    "ID" : "CH01_FD15",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "내용없음"
+  },
+  "53" : {
+    "ID" : "CH01_FD22",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "냉무"
+  },
+  "54" : {
+    "ID" : "CH01_FD24",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "냉무"
+  },
+  "55" : {
+    "ID" : "CH01_FD27",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 1,
+    "Command" : "내용없음"
+  }
+}

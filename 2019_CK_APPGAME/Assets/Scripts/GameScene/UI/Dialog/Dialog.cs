@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DialogCommand;
 
 namespace GameScene
 {
@@ -19,8 +20,8 @@ namespace GameScene
         {
             bTextFullLoad = true;
             dialogTextUI = GetComponentsInChildren<Text>();
-            MgrSingleton.GetuiMgrSingleton().textListQueueIndex = 0;
             elapsedTextTime = 0f;
+            
         }
 
         private void Start()
@@ -35,25 +36,25 @@ namespace GameScene
 
         private void DialogOutput()
         {
-            if (bTextFullLoad && MgrSingleton.GetuiMgrSingleton().ScreenReaction())
+            if (bTextFullLoad && UIMgr.GetUIMgr().ScreenReaction())
             {
                 NextText();
             }
             else if (!bTextFullLoad)
             {
-                TextOutput(MgrSingleton.GetuiMgrSingleton().ScreenReaction());
+                TextOutput(UIMgr.GetUIMgr().ScreenReaction());
             }
-            dialogTextUI[0].text = MgrSingleton.GetuiMgrSingleton().textStringBuilder.ToString();
+            dialogTextUI[0].text = UIMgr.GetUIMgr().textStringBuilder.ToString();
         }
 
         private void NextText()
         {
             bTextFullLoad = false;
-            List<TextType> textListQueue = MgrSingleton.GetuiMgrSingleton().NextText();
-            dialogTextUI[0].text = MgrSingleton.GetuiMgrSingleton().textStringBuilder.ToString();
-            dialogTextUI[1].text = textListQueue[MgrSingleton.GetuiMgrSingleton().textListQueueIndex].TalkerName;
-            textQueue = new Queue<DlgCmd>(textListQueue[MgrSingleton.GetuiMgrSingleton().textListQueueIndex++].mTextQueue);
-            MgrSingleton.GetuiMgrSingleton().NextTextCount();
+            TextStackType textListQueue = UIMgr.GetUIMgr().NextText();
+            dialogTextUI[0].text = UIMgr.GetUIMgr().textStringBuilder.ToString();
+            dialogTextUI[1].text = textListQueue.textTypeList[textListQueue.TextTypeIndex].TalkerName;
+            textQueue = new Queue<DlgCmd>(textListQueue.textTypeList[textListQueue.TextTypeIndex++].textQueue);
+            UIMgr.GetUIMgr().NextTextCount();
             TextDequeue();
         }
 
@@ -64,7 +65,7 @@ namespace GameScene
                 textQueue.Dequeue().CommandPerform(true);
             }
             elapsedTextTime = 0f;
-            MgrSingleton.GetuiMgrSingleton().bChAppend = false;
+            UIMgr.GetUIMgr().bChAppend = false;
             bTextFullLoad = true;
         }
 
@@ -76,7 +77,7 @@ namespace GameScene
                 return;
             }
             elapsedTextTime += Time.deltaTime;
-            if (!(MgrSingleton.GetuiMgrSingleton().textOutputTime <= elapsedTextTime) && MgrSingleton.GetuiMgrSingleton().bChAppend)
+            if (!(UIMgr.GetUIMgr().textOutputTime <= elapsedTextTime) && UIMgr.GetUIMgr().bChAppend)
             {
                 return;
             }
@@ -90,11 +91,11 @@ namespace GameScene
         private void TextDequeue()
         {
             elapsedTextTime = 0f;
-            MgrSingleton.GetuiMgrSingleton().bChAppend = false;
+            UIMgr.GetUIMgr().bChAppend = false;
             while (textQueue.Count > 0)
             {
                 textQueue.Dequeue().CommandPerform(false);
-                if (MgrSingleton.GetuiMgrSingleton().bChAppend)
+                if (UIMgr.GetUIMgr().bChAppend)
                 {
                     break;
                 }

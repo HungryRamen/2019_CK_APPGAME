@@ -1,34 +1,65 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-
-public static class ObjectFade
+namespace Util
 {
-    public static IEnumerator FadeOut(RawImage fadeImg, float totalTime = 1f)
+    public static class ObjectFade
     {
-        Color tempColor = fadeImg.color;
-        float startColor = tempColor.a;
-        float elapsedTime = 0f;
-        while (tempColor.a > 0f)
+        public static IEnumerator FadeOut(RawImage fadeImg, float totalTime = 1f)
         {
-            elapsedTime += Time.deltaTime / totalTime;
-            tempColor.a = Mathf.Lerp(startColor, 0f, elapsedTime);
-            fadeImg.color = tempColor;
-            yield return null;
+            Color tempColor = fadeImg.color;
+            float startColor = tempColor.a;
+            float elapsedTime = 0f;
+            while (tempColor.a > 0f)
+            {
+                elapsedTime += Time.deltaTime / totalTime;
+                tempColor.a = Mathf.Lerp(startColor, 0f, elapsedTime);
+                fadeImg.color = tempColor;
+                yield return null;
+            }
         }
-    }
 
-    public static IEnumerator FadeIn(RawImage fadeImg, float totalTime = 1f)
-    {
-        Color tempColor = fadeImg.color;
-        float startColor = tempColor.a;
-        float elapsedTime = 0f;
-        while (tempColor.a < 1f)
+        public static IEnumerator FadeIn(RawImage fadeImg, float totalTime = 1f)
         {
-            elapsedTime += Time.deltaTime / totalTime;
-            tempColor.a = Mathf.Lerp(startColor, 1f, elapsedTime);
-            fadeImg.color = tempColor;
-            yield return null;
+            Color tempColor = fadeImg.color;
+            float startColor = tempColor.a;
+            float elapsedTime = 0f;
+            while (tempColor.a < 1f)
+            {
+                elapsedTime += Time.deltaTime / totalTime;
+                tempColor.a = Mathf.Lerp(startColor, 1f, elapsedTime);
+                fadeImg.color = tempColor;
+                yield return null;
+            }
+        }
+        public static IEnumerator ObjectFadeOut(GameObject fadeObj, float totalTime = 1f)
+        {
+            Color tempColor = fadeObj.GetComponent<RawImage>().color;
+            float startColor = tempColor.a;
+            float elapsedTime = 0f;
+            while (tempColor.a > 0f)
+            {
+                elapsedTime += Time.deltaTime / totalTime;
+                tempColor.a = Mathf.Lerp(startColor, 0f, elapsedTime);
+                fadeObj.GetComponent<RawImage>().color = tempColor;
+                yield return null;
+            }
+            fadeObj.SetActive(false);
+        }
+
+        public static IEnumerator ObjectFadeIn(GameObject fadeObj, float totalTime = 1f)
+        {
+            fadeObj.SetActive(true);
+            Color tempColor = fadeObj.GetComponent<RawImage>().color;
+            float startColor = tempColor.a;
+            float elapsedTime = 0f;
+            while (tempColor.a < 1f)
+            {
+                elapsedTime += Time.deltaTime / totalTime;
+                tempColor.a = Mathf.Lerp(startColor, 1f, elapsedTime);
+                fadeObj.GetComponent<RawImage>().color = tempColor;
+                yield return null;
+            }
         }
     }
 }

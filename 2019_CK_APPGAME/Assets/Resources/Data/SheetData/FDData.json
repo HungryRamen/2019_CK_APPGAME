@@ -1,0 +1,86 @@
+{
+  "0" : {
+    "Index" : 1,
+    "ID" : "FD01",
+    "ImageLocation" : "FoodImg/FD_01",
+    "Name" : "닭꼬치",
+    "Description" : "닭고기를 꼬챙이에 꿰어 구워낸 요리."
+  },
+  "1" : {
+    "Index" : 2,
+    "ID" : "FD02",
+    "ImageLocation" : "FoodImg/FD_02",
+    "Name" : "닭도리탕",
+    "Description" : "닭고기를 먹기 좋은 크기로 잘라 매콤한 양념과 함께 조린 요리."
+  },
+  "2" : {
+    "Index" : 3,
+    "ID" : "FD03",
+    "ImageLocation" : "FoodImg/FD_03",
+    "Name" : "닭 용암 스튜",
+    "Description" : "불닭요리에 단련된 매운맛 마니아를 위해, 양념으로 용암을 사용한 요리.\n스트레스 해소 뒤에 따라오는 복통에 대해선 책임지지 않습니다."
+  },
+  "3" : {
+    "Index" : 7,
+    "ID" : "FD07",
+    "ImageLocation" : "FoodImg/FD_07",
+    "Name" : "내장탕",
+    "Description" : "생선 내장으로 만든 국물요리. 비주얼은 이래도 맛은 좋다."
+  },
+  "4" : {
+    "Index" : 8,
+    "ID" : "FD08",
+    "ImageLocation" : "FoodImg/FD_08",
+    "Name" : "생선 대가리 국밥",
+    "Description" : "맛없어 보이신다고요? 맞습니다."
+  },
+  "5" : {
+    "Index" : 9,
+    "ID" : "FD09",
+    "ImageLocation" : "FoodImg/FD_09",
+    "Name" : "정어리 파이",
+    "Description" : "정어리를 통으로 넣어 오븐에 구운 영국식 파이.\n고소한 생선의 풍미가 파이에 스며들어 있다."
+  },
+  "6" : {
+    "Index" : 10,
+    "ID" : "FD10",
+    "ImageLocation" : "FoodImg/FD_10",
+    "Name" : "스테이크",
+    "Description" : "큼지막한 고기를 적당히 구워낸 요리."
+  },
+  "7" : {
+    "Index" : 11,
+    "ID" : "FD11",
+    "ImageLocation" : "FoodImg/FD_11",
+    "Name" : "김치찌개",
+    "Description" : "김치와 고기를 각종 채소와 함께 끓여낸 찌개.\n매콤새콤한 한국인의 소울푸드"
+  },
+  "8" : {
+    "Index" : 15,
+    "ID" : "FD15",
+    "ImageLocation" : "FoodImg/FD_15",
+    "Name" : "수박화채",
+    "Description" : "동그랗게 파내느라 힘들었습니다."
+  },
+  "9" : {
+    "Index" : 22,
+    "ID" : "FD22",
+    "ImageLocation" : "FoodImg/FD_22",
+    "Name" : "김치케이크",
+    "Description" : "???: 김치와 케이크는 어울리는 조합입니다."
+  },
+  "10" : {
+    "Index" : 24,
+    "ID" : "FD24",
+    "ImageLocation" : "FoodImg/FD_24",
+    "Name" : "미네랄 워터",
+    "Description" : "H2O"
+  },
+  "11" : {
+    "Index" : 27,
+    "ID" : "FD27",
+    "ImageLocation" : "FoodImg/FD_27",
+    "Name" : "수증기",
+    "Description" : "한잔 하시고 진정하세요."
+  }
+}
