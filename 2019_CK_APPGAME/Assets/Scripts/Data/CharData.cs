@@ -11,6 +11,7 @@ namespace CharData
     public class CharDataStructure
     {
         int storyState;
+        string eatFoodID;
         int[] status = new int[5];
         public List<string> combinationCheck = new List<string>();
 

@@ -35,7 +35,7 @@ namespace GameScene
         public StringBuilder textStringBuilder;
 
         [Range(0.01f, 1f)]
-        public float fadeTime;
+        public float fadeTime = 0.01f;
 
         private static UIMgr uiMgrSingleton = null;
 
@@ -319,6 +319,20 @@ namespace GameScene
             {
                 textStack.Peek().textTypeList = null;
                 textStack.Pop();
+            }
+            foreach (TriggerType temp in DataJsonSet.TriggerDictionary[nowEvent.TriggerID])
+            {
+                if (temp.IsTrigger(nowEvent.CharID))
+                {
+                    for(int i = 0; i < temp.Status.Length; i++)
+                    {
+                        CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] += temp.Status[i];
+                    }
+                    if(temp.StoryState != -1)
+                    {
+                        CharDataSet.charDataDictionary[nowEvent.CharID].StoryState = temp.StoryState;
+                    }
+                }
             }
             for (int i = 0; i < currentStatus.Length; i++)
             {

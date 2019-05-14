@@ -131,6 +131,27 @@ namespace SheetData
             storyState = -1;
         }
 
+        public bool IsTrigger(string charID)
+        {
+            foreach(string temp in triggerList)
+            {
+                if (temp == "Defualt")
+                    return true;
+                int arrCount = System.Convert.ToInt32(temp[0]);
+                if(temp[3] == 'T')
+                {
+                    if (CharData.CharDataSet.charDataDictionary[charID].Status[arrCount] < 50)
+                        return false;
+                }
+                else
+                {
+                    if (CharData.CharDataSet.charDataDictionary[charID].Status[arrCount] > 49)
+                        return false;
+                }
+            }
+            return true;
+        }
+
         public int[] Status { get => status; set => status = value; }
         public int StoryState { get => storyState; set => storyState = value; }
     }
