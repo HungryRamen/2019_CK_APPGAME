@@ -57,7 +57,7 @@ namespace GameScene
 
         private GameObject[] charImgLayer;
 
-        private GameObject[] charImg;
+        public GameObject[] charImg;
 
         private GameObject statusLayer;
 
@@ -175,12 +175,18 @@ namespace GameScene
                 uiDialog.SetActive(!uiDialog.activeSelf);
                 uiCook.SetActive(!uiCook.activeSelf);
                 btnCook.SetActive(!btnCook.activeSelf);
+                FoodStatusUp();
             }
             else
             {
                 uiDialog.SetActive(!uiDialog.activeSelf);
                 uiCook.SetActive(!uiCook.activeSelf);
             }
+        }
+
+        public void FoodStatusUp()
+        {
+            FoodBonus(CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID, DataJsonSet.StatusDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].Status);
         }
 
         public void RestroomSceneLoad()
@@ -284,10 +290,10 @@ namespace GameScene
         {
             BlackOnOff();
             Image[] img = uiBlack.GetComponentsInChildren<Image>();
-            img[2].sprite = Resources.Load<Sprite>(DataJsonSet.FoodDataDictionary[RunTimeData.RunTimeDataSet.foodID][0].ImageLocation);
+            img[2].sprite = Resources.Load<Sprite>(DataJsonSet.FoodDataDictionary[RunTimeData.RunTimeDataSet.foodID].ImageLocation);
             Text[] text = uiBlack.GetComponentsInChildren<Text>();
-            text[0].text = DataJsonSet.FoodDataDictionary[RunTimeData.RunTimeDataSet.foodID][0].Name;
-            text[1].text = DataJsonSet.FoodDataDictionary[RunTimeData.RunTimeDataSet.foodID][0].Description;
+            text[0].text = DataJsonSet.FoodDataDictionary[RunTimeData.RunTimeDataSet.foodID].Name;
+            text[1].text = DataJsonSet.FoodDataDictionary[RunTimeData.RunTimeDataSet.foodID].Description;
         }
 
         public void BlackOnOff()
@@ -320,27 +326,34 @@ namespace GameScene
                 textStack.Peek().textTypeList = null;
                 textStack.Pop();
             }
-            foreach (TriggerType temp in DataJsonSet.TriggerDictionary[nowEvent.TriggerID])
+            if (textStack.Count == 0)
             {
-                if (temp.IsTrigger(nowEvent.CharID))
+                for (int i = 0; i < singleStatus.Length; i++)
                 {
-                    for(int i = 0; i < temp.Status.Length; i++)
+                    CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] = System.Convert.ToInt32(singleStatus[i]);
+                }
+                foreach (TriggerType temp in DataJsonSet.TriggerDictionary[nowEvent.TriggerID])
+                {
+                    if (temp.IsTrigger(nowEvent.CharID))
                     {
-                        CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] += temp.Status[i];
-                    }
-                    if(temp.StoryState != -1)
-                    {
-                        CharDataSet.charDataDictionary[nowEvent.CharID].StoryState = temp.StoryState;
+                        for (int i = 0; i < temp.Status.Length; i++)
+                        {
+                            CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] += temp.Status[i];
+                        }
+                        if (temp.StoryState != -1)
+                        {
+                            CharDataSet.charDataDictionary[nowEvent.CharID].StoryState = temp.StoryState;
+                        }
                     }
                 }
-            }
-            for (int i = 0; i < currentStatus.Length; i++)
-            {
-                currentStatus[i] = 0;
-            }
-            if (textStack.Count == 0 && eventsQueue.Count == 0)
-            {
-                btnEnd.SetActive(true);
+                for (int i = 0; i < currentStatus.Length; i++)
+                {
+                    currentStatus[i] = 0;
+                }
+                if (eventsQueue.Count == 0)
+                {
+                    btnEnd.SetActive(true);
+                }
             }
         }
 

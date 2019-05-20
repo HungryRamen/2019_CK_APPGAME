@@ -5,5 +5,9 @@
         public virtual void SheetDataLoad()
         {
         }
+        public virtual void IntegrityCheck()
+        {
+
+        }
     }
 }

@@ -27,7 +27,6 @@ namespace SheetLoad
                     temp.triggerList.Add(tempStr);
                 else
                 {
-                    //int length = indexof;
                     while (indexof != -1)
                     {
                         string tempStr2 = tempStr.Substring(0, indexof);
@@ -37,6 +36,14 @@ namespace SheetLoad
                     }
                     temp.triggerList.Add(tempStr);
                 }
+                for(int index = 0; index < temp.triggerList.Count;index++)
+                {
+                    if(temp.triggerList[index].Length == 4 || temp.triggerList[index].Length == 7)
+                    {
+                        continue;
+                    }
+                    SundryUtil.ErrorAdd(i, "Trigger - Trigger");
+                }
                 temp.Status[0] = Convert.ToInt32(jsonData[i]["Status1"].ToString());
                 temp.Status[1] = Convert.ToInt32(jsonData[i]["Status2"].ToString());
                 temp.Status[2] = Convert.ToInt32(jsonData[i]["Status3"].ToString());
@@ -44,12 +51,23 @@ namespace SheetLoad
                 temp.Status[4] = Convert.ToInt32(jsonData[i]["Status5"].ToString());
                 if (jsonData[i]["StoryState"].ToString() != "NULL")
                 {
-                    temp.StoryState = Convert.ToInt32(jsonData[i]["StoryState"].ToString());
+                    try
+                    {
+                        temp.StoryState = Convert.ToInt32(jsonData[i]["StoryState"].ToString());
+                    }
+                    catch(Exception e)
+                    {
+                        SundryUtil.ErrorAdd(i, "Trigger - Trigger", e);
+                    }
                 }
                 DataJsonSet.TriggerDictionary[key].Add(temp);
             }
 
             
+        }
+
+        public override void IntegrityCheck() //참조하는게 없음
+        {
         }
     }
 }

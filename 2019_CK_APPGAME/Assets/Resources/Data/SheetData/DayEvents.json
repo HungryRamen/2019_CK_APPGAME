@@ -4,69 +4,69 @@
     "CharID" : "CH01",
     "StoryState" : 1,
     "DialogID" : "CH01_SD01",
-    "TriggerID" : "CH00_T00"
+    "TriggerID" : "CH01_T00"
   },
   "1" : {
     "Day" : 2,
     "CharID" : "CH01",
     "StoryState" : 1,
     "DialogID" : "CH01_SD02",
-    "TriggerID" : "CH00_T01"
+    "TriggerID" : "CH01_T01"
   },
   "2" : {
     "Day" : 3,
     "CharID" : "CH01",
     "StoryState" : 1,
     "DialogID" : "CH01_SD03",
-    "TriggerID" : "CH00_T02"
+    "TriggerID" : "CH01_T02"
   },
   "3" : {
     "Day" : 3,
     "CharID" : "CH01",
     "StoryState" : 2,
     "DialogID" : "CH01_SD04",
-    "TriggerID" : "CH00_T03"
+    "TriggerID" : "CH01_T03"
   },
   "4" : {
     "Day" : 3,
     "CharID" : "CH01",
     "StoryState" : 3,
     "DialogID" : "CH01_SD05",
-    "TriggerID" : "CH00_T04"
+    "TriggerID" : "CH01_T04"
   },
   "5" : {
     "Day" : 4,
     "CharID" : "CH01",
     "StoryState" : 1,
     "DialogID" : "CH01_SD06",
-    "TriggerID" : "CH00_T05"
+    "TriggerID" : "CH01_T05"
   },
   "6" : {
     "Day" : 4,
     "CharID" : "CH01",
     "StoryState" : 2,
     "DialogID" : "CH01_SD07",
-    "TriggerID" : "CH00_T06"
+    "TriggerID" : "CH01_T06"
   },
   "7" : {
     "Day" : 5,
     "CharID" : "CH01",
     "StoryState" : 1,
     "DialogID" : "CH01_SD08",
-    "TriggerID" : "CH00_T07"
+    "TriggerID" : "CH01_T07"
   },
   "8" : {
     "Day" : 5,
     "CharID" : "CH01",
     "StoryState" : 2,
     "DialogID" : "CH01_SD09",
-    "TriggerID" : "CH00_T08"
+    "TriggerID" : "CH01_T08"
   },
   "9" : {
     "Day" : 5,
     "CharID" : "CH01",
     "StoryState" : 3,
     "DialogID" : "CH01_SD10",
-    "TriggerID" : "CH00_T09"
+    "TriggerID" : "CH01_T09"
   }
 }

@@ -27,6 +27,10 @@ namespace SheetLoad
             }
         }
 
+        public override void IntegrityCheck()
+        {
+        }
+
         public TextType TextLoad(string str, int listIndex, string workSheetName)
         {
             TextType textType = new TextType

@@ -1,6 +1,6 @@
 {
   "0" : {
-    "ID" : "CH00_T00",
+    "ID" : "CH01_T00",
     "Trigger" : "Defualt",
     "Status1" : 40,
     "Status2" : 50,
@@ -10,8 +10,8 @@
     "StoryState" : "NULL"
   },
   "1" : {
-    "ID" : "CH00_T01",
-    "Trigger" : "Stat5::T",
+    "ID" : "CH01_T01",
+    "Trigger" : "5::T",
     "Status1" : 5,
     "Status2" : 0,
     "Status3" : 0,
@@ -20,8 +20,8 @@
     "StoryState" : 3
   },
   "2" : {
-    "ID" : "CH00_T01",
-    "Trigger" : "Stat1::T",
+    "ID" : "CH01_T01",
+    "Trigger" : "1::T",
     "Status1" : 5,
     "Status2" : 0,
     "Status3" : 0,
@@ -30,7 +30,7 @@
     "StoryState" : 2
   },
   "3" : {
-    "ID" : "CH00_T01",
+    "ID" : "CH01_T01",
     "Trigger" : "Defualt",
     "Status1" : 5,
     "Status2" : 0,
@@ -40,8 +40,8 @@
     "StoryState" : 1
   },
   "4" : {
-    "ID" : "CH00_T02",
-    "Trigger" : "Stat3::T\nStat4::T",
+    "ID" : "CH01_T02",
+    "Trigger" : "3::T\n4::T",
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : -10,
@@ -50,7 +50,7 @@
     "StoryState" : 2
   },
   "5" : {
-    "ID" : "CH00_T02",
+    "ID" : "CH01_T02",
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
@@ -60,8 +60,8 @@
     "StoryState" : 1
   },
   "6" : {
-    "ID" : "CH00_T03",
-    "Trigger" : "Stat3::T\nStat4::T",
+    "ID" : "CH01_T03",
+    "Trigger" : "3::T\n4::T",
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : -10,
@@ -70,7 +70,7 @@
     "StoryState" : 2
   },
   "7" : {
-    "ID" : "CH00_T03",
+    "ID" : "CH01_T03",
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
@@ -80,8 +80,8 @@
     "StoryState" : 1
   },
   "8" : {
-    "ID" : "CH00_T04",
-    "Trigger" : "Stat3::T\nStat4::T",
+    "ID" : "CH01_T04",
+    "Trigger" : "3::T\n4::T",
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : -10,
@@ -90,7 +90,7 @@
     "StoryState" : 2
   },
   "9" : {
-    "ID" : "CH00_T04",
+    "ID" : "CH01_T04",
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
@@ -100,8 +100,8 @@
     "StoryState" : 1
   },
   "10" : {
-    "ID" : "CH00_T05",
-    "Trigger" : "Stat4::T\nStat5::T",
+    "ID" : "CH01_T05",
+    "Trigger" : "4::T\n5::T",
     "Status1" : -10,
     "Status2" : 0,
     "Status3" : -10,
@@ -110,8 +110,8 @@
     "StoryState" : 3
   },
   "11" : {
-    "ID" : "CH00_T05",
-    "Trigger" : "Stat4::T",
+    "ID" : "CH01_T05",
+    "Trigger" : "4::T",
     "Status1" : -10,
     "Status2" : 0,
     "Status3" : -10,
@@ -120,7 +120,7 @@
     "StoryState" : 2
   },
   "12" : {
-    "ID" : "CH00_T05",
+    "ID" : "CH01_T05",
     "Trigger" : "Defualt",
     "Status1" : -10,
     "Status2" : 0,
@@ -130,8 +130,8 @@
     "StoryState" : 1
   },
   "13" : {
-    "ID" : "CH00_T06",
-    "Trigger" : "Stat4::T\nStat5::T",
+    "ID" : "CH01_T06",
+    "Trigger" : "4::T\n5::T",
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : -10,
@@ -140,8 +140,8 @@
     "StoryState" : 3
   },
   "14" : {
-    "ID" : "CH00_T06",
-    "Trigger" : "Stat4::T",
+    "ID" : "CH01_T06",
+    "Trigger" : "4::T",
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : -10,
@@ -150,7 +150,7 @@
     "StoryState" : 2
   },
   "15" : {
-    "ID" : "CH00_T06",
+    "ID" : "CH01_T06",
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
@@ -160,7 +160,7 @@
     "StoryState" : 1
   },
   "16" : {
-    "ID" : "CH00_T07",
+    "ID" : "CH01_T07",
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 20,
@@ -170,7 +170,7 @@
     "StoryState" : "NULL"
   },
   "17" : {
-    "ID" : "CH00_T08",
+    "ID" : "CH01_T08",
     "Trigger" : "Defualt",
     "Status1" : 15,
     "Status2" : 0,
@@ -180,7 +180,7 @@
     "StoryState" : "NULL"
   },
   "18" : {
-    "ID" : "CH00_T09",
+    "ID" : "CH01_T09",
     "Trigger" : "Defualt",
     "Status1" : 15,
     "Status2" : 0,

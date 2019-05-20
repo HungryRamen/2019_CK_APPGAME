@@ -17,9 +17,20 @@ namespace SheetLoad
                 string key = jsonData[i]["ID"].ToString();
                 if (!DataJsonSet.FoodDataDictionary.ContainsKey(key))
                 {
-                    DataJsonSet.FoodDataDictionary.Add(key, new List<FoodDataType>());
+                    DataJsonSet.FoodDataDictionary.Add(key, new FoodDataType(jsonData[i]["ID"].ToString(), jsonData[i]["ImageLocation"].ToString(), jsonData[i]["Name"].ToString(), jsonData[i]["Description"].ToString()));
                 }
-                DataJsonSet.FoodDataDictionary[key].Add(new FoodDataType(jsonData[i]["ID"].ToString(), jsonData[i]["ImageLocation"].ToString(), jsonData[i]["Name"].ToString(), jsonData[i]["Description"].ToString()));
+            }
+        }
+
+        public override void IntegrityCheck()
+        {
+            JsonData jsonData = SundryUtil.JsonDataLoad("/FDData");
+            for (int i = 0; i < jsonData.Count; i++)
+            {
+                if (UnityEngine.Resources.Load(jsonData[i]["ImageLocation"].ToString()) == null)
+                {
+                    SundryUtil.ErrorAdd(i, "FDData - Location");
+                }
             }
         }
     }

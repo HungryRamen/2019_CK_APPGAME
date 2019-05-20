@@ -9,7 +9,8 @@ namespace SheetData
         public static Dictionary<string, List<DayEventsType>> DayEventsDictionary = new Dictionary<string, List<DayEventsType>>();  //캐릭터ID X일차관리 딕셔너리
         public static Dictionary<string, List<TextTypeRaction>> TextReactionDictionary = new Dictionary<string, List<TextTypeRaction>>(); //음식 리액션 장면을 관리하는 딕셔너리
         public static Dictionary<string, List<TriggerType>> TriggerDictionary = new Dictionary<string, List<TriggerType>>(); //트리거를 관리하는 딕셔너리
-        public static Dictionary<string, List<FoodDataType>> FoodDataDictionary = new Dictionary<string, List<FoodDataType>>(); // 음식 데이터를 관리하는 딕셔너리
+        public static Dictionary<string, FoodDataType> FoodDataDictionary = new Dictionary<string, FoodDataType>(); // 음식 데이터를 관리하는 딕셔너리
+        public static Dictionary<string, StatusDataType> StatusDataDictionary = new Dictionary<string, StatusDataType>(); //음식 스테이터스 딕셔너리
     }
 
     enum ETextCommandType
@@ -174,5 +175,16 @@ namespace SheetData
         public string ImageLocation { get => imageLocation; set => imageLocation = value; }
         public string Name { get => name; set => name = value; }
         public string Description { get => description; set => description = value; }
+    }
+
+    public class StatusDataType
+    {
+        int[] status = new int[5];
+        public StatusDataType(int[] status)
+        {
+            this.status = status;
+        }
+
+        public int[] Status { get => status; set => status = value; }
     }
 }

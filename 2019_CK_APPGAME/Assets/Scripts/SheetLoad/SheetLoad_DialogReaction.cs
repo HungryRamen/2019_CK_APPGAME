@@ -28,6 +28,11 @@ namespace SheetLoad
             }
         }
 
+        public override void IntegrityCheck()
+        {
+
+        }
+
         public TextTypeRaction TextLoad(string str, int listIndex, string workSheetName)
         {
             TextTypeRaction textTypeReaction = new TextTypeRaction

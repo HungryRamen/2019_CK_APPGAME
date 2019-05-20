@@ -17,6 +17,7 @@ namespace CharData
 
         public int StoryState { get => storyState; set => storyState = value; }
         public int[] Status { get => status; set => status = value; }
+        public string EatFoodID { get => eatFoodID; set => eatFoodID = value; }
 
         public CharDataStructure()
         {
