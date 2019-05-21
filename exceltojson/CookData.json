@@ -1,0 +1,30 @@
+{
+  "0" : {
+    "Index" : 0,
+    "ID" : "C1",
+    "ImageLocation" : "CookImg/C1_Roast",
+    "Name" : "구이",
+    "Description" : "스테이크, 볶음, 꼬치구이 등… 불로 열을 가해 조리하는 방법"
+  },
+  "1" : {
+    "Index" : 1,
+    "ID" : "C2",
+    "ImageLocation" : "CookImg/C2_Soup",
+    "Name" : "국물",
+    "Description" : "탕, 스튜, 조림, 샤브샤브 등… 국물과 함께 먹을 수 있는 고기요리"
+  },
+  "2" : {
+    "Index" : 2,
+    "ID" : "C3",
+    "ImageLocation" : "CookImg/C3_Fried",
+    "Name" : "튀김",
+    "Description" : "밀가루에 묻힌 식재료를 뜨거운 기름에 푹 담가 조리하는 방법"
+  },
+  "3" : {
+    "Index" : 3,
+    "ID" : "C4",
+    "ImageLocation" : "CookImg/C4_Oven",
+    "Name" : "오븐",
+    "Description" : "밀폐된 공간 속에서 사방에서 보내는 열로 느긋하게 조리하는 방법"
+  }
+}

@@ -9,8 +9,12 @@ namespace SheetData
         public static Dictionary<string, List<DayEventsType>> DayEventsDictionary = new Dictionary<string, List<DayEventsType>>();  //캐릭터ID X일차관리 딕셔너리
         public static Dictionary<string, List<TextTypeRaction>> TextReactionDictionary = new Dictionary<string, List<TextTypeRaction>>(); //음식 리액션 장면을 관리하는 딕셔너리
         public static Dictionary<string, List<TriggerType>> TriggerDictionary = new Dictionary<string, List<TriggerType>>(); //트리거를 관리하는 딕셔너리
-        public static Dictionary<string, FoodDataType> FoodDataDictionary = new Dictionary<string, FoodDataType>(); // 음식 데이터를 관리하는 딕셔너리
+        public static Dictionary<string, LoadDataType> FoodDataDictionary = new Dictionary<string, LoadDataType>(); // 음식 데이터를 관리하는 딕셔너리
+        public static Dictionary<string, LoadDataType> CookDataDictionary = new Dictionary<string, LoadDataType>(); // 조리 방법 데이터를 관리하는 딕셔너리
+        public static Dictionary<string, LoadDataType> MaterialDataDictionary = new Dictionary<string, LoadDataType>(); // 음식 재료 데이터를 관리하는 딕셔너리
         public static Dictionary<string, StatusDataType> StatusDataDictionary = new Dictionary<string, StatusDataType>(); //음식 스테이터스 딕셔너리
+        public static Dictionary<string, List<string>> RecipeDictionary = new Dictionary<string, List<string>>(); // 레시피 딕셔너리
+        public static Dictionary<string, RecipeDataType> RecipeDataDictionary = new Dictionary<string, RecipeDataType>(); // 레시피 조합 딕셔너리
     }
 
     enum ETextCommandType
@@ -21,7 +25,7 @@ namespace SheetData
         TextColor,          //문자색깔
     }
 
-
+    
     public class ErrorDataStructer
     {
         int index;
@@ -157,13 +161,13 @@ namespace SheetData
         public int StoryState { get => storyState; set => storyState = value; }
     }
 
-    public class FoodDataType
+    public class LoadDataType
     {
         string id;
         string imageLocation;
         string name;
         string description;
-        public FoodDataType(string id,string location,string name,string description)
+        public LoadDataType(string id,string location,string name,string description)
         {
             this.id = id;
             this.imageLocation = location;
@@ -187,4 +191,22 @@ namespace SheetData
 
         public int[] Status { get => status; set => status = value; }
     }
+
+    public class RecipeDataType
+    {
+        string cookID;
+        string foodMaterialID;
+        string foodSubMaterialID;
+        public RecipeDataType(string cID,string fmID,string fsmID)
+        {
+            cookID = cID;
+            foodMaterialID = fmID;
+            foodSubMaterialID = fsmID;
+        }
+
+        public string CookID { get => cookID; set => cookID = value; }
+        public string FoodMaterialID { get => foodMaterialID; set => foodMaterialID = value; }
+        public string FoodSubMaterialID { get => foodSubMaterialID; set => foodSubMaterialID = value; }
+    }
+
 }

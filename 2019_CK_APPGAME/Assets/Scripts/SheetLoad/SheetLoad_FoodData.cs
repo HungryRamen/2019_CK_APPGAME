@@ -17,7 +17,11 @@ namespace SheetLoad
                 string key = jsonData[i]["ID"].ToString();
                 if (!DataJsonSet.FoodDataDictionary.ContainsKey(key))
                 {
-                    DataJsonSet.FoodDataDictionary.Add(key, new FoodDataType(jsonData[i]["ID"].ToString(), jsonData[i]["ImageLocation"].ToString(), jsonData[i]["Name"].ToString(), jsonData[i]["Description"].ToString()));
+                    DataJsonSet.FoodDataDictionary.Add(key, 
+                        new LoadDataType(jsonData[i]["ID"].ToString(), 
+                        jsonData[i]["ImageLocation"].ToString(), 
+                        jsonData[i]["Name"].ToString(), 
+                        jsonData[i]["Description"].ToString()));
                 }
             }
         }

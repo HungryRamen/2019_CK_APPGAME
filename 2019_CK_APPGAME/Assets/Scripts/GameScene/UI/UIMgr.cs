@@ -67,13 +67,13 @@ namespace GameScene
 
         private Coroutine runningCoroutine;
 
-        private GameObject uiBlack;
+        public GameObject uiBlack;
 
         private void Awake()
         {
             uiCook = GameObject.FindWithTag("CookUI");
             uiDialog = GameObject.FindWithTag("DlgUI");
-            uiBlack = GameObject.FindWithTag("Black");
+            //uiBlack = GameObject.FindWithTag("Black");
             btnCook = GameObject.FindWithTag("CookBtn");
             btnEnd = GameObject.FindWithTag("EndBtn");
             statusLayer = GameObject.FindWithTag("StatusLayer");
@@ -407,15 +407,8 @@ namespace GameScene
 
         private void StatusFillUpdate(int index)
         {
-            Image[] img = statusArr[index].GetComponentsInChildren<Image>();
-            if (singleStatus[index] >= 50)
-            {
-                img[0].fillAmount = (singleStatus[index] - 50.0f) / 50.0f;
-            }
-            else
-            {
-                img[1].fillAmount = 1.0f - singleStatus[index] / 50.0f;
-            }
+            Image img = statusArr[index].GetComponentInChildren<Image>();
+            img.fillAmount = singleStatus[index] / 100.0f;
         }
 
         public void IndexJump(int index)

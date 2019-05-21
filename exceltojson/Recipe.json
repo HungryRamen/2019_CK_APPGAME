@@ -1,0 +1,74 @@
+{
+  "0" : {
+    "FoodID" : "FD01",
+    "CookID" : "C1",
+    "FoodMaterialID" : "FM01",
+    "FoodSubMaterialID" : "FM09"
+  },
+  "1" : {
+    "FoodID" : "FD02",
+    "CookID" : "C2",
+    "FoodMaterialID" : "FM01",
+    "FoodSubMaterialID" : "FM08"
+  },
+  "2" : {
+    "FoodID" : "FD03",
+    "CookID" : "C2",
+    "FoodMaterialID" : "FM01",
+    "FoodSubMaterialID" : "FM11"
+  },
+  "3" : {
+    "FoodID" : "FD07",
+    "CookID" : "C2",
+    "FoodMaterialID" : "FM02",
+    "FoodSubMaterialID" : "FM08"
+  },
+  "4" : {
+    "FoodID" : "FD08",
+    "CookID" : "C2",
+    "FoodMaterialID" : "FM02",
+    "FoodSubMaterialID" : "FM10"
+  },
+  "5" : {
+    "FoodID" : "FD09",
+    "CookID" : "C4",
+    "FoodMaterialID" : "FM02",
+    "FoodSubMaterialID" : "FM13"
+  },
+  "6" : {
+    "FoodID" : "FD10",
+    "CookID" : "C1",
+    "FoodMaterialID" : "FM03",
+    "FoodSubMaterialID" : "FM09"
+  },
+  "7" : {
+    "FoodID" : "FD11",
+    "CookID" : "C2",
+    "FoodMaterialID" : "FM03",
+    "FoodSubMaterialID" : "FM06"
+  },
+  "8" : {
+    "FoodID" : "FD15",
+    "CookID" : "C2",
+    "FoodMaterialID" : "FM04",
+    "FoodSubMaterialID" : "FM07"
+  },
+  "9" : {
+    "FoodID" : "FD22",
+    "CookID" : "C4",
+    "FoodMaterialID" : "FM06",
+    "FoodSubMaterialID" : "FM13"
+  },
+  "10" : {
+    "FoodID" : "FD24",
+    "CookID" : "C2",
+    "FoodMaterialID" : "FM07",
+    "FoodSubMaterialID" : "FM09"
+  },
+  "11" : {
+    "FoodID" : "FD27",
+    "CookID" : "C4",
+    "FoodMaterialID" : "FM07",
+    "FoodSubMaterialID" : "FM09"
+  }
+}
