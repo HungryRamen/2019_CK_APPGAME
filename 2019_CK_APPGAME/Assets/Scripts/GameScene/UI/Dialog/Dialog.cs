@@ -16,12 +16,14 @@ namespace GameScene
 
         private float elapsedTextTime;
 
+        private int exceptionIndex;
+
         private void Awake()
         {
             bTextFullLoad = true;
             dialogTextUI = GetComponentsInChildren<Text>();
             elapsedTextTime = 0f;
-            
+
         }
 
         private void Start()
@@ -51,6 +53,7 @@ namespace GameScene
         {
             bTextFullLoad = false;
             TextStackType textListQueue = UIMgr.GetUIMgr().NextText();
+            exceptionIndex = textListQueue.TextTypeIndex;
             dialogTextUI[0].text = UIMgr.GetUIMgr().textStringBuilder.ToString();
             dialogTextUI[1].text = textListQueue.textTypeList[textListQueue.TextTypeIndex].TalkerName;
             textQueue = new Queue<DlgCmd>(textListQueue.textTypeList[textListQueue.TextTypeIndex++].textQueue);
@@ -71,20 +74,27 @@ namespace GameScene
 
         private void TextOutput(bool bPass)
         {
-            if (bPass)
+            try
             {
-                PassText();
-                return;
+                if (bPass)
+                {
+                    PassText();
+                    return;
+                }
+                elapsedTextTime += Time.deltaTime;
+                if (!(UIMgr.GetUIMgr().textOutputTime <= elapsedTextTime) && UIMgr.GetUIMgr().bChAppend)
+                {
+                    return;
+                }
+                TextDequeue();
+                if (textQueue.Count == 0)
+                {
+                    bTextFullLoad = true;
+                }
             }
-            elapsedTextTime += Time.deltaTime;
-            if (!(UIMgr.GetUIMgr().textOutputTime <= elapsedTextTime) && UIMgr.GetUIMgr().bChAppend)
+            catch (System.Exception e)
             {
-                return;
-            }
-            TextDequeue();
-            if (textQueue.Count == 0)
-            {
-                bTextFullLoad = true;
+                Debug.LogFormat("DialogID : {0}\nRelativeIndex : {1}\nException : {2}",UIMgr.GetUIMgr().nowEvent.DialogID, exceptionIndex, e);
             }
         }
 

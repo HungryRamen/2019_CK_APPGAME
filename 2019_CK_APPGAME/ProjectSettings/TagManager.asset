@@ -14,6 +14,12 @@ TagManager:
   - StatusLayer
   - Status
   - Black
+  - FMLeft
+  - FMRight
+  - FMBtns
+  - Drag
+  - CookText
+  - CookBtns
   layers:
   - Default
   - TransparentFX

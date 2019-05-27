@@ -10,7 +10,7 @@ namespace DialogCommand
         public override void CommandPerform(bool bPass)
         {
             GameScene.UIMgr.GetUIMgr().FoodPopUp();
-            GameScene.UIMgr.GetUIMgr().TextStackPush(SheetData.DataJsonSet.TextReactionDictionary[GameScene.UIMgr.GetUIMgr().nowEvent.CharID + "_" + RunTimeData.RunTimeDataSet.foodID]);
+            GameScene.UIMgr.GetUIMgr().TextStackPush(SheetData.DataJsonSet.TextReactionDictionary[GameScene.UIMgr.GetUIMgr().nowEvent.CharID + "_" + CharData.CharDataSet.charDataDictionary[GameScene.UIMgr.GetUIMgr().nowEvent.CharID].EatFoodID]);
         }
 
         public override DlgCmd Copy()

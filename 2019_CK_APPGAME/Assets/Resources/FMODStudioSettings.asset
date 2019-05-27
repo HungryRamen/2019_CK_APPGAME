@@ -60,5 +60,8 @@ MonoBehaviour:
   MasterBanks:
   - Master Bank
   Banks:
-  - Samples
+  - RestRoom
+  - Public
+  - Restaurant
+  - Load
   LiveUpdatePort: 9264

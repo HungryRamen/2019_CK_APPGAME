@@ -69,6 +69,55 @@ namespace GameScene
 
         public GameObject uiBlack;
 
+        private GameObject materialImgLeft;
+
+        private GameObject materialImgRight;
+
+        private GameObject foodMaterialButton;
+
+        private Dictionary<string, FoodMaterialButtonMgr> foodMaterialButtonDic = new Dictionary<string, FoodMaterialButtonMgr>();
+
+        private Dictionary<string, Button> cookButtonDic = new Dictionary<string, Button>();
+
+        private string[] foodMaterialSelectID = new string[2]; //선택된 음식재료 ID 0은왼쪽 1은오른쪽
+
+        private bool[] foodMaterialSelectOn = new bool[2]; //선택위에 들어와있는지 없는지
+
+        private GameObject cookButton;
+
+        private GameObject cookTextObject;
+
+        //추후 사운드 매니저 혹은 리스트로 관리
+
+        [FMODUnity.EventRef]
+        public string eventPath;    // 재생할 이벤트 주소
+        public FMOD.Studio.EventInstance restaurant;           // 이벤트 주소로 생성할 임시객체
+        public FMOD.Studio.ParameterInstance CookType;      // 이벤트 파라미터 변수
+        public FMOD.Studio.ParameterInstance Perspective;      // 이벤트 파라미터 변수
+
+        [FMODUnity.EventRef]
+        public string eventPath2;    // 재생할 이벤트 주소
+        public FMOD.Studio.EventInstance voice;           // 이벤트 주소로 생성할 임시객체
+        public FMOD.Studio.ParameterInstance accent;      // 이벤트 파라미터 변수
+
+
+        [FMODUnity.EventRef]
+        public string eventPath3;    // 재생할 이벤트 주소
+        public FMOD.Studio.EventInstance entry;           // 이벤트 주소로 생성할 임시객체
+        public FMOD.Studio.ParameterInstance DoorState;      // 이벤트 파라미터 변수
+
+        [FMODUnity.EventRef]
+        public string eventPath4;    // 재생할 이벤트 주소
+        public FMOD.Studio.EventInstance unlock;           // 이벤트 주소로 생성할 임시객체
+
+        [FMODUnity.EventRef]
+        public string eventPath5;    // 재생할 이벤트 주소
+        public FMOD.Studio.EventInstance finish;           // 이벤트 주소로 생성할 임시객체
+
+        [FMODUnity.EventRef]
+        public string eventPath6;    // 재생할 이벤트 주소
+        public FMOD.Studio.EventInstance serve;           // 이벤트 주소로 생성할 임시객체
+
         private void Awake()
         {
             uiCook = GameObject.FindWithTag("CookUI");
@@ -77,6 +126,21 @@ namespace GameScene
             btnCook = GameObject.FindWithTag("CookBtn");
             btnEnd = GameObject.FindWithTag("EndBtn");
             statusLayer = GameObject.FindWithTag("StatusLayer");
+            materialImgLeft = GameObject.FindWithTag("FMLeft");
+            materialImgRight = GameObject.FindWithTag("FMRight");
+            foodMaterialButton = GameObject.FindWithTag("FMBtns");
+            cookButton = GameObject.FindWithTag("CookBtns");
+            cookTextObject = GameObject.FindWithTag("CookText");
+            FoodMaterialButtonMgr[] temp = foodMaterialButton.GetComponentsInChildren<FoodMaterialButtonMgr>();
+            for (int i = 0; i < temp.Length; i++)
+            {
+                foodMaterialButtonDic.Add(temp[i].name, temp[i]);
+            }
+            Button[] temp2 = cookButton.GetComponentsInChildren<Button>();
+            for (int i = 0; i < temp2.Length; i++)
+            {
+                cookButtonDic.Add(temp2[i].name, temp2[i]);
+            }
             charImg = GameObject.FindGameObjectsWithTag("CharImg");
             charImgLayer = GameObject.FindGameObjectsWithTag("CharImgLayer");
             statusArr = GameObject.FindGameObjectsWithTag("Status");
@@ -85,10 +149,14 @@ namespace GameScene
             uiBlack.SetActive(false);
             btnCook.SetActive(false);
             btnEnd.SetActive(false);
+            materialImgLeft.SetActive(false);
+            materialImgRight.SetActive(false);
             for (int i = 0; i < charImg.Length; i++)
             {
                 charImg[i].SetActive(false);
             }
+
+
             textStringBuilder = new StringBuilder();
             textIndex = 0;
             textOutputTime = 0f;
@@ -99,6 +167,256 @@ namespace GameScene
             runningCoroutine = null;
             textTypeDictionary.Add("color", "size");
             textTypeDictionary.Add("size", "color");
+            if (RunTimeData.RunTimeDataSet.lockMaterials.Count == 0)     //땜빵 코드 추후에 수정 int 비트플래그로 하도록하자
+            {
+                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM05");
+                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM07");
+                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM11");
+                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM12");
+                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM13");
+                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM14");
+            }
+        }
+
+        private void Start()
+        {
+            restaurant = FMODUnity.RuntimeManager.CreateInstance(eventPath);   // 이벤트 주소를 참조하여 객체 생성
+            restaurant.getParameter("CookType", out CookType);         // 임시객체의 파라미터와 파라미터 변수 연동
+            restaurant.getParameter("Perspective", out Perspective);         // 임시객체의 파라미터와 파라미터 변수 연동
+            restaurant.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
+            restaurant.start();            // 객체 활성화(재생)
+
+            entry = FMODUnity.RuntimeManager.CreateInstance(eventPath3);   // 이벤트 주소를 참조하여 객체 생성
+            entry.getParameter("DoorState", out DoorState);         // 임시객체의 파라미터와 파라미터 변수 연동
+            entry.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
+            entry.start();            // 객체 활성화(재생)
+        }
+
+        public void NpcEntry()
+        {
+            float temp;
+            DoorState.getValue(out temp);
+            if (temp == 1)
+                DoorState.setValue(0);
+            DoorState.setValue(1);
+
+        }
+
+        public void MaterialEnterOn(string tag)
+        {
+            if (tag == "FMLeft")
+            {
+                foodMaterialSelectOn[0] = true;
+            }
+            else if (tag == "FMRight")
+            {
+                foodMaterialSelectOn[1] = true;
+            }
+        }
+
+        public void MaterialEnterOff(string tag)
+        {
+            if (tag == "FMLeft")
+            {
+                foodMaterialSelectOn[0] = false;
+            }
+            else if (tag == "FMRight")
+            {
+                foodMaterialSelectOn[1] = false;
+            }
+        }
+
+        public void MaterialUnLock(string fmID)
+        {
+            if (RunTimeData.RunTimeDataSet.lockMaterials.Contains(fmID))
+                RunTimeData.RunTimeDataSet.lockMaterials.Remove(fmID);
+        }
+
+        public void DragImagCheck(string fm, Sprite materialSprite)
+        {
+            if (foodMaterialSelectOn[0])
+            {
+                foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //일단 전부 disable
+                {
+                    obj.SetState(ESpriteState.Disable);
+                }
+                materialImgLeft.GetComponent<Image>().sprite = materialSprite;
+                materialImgLeft.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                materialImgLeft.SetActive(true);
+                foodMaterialSelectID[0] = fm;
+                foodMaterialSelectOn[0] = false;
+                if (!materialImgRight.activeSelf)
+                    RecipeCheckID(fm);
+                else
+                    FoodSet();
+            }
+            else if (foodMaterialSelectOn[1])
+            {
+                foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //일단 전부 disable
+                {
+                    obj.SetState(ESpriteState.Disable);
+                }
+                materialImgRight.GetComponent<Image>().sprite = materialSprite;
+                materialImgRight.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+                materialImgRight.SetActive(true);
+                foodMaterialSelectID[1] = fm;
+                foodMaterialSelectOn[1] = false;
+                if (!materialImgLeft.activeSelf)
+                    RecipeCheckID(fm);
+                else
+                    FoodSet();
+            }
+        }
+
+
+        public void MaterialRightClickSelect(string fm, Sprite materialSprite)
+        {
+            foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //일단 전부 disable
+            {
+                obj.SetState(ESpriteState.Disable);
+            }
+            if (materialImgLeft.activeSelf && materialImgRight.activeSelf == false)  //왼쪽에 재료가있고 오른쪽에 재료가 없는경우
+            {
+                materialImgRight.GetComponent<Image>().sprite = materialSprite;
+                materialImgRight.SetActive(true);
+                foodMaterialSelectID[1] = fm;
+                foodMaterialSelectOn[1] = false;
+                FoodSet();
+            }
+            else if (materialImgLeft.activeSelf == false)   //왼쪽에 재료가 없는경우
+            {
+                materialImgLeft.GetComponent<Image>().sprite = materialSprite;
+                materialImgLeft.SetActive(true);
+                foodMaterialSelectID[0] = fm;
+                foodMaterialSelectOn[0] = false;
+                RecipeCheckID(fm);
+            }
+        }
+
+        public void CookChangeSelect(string name)
+        {
+            MaterialClear();
+            foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //일단 전부 disable
+            {
+                obj.SetState(ESpriteState.Disable);
+            }
+            cookTextObject.GetComponent<Text>().text = name;
+            RecipeCheckID(name);
+        }
+
+        public void MaterialClear()
+        {
+            MaterialOff("FMLeft");
+            MaterialOff("FMRight");
+        }
+
+        public void MaterialOff(string tag)
+        {
+            foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //전부 disable
+            {
+                obj.SetState(ESpriteState.Disable);
+            }
+            if (materialImgLeft.tag == tag)
+            {
+                materialImgLeft.SetActive(false);
+                foodMaterialSelectID[0] = null;
+                foodMaterialSelectOn[0] = false;
+            }
+            else if (materialImgRight.tag == tag)
+            {
+                materialImgRight.SetActive(false);
+                foodMaterialSelectID[1] = null;
+                foodMaterialSelectOn[1] = false;
+            }
+            if (foodMaterialSelectID[0] != null)
+            {
+                RecipeCheckID(foodMaterialSelectID[0]);
+            }
+            else if (foodMaterialSelectID[1] != null)
+            {
+                RecipeCheckID(foodMaterialSelectID[1]);
+            }
+            else
+            {
+                if (cookTextObject.GetComponent<Text>().text != "")
+                    RecipeCheckID(cookTextObject.GetComponent<Text>().text);
+                else
+                {
+
+                    foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //전부 enable
+                    {
+                        obj.SetState(ESpriteState.Enable);
+                    }
+                }
+            }
+        }
+
+        private void RecipeCheckID(string id)
+        {
+            List<string> recipeIDMaterial = new List<string>();
+            RecipeIDCheck(id, recipeIDMaterial);
+            List<string> recipeIDMaterialSub = new List<string>();
+            List<string> recipeIDCookSub = new List<string>();
+            if (id != foodMaterialSelectID[0] && null != foodMaterialSelectID[0])
+            {
+                RecipeIDCheck(foodMaterialSelectID[0], recipeIDMaterialSub);
+            }
+            else if (id != foodMaterialSelectID[1] && null != foodMaterialSelectID[1])
+            {
+                RecipeIDCheck(foodMaterialSelectID[1], recipeIDMaterialSub);
+            }
+            List<string> recipeTotalMaterial = RecipeIDOverlap(recipeIDMaterial, recipeIDMaterialSub);
+
+
+
+            for (int i = 0; i < recipeTotalMaterial.Count; i++)   // 조합에 해당한 음식재료만 ON
+            {
+                foodMaterialButtonDic[recipeTotalMaterial[i]].SetState(ESpriteState.Enable);
+            }
+        }
+
+        private List<string> RecipeIDOverlap(List<string> list1, List<string> list2)
+        {
+            List<string> temp = new List<string>();
+            if (list2.Count == 0)
+            {
+                return list1;
+            }
+            else
+            {
+                for (int i = 0; i < list1.Count; i++)
+                {
+                    for (int j = 0; j < list2.Count; j++)
+                    {
+                        if (list1[i] == list2[j])
+                        {
+                            temp.Add(list1[i]);
+                            break;
+                        }
+                    }
+                }
+            }
+            return temp;
+        }
+
+        private void RecipeIDCheck(string id, List<string> material)
+        {
+            for (int i = 0; i < DataJsonSet.RecipeDictionary[id].Count; i++)    //조합에 해당하는 재료ID만 가져옴
+            {
+                if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[id][i]].CookID == cookTextObject.GetComponent<Text>().text)
+                {
+                    string temp = DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[id][i]].FoodMaterialID;
+                    if (id != temp)
+                    {
+                        material.Add(temp);
+                    }
+                    temp = DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[id][i]].FoodSubMaterialID;
+                    if (id != temp)
+                    {
+                        material.Add(temp);
+                    }
+                }
+            }
         }
 
         // NPC이미지 설정
@@ -133,7 +451,7 @@ namespace GameScene
             dest.transform.SetParent(src.transform.parent);
             dest.GetComponent<RectTransform>().sizeDelta = src.GetComponent<RectTransform>().sizeDelta;
             StartCoroutine(ObjectFade.ObjectFadeIn(dest, fadeTime));
-            StartCoroutine(ObjectFade.ObjectFadeOut(src, fadeTime));
+            StartCoroutine(ObjectFade.ObjectFadeOutChange(src, fadeTime));
         }
 
         // 대사 분류
@@ -151,9 +469,26 @@ namespace GameScene
             }
         }
 
-        public void FoodSet(string id)
+        public void FoodSet()
         {
-            RunTimeData.RunTimeDataSet.foodID = id;
+            for (int i = 0; i < DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text].Count; i++)
+            {
+                if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i]].FoodMaterialID == foodMaterialSelectID[0])
+                {
+                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i]].FoodSubMaterialID == foodMaterialSelectID[1])
+                    {
+                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i];
+                    }
+                }
+                else if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i]].FoodSubMaterialID == foodMaterialSelectID[0])
+                {
+                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i]].FoodMaterialID == foodMaterialSelectID[1])
+                    {
+                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i];
+                    }
+                }
+            }
+            RunTimeData.RunTimeDataSet.cookID = cookTextObject.GetComponent<Text>().text;
         }
 
         private bool ButtonActiveCheck()
@@ -168,10 +503,32 @@ namespace GameScene
             return uiMgrSingleton;
         }
 
+        enum ECookValue
+        {
+            Bolling = 1,
+            Pan,
+            Oven,
+            Fry,
+        }
+
+        private ECookValue CookIDToEnum(string cookID)
+        {
+            ECookValue temp = ECookValue.Pan;
+            if (cookID == "C2")
+                temp = ECookValue.Bolling;
+            else if (cookID == "C3")
+                temp = ECookValue.Fry;
+            else if (cookID == "C4")
+                temp = ECookValue.Oven;
+            return temp;
+        }
+
         public void ChangeUI()
         {
             if (uiCook.activeSelf)
             {
+                Perspective.setValue(0);
+                CookType.setValue((int)CookIDToEnum(RunTimeData.RunTimeDataSet.cookID));
                 uiDialog.SetActive(!uiDialog.activeSelf);
                 uiCook.SetActive(!uiCook.activeSelf);
                 btnCook.SetActive(!btnCook.activeSelf);
@@ -179,6 +536,7 @@ namespace GameScene
             }
             else
             {
+                Perspective.setValue(1);
                 uiDialog.SetActive(!uiDialog.activeSelf);
                 uiCook.SetActive(!uiCook.activeSelf);
             }
@@ -208,6 +566,7 @@ namespace GameScene
 
         public void NpcJoin(string id, int state)
         {
+            NpcEntry();
             if (charImg[(int)CHARIMG.CENTER].activeSelf)
             {
                 NpcImageOverwrite(charImg[(int)CHARIMG.LEFT], charImg[(int)CHARIMG.CENTER]);
@@ -269,6 +628,11 @@ namespace GameScene
 
         public void ChAppend(char ch)
         {
+            voice = FMODUnity.RuntimeManager.CreateInstance(eventPath2);   // 이벤트 주소를 참조하여 객체 생성
+            //restaurant.getParameter("cooktype", out cooktype);         // 임시객체의 파라미터와 파라미터 변수 연동
+            voice.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
+            voice.start();            // 객체 활성화(재생)
+            voice.release();
             textStringBuilder.Insert(textIndex++, ch);
             bChAppend = true;
         }
@@ -288,16 +652,43 @@ namespace GameScene
 
         public void FoodPopUp()
         {
+            finish = FMODUnity.RuntimeManager.CreateInstance(eventPath5);   // 이벤트 주소를 참조하여 객체 생성
+            finish.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
+            finish.start();            // 객체 활성화(재생)
+            finish.release();            // 객체 활성화(재생)
             BlackOnOff();
             Image[] img = uiBlack.GetComponentsInChildren<Image>();
-            img[2].sprite = Resources.Load<Sprite>(DataJsonSet.FoodDataDictionary[RunTimeData.RunTimeDataSet.foodID].ImageLocation);
+            img[2].sprite = Resources.Load<Sprite>(DataJsonSet.FoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].ImageLocation);
+            RectTransform[] rectTransform = uiBlack.GetComponentsInChildren<RectTransform>();
+            rectTransform[2].sizeDelta = new Vector2(620.0f, 385.0f);
             Text[] text = uiBlack.GetComponentsInChildren<Text>();
-            text[0].text = DataJsonSet.FoodDataDictionary[RunTimeData.RunTimeDataSet.foodID].Name;
-            text[1].text = DataJsonSet.FoodDataDictionary[RunTimeData.RunTimeDataSet.foodID].Description;
+            text[0].text = DataJsonSet.FoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].Name;
+            text[1].text = DataJsonSet.FoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].Description;
+        }
+
+        public void MaterialPopUp(string fmID)
+        {
+            unlock = FMODUnity.RuntimeManager.CreateInstance(eventPath4);   // 이벤트 주소를 참조하여 객체 생성
+            unlock.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
+            unlock.start();            // 객체 활성화(재생)
+            unlock.release();            // 객체 활성화(재생)
+            BlackOnOff();
+            Image[] img = uiBlack.GetComponentsInChildren<Image>();
+            img[2].sprite = Resources.Load<Sprite>(DataJsonSet.MaterialDataDictionary[fmID].ImageLocation);
+            RectTransform[] rectTransform = uiBlack.GetComponentsInChildren<RectTransform>();
+            rectTransform[2].sizeDelta = new Vector2(385.0f, 385.0f);
+            Text[] text = uiBlack.GetComponentsInChildren<Text>();
+            text[0].text = DataJsonSet.MaterialDataDictionary[fmID].Name;
+            text[1].text = DataJsonSet.MaterialDataDictionary[fmID].Description;
         }
 
         public void BlackOnOff()
         {
+            serve = FMODUnity.RuntimeManager.CreateInstance(eventPath6);   // 이벤트 주소를 참조하여 객체 생성
+            serve.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
+            serve.start();            // 객체 활성화(재생)
+            serve.release();            // 객체 활성화(재생)
+            CookType.setValue(0);
             uiBlack.SetActive(!uiBlack.activeSelf);
         }
 
@@ -332,20 +723,20 @@ namespace GameScene
                 {
                     CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] = System.Convert.ToInt32(singleStatus[i]);
                 }
-                foreach (TriggerType temp in DataJsonSet.TriggerDictionary[nowEvent.TriggerID])
-                {
-                    if (temp.IsTrigger(nowEvent.CharID))
-                    {
-                        for (int i = 0; i < temp.Status.Length; i++)
-                        {
-                            CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] += temp.Status[i];
-                        }
-                        if (temp.StoryState != -1)
-                        {
-                            CharDataSet.charDataDictionary[nowEvent.CharID].StoryState = temp.StoryState;
-                        }
-                    }
-                }
+                //foreach (TriggerType temp in DataJsonSet.TriggerDictionary[nowEvent.TriggerID])
+                //{
+                //    if (temp.IsTrigger(nowEvent.CharID))
+                //    {
+                //        for (int i = 0; i < temp.Status.Length; i++)
+                //        {
+                //            CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] += temp.Status[i];
+                //        }
+                //        if (temp.StoryState != -1)
+                //        {
+                //            CharDataSet.charDataDictionary[nowEvent.CharID].StoryState = temp.StoryState;
+                //        }
+                //    }
+                //}
                 for (int i = 0; i < currentStatus.Length; i++)
                 {
                     currentStatus[i] = 0;
@@ -368,7 +759,7 @@ namespace GameScene
 
         public void FoodBonus(string foodID, int[] status)
         {
-            if (foodID == RunTimeData.RunTimeDataSet.foodID)
+            if (foodID == CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID)
             {
                 for (int i = 0; i < status.Length; i++)
                 {
@@ -438,7 +829,7 @@ namespace GameScene
             SelectBtnList[count].transform.localPosition = new Vector2(655, -50 + (-80 * count));
             SelectBtnList[count].transform.localScale = new Vector2(1, 1);
             SelectBtnList[count].GetComponentInChildren<Text>().text = btnText;
-            SelectBtnList[count].GetComponent<Button>().onClick.AddListener(() => IndexJump(index));
+            SelectBtnList[count].GetComponent<ButtonTrigger>().OnEvent.AddListener(() => IndexJump(index));
         }
 
         public bool ScreenReaction()

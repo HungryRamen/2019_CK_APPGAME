@@ -44,6 +44,22 @@ namespace Util
                 fadeObj.GetComponent<RawImage>().color = tempColor;
                 yield return null;
             }
+            GameScene.UIMgr.GetUIMgr().NpcEntry();
+            fadeObj.SetActive(false);
+        }
+
+        public static IEnumerator ObjectFadeOutChange(GameObject fadeObj, float totalTime = 1f)
+        {
+            Color tempColor = fadeObj.GetComponent<RawImage>().color;
+            float startColor = tempColor.a;
+            float elapsedTime = 0f;
+            while (tempColor.a > 0f)
+            {
+                elapsedTime += Time.deltaTime / totalTime;
+                tempColor.a = Mathf.Lerp(startColor, 0f, elapsedTime);
+                fadeObj.GetComponent<RawImage>().color = tempColor;
+                yield return null;
+            }
             fadeObj.SetActive(false);
         }
 

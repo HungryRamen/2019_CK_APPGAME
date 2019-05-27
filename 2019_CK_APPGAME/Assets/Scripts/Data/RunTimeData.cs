@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace RunTimeData
 { 
     public static class RunTimeDataSet
     {
         public static string day = "1";
-        public static string foodID;
         public static string userName = "김성훈";
+
+        public static List<string> lockMaterials = new List<string>();
+
+        public static string cookID = "";
 
         public static void DayPlus()
         {

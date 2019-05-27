@@ -19,16 +19,19 @@ namespace SheetLoad
                 string fsmID = jsonData[i]["FoodSubMaterialID"].ToString();
 
                 DataJsonSet.RecipeDataDictionary.Add(foodID, new RecipeDataType(cookID, fmID, fsmID));
+
                 if(!DataJsonSet.RecipeDictionary.ContainsKey(cookID))
                 {
                     DataJsonSet.RecipeDictionary.Add(cookID, new List<string>());
                 }
                 DataJsonSet.RecipeDictionary[cookID].Add(foodID);
+
                 if (!DataJsonSet.RecipeDictionary.ContainsKey(fmID))
                 {
                     DataJsonSet.RecipeDictionary.Add(fmID, new List<string>());
                 }
                 DataJsonSet.RecipeDictionary[fmID].Add(foodID);
+
                 if (!DataJsonSet.RecipeDictionary.ContainsKey(fsmID))
                 {
                     DataJsonSet.RecipeDictionary.Add(fsmID, new List<string>());

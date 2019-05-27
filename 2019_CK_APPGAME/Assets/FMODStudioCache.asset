@@ -13,23 +13,188 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 114904916497368308}
-  - {fileID: 114476689403325304}
-  - {fileID: 114550335410289238}
+  - {fileID: 114777291114835986}
+  - {fileID: 114790397113978448}
+  - {fileID: 114423390324646130}
+  - {fileID: 114001843081498112}
+  - {fileID: 114490687786311738}
+  - {fileID: 114190800191926976}
   EditorEvents:
-  - {fileID: 114849733982840502}
-  - {fileID: 114109289572313482}
-  - {fileID: 114494085743002672}
-  - {fileID: 114625226159881794}
-  - {fileID: 114818978466085460}
-  - {fileID: 114736617970817228}
-  - {fileID: 114991383570976304}
+  - {fileID: 114509288145419522}
+  - {fileID: 114051227309242790}
+  - {fileID: 114779059263474100}
+  - {fileID: 114502872224801830}
+  - {fileID: 114864420041965432}
+  - {fileID: 114123428956082936}
+  - {fileID: 114523528417155660}
+  - {fileID: 114243595602760086}
+  - {fileID: 114415955249601774}
+  - {fileID: 114035458819560532}
+  - {fileID: 114114618973691634}
+  - {fileID: 114230280310710884}
+  - {fileID: 114385922466332554}
+  - {fileID: 114454142705607638}
+  - {fileID: 114955895592043688}
+  - {fileID: 114014080264335264}
+  - {fileID: 114507231853703454}
+  - {fileID: 114223949570646078}
+  - {fileID: 114320604979477938}
+  - {fileID: 114164493640566404}
+  - {fileID: 114751119679757522}
+  - {fileID: 114853828822238322}
+  - {fileID: 114737154236322128}
+  - {fileID: 114097377300761902}
+  - {fileID: 114441902914782402}
   MasterBanks:
-  - {fileID: 114550335410289238}
+  - {fileID: 114490687786311738}
   StringsBanks:
-  - {fileID: 114904916497368308}
-  stringsBankWriteTime: 636940266512827991
+  - {fileID: 114777291114835986}
+  stringsBankWriteTime: 636946133220000000
   cacheVersion: 3
+--- !u!114 &114001843081498112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\matiy\Desktop\GitHub\2019_CK_APPGAME\2019_CK_APPGAME\Assets\Resources\Sounds\Restaurant.bank
+  lastModified: 636946133260000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2720544
+  Exists: 1
+--- !u!114 &114014080264335264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/BGM/!RetaurantMusic
+  guid: 856757722295964b9f11b13f8fb62070
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114035458819560532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/Food/Food Serve/Plate.SFX
+  guid: 5cc9289bac992d4aa5969eb17dce94e7
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &114051227309242790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Public/FM00
+  guid: 53d8edb05f3bfe43903290fdd3a967e7
+  Banks:
+  - {fileID: 114423390324646130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114294054711177502}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114087859200945032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Action
+  Min: 0
+  Max: 2
+  Default: 0
+--- !u!114 &114096217288806504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: CookType
+  Min: 0
+  Max: 6
+  Default: 0
+--- !u!114 &114097377300761902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/UI/Button/!Log&Auto.Button
+  guid: fff3f56ae352f64a838d29110c3f331a
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &114109289572313482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,7 +210,7 @@ MonoBehaviour:
   Path: event:/Food/Boiling
   guid: 45e1a9559b1b69488e32146485cd3d03
   Banks:
-  - {fileID: 114476689403325304}
+  - {fileID: 114886626434085358}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -53,6 +218,68 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 16000
+--- !u!114 &114114618973691634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/UI/Button/!Selection.Button
+  guid: 5fbdfedcca8e204d91aa21bc39d25927
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114123428956082936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/UI/Status/!Update
+  guid: 40a956caf06dbf4eaddf81732291d84b
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114140140173727300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Accent
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114153069139974342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +299,64 @@ MonoBehaviour:
   FileSizes:
   - Name: 
     Value: 12474
+  Exists: 1
+--- !u!114 &114160052915449708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DoorState
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114164493640566404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/Food/Food Resting/!Baked
+  guid: c53b18c0c7595344a9abf181d7f019de
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &114190800191926976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\matiy\Desktop\GitHub\2019_CK_APPGAME\2019_CK_APPGAME\Assets\Resources\Sounds\Load.bank
+  lastModified: 636946133220000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 450
   Exists: 1
 --- !u!114 &114207820287039838
 MonoBehaviour:
@@ -105,6 +390,276 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114223949570646078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/Finish.SFX
+  guid: a02837fda81d9d4f9f555df8d0e3dcf1
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6500
+--- !u!114 &114230280310710884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/UI/Button/!Option.Button
+  guid: 648fcd203e611e4ca7be70766705f802
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114243595602760086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/!Calender.SFX
+  guid: 56a8c01c552bad44968a6c2ef5692f84
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &114280490692372674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BtState
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114294054711177502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: BtState
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114320604979477938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/!SelectionIn.SFX
+  guid: c03ebf7a6d3746498f1a27744c123ca6
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &114382218980973886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: DKState
+  Min: 0
+  Max: 4
+  Default: 0
+--- !u!114 &114385922466332554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/Amb/Restaurant.Amb
+  guid: 75767b1cb312e144a9cbf960aac19bb1
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114096217288806504}
+  - {fileID: 114414197282027270}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114414197282027270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Perspective
+  Min: 0
+  Max: 1
+  Default: 0
+--- !u!114 &114415955249601774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/Unlock.SFX
+  guid: 59fe25ec3c155f4c91e42cf96d54fa2f
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &114423390324646130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\matiy\Desktop\GitHub\2019_CK_APPGAME\2019_CK_APPGAME\Assets\Resources\Sounds\Public.bank
+  lastModified: 636946133220000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 60064
+  Exists: 1
+--- !u!114 &114441902914782402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Pop-Up
+  guid: 8e7fd9c2caec5a449811f18af14477d7
+  Banks:
+  - {fileID: 114490687786311738}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &114454142705607638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/SubAmb/NPCEntry.SFX
+  guid: 7aa0b74e4c90ef41880fed408ad4ea95
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114160052915449708}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &114476689403325304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +699,26 @@ MonoBehaviour:
   - Name: 
     Value: 12474
   Exists: 1
+--- !u!114 &114490687786311738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\matiy\Desktop\GitHub\2019_CK_APPGAME\2019_CK_APPGAME\Assets\Resources\Sounds\Master
+    Bank.bank
+  lastModified: 636946133220000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 15848
+  Exists: 1
 --- !u!114 &114494085743002672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +734,7 @@ MonoBehaviour:
   Path: event:/Food/BakedBread
   guid: 57a4ff9fc2ea5a49808bd08cbe2e13b7
   Banks:
-  - {fileID: 114476689403325304}
+  - {fileID: 114886626434085358}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -167,6 +742,76 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 18780
+--- !u!114 &114502872224801830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Public/!Change.SFX
+  guid: cbc248b504b71a4d8b192fc55acb8f94
+  Banks:
+  - {fileID: 114423390324646130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &114507231853703454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/Food/Food Resting/Sizzling
+  guid: 8ea3e5e1a882f544a05783911c8658f5
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 13913
+--- !u!114 &114509288145419522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Public/!DK00
+  guid: 0e24dff96a0f1e4d8df83422704b1ab9
+  Banks:
+  - {fileID: 114423390324646130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114382218980973886}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &114511104395634912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +828,29 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114523528417155660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/Food/Food Resting/Boiling
+  guid: 4f09695d903863408d0dd31519390756
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &114529651361672372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -238,6 +906,22 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114589252670273326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Accent
+  Min: 0
+  Max: 1
+  Default: 0
 --- !u!114 &114625226159881794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -253,15 +937,31 @@ MonoBehaviour:
   Path: event:/SFX/Click
   guid: 69413177f7dcd04cb23b2091e3578ba0
   Banks:
-  - {fileID: 114476689403325304}
+  - {fileID: 114886626434085358}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114218827094759234}
+  - {fileID: 114087859200945032}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &114719002409664420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: FridgeState
+  Min: 0
+  Max: 2
+  Default: 0
 --- !u!114 &114725902741153532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,7 +1012,7 @@ MonoBehaviour:
   Path: event:/SFX/Food_Finish
   guid: 8cb7416533d15d419a71bf2768068369
   Banks:
-  - {fileID: 114476689403325304}
+  - {fileID: 114886626434085358}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -320,6 +1020,135 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1103
+--- !u!114 &114737154236322128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/UI/Button/!Status.Button
+  guid: f98fe0dc4b217947bf366517511582b9
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114751119679757522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/SubAmb/Fridge.SFX
+  guid: d277455a8150ab4baa0abba46b5b7f62
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 114719002409664420}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114777291114835986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Assets\Resources\Sounds\Master Bank.strings.bank
+  lastModified: 636946133220000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 2274
+  Exists: 1
+--- !u!114 &114779059263474100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Public/CH00
+  guid: 7107f8637edd6442b36aa3364eb84900
+  Banks:
+  - {fileID: 114423390324646130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114140140173727300}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114785425654600064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\matiy\Desktop\GitHub\2019_CK_APPGAME\2019_CK_APPGAME\Assets\Resources\Sounds\Master
+    Bank.bank
+  lastModified: 636926911920000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 12474
+  Exists: 1
+--- !u!114 &114790397113978448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\matiy\Desktop\GitHub\2019_CK_APPGAME\2019_CK_APPGAME\Assets\Resources\Sounds\RestRoom.bank
+  lastModified: 636946133260000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 450
+  Exists: 1
 --- !u!114 &114818978466085460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +1164,7 @@ MonoBehaviour:
   Path: event:/Food/Lava
   guid: 8a0c6f5de41cc840903fe605451ae3aa
   Banks:
-  - {fileID: 114476689403325304}
+  - {fileID: 114886626434085358}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -413,15 +1242,62 @@ MonoBehaviour:
   Path: event:/Dialog/Voice_Sample1
   guid: 2030f65139c2f547a454f162ed89675b
   Banks:
-  - {fileID: 114476689403325304}
+  - {fileID: 114886626434085358}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: 114821520944686462}
+  - {fileID: 114589252670273326}
   MinDistance: 1
   MaxDistance: 20
   Length: 160
+--- !u!114 &114853828822238322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/UI/Button/!Cook.Button
+  guid: d7a56f1847f84644a93e90ce662b0eda
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &114864420041965432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Public/Public.Button
+  guid: cd0f12f989d5604c9c05d0fc5991f885
+  Banks:
+  - {fileID: 114423390324646130}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 114280490692372674}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &114871291216063544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +1314,25 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
+--- !u!114 &114886626434085358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\matiy\Desktop\GitHub\2019_CK_APPGAME\2019_CK_APPGAME\Assets\Resources\Sounds\Samples.bank
+  lastModified: 636926912160000000
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 9833504
+  Exists: 1
 --- !u!114 &114904916497368308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +1346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\Resources\Sounds\Master Bank.strings.bank
-  lastModified: 636940266512827991
+  lastModified: 636926911920000000
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -473,6 +1368,29 @@ MonoBehaviour:
   Min: 0
   Max: 1
   Default: 0
+--- !u!114 &114955895592043688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/Restaurant/SFX/!SelectionOut.SFX
+  guid: 81bf45861dcef84ea2606946ccfe7b53
+  Banks:
+  - {fileID: 114001843081498112}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &114991383570976304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +1406,7 @@ MonoBehaviour:
   Path: event:/Food/Sizzling
   guid: bc820f743e3d7043bafeb53840253dd4
   Banks:
-  - {fileID: 114476689403325304}
+  - {fileID: 114886626434085358}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
