@@ -12,25 +12,21 @@ namespace SheetLoad
         public static bool isLoad = false;
         private void Awake()
         {
-            if (!isLoad)
-            {
 
-                DialogCommand.DlgCmdDictionary.Set();
-                SheetDataTypeList.Add(new SheetLoad_DayEvents());
-                SheetDataTypeList.Add(new SheetLoad_Trigger());
-                SheetDataTypeList.Add(new SheetLoad_Char());
-                SheetDataTypeList.Add(new SheetLoad_FoodData());
-                SheetDataTypeList.Add(new SheetLoad_MaterialData());
-                SheetDataTypeList.Add(new SheetLoad_CookData());
-                SheetDataTypeList.Add(new SheetLoad_Recipe());
-                SheetDataTypeList.Add(new SheetLoad_Status());
-                SheetDataTypeList.Add(new SheetLoad_Dlg());
-                SheetDataTypeList.Add(new SheetLoad_DialogReaction());
-                DataAllLoad();
-                IntegrityAllCheck();
-                ErrorOutput();
-                isLoad = true;
-            }
+            DialogCommand.DlgCmdDictionary.Set();
+            SheetDataTypeList.Add(new SheetLoad_DayEvents());
+            SheetDataTypeList.Add(new SheetLoad_Trigger());
+            SheetDataTypeList.Add(new SheetLoad_Char());
+            SheetDataTypeList.Add(new SheetLoad_FoodData());
+            SheetDataTypeList.Add(new SheetLoad_MaterialData());
+            SheetDataTypeList.Add(new SheetLoad_CookData());
+            SheetDataTypeList.Add(new SheetLoad_Recipe());
+            SheetDataTypeList.Add(new SheetLoad_Status());
+            SheetDataTypeList.Add(new SheetLoad_Dlg());
+            SheetDataTypeList.Add(new SheetLoad_DialogReaction());
+            DataAllLoad();
+            IntegrityAllCheck();
+            ErrorOutput();
         }
 
         private void DataAllLoad()
@@ -51,12 +47,12 @@ namespace SheetLoad
 
         private void ErrorOutput()
         {
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             for (int i = 0; i < SundryUtil.errorList.Count; i++)
             {
                 Debug.LogFormat("WorkSheetName: {0}\nSheetIndex: {1}", SundryUtil.errorList[i].WorkSheetName, SundryUtil.errorList[i].Index);
             }
-            #else
+#else
             string path = Application.dataPath + "/Error/";
             if (!Directory.Exists(path))
                 Directory.CreateDirectory(path);
@@ -69,7 +65,7 @@ namespace SheetLoad
             }
             wr.Close();
             fs.Close();
-            #endif
+#endif
         }
     }
 }

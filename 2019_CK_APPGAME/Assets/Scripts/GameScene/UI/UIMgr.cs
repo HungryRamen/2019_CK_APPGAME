@@ -20,6 +20,8 @@ namespace GameScene
     {
         public int textIndex;
 
+        public int textOverFlowIndex;
+
         public float textOutputTime;
 
         public bool bChAppend;
@@ -77,7 +79,7 @@ namespace GameScene
 
         private Dictionary<string, FoodMaterialButtonMgr> foodMaterialButtonDic = new Dictionary<string, FoodMaterialButtonMgr>();
 
-        private Dictionary<string, Button> cookButtonDic = new Dictionary<string, Button>();
+        private Dictionary<string, Image> cookButtonDic = new Dictionary<string, Image>();
 
         private string[] foodMaterialSelectID = new string[2]; //선택된 음식재료 ID 0은왼쪽 1은오른쪽
 
@@ -85,7 +87,7 @@ namespace GameScene
 
         private GameObject cookButton;
 
-        private GameObject cookTextObject;
+        private GameObject cookImageObject;
 
         //추후 사운드 매니저 혹은 리스트로 관리
 
@@ -130,13 +132,13 @@ namespace GameScene
             materialImgRight = GameObject.FindWithTag("FMRight");
             foodMaterialButton = GameObject.FindWithTag("FMBtns");
             cookButton = GameObject.FindWithTag("CookBtns");
-            cookTextObject = GameObject.FindWithTag("CookText");
+            cookImageObject = GameObject.FindWithTag("CookImage");
             FoodMaterialButtonMgr[] temp = foodMaterialButton.GetComponentsInChildren<FoodMaterialButtonMgr>();
             for (int i = 0; i < temp.Length; i++)
             {
                 foodMaterialButtonDic.Add(temp[i].name, temp[i]);
             }
-            Button[] temp2 = cookButton.GetComponentsInChildren<Button>();
+            Image[] temp2 = cookButton.GetComponentsInChildren<Image>();
             for (int i = 0; i < temp2.Length; i++)
             {
                 cookButtonDic.Add(temp2[i].name, temp2[i]);
@@ -159,6 +161,7 @@ namespace GameScene
 
             textStringBuilder = new StringBuilder();
             textIndex = 0;
+            textOverFlowIndex = 0;
             textOutputTime = 0f;
             fadeTime = 0.1f;
             bChAppend = false;
@@ -246,7 +249,7 @@ namespace GameScene
                 foodMaterialSelectID[0] = fm;
                 foodMaterialSelectOn[0] = false;
                 if (!materialImgRight.activeSelf)
-                    RecipeCheckID(fm);
+                    RecipeIDCheck(fm);
                 else
                     FoodSet();
             }
@@ -262,7 +265,7 @@ namespace GameScene
                 foodMaterialSelectID[1] = fm;
                 foodMaterialSelectOn[1] = false;
                 if (!materialImgLeft.activeSelf)
-                    RecipeCheckID(fm);
+                    RecipeIDCheck(fm);
                 else
                     FoodSet();
             }
@@ -289,7 +292,7 @@ namespace GameScene
                 materialImgLeft.SetActive(true);
                 foodMaterialSelectID[0] = fm;
                 foodMaterialSelectOn[0] = false;
-                RecipeCheckID(fm);
+                RecipeIDCheck(fm);
             }
         }
 
@@ -300,8 +303,37 @@ namespace GameScene
             {
                 obj.SetState(ESpriteState.Disable);
             }
-            cookTextObject.GetComponent<Text>().text = name;
-            RecipeCheckID(name);
+            Sprite temp = cookButtonDic[name].sprite;
+            cookButtonDic[name].sprite = cookImageObject.GetComponent<Image>().sprite;
+            cookImageObject.GetComponent<Image>().sprite = temp;
+            RecipeIDCheck(CookImageCheck(temp));
+        }
+
+        public void CookStartSet()
+        {
+            MaterialClear();
+            foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //일단 전부 disable
+            {
+                obj.SetState(ESpriteState.Disable);
+            }
+            RecipeIDCheck("C1");
+        }
+
+        private string CookImageCheck(Sprite temp)
+        {
+            if (temp == Resources.Load<Sprite>(DataJsonSet.CookDataDictionary["C1"].ImageLocation))
+            {
+                return "C1";
+            }
+            else if (temp == Resources.Load<Sprite>(DataJsonSet.CookDataDictionary["C2"].ImageLocation))
+            {
+                return "C2";
+            }
+            else if (temp == Resources.Load<Sprite>(DataJsonSet.CookDataDictionary["C3"].ImageLocation))
+            {
+                return "C3";
+            }
+            return "C4";
         }
 
         public void MaterialClear()
@@ -319,51 +351,54 @@ namespace GameScene
             if (materialImgLeft.tag == tag)
             {
                 materialImgLeft.SetActive(false);
+                materialImgLeft.GetComponent<Image>().sprite = null;
                 foodMaterialSelectID[0] = null;
                 foodMaterialSelectOn[0] = false;
             }
             else if (materialImgRight.tag == tag)
             {
                 materialImgRight.SetActive(false);
+                materialImgRight.GetComponent<Image>().sprite = null;
                 foodMaterialSelectID[1] = null;
                 foodMaterialSelectOn[1] = false;
             }
             if (foodMaterialSelectID[0] != null)
             {
-                RecipeCheckID(foodMaterialSelectID[0]);
+                RecipeIDCheck(foodMaterialSelectID[0]);
             }
             else if (foodMaterialSelectID[1] != null)
             {
-                RecipeCheckID(foodMaterialSelectID[1]);
+                RecipeIDCheck(foodMaterialSelectID[1]);
             }
             else
             {
-                if (cookTextObject.GetComponent<Text>().text != "")
-                    RecipeCheckID(cookTextObject.GetComponent<Text>().text);
-                else
-                {
-
-                    foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //전부 enable
-                    {
-                        obj.SetState(ESpriteState.Enable);
-                    }
-                }
+                //if (cookImageObject.GetComponent<Text>().text != "")
+                //    RecipeCheckID(cookImageObject.GetComponent<Text>().text);
+                //else
+                //{
+                //
+                //    foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //전부 enable
+                //    {
+                //        obj.SetState(ESpriteState.Enable);
+                //    }
+                //}
+                RecipeIDCheck(CookImageCheck(cookImageObject.GetComponent<Image>().sprite));
             }
         }
 
-        private void RecipeCheckID(string id)
+        private void RecipeIDCheck(string id)
         {
             List<string> recipeIDMaterial = new List<string>();
-            RecipeIDCheck(id, recipeIDMaterial);
+            RecipeIDCheckDic(id, recipeIDMaterial);
             List<string> recipeIDMaterialSub = new List<string>();
             List<string> recipeIDCookSub = new List<string>();
             if (id != foodMaterialSelectID[0] && null != foodMaterialSelectID[0])
             {
-                RecipeIDCheck(foodMaterialSelectID[0], recipeIDMaterialSub);
+                RecipeIDCheckDic(foodMaterialSelectID[0], recipeIDMaterialSub);
             }
             else if (id != foodMaterialSelectID[1] && null != foodMaterialSelectID[1])
             {
-                RecipeIDCheck(foodMaterialSelectID[1], recipeIDMaterialSub);
+                RecipeIDCheckDic(foodMaterialSelectID[1], recipeIDMaterialSub);
             }
             List<string> recipeTotalMaterial = RecipeIDOverlap(recipeIDMaterial, recipeIDMaterialSub);
 
@@ -399,11 +434,11 @@ namespace GameScene
             return temp;
         }
 
-        private void RecipeIDCheck(string id, List<string> material)
+        private void RecipeIDCheckDic(string id, List<string> material)
         {
             for (int i = 0; i < DataJsonSet.RecipeDictionary[id].Count; i++)    //조합에 해당하는 재료ID만 가져옴
             {
-                if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[id][i]].CookID == cookTextObject.GetComponent<Text>().text)
+                if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[id][i]].CookID == CookImageCheck(cookImageObject.GetComponent<Image>().sprite))
                 {
                     string temp = DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[id][i]].FoodMaterialID;
                     if (id != temp)
@@ -471,24 +506,25 @@ namespace GameScene
 
         public void FoodSet()
         {
-            for (int i = 0; i < DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text].Count; i++)
+            string foodID = CookImageCheck(cookImageObject.GetComponent<Image>().sprite);
+            for (int i = 0; i < DataJsonSet.RecipeDictionary[foodID].Count; i++)
             {
-                if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i]].FoodMaterialID == foodMaterialSelectID[0])
+                if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[foodID][i]].FoodMaterialID == foodMaterialSelectID[0])
                 {
-                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i]].FoodSubMaterialID == foodMaterialSelectID[1])
+                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[foodID][i]].FoodSubMaterialID == foodMaterialSelectID[1])
                     {
-                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i];
+                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[foodID][i];
                     }
                 }
-                else if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i]].FoodSubMaterialID == foodMaterialSelectID[0])
+                else if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[foodID][i]].FoodSubMaterialID == foodMaterialSelectID[0])
                 {
-                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i]].FoodMaterialID == foodMaterialSelectID[1])
+                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[foodID][i]].FoodMaterialID == foodMaterialSelectID[1])
                     {
-                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[cookTextObject.GetComponent<Text>().text][i];
+                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[foodID][i];
                     }
                 }
             }
-            RunTimeData.RunTimeDataSet.cookID = cookTextObject.GetComponent<Text>().text;
+            RunTimeData.RunTimeDataSet.cookID = foodID;
         }
 
         private bool ButtonActiveCheck()
@@ -525,7 +561,7 @@ namespace GameScene
 
         public void ChangeUI()
         {
-            if (uiCook.activeSelf)
+            if (uiCook.activeSelf && foodMaterialSelectID[0] != null && foodMaterialSelectID[1] != null)
             {
                 Perspective.setValue(0);
                 CookType.setValue((int)CookIDToEnum(RunTimeData.RunTimeDataSet.cookID));
@@ -534,7 +570,7 @@ namespace GameScene
                 btnCook.SetActive(!btnCook.activeSelf);
                 FoodStatusUp();
             }
-            else
+            else if(!uiCook.activeSelf)
             {
                 Perspective.setValue(1);
                 uiDialog.SetActive(!uiDialog.activeSelf);
@@ -634,6 +670,15 @@ namespace GameScene
             voice.start();            // 객체 활성화(재생)
             voice.release();
             textStringBuilder.Insert(textIndex++, ch);
+            textOverFlowIndex++;
+            if (ch == '\n')
+                textOverFlowIndex = 0;
+            else if(textOverFlowIndex >= 30)
+            {
+                textStringBuilder.Insert(textIndex++, '\n');
+                textOverFlowIndex = 0;
+            }
+
             bChAppend = true;
         }
 
@@ -707,6 +752,7 @@ namespace GameScene
             }
             textStringBuilder.Clear();
             textIndex = 0;
+            textOverFlowIndex = 0;
             return textStack.Peek();
         }
 
@@ -723,20 +769,20 @@ namespace GameScene
                 {
                     CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] = System.Convert.ToInt32(singleStatus[i]);
                 }
-                //foreach (TriggerType temp in DataJsonSet.TriggerDictionary[nowEvent.TriggerID])
-                //{
-                //    if (temp.IsTrigger(nowEvent.CharID))
-                //    {
-                //        for (int i = 0; i < temp.Status.Length; i++)
-                //        {
-                //            CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] += temp.Status[i];
-                //        }
-                //        if (temp.StoryState != -1)
-                //        {
-                //            CharDataSet.charDataDictionary[nowEvent.CharID].StoryState = temp.StoryState;
-                //        }
-                //    }
-                //}
+                foreach (TriggerType temp in DataJsonSet.TriggerDictionary[nowEvent.TriggerID])
+                {
+                    if (temp.IsTrigger(nowEvent.CharID))
+                    {
+                        for (int i = 0; i < temp.Status.Length; i++)
+                        {
+                            CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] += temp.Status[i];
+                        }
+                        if (temp.StoryState != -1)
+                        {
+                            CharDataSet.charDataDictionary[nowEvent.CharID].StoryState = temp.StoryState;
+                        }
+                    }
+                }
                 for (int i = 0; i < currentStatus.Length; i++)
                 {
                     currentStatus[i] = 0;
@@ -770,6 +816,7 @@ namespace GameScene
 
         public void StatusUpdate()
         {
+            StatusLayerDown();
             for (int i = 0; i < currentStatus.Length; i++)
             {
                 singleStatus[i] = CharDataSet.charDataDictionary[nowEvent.CharID].Status[i];
@@ -799,7 +846,7 @@ namespace GameScene
         private void StatusFillUpdate(int index)
         {
             Image img = statusArr[index].GetComponentInChildren<Image>();
-            img.fillAmount = singleStatus[index] / 100.0f;
+            img.fillAmount = 1.0f - singleStatus[index] / 100.0f;
         }
 
         public void IndexJump(int index)
@@ -862,6 +909,13 @@ namespace GameScene
                 runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpY(statusLayer.transform, 270.0f, 5.0f));
             }
             isStatusLayerInteraction = !isStatusLayerInteraction;
+        }
+        public void StatusLayerDown()
+        {
+            if (runningCoroutine != null)
+                StopCoroutine(runningCoroutine);
+            runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpY(statusLayer.transform, 270.0f, 5.0f));
+            isStatusLayerInteraction = true;
         }
     }
 }

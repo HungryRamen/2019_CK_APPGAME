@@ -9,7 +9,7 @@ namespace GameScene
     {
         private void Start()
         {
-            UIMgr.GetUIMgr().CookChangeSelect("C1");
+            UIMgr.GetUIMgr().CookStartSet();
         }
     }
 }

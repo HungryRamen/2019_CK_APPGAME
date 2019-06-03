@@ -18,8 +18,8 @@ TagManager:
   - FMRight
   - FMBtns
   - Drag
-  - CookText
   - CookBtns
+  - CookImage
   layers:
   - Default
   - TransparentFX

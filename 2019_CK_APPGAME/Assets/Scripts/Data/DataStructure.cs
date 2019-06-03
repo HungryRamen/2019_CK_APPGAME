@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using DialogCommand;
+using FMOD.Studio;
+
 namespace SheetData
 {
     public static class DataJsonSet
@@ -15,6 +17,7 @@ namespace SheetData
         public static Dictionary<string, StatusDataType> StatusDataDictionary = new Dictionary<string, StatusDataType>(); //음식 스테이터스 딕셔너리
         public static Dictionary<string, List<string>> RecipeDictionary = new Dictionary<string, List<string>>(); // 레시피 딕셔너리
         public static Dictionary<string, RecipeDataType> RecipeDataDictionary = new Dictionary<string, RecipeDataType>(); // 레시피 조합 딕셔너리
+        public static Dictionary<string, SoundDataType> SoundDataDictionary = new Dictionary<string, SoundDataType>();  // 음악 딕셔너리
     }
 
     enum ETextCommandType
@@ -209,4 +212,23 @@ namespace SheetData
         public string FoodSubMaterialID { get => foodSubMaterialID; set => foodSubMaterialID = value; }
     }
 
+    public class SoundDataType
+    {
+        string path;
+        public List<string> parameterName = new List<string>();
+        FMOD.Studio.EventInstance eventInstance;
+        FMOD.Studio.ParameterInstance parameterInstanceList;
+        
+        public SoundDataType(string p,string t1, string t2, string t3)
+        {
+            path = p;
+            parameterName.Add(t1);
+            parameterName.Add(t2);
+            parameterName.Add(t3);
+        }
+
+        public string Path { get => path; set => path = value; }
+        public EventInstance EventInstance { get => eventInstance; set => eventInstance = value; }
+        public ParameterInstance ParameterInstanceList { get => parameterInstanceList; set => parameterInstanceList = value; }
+    }
 }

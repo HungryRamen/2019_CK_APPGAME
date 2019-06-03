@@ -41,23 +41,23 @@ namespace Util
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            ButtonSoundMgr.BtState.setValue(0);
-            ButtonSoundMgr.SoundOn();
+            SoundMgr.BtState.setValue(0);
+            SoundMgr.SoundOn();
             onCheck = true;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            ButtonSoundMgr.BtState.setValue(1);
-            ButtonSoundMgr.SoundOn();
+            SoundMgr.BtState.setValue(1);
+            SoundMgr.SoundOn();
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Right && foodMgr.GetState() == ESpriteState.Enable && onCheck) //우클릭 && 현재상태
             {
-                ButtonSoundMgr.BtState.setValue(2);
-                ButtonSoundMgr.SoundOn();
+                SoundMgr.BtState.setValue(2);
+                SoundMgr.SoundOn();
                 UIMgr.GetUIMgr().MaterialRightClickSelect(name, mainSprite[1].sprite);
             }
         }

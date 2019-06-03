@@ -16,23 +16,23 @@ namespace Util
         public bool onCheck = false;
         public void OnPointerEnter(PointerEventData eventData)
         {
-            ButtonSoundMgr.BtState.setValue(0);
-            ButtonSoundMgr.SoundOn();
+            SoundMgr.BtState.setValue(0);
+            SoundMgr.SoundOn();
             onCheck = true;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            ButtonSoundMgr.BtState.setValue(1);
-            ButtonSoundMgr.SoundOn();
+            SoundMgr.BtState.setValue(1);
+            SoundMgr.SoundOn();
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             if (onCheck)
             {
-                ButtonSoundMgr.BtState.setValue(2);
-                ButtonSoundMgr.SoundOn();
+                SoundMgr.BtState.setValue(2);
+                SoundMgr.SoundOn();
                 OnEvent.Invoke();
             }
         }

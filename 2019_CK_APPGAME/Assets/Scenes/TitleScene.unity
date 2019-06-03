@@ -248,6 +248,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onCheck: 0
 --- !u!1 &550177456
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +459,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onCheck: 0
 --- !u!1 &841344629
 GameObject:
   m_ObjectHideFlags: 0
@@ -699,6 +701,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onCheck: 0
 --- !u!1 &1607013825
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +954,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onCheck: 0
 --- !u!1 &1755431014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,7 +1198,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 155}
-  m_SizeDelta: {x: 1168, y: 466}
+  m_SizeDelta: {x: 1024, y: 411}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1946524169
 MonoBehaviour:
@@ -1216,7 +1220,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 83e811de16d25d5498a0864978e17aaf, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 743b2ddcd7ac8e04391744d7ba052311, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
