@@ -9,7 +9,7 @@
         }
         public override void CommandPerform(bool bPass)
         {
-            GameScene.UIMgr.GetUIMgr().StatusUpdate();
+            GameScene.UIMgr.GetUIMgr().StatusLayerDown();
         }
         public override DlgCmd Copy()
         {

@@ -179,6 +179,9 @@ namespace GameScene
                 RunTimeData.RunTimeDataSet.lockMaterials.Add("FM13");
                 RunTimeData.RunTimeDataSet.lockMaterials.Add("FM14");
             }
+            //Texture2D[] spritesTemp = Resources.LoadAll<Texture2D>("UI/Dialog/DialogSpriteSheet");
+
+            //Cursor.SetCursor(spritesTemp[0], Vector2.zero, CursorMode.Auto);
         }
 
         private void Start()
@@ -202,7 +205,6 @@ namespace GameScene
             if (temp == 1)
                 DoorState.setValue(0);
             DoorState.setValue(1);
-
         }
 
         public void MaterialEnterOn(string tag)
@@ -816,7 +818,6 @@ namespace GameScene
 
         public void StatusUpdate()
         {
-            StatusLayerDown();
             for (int i = 0; i < currentStatus.Length; i++)
             {
                 singleStatus[i] = CharDataSet.charDataDictionary[nowEvent.CharID].Status[i];
@@ -914,7 +915,7 @@ namespace GameScene
         {
             if (runningCoroutine != null)
                 StopCoroutine(runningCoroutine);
-            runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpY(statusLayer.transform, 270.0f, 5.0f));
+            runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpYDelegate(statusLayer.transform, 270.0f, 5.0f,()=>StatusUpdate()));
             isStatusLayerInteraction = true;
         }
     }

@@ -188,5 +188,665 @@
     "Status4" : 0,
     "Status5" : 20,
     "StoryState" : "NULL"
+  },
+  "19" : {
+    "ID" : "CH02_T01",
+    "Trigger" : "3::T",
+    "Status1" : 40,
+    "Status2" : 40,
+    "Status3" : 40,
+    "Status4" : 65,
+    "Status5" : 35,
+    "StoryState" : 2
+  },
+  "20" : {
+    "ID" : "CH02_T01",
+    "Trigger" : "Defualt",
+    "Status1" : 40,
+    "Status2" : 40,
+    "Status3" : 40,
+    "Status4" : 65,
+    "Status5" : 35,
+    "StoryState" : 3
+  },
+  "21" : {
+    "ID" : "CH02_T02",
+    "Trigger" : "2::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -10,
+    "Status5" : 0,
+    "StoryState" : 4
+  },
+  "22" : {
+    "ID" : "CH02_T02",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -10,
+    "Status5" : 0,
+    "StoryState" : 5
+  },
+  "23" : {
+    "ID" : "CH02_T03",
+    "Trigger" : "2::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -10,
+    "Status5" : 0,
+    "StoryState" : 4
+  },
+  "24" : {
+    "ID" : "CH02_T03",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -10,
+    "Status5" : 0,
+    "StoryState" : 5
+  },
+  "25" : {
+    "ID" : "CH02_T04",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : -5,
+    "Status4" : -10,
+    "Status5" : 0,
+    "StoryState" : 6
+  },
+  "26" : {
+    "ID" : "CH02_T05",
+    "Trigger" : "Defualt",
+    "Status1" : -3,
+    "Status2" : -3,
+    "Status3" : -5,
+    "Status4" : -10,
+    "Status5" : 0,
+    "StoryState" : 6
+  },
+  "27" : {
+    "ID" : "CH02_T06",
+    "Trigger" : "3::T\n4::T",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : -5,
+    "Status4" : -5,
+    "Status5" : -5,
+    "StoryState" : 10
+  },
+  "28" : {
+    "ID" : "CH02_T06",
+    "Trigger" : "1::T\n3::T",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : -5,
+    "Status4" : -5,
+    "Status5" : -5,
+    "StoryState" : 9
+  },
+  "29" : {
+    "ID" : "CH02_T06",
+    "Trigger" : "2::T\n3::T",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : -5,
+    "Status4" : -5,
+    "Status5" : -5,
+    "StoryState" : 9
+  },
+  "30" : {
+    "ID" : "CH02_T06",
+    "Trigger" : "1::T",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : -5,
+    "Status4" : -5,
+    "Status5" : -5,
+    "StoryState" : 8
+  },
+  "31" : {
+    "ID" : "CH02_T06",
+    "Trigger" : "2::T",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : -5,
+    "Status4" : -5,
+    "Status5" : -5,
+    "StoryState" : 8
+  },
+  "32" : {
+    "ID" : "CH02_T06",
+    "Trigger" : "Defualt",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : -5,
+    "Status4" : -5,
+    "Status5" : -5,
+    "StoryState" : 7
+  },
+  "33" : {
+    "ID" : "CH02_T07",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "34" : {
+    "ID" : "CH02_T08",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "35" : {
+    "ID" : "CH02_T09",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "36" : {
+    "ID" : "CH02_T10",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "37" : {
+    "ID" : "CH05_T01",
+    "Trigger" : "Defualt",
+    "Status1" : 60,
+    "Status2" : 60,
+    "Status3" : 60,
+    "Status4" : 70,
+    "Status5" : 40,
+    "StoryState" : 1
+  },
+  "38" : {
+    "ID" : "CH05_T02",
+    "Trigger" : "5::T",
+    "Status1" : -15,
+    "Status2" : -15,
+    "Status3" : -8,
+    "Status4" : 0,
+    "Status5" : -5,
+    "StoryState" : 2
+  },
+  "39" : {
+    "ID" : "CH05_T02",
+    "Trigger" : "Defualt",
+    "Status1" : -15,
+    "Status2" : -15,
+    "Status3" : -8,
+    "Status4" : 0,
+    "Status5" : -5,
+    "StoryState" : 3
+  },
+  "40" : {
+    "ID" : "CH05_T03",
+    "Trigger" : "3::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : -12,
+    "Status4" : -10,
+    "Status5" : -5,
+    "StoryState" : 4
+  },
+  "41" : {
+    "ID" : "CH05_T03",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : -12,
+    "Status4" : -10,
+    "Status5" : -5,
+    "StoryState" : 5
+  },
+  "42" : {
+    "ID" : "CH05_T04",
+    "Trigger" : "3::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -10,
+    "Status5" : 0,
+    "StoryState" : 6
+  },
+  "43" : {
+    "ID" : "CH05_T04",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -10,
+    "Status5" : 0,
+    "StoryState" : 7
+  },
+  "44" : {
+    "ID" : "CH05_T05",
+    "Trigger" : "5::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -15,
+    "Status5" : -10,
+    "StoryState" : 8
+  },
+  "45" : {
+    "ID" : "CH05_T05",
+    "Trigger" : "4::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -15,
+    "Status5" : -10,
+    "StoryState" : 8
+  },
+  "46" : {
+    "ID" : "CH05_T05",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -15,
+    "Status5" : -10,
+    "StoryState" : 9
+  },
+  "47" : {
+    "ID" : "CH05_T06",
+    "Trigger" : "5::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : -10,
+    "Status4" : -15,
+    "Status5" : -10,
+    "StoryState" : 8
+  },
+  "48" : {
+    "ID" : "CH05_T06",
+    "Trigger" : "4::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : -10,
+    "Status4" : -15,
+    "Status5" : -10,
+    "StoryState" : 8
+  },
+  "49" : {
+    "ID" : "CH05_T06",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : -10,
+    "Status4" : -15,
+    "Status5" : -10,
+    "StoryState" : 9
+  },
+  "50" : {
+    "ID" : "CH05_T07",
+    "Trigger" : "1::T",
+    "Status1" : -10,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -5,
+    "StoryState" : 10
+  },
+  "51" : {
+    "ID" : "CH05_T07",
+    "Trigger" : "5::T",
+    "Status1" : -10,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -5,
+    "StoryState" : 10
+  },
+  "52" : {
+    "ID" : "CH05_T07",
+    "Trigger" : "Defualt",
+    "Status1" : -1,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -5,
+    "StoryState" : 11
+  },
+  "53" : {
+    "ID" : "CH05_T08",
+    "Trigger" : "1::T",
+    "Status1" : -10,
+    "Status2" : 0,
+    "Status3" : -10,
+    "Status4" : 0,
+    "Status5" : -5,
+    "StoryState" : 10
+  },
+  "54" : {
+    "ID" : "CH05_T08",
+    "Trigger" : "5::T",
+    "Status1" : -10,
+    "Status2" : 0,
+    "Status3" : -10,
+    "Status4" : 0,
+    "Status5" : -5,
+    "StoryState" : 10
+  },
+  "55" : {
+    "ID" : "CH05_T08",
+    "Trigger" : "Defualt",
+    "Status1" : -10,
+    "Status2" : 0,
+    "Status3" : -10,
+    "Status4" : 0,
+    "Status5" : -5,
+    "StoryState" : 11
+  },
+  "56" : {
+    "ID" : "CH05_T09",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "57" : {
+    "ID" : "CH05_T10",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "58" : {
+    "ID" : "CH05_T11",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "59" : {
+    "ID" : "CH05_T12",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "60" : {
+    "ID" : "CH06_T01",
+    "Trigger" : "3::T",
+    "Status1" : 35,
+    "Status2" : 35,
+    "Status3" : 35,
+    "Status4" : 40,
+    "Status5" : 70,
+    "StoryState" : 2
+  },
+  "61" : {
+    "ID" : "CH06_T01",
+    "Trigger" : "Defualt",
+    "Status1" : 35,
+    "Status2" : 35,
+    "Status3" : 35,
+    "Status4" : 40,
+    "Status5" : 70,
+    "StoryState" : 3
+  },
+  "62" : {
+    "ID" : "CH06_T02",
+    "Trigger" : "1::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 10,
+    "Status4" : 0,
+    "Status5" : -8,
+    "StoryState" : 5
+  },
+  "63" : {
+    "ID" : "CH06_T02",
+    "Trigger" : "2::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 10,
+    "Status4" : 0,
+    "Status5" : -8,
+    "StoryState" : 6
+  },
+  "64" : {
+    "ID" : "CH06_T02",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 10,
+    "Status4" : 0,
+    "Status5" : -8,
+    "StoryState" : 4
+  },
+  "65" : {
+    "ID" : "CH06_T03",
+    "Trigger" : "1::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 5,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : 5
+  },
+  "66" : {
+    "ID" : "CH06_T03",
+    "Trigger" : "2::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 5,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : 6
+  },
+  "67" : {
+    "ID" : "CH06_T03",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 5,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : 4
+  },
+  "68" : {
+    "ID" : "CH06_T04",
+    "Trigger" : "1::T",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -8,
+    "StoryState" : 7
+  },
+  "69" : {
+    "ID" : "CH06_T04",
+    "Trigger" : "Defualt",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -8,
+    "StoryState" : 8
+  },
+  "70" : {
+    "ID" : "CH06_T05",
+    "Trigger" : "1::T",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -8,
+    "StoryState" : 7
+  },
+  "71" : {
+    "ID" : "CH06_T05",
+    "Trigger" : "Defualt",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -8,
+    "StoryState" : 8
+  },
+  "72" : {
+    "ID" : "CH06_T06",
+    "Trigger" : "1::T",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -8,
+    "StoryState" : 7
+  },
+  "73" : {
+    "ID" : "CH06_T06",
+    "Trigger" : "Defualt",
+    "Status1" : -5,
+    "Status2" : -5,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -8,
+    "StoryState" : 8
+  },
+  "74" : {
+    "ID" : "CH06_T07",
+    "Trigger" : "4::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -5,
+    "Status5" : -10,
+    "StoryState" : 9
+  },
+  "75" : {
+    "ID" : "CH06_T07",
+    "Trigger" : "5::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -5,
+    "Status5" : -10,
+    "StoryState" : 9
+  },
+  "76" : {
+    "ID" : "CH06_T07",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : -5,
+    "Status5" : -1,
+    "StoryState" : 10
+  },
+  "77" : {
+    "ID" : "CH06_T08",
+    "Trigger" : "1::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -10,
+    "StoryState" : 11
+  },
+  "78" : {
+    "ID" : "CH06_T08",
+    "Trigger" : "5::T",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -10,
+    "StoryState" : 11
+  },
+  "79" : {
+    "ID" : "CH06_T08",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : -10,
+    "StoryState" : 12
+  },
+  "80" : {
+    "ID" : "CH06_T09",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "81" : {
+    "ID" : "CH06_T10",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "82" : {
+    "ID" : "CH06_T11",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "83" : {
+    "ID" : "CH06_T12",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
+  },
+  "84" : {
+    "ID" : "CH03_T01",
+    "Trigger" : "Defualt",
+    "Status1" : 0,
+    "Status2" : 0,
+    "Status3" : 0,
+    "Status4" : 0,
+    "Status5" : 0,
+    "StoryState" : "NULL"
   }
 }

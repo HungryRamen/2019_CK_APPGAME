@@ -12,21 +12,171 @@
     "Name" : "송아연"
   },
   "2" : {
-    "ID" : "CH01",
-    "State" : 0,
-    "ImageLocation" : "CharImg/CH01/CH01_Idle01",
-    "Name" : "만화가"
+    "ID" : "CH02",
+    "State" : 2,
+    "ImageLocation" : "CharImg/CH02/CH02_Embarrassed",
+    "Name" : "송아연"
   },
   "3" : {
-    "ID" : "CH05",
-    "State" : 0,
-    "ImageLocation" : "CharImg/CH05/CH05_Idle01",
-    "Name" : "마녀"
+    "ID" : "CH02",
+    "State" : 3,
+    "ImageLocation" : "CharImg/CH02/CH02_Mild",
+    "Name" : "송아연"
   },
   "4" : {
+    "ID" : "CH02",
+    "State" : 4,
+    "ImageLocation" : "CharImg/CH02/CH02_Depression",
+    "Name" : "송아연"
+  },
+  "5" : {
+    "ID" : "CH02",
+    "State" : 5,
+    "ImageLocation" : "CharImg/CH02/CH02_Awkward",
+    "Name" : "송아연"
+  },
+  "6" : {
+    "ID" : "CH02",
+    "State" : 6,
+    "ImageLocation" : "CharImg/CH02/CH02_Disgusting",
+    "Name" : "송아연"
+  },
+  "7" : {
+    "ID" : "CH02",
+    "State" : 7,
+    "ImageLocation" : "CharImg/CH02/CH02_Shy",
+    "Name" : "송아연"
+  },
+  "8" : {
+    "ID" : "CH02",
+    "State" : 8,
+    "ImageLocation" : "CharImg/CH02/CH02_Angry",
+    "Name" : "송아연"
+  },
+  "9" : {
+    "ID" : "CH01",
+    "State" : 0,
+    "ImageLocation" : "CharImg/CH01/CH01_Idle",
+    "Name" : "한별"
+  },
+  "10" : {
+    "ID" : "CH01",
+    "State" : 1,
+    "ImageLocation" : "CharImg/CH01/CH01_Bitter01",
+    "Name" : "한별"
+  },
+  "11" : {
+    "ID" : "CH01",
+    "State" : 2,
+    "ImageLocation" : "CharImg/CH01/CH01_Bitter02",
+    "Name" : "한별"
+  },
+  "12" : {
+    "ID" : "CH01",
+    "State" : 3,
+    "ImageLocation" : "CharImg/CH01/CH01_Curious",
+    "Name" : "한별"
+  },
+  "13" : {
+    "ID" : "CH01",
+    "State" : 4,
+    "ImageLocation" : "CharImg/CH01/CH01_Spicy",
+    "Name" : "한별"
+  },
+  "14" : {
+    "ID" : "CH01",
+    "State" : 5,
+    "ImageLocation" : "CharImg/CH01/CH01_Worry",
+    "Name" : "한별"
+  },
+  "15" : {
+    "ID" : "CH01",
+    "State" : 6,
+    "ImageLocation" : "CharImg/CH01/CH01_Disgusting",
+    "Name" : "한별"
+  },
+  "16" : {
+    "ID" : "CH01",
+    "State" : 7,
+    "ImageLocation" : "CharImg/CH01/CH01_Think",
+    "Name" : "한별"
+  },
+  "17" : {
+    "ID" : "CH05",
+    "State" : 0,
+    "ImageLocation" : "CharImg/CH05/CH05_Idle",
+    "Name" : "할머니"
+  },
+  "18" : {
+    "ID" : "CH05",
+    "State" : 1,
+    "ImageLocation" : "CharImg/CH05/CH05_Surprised",
+    "Name" : "할머니"
+  },
+  "19" : {
+    "ID" : "CH05",
+    "State" : 2,
+    "ImageLocation" : "CharImg/CH05/CH05_Smile",
+    "Name" : "할머니"
+  },
+  "20" : {
+    "ID" : "CH05",
+    "State" : 3,
+    "ImageLocation" : "CharImg/CH05/CH05_Depressed",
+    "Name" : "할머니"
+  },
+  "21" : {
+    "ID" : "CH05",
+    "State" : 4,
+    "ImageLocation" : "CharImg/CH05/CH05_Disgusting",
+    "Name" : "할머니"
+  },
+  "22" : {
     "ID" : "CH06",
     "State" : 0,
-    "ImageLocation" : "CharImg/CH06/CH06_Idle01",
+    "ImageLocation" : "CharImg/CH06/CH06_Idle",
     "Name" : "안드로이드"
+  },
+  "23" : {
+    "ID" : "CH06",
+    "State" : 1,
+    "ImageLocation" : "CharImg/CH06/CH06_Depressed",
+    "Name" : "안드로이드"
+  },
+  "24" : {
+    "ID" : "CH06",
+    "State" : 2,
+    "ImageLocation" : "CharImg/CH06/CH06_Surprised",
+    "Name" : "안드로이드"
+  },
+  "25" : {
+    "ID" : "CH06",
+    "State" : 3,
+    "ImageLocation" : "CharImg/CH06/CH06_Smile",
+    "Name" : "안드로이드"
+  },
+  "26" : {
+    "ID" : "CH06",
+    "State" : 4,
+    "ImageLocation" : "CharImg/CH06/CH06_Disgusting",
+    "Name" : "안드로이드"
+  },
+  "27" : {
+    "ID" : "CH03",
+    "State" : 0,
+    "ImageLocation" : "CharImg/CH03/CH03_Idle",
+    "Name" : "우주인"
+  },
+  "28" : {
+    "ID" : "CH03",
+    "State" : 1,
+    "ImageLocation" : "CharImg/CH03/CH03_Chat",
+    "Name" : "우주인"
+  },
+  "29" : {
+    "ID" : "CH03",
+    "State" : 2,
+    "ImageLocation" : "CharImg/CH03/CH03_Light",
+    "Name" : "우주인"
   }
 }

@@ -7,6 +7,8 @@ namespace Util
 
     public static class ObjectLerf
     {
+        public delegate void StatusFunc();
+
         public static IEnumerator LocalLerpY(Transform startPos,float arriveY,float speed)
         {
             while (Mathf.Abs(arriveY - startPos.localPosition.y) > 0.2f)
@@ -16,6 +18,15 @@ namespace Util
             }
             startPos.localPosition = new Vector3(startPos.localPosition.x, arriveY, startPos.localPosition.z);
         }
-
+        public static IEnumerator LocalLerpYDelegate(Transform startPos, float arriveY, float speed,StatusFunc func)
+        {
+            while (Mathf.Abs(arriveY - startPos.localPosition.y) > 0.2f)
+            {
+                startPos.localPosition = Vector3.Lerp(startPos.localPosition, new Vector3(startPos.localPosition.x, arriveY), speed * Time.deltaTime);
+                yield return null;
+            }
+            startPos.localPosition = new Vector3(startPos.localPosition.x, arriveY, startPos.localPosition.z);
+            func();
+        }
     }
 }
