@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 467791792}
   - component: {fileID: 467791791}
   - component: {fileID: 467791794}
+  - component: {fileID: 467791795}
   m_Layer: 5
   m_Name: GameLoad
   m_TagString: Untagged
@@ -248,7 +249,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  onCheck: 0
+--- !u!114 &467791795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467791789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60111aa0562737647b6638fc339323ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &550177456
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,6 +272,8 @@ GameObject:
   - component: {fileID: 550177457}
   - component: {fileID: 550177459}
   - component: {fileID: 550177458}
+  - component: {fileID: 550177460}
+  - component: {fileID: 550177461}
   m_Layer: 5
   m_Name: BackGround
   m_TagString: Untagged
@@ -323,6 +337,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550177456}
   m_CullTransparentMesh: 0
+--- !u!114 &550177460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550177456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60111aa0562737647b6638fc339323ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &550177461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550177456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0f9dda20329154aa9909a85951a437, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &618656599
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +379,7 @@ GameObject:
   - component: {fileID: 618656602}
   - component: {fileID: 618656601}
   - component: {fileID: 618656604}
+  - component: {fileID: 618656605}
   m_Layer: 5
   m_Name: GameSound
   m_TagString: Untagged
@@ -459,7 +503,18 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  onCheck: 0
+--- !u!114 &618656605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618656599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60111aa0562737647b6638fc339323ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &841344629
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +564,7 @@ GameObject:
   - component: {fileID: 1034248874}
   - component: {fileID: 1034248873}
   - component: {fileID: 1034248872}
+  - component: {fileID: 1034248875}
   m_Layer: 0
   m_Name: DataLoad
   m_TagString: Untagged
@@ -554,6 +610,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1034248875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034248871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e155b1f3fa7b4e4abe1b0af1c603403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1376796031
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +635,7 @@ GameObject:
   - component: {fileID: 1376796034}
   - component: {fileID: 1376796033}
   - component: {fileID: 1376796036}
+  - component: {fileID: 1376796037}
   m_Layer: 5
   m_Name: GameStart
   m_TagString: Untagged
@@ -701,7 +770,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  onCheck: 0
+--- !u!114 &1376796037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376796031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60111aa0562737647b6638fc339323ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1607013825
 GameObject:
   m_ObjectHideFlags: 0
@@ -820,6 +900,7 @@ GameObject:
   - component: {fileID: 1718799794}
   - component: {fileID: 1718799793}
   - component: {fileID: 1718799796}
+  - component: {fileID: 1718799797}
   m_Layer: 5
   m_Name: GameQuit
   m_TagString: Untagged
@@ -954,7 +1035,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  onCheck: 0
+--- !u!114 &1718799797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718799791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60111aa0562737647b6638fc339323ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1755431014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,6 +1266,7 @@ GameObject:
   - component: {fileID: 1946524168}
   - component: {fileID: 1946524170}
   - component: {fileID: 1946524169}
+  - component: {fileID: 1946524171}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -1237,3 +1330,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1946524167}
   m_CullTransparentMesh: 0
+--- !u!114 &1946524171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946524167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60111aa0562737647b6638fc339323ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -57,6 +57,8 @@ namespace GameScene
 
         public DayEventsType nowEvent;
 
+        public bool isAutoPlay;
+
         private Dictionary<string, string> textTypeDictionary = new Dictionary<string, string>();
 
         private GameObject[] charImgLayer;
@@ -179,7 +181,7 @@ namespace GameScene
                 charImg[i].SetActive(false);
             }
 
-
+            isAutoPlay = true;
             textStringBuilder = new StringBuilder();
             textIndex = 0;
             logTextIndex = 0;
@@ -481,17 +483,17 @@ namespace GameScene
         // NPC이미지 설정
         private void NpcImageSet(GameObject dest, string id, int state)
         {
-            dest.GetComponent<RawImage>().texture = Resources.Load(DataJsonSet.CharImageDictionary[id][state].ImagePath, typeof(Texture)) as Texture;
+            dest.GetComponent<RawImage>().texture = Resources.Load<Texture>(DataJsonSet.CharImageDictionary[id][state].ImagePath);
             dest.name = id;
             StartCoroutine(ObjectFade.ObjectFadeIn(dest, fadeTime));
-            if (id == "CH05")
-            {
-                dest.GetComponent<RectTransform>().sizeDelta = new Vector2(750, 800);
-            }
-            else
-            {
-                dest.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 800);
-            }
+            //if (id == "CH05") 추후 확인후 수정
+            //{
+            //    dest.GetComponent<RectTransform>().sizeDelta = new Vector2(750, 800);
+            //}
+            //else
+            //{
+            //    dest.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 800);
+            //}
             if (id == "CH01")
             {
                 dest.transform.SetParent(charImgLayer[1].transform);
@@ -636,7 +638,7 @@ namespace GameScene
             {
                 if (charImg[i].name == id && charImg[i].activeSelf)
                 {
-                    charImg[i].GetComponent<RawImage>().texture = Resources.Load(DataJsonSet.CharImageDictionary[id][state].ImagePath, typeof(Texture)) as Texture;
+                    charImg[i].GetComponent<RawImage>().texture = Resources.Load<Texture>(DataJsonSet.CharImageDictionary[id][state].ImagePath);
                 }
             }
         }
@@ -809,7 +811,7 @@ namespace GameScene
         {
             //logStringBuilder.AppendFormat("{0} : {1}\n", talkerName,textStringBuilder);
             //uiLog.GetComponentInChildren<Text>().text = logStringBuilder.ToString();
-            GameObject obj = Instantiate(Resources.Load("Prefebs/LogText")) as GameObject;
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/LogText"));
             obj.GetComponent<Text>().text = string.Format("{0} : {1}", talkerName, logStringBuilder);
             obj.transform.SetParent(uiLogContent.transform,false);
         }
@@ -948,7 +950,7 @@ namespace GameScene
 
         public void CreateSelectBtn(string btnText, int index)
         {
-            SelectBtnList.Add(Instantiate(Resources.Load("Prefebs/SelectBtn")) as GameObject);
+            SelectBtnList.Add(Instantiate(Resources.Load<GameObject>("Prefebs/SelectBtn")));
             int count = SelectBtnList.Count - 1;
             SelectBtnList[count].transform.SetParent(uiDialog.transform,false);
             SelectBtnList[count].transform.localPosition = new Vector2(655, -50 + (-80 * count));

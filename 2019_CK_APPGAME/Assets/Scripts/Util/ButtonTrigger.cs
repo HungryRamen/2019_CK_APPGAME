@@ -7,18 +7,16 @@ using UnityEngine.EventSystems;
 namespace Util
 {
 
-    public class ButtonTrigger : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler, IPointerUpHandler , IPointerExitHandler
+    public class ButtonTrigger : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler,IPointerClickHandler
     {
         [Serializable]
-        public class MyEventType : UnityEvent { }
+        public class MyEventType : UnityEvent { } //함수 받아오기
 
         public MyEventType OnEvent;
-        public bool onCheck = false;
         public void OnPointerEnter(PointerEventData eventData)
         {
             SoundMgr.BtState.setValue(0);
             SoundMgr.SoundOn();
-            onCheck = true;
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -27,19 +25,11 @@ namespace Util
             SoundMgr.SoundOn();
         }
 
-        public void OnPointerUp(PointerEventData eventData)
+        public void OnPointerClick(PointerEventData eventData)
         {
-            if (onCheck)
-            {
-                SoundMgr.BtState.setValue(2);
-                SoundMgr.SoundOn();
-                OnEvent.Invoke();
-            }
-        }
-
-        public void OnPointerExit(PointerEventData eventData)
-        {
-            onCheck = false;
+            SoundMgr.BtState.setValue(2);
+            SoundMgr.SoundOn();
+            OnEvent.Invoke();
         }
     }
 }
