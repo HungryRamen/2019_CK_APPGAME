@@ -12,6 +12,7 @@ namespace Util
             {
                 CharDataSet.charDataDictionary.Add("CH01", new CharDataStructure());
                 CharDataSet.charDataDictionary.Add("CH02", new CharDataStructure());
+                CharDataSet.charDataDictionary.Add("CH03", new CharDataStructure());
                 CharDataSet.charDataDictionary.Add("CH05", new CharDataStructure());
                 CharDataSet.charDataDictionary.Add("CH06", new CharDataStructure());
                 Save();
@@ -28,11 +29,12 @@ namespace Util
             }
             string jsonstr = File.ReadAllText(path);
             JsonData CharJsonData = JsonMapper.ToObject(jsonstr);
-            string[] s = new string[4];
+            string[] s = new string[5];
             s[0] = "CH01";
             s[1] = "CH02";
-            s[2] = "CH05";
-            s[3] = "CH06";
+            s[2] = "CH03";
+            s[3] = "CH05";
+            s[4] = "CH06";
             for(int i = 0; i <s.Length;i++)
             {
                 CharDataSet.charDataDictionary.Add(s[i], new CharDataStructure(CharJsonData,s[i]));

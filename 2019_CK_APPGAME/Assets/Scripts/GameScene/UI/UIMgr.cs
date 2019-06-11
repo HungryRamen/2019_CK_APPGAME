@@ -20,6 +20,8 @@ namespace GameScene
     {
         public int textIndex;
 
+        public int logTextIndex;
+
         public int textOverFlowIndex;
 
         public float textOutputTime;
@@ -71,6 +73,18 @@ namespace GameScene
 
         public GameObject uiBlack;
 
+        public GameObject uiLog;
+
+        private GameObject uiLogOff;
+
+        private GameObject uiLogPanel;
+
+        private GameObject uiLogScrollBar;
+
+        private GameObject uiLogContent;
+
+        private Scrollbar logScrollBar;
+
         private GameObject materialImgLeft;
 
         private GameObject materialImgRight;
@@ -88,6 +102,8 @@ namespace GameScene
         private GameObject cookButton;
 
         private GameObject cookImageObject;
+
+        private StringBuilder logStringBuilder = new StringBuilder();
 
         //추후 사운드 매니저 혹은 리스트로 관리
 
@@ -133,6 +149,11 @@ namespace GameScene
             foodMaterialButton = GameObject.FindWithTag("FMBtns");
             cookButton = GameObject.FindWithTag("CookBtns");
             cookImageObject = GameObject.FindWithTag("CookImage");
+            uiLogOff = GameObject.FindWithTag("LogOff");
+            uiLogPanel = GameObject.FindWithTag("LogPanel");
+            uiLogScrollBar = GameObject.FindWithTag("LogScrollBar");
+            uiLogContent = GameObject.FindWithTag("LogContent");
+            logScrollBar = uiLogScrollBar.GetComponent<Scrollbar>();
             FoodMaterialButtonMgr[] temp = foodMaterialButton.GetComponentsInChildren<FoodMaterialButtonMgr>();
             for (int i = 0; i < temp.Length; i++)
             {
@@ -161,6 +182,7 @@ namespace GameScene
 
             textStringBuilder = new StringBuilder();
             textIndex = 0;
+            logTextIndex = 0;
             textOverFlowIndex = 0;
             textOutputTime = 0f;
             fadeTime = 0.1f;
@@ -580,6 +602,23 @@ namespace GameScene
             }
         }
 
+        public void LogUI()
+        {
+            if (uiLog.activeSelf)
+            {
+                uiLog.SetActive(false);
+                uiLogPanel.transform.SetParent(uiLogOff.transform, false);
+
+            }
+            else if(!uiLog.activeSelf)
+            {
+                uiLog.SetActive(true);
+                uiLogPanel.transform.SetParent(uiLog.transform, false);
+                logScrollBar.value = 0;
+            }
+
+        }
+
         public void FoodStatusUp()
         {
             FoodBonus(CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID, DataJsonSet.StatusDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].Status);
@@ -662,6 +701,32 @@ namespace GameScene
                 textStringBuilder.Append(stringBuilder3);
             }
             textIndex += textStringBuilder.ToString().IndexOf(">", textIndex) + 1 - textIndex;
+            if (type == "color")
+                LogRichTextColor(type, value);
+        }
+
+        private void LogRichTextColor(string type,string value)
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendFormat("<{0}={1}>", type, value);
+            StringBuilder stringBuilder2 = new StringBuilder();
+            stringBuilder2.AppendFormat("</{0}>", type);
+            int num = logStringBuilder.ToString().IndexOf(stringBuilder2.ToString(), logTextIndex);
+            if (num >= 0)
+            {
+                logTextIndex += num + stringBuilder2.Length - logTextIndex;
+            }
+            logStringBuilder.Insert(logTextIndex++, stringBuilder);
+            logStringBuilder.Append(stringBuilder2);
+            StringBuilder stringBuilder3 = new StringBuilder();
+            stringBuilder3.AppendFormat("</{0}>", textTypeDictionary[type]);
+            num = logStringBuilder.ToString().IndexOf(stringBuilder3.ToString(), logTextIndex);
+            if (num >= 0)
+            {
+                logStringBuilder.Remove(num, stringBuilder3.Length);
+                logStringBuilder.Append(stringBuilder3);
+            }
+            logTextIndex += logStringBuilder.ToString().IndexOf(">", logTextIndex) + 1 - logTextIndex;
         }
 
         public void ChAppend(char ch)
@@ -672,10 +737,11 @@ namespace GameScene
             voice.start();            // 객체 활성화(재생)
             voice.release();
             textStringBuilder.Insert(textIndex++, ch);
+            logStringBuilder.Insert(logTextIndex++, ch);
             textOverFlowIndex++;
             if (ch == '\n')
                 textOverFlowIndex = 0;
-            else if(textOverFlowIndex >= 30)
+            else if(textOverFlowIndex >= 26)
             {
                 textStringBuilder.Insert(textIndex++, '\n');
                 textOverFlowIndex = 0;
@@ -739,6 +805,15 @@ namespace GameScene
             uiBlack.SetActive(!uiBlack.activeSelf);
         }
 
+        public void LogTextAppend(string talkerName)
+        {
+            //logStringBuilder.AppendFormat("{0} : {1}\n", talkerName,textStringBuilder);
+            //uiLog.GetComponentInChildren<Text>().text = logStringBuilder.ToString();
+            GameObject obj = Instantiate(Resources.Load("Prefebs/LogText")) as GameObject;
+            obj.GetComponent<Text>().text = string.Format("{0} : {1}", talkerName, logStringBuilder);
+            obj.transform.SetParent(uiLogContent.transform,false);
+        }
+
         public TextStackType NextText()
         {
             if (textStack.Count == 0 && eventsQueue.Count == 0)
@@ -752,8 +827,10 @@ namespace GameScene
                 temp.textTypeList = new List<TextType>(DataJsonSet.TextDictionary[nowEvent.DialogID]);
                 textStack.Push(temp);
             }
+            logStringBuilder.Clear();
             textStringBuilder.Clear();
             textIndex = 0;
+            logTextIndex = 0;
             textOverFlowIndex = 0;
             return textStack.Peek();
         }
@@ -873,9 +950,8 @@ namespace GameScene
         {
             SelectBtnList.Add(Instantiate(Resources.Load("Prefebs/SelectBtn")) as GameObject);
             int count = SelectBtnList.Count - 1;
-            SelectBtnList[count].transform.SetParent(uiDialog.transform);
+            SelectBtnList[count].transform.SetParent(uiDialog.transform,false);
             SelectBtnList[count].transform.localPosition = new Vector2(655, -50 + (-80 * count));
-            SelectBtnList[count].transform.localScale = new Vector2(1, 1);
             SelectBtnList[count].GetComponentInChildren<Text>().text = btnText;
             SelectBtnList[count].GetComponent<ButtonTrigger>().OnEvent.AddListener(() => IndexJump(index));
         }

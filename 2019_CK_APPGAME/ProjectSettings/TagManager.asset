@@ -20,6 +20,11 @@ TagManager:
   - Drag
   - CookBtns
   - CookImage
+  - Log
+  - LogScrollBar
+  - LogContent
+  - LogOff
+  - LogPanel
   layers:
   - Default
   - TransparentFX

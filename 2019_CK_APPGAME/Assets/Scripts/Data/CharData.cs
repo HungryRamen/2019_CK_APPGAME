@@ -26,8 +26,8 @@ namespace CharData
             {
                 status[i] = 0;
             }
-            combinationCheck.Add("FD_IDDK_ID");
-            combinationCheck.Add("FD_IDDK_ID2");
+            //combinationCheck.Add("FD_IDDK_ID");
+            //combinationCheck.Add("FD_IDDK_ID2");
         }
 
         public CharDataStructure(JsonData jsonData,string key)

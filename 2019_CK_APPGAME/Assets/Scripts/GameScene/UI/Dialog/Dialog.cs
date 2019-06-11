@@ -40,6 +40,7 @@ namespace GameScene
         {
             if (bTextFullLoad && UIMgr.GetUIMgr().ScreenReaction())
             {
+                UIMgr.GetUIMgr().LogTextAppend(dialogTextUI[1].text);
                 NextText();
             }
             else if (!bTextFullLoad)
@@ -76,6 +77,8 @@ namespace GameScene
         {
             try
             {
+                if (UIMgr.GetUIMgr().uiLog.activeSelf == true)  //로그창을 보고있으면 멈춘다.
+                    return;
                 if (bPass)
                 {
                     PassText();

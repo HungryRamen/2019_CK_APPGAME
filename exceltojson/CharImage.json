@@ -102,78 +102,84 @@
     "Name" : "한별"
   },
   "17" : {
+    "ID" : "CH01",
+    "State" : 8,
+    "ImageLocation" : "CharImg/CH01/CH01_Bitter02",
+    "Name" : "한별"
+  },
+  "18" : {
     "ID" : "CH05",
     "State" : 0,
     "ImageLocation" : "CharImg/CH05/CH05_Idle",
     "Name" : "할머니"
   },
-  "18" : {
+  "19" : {
     "ID" : "CH05",
     "State" : 1,
     "ImageLocation" : "CharImg/CH05/CH05_Surprised",
     "Name" : "할머니"
   },
-  "19" : {
+  "20" : {
     "ID" : "CH05",
     "State" : 2,
     "ImageLocation" : "CharImg/CH05/CH05_Smile",
     "Name" : "할머니"
   },
-  "20" : {
+  "21" : {
     "ID" : "CH05",
     "State" : 3,
     "ImageLocation" : "CharImg/CH05/CH05_Depressed",
     "Name" : "할머니"
   },
-  "21" : {
+  "22" : {
     "ID" : "CH05",
     "State" : 4,
     "ImageLocation" : "CharImg/CH05/CH05_Disgusting",
     "Name" : "할머니"
   },
-  "22" : {
+  "23" : {
     "ID" : "CH06",
     "State" : 0,
     "ImageLocation" : "CharImg/CH06/CH06_Idle",
     "Name" : "안드로이드"
   },
-  "23" : {
+  "24" : {
     "ID" : "CH06",
     "State" : 1,
     "ImageLocation" : "CharImg/CH06/CH06_Depressed",
     "Name" : "안드로이드"
   },
-  "24" : {
+  "25" : {
     "ID" : "CH06",
     "State" : 2,
     "ImageLocation" : "CharImg/CH06/CH06_Surprised",
     "Name" : "안드로이드"
   },
-  "25" : {
+  "26" : {
     "ID" : "CH06",
     "State" : 3,
     "ImageLocation" : "CharImg/CH06/CH06_Smile",
     "Name" : "안드로이드"
   },
-  "26" : {
+  "27" : {
     "ID" : "CH06",
     "State" : 4,
     "ImageLocation" : "CharImg/CH06/CH06_Disgusting",
     "Name" : "안드로이드"
   },
-  "27" : {
+  "28" : {
     "ID" : "CH03",
     "State" : 0,
     "ImageLocation" : "CharImg/CH03/CH03_Idle",
     "Name" : "우주인"
   },
-  "28" : {
+  "29" : {
     "ID" : "CH03",
     "State" : 1,
     "ImageLocation" : "CharImg/CH03/CH03_Chat",
     "Name" : "우주인"
   },
-  "29" : {
+  "30" : {
     "ID" : "CH03",
     "State" : 2,
     "ImageLocation" : "CharImg/CH03/CH03_Light",

@@ -21,11 +21,11 @@ namespace GameScene
         private void Awake()
         {
             imageMain = GetComponent<Image>();
-            Sprite[] temp = Resources.LoadAll<Sprite>("UI/Dialog/CookSpriteSheet");
+            Sprite[] temp = Resources.LoadAll<Sprite>("UI/Dialog/SpriteSheet2");
             material = GetComponentsInChildren<RectTransform>();
             for (int i = 0; i < sprites.Length; i++)
             {
-                sprites[i] = temp[i + 1];
+                sprites[i] = temp[i];
             }
             for(int i = 0; i < RunTimeData.RunTimeDataSet.lockMaterials.Count;i++)
             {
