@@ -1031,10 +1031,10 @@ namespace GameScene
         private IEnumerator StatusExit(GameObject obj, float speed)
         {
             obj.GetComponent<Button>().interactable = false;
-            Vector2 v = new Vector2(1280, obj.transform.position.y);
-            while (obj.transform.position.x < 1200)
+            Vector2 v = new Vector2(1400, obj.transform.localPosition.y);
+            while (obj.transform.localPosition.x < 1280)
             {
-                obj.transform.position = Vector2.Lerp(obj.transform.position, v, speed * Time.deltaTime);
+                obj.transform.localPosition = Vector2.Lerp(obj.transform.localPosition, v, speed * Time.deltaTime);
                 yield return null;
             }
             Destroy(obj);
