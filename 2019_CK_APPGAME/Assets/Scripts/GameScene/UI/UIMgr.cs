@@ -36,6 +36,8 @@ namespace GameScene
 
         public GameObject btnEnd;
 
+        private GameObject btnDrinks;
+
         public StringBuilder textStringBuilder;
 
         [Range(0.01f, 1f)]
@@ -73,6 +75,8 @@ namespace GameScene
 
         private Coroutine runningCoroutine;
 
+        private Coroutine talkCoroutine;
+
         public GameObject uiBlack;
 
         public GameObject uiLog;
@@ -93,6 +97,8 @@ namespace GameScene
 
         private GameObject foodMaterialButton;
 
+        private GameObject statusName;
+
         private Dictionary<string, FoodMaterialButtonMgr> foodMaterialButtonDic = new Dictionary<string, FoodMaterialButtonMgr>();
 
         private Dictionary<string, Image> cookButtonDic = new Dictionary<string, Image>();
@@ -103,9 +109,17 @@ namespace GameScene
 
         private GameObject cookButton;
 
+        private Dictionary<string, Sprite> statusNameDic = new Dictionary<string, Sprite>();
+
+        private List<Sprite> talkAnimationSpriteList = new List<Sprite>();
+
+        private Dictionary<CursorImageData.EMouseState, Sprite> drinkSpriteDic = new Dictionary<CursorImageData.EMouseState, Sprite>();
+
         private GameObject cookImageObject;
 
         private StringBuilder logStringBuilder = new StringBuilder();
+
+        static int talkSpriteIndex = 0;
 
         //추후 사운드 매니저 혹은 리스트로 관리
 
@@ -155,6 +169,7 @@ namespace GameScene
             uiLogPanel = GameObject.FindWithTag("LogPanel");
             uiLogScrollBar = GameObject.FindWithTag("LogScrollBar");
             uiLogContent = GameObject.FindWithTag("LogContent");
+            statusName = GameObject.FindWithTag("StatusName");
             logScrollBar = uiLogScrollBar.GetComponent<Scrollbar>();
             FoodMaterialButtonMgr[] temp = foodMaterialButton.GetComponentsInChildren<FoodMaterialButtonMgr>();
             for (int i = 0; i < temp.Length; i++)
@@ -169,6 +184,26 @@ namespace GameScene
             charImg = GameObject.FindGameObjectsWithTag("CharImg");
             charImgLayer = GameObject.FindGameObjectsWithTag("CharImgLayer");
             statusArr = GameObject.FindGameObjectsWithTag("Status");
+            btnDrinks = GameObject.FindWithTag("DrinksBtn");
+
+            Sprite[] talkSprites = Resources.LoadAll<Sprite>("UI/Dialog/DialogSpriteSheet");
+            for(int i = 0; i <4;i++)
+            {
+                talkAnimationSpriteList.Add(talkSprites[i]);
+            }
+
+            Sprite[] statusSprites = Resources.LoadAll<Sprite>("UI/Text/TextSpriteSheet");
+            statusNameDic.Add("CH01", statusSprites[0]);
+            statusNameDic.Add("CH02", statusSprites[1]);
+            statusNameDic.Add("CH03", statusSprites[2]);
+            statusNameDic.Add("CH05", statusSprites[3]);
+            statusNameDic.Add("CH06", statusSprites[4]);
+
+            drinkSpriteDic.Add(CursorImageData.EMouseState.DK1, Resources.Load<Sprite>("UI/Dialog/DK1"));
+            drinkSpriteDic.Add(CursorImageData.EMouseState.DK2, Resources.Load<Sprite>("UI/Dialog/DK2"));
+            drinkSpriteDic.Add(CursorImageData.EMouseState.DK3, Resources.Load<Sprite>("UI/Dialog/DK3"));
+            drinkSpriteDic.Add(CursorImageData.EMouseState.DK4, Resources.Load<Sprite>("UI/Dialog/DK4"));
+            drinkSpriteDic.Add(CursorImageData.EMouseState.DK5, Resources.Load<Sprite>("UI/Dialog/DK5"));
             DialogLoadClassifcation(RunTimeData.RunTimeDataSet.day);
             uiCook.SetActive(false);
             uiBlack.SetActive(false);
@@ -192,6 +227,7 @@ namespace GameScene
             isBackGroundClick = false;
             isStatusLayerInteraction = false;
             runningCoroutine = null;
+            talkCoroutine = null;
             textTypeDictionary.Add("color", "size");
             textTypeDictionary.Add("size", "color");
             if (RunTimeData.RunTimeDataSet.lockMaterials.Count == 0)     //땜빵 코드 추후에 수정 int 비트플래그로 하도록하자
@@ -210,6 +246,7 @@ namespace GameScene
 
         private void Start()
         {
+            btnDrinks.SetActive(false);
             restaurant = FMODUnity.RuntimeManager.CreateInstance(eventPath);   // 이벤트 주소를 참조하여 객체 생성
             restaurant.getParameter("CookType", out CookType);         // 임시객체의 파라미터와 파라미터 변수 연동
             restaurant.getParameter("Perspective", out Perspective);         // 임시객체의 파라미터와 파라미터 변수 연동
@@ -494,25 +531,29 @@ namespace GameScene
             //{
             //    dest.GetComponent<RectTransform>().sizeDelta = new Vector2(500, 800);
             //}
-            if (id == "CH01")
-            {
-                dest.transform.SetParent(charImgLayer[1].transform);
-            }
-            else
-            {
-                dest.transform.SetParent(charImgLayer[0].transform);
-            }
+            //if (id == "CH01") 마찬가지
+            //{
+            //    dest.transform.SetParent(charImgLayer[1].transform);
+            //}
+            //else
+            //{
+            //    dest.transform.SetParent(charImgLayer[0].transform);
+            //}
         }
 
         // 덮어씌워질곳 덮어씌울오브젝트
         private void NpcImageOverwrite(GameObject dest, GameObject src)
         {
             dest.GetComponent<RawImage>().texture = src.GetComponent<RawImage>().texture;
+            Image[] temp = dest.GetComponentsInChildren<Image>();
+            dest.GetComponentInChildren<Image>().sprite = src.GetComponentInChildren<Image>().sprite;
             dest.name = src.name;
-            dest.transform.SetParent(src.transform.parent);
-            dest.GetComponent<RectTransform>().sizeDelta = src.GetComponent<RectTransform>().sizeDelta;
+            //dest.transform.SetParent(src.transform.parent);
+            //dest.GetComponent<RectTransform>().sizeDelta = src.GetComponent<RectTransform>().sizeDelta;
             StartCoroutine(ObjectFade.ObjectFadeIn(dest, fadeTime));
+            StartCoroutine(ObjectFade.ObjectSpriteFadeIn(dest.GetComponentInChildren<Image>().transform.gameObject, fadeTime));
             StartCoroutine(ObjectFade.ObjectFadeOutChange(src, fadeTime));
+            StartCoroutine(ObjectFade.ObjectSpriteFadeOutChange(src.GetComponentInChildren<Image>().transform.gameObject, fadeTime));
         }
 
         // 대사 분류
@@ -555,7 +596,7 @@ namespace GameScene
 
         private bool ButtonActiveCheck()
         {
-            return btnCook.activeSelf || btnEnd.activeSelf;
+            return btnCook.activeSelf || btnEnd.activeSelf || btnDrinks.activeSelf;
         }
 
         public static UIMgr GetUIMgr()
@@ -596,7 +637,7 @@ namespace GameScene
                 btnCook.SetActive(!btnCook.activeSelf);
                 FoodStatusUp();
             }
-            else if(!uiCook.activeSelf)
+            else if (!uiCook.activeSelf)
             {
                 Perspective.setValue(1);
                 uiDialog.SetActive(!uiDialog.activeSelf);
@@ -612,7 +653,7 @@ namespace GameScene
                 uiLogPanel.transform.SetParent(uiLogOff.transform, false);
 
             }
-            else if(!uiLog.activeSelf)
+            else if (!uiLog.activeSelf)
             {
                 uiLog.SetActive(true);
                 uiLogPanel.transform.SetParent(uiLog.transform, false);
@@ -672,7 +713,38 @@ namespace GameScene
                         NpcImageOverwrite(charImg[(int)CHARIMG.CENTER], charImg[(int)CHARIMG.LEFT]);
                     }
                     StartCoroutine(ObjectFade.ObjectFadeOut(charImg[i], fadeTime));
+                    StartCoroutine(ObjectFade.ObjectSpriteFadeOut(charImg[i].GetComponentInChildren<Image>().transform.gameObject, fadeTime));
+                    if (talkCoroutine != null)
+                        StopCoroutine(talkCoroutine);
+                    break;
                 }
+            }
+        }
+
+        public void NpcTalkCheck(string charID)
+        {
+            for(int i = 1; i <charImg.Length;i++)
+            {
+                Image[] temp = charImg[i].GetComponentsInChildren<Image>();
+                if (charImg[i].name == charID && charImg[i].activeSelf)
+                {
+                    temp[1].color = Color.white;
+                    if (talkCoroutine != null)
+                        StopCoroutine(talkCoroutine);
+                    talkCoroutine = StartCoroutine(TalkAnimation(temp[1]));
+                }
+                else if(charImg[i].activeSelf)
+                    temp[1].color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+            }
+        }
+        IEnumerator TalkAnimation(Image img)
+        {
+            while (true)
+            {
+                img.sprite = talkAnimationSpriteList[talkSpriteIndex++];
+                if (talkAnimationSpriteList.Count <= talkSpriteIndex)
+                    talkSpriteIndex = 0;
+                yield return new WaitForSeconds(0.25f);
             }
         }
 
@@ -707,7 +779,7 @@ namespace GameScene
                 LogRichTextColor(type, value);
         }
 
-        private void LogRichTextColor(string type,string value)
+        private void LogRichTextColor(string type, string value)
         {
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendFormat("<{0}={1}>", type, value);
@@ -743,7 +815,7 @@ namespace GameScene
             textOverFlowIndex++;
             if (ch == '\n')
                 textOverFlowIndex = 0;
-            else if(textOverFlowIndex >= 26)
+            else if (textOverFlowIndex >= 26)
             {
                 textStringBuilder.Insert(textIndex++, '\n');
                 textOverFlowIndex = 0;
@@ -813,7 +885,7 @@ namespace GameScene
             //uiLog.GetComponentInChildren<Text>().text = logStringBuilder.ToString();
             GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/LogText"));
             obj.GetComponent<Text>().text = string.Format("{0} : {1}", talkerName, logStringBuilder);
-            obj.transform.SetParent(uiLogContent.transform,false);
+            obj.transform.SetParent(uiLogContent.transform, false);
         }
 
         public TextStackType NextText()
@@ -825,6 +897,8 @@ namespace GameScene
             else if (textStack.Count == 0 && eventsQueue.Count > 0)
             {
                 nowEvent = eventsQueue.Dequeue();
+                statusName.GetComponent<Image>().sprite = statusNameDic[nowEvent.CharID];
+                StatusUpdate();
                 TextStackType temp = new TextStackType();
                 temp.textTypeList = new List<TextType>(DataJsonSet.TextDictionary[nowEvent.DialogID]);
                 textStack.Push(temp);
@@ -921,6 +995,8 @@ namespace GameScene
             CharDataSet.charDataDictionary[nowEvent.CharID].Status[index] = System.Convert.ToInt32(arrive);
             singleStatus[index] = System.Convert.ToInt32(arrive);
             StatusFillUpdate(index);
+            if (isStatusLayerInteraction)
+                StatusLayerUpDown();
         }
 
         private void StatusFillUpdate(int index)
@@ -931,14 +1007,37 @@ namespace GameScene
 
         public void IndexJump(int index)
         {
-            if (textStack.Peek().textTypeList.Count > index)
+            for (int i = 0; i < textStack.Peek().textTypeList.Count; i++)
             {
-                textStack.Peek().TextTypeIndex = index;
+                if (textStack.Peek().textTypeList[i].Index == index)
+                    textStack.Peek().TextTypeIndex = i;
             }
+            if (textStack.Peek().textTypeList.Count > index)
+                textStack.Peek().TextTypeIndex = index;
             foreach (GameObject obj in SelectBtnList)
             {
-                Destroy(obj);
+                if (obj.name == "Check")
+                {
+                    Destroy(obj, 1.0f);
+
+                }
+                else
+                {
+                    StartCoroutine(StatusExit(obj, 1.5f));
+                }
             }
+        }
+
+        private IEnumerator StatusExit(GameObject obj, float speed)
+        {
+            obj.GetComponent<Button>().interactable = false;
+            Vector2 v = new Vector2(1280, obj.transform.position.y);
+            while (obj.transform.position.x < 1200)
+            {
+                obj.transform.position = Vector2.Lerp(obj.transform.position, v, speed * Time.deltaTime);
+                yield return null;
+            }
+            Destroy(obj);
             SelectBtnList.Clear();
         }
 
@@ -952,7 +1051,7 @@ namespace GameScene
         {
             SelectBtnList.Add(Instantiate(Resources.Load<GameObject>("Prefebs/SelectBtn")));
             int count = SelectBtnList.Count - 1;
-            SelectBtnList[count].transform.SetParent(uiDialog.transform,false);
+            SelectBtnList[count].transform.SetParent(uiDialog.transform, false);
             SelectBtnList[count].transform.localPosition = new Vector2(655, -50 + (-80 * count));
             SelectBtnList[count].GetComponentInChildren<Text>().text = btnText;
             SelectBtnList[count].GetComponent<ButtonTrigger>().OnEvent.AddListener(() => IndexJump(index));
@@ -975,6 +1074,44 @@ namespace GameScene
             return false;
         }
 
+        public void DrinkButtonOn()
+        {
+            btnDrinks.SetActive(true);
+        }
+
+        public void DrinkButtonConfirmed()
+        {
+            for (int i = 0; i < charImg.Length; i++)
+            {
+                if (charImg[i].name == nowEvent.CharID)
+                {
+                    charImg[i].GetComponentInChildren<Image>().sprite = drinkSpriteDic[CursorImageData.currentState];
+                    CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID = CursorImageData.GetCursor();
+                    CursorImageData.SetCursor(null);
+                    StartCoroutine(ObjectFade.ObjectSpriteFadeIn(charImg[i].GetComponentInChildren<Image>().transform.gameObject, fadeTime));
+                    break;
+                }
+            }
+            btnDrinks.SetActive(false);
+        }
+
+        public void DrinkButtonDragConfirmed()
+        {
+            bool bCheck = true;
+            for (int i = 0; i < charImg.Length; i++)
+            {
+                if (charImg[i].name == nowEvent.CharID && charImg[i].GetComponent<CharTrigger>().isCharOn)
+                {
+                    bCheck = false;
+                    charImg[i].GetComponentInChildren<Image>().sprite = drinkSpriteDic[CursorImageData.currentState];
+                    CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID = CursorImageData.GetCursor();
+                    StartCoroutine(ObjectFade.ObjectSpriteFadeIn(charImg[i].GetComponentInChildren<Image>().transform.gameObject, fadeTime));
+                    break;
+                }
+            }
+            btnDrinks.SetActive(bCheck);
+        }
+
         public void StatusLayerUpDown()
         {
             if (runningCoroutine != null)
@@ -993,7 +1130,7 @@ namespace GameScene
         {
             if (runningCoroutine != null)
                 StopCoroutine(runningCoroutine);
-            runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpYDelegate(statusLayer.transform, 270.0f, 5.0f,()=>StatusUpdate()));
+            runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpYDelegate(statusLayer.transform, 270.0f, 5.0f, () => StatusUpdate()));
             isStatusLayerInteraction = true;
         }
     }

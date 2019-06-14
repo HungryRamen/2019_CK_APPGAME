@@ -20,6 +20,7 @@ namespace SheetLoad
                 textTypeReaction.TalkerName = jsonData[i]["TalkerName"].ToString();
                 textTypeReaction.StoryState = Convert.ToInt32(jsonData[i]["StoryState"].ToString());
                 string key = jsonData[i]["ID"].ToString();
+                textTypeReaction.CharId = key.Substring(0, 4);
                 if (!DataJsonSet.TextReactionDictionary.ContainsKey(key))
                 {
                     DataJsonSet.TextReactionDictionary.Add(key, new List<TextTypeRaction>());

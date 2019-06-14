@@ -24,6 +24,7 @@ namespace SheetLoad
             SheetDataTypeList.Add(new SheetLoad_Status());
             SheetDataTypeList.Add(new SheetLoad_Dlg());
             SheetDataTypeList.Add(new SheetLoad_DialogReaction());
+            SheetDataTypeList.Add(new SheetLoad_DialogCombination());
             DataAllLoad();
             IntegrityAllCheck();
             ErrorOutput();

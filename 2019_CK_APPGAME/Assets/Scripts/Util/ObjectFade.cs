@@ -44,7 +44,7 @@ namespace Util
                 fadeObj.GetComponent<RawImage>().color = tempColor;
                 yield return null;
             }
-            GameScene.UIMgr.GetUIMgr().NpcEntry();
+            GameScene.UIMgr.GetUIMgr().NpcEntry(); //이 부분 추후 수정
             fadeObj.SetActive(false);
         }
 
@@ -74,6 +74,51 @@ namespace Util
                 elapsedTime += Time.deltaTime / totalTime;
                 tempColor.a = Mathf.Lerp(startColor, 1f, elapsedTime);
                 fadeObj.GetComponent<RawImage>().color = tempColor;
+                yield return null;
+            }
+        }
+
+        public static IEnumerator ObjectSpriteFadeOut(GameObject fadeObj, float totalTime = 1f)
+        {
+            Color tempColor = fadeObj.GetComponent<Image>().color;
+            float startColor = tempColor.a;
+            float elapsedTime = 0f;
+            while (tempColor.a > 0f)
+            {
+                elapsedTime += Time.deltaTime / totalTime;
+                tempColor.a = Mathf.Lerp(startColor, 0f, elapsedTime);
+                fadeObj.GetComponent<Image>().color = tempColor;
+                yield return null;
+            }
+            fadeObj.SetActive(false);
+        }
+
+        public static IEnumerator ObjectSpriteFadeOutChange(GameObject fadeObj, float totalTime = 1f)
+        {
+            Color tempColor = fadeObj.GetComponent<Image>().color;
+            float startColor = tempColor.a;
+            float elapsedTime = 0f;
+            while (tempColor.a > 0f)
+            {
+                elapsedTime += Time.deltaTime / totalTime;
+                tempColor.a = Mathf.Lerp(startColor, 0f, elapsedTime);
+                fadeObj.GetComponent<Image>().color = tempColor;
+                yield return null;
+            }
+            //fadeObj.SetActive(false);
+        }
+
+        public static IEnumerator ObjectSpriteFadeIn(GameObject fadeObj, float totalTime = 1f)
+        {
+            fadeObj.SetActive(true);
+            Color tempColor = fadeObj.GetComponent<Image>().color;
+            float startColor = tempColor.a;
+            float elapsedTime = 0f;
+            while (tempColor.a < 1f)
+            {
+                elapsedTime += Time.deltaTime / totalTime;
+                tempColor.a = Mathf.Lerp(startColor, 1f, elapsedTime);
+                fadeObj.GetComponent<Image>().color = tempColor;
                 yield return null;
             }
         }

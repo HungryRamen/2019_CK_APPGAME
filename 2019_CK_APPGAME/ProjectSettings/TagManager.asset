@@ -25,6 +25,8 @@ TagManager:
   - LogContent
   - LogOff
   - LogPanel
+  - DrinksBtn
+  - StatusName
   layers:
   - Default
   - TransparentFX

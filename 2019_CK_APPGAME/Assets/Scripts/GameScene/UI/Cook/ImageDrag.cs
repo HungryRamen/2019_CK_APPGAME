@@ -19,8 +19,12 @@ namespace GameScene
             OffImage();
         }
 
-        public void ChangeImage(Sprite temp)
+        public void ChangeImage(Sprite temp,bool isCheck)
         {
+            if (isCheck)
+                this.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
+            else
+                this.GetComponent<RectTransform>().sizeDelta = new Vector2(60, 148);
             currentImage.sprite = temp;
             enabled = true;
             currentImage.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
@@ -29,6 +33,7 @@ namespace GameScene
 
         public void OffImage()
         {
+            currentImage.sprite = null;
             enabled = false;
             currentImage.color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
         }
@@ -49,9 +54,6 @@ namespace GameScene
             Vector3 pos = Camera.main.ScreenToViewportPoint(Input.mousePosition);
             pos.x *= rootWidth;
             pos.y *= rootHeight;
-
-            pos.x -= 65.0f;
-            pos.y += 65.0f;
             transform.position = pos;
         }
     }

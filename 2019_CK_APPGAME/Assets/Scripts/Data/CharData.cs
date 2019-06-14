@@ -13,11 +13,13 @@ namespace CharData
         int storyState;
         string eatFoodID;
         int[] status = new int[5];
+        string drinkID;
         public List<string> combinationCheck = new List<string>();
 
         public int StoryState { get => storyState; set => storyState = value; }
         public int[] Status { get => status; set => status = value; }
         public string EatFoodID { get => eatFoodID; set => eatFoodID = value; }
+        public string DrinkID { get => drinkID; set => drinkID = value; }
 
         public CharDataStructure()
         {

@@ -2,17 +2,17 @@ fileFormatVersion: 2
 guid: 26ec86d5741ff5d439ac041cce2e2e89
 TextureImporter:
   fileIDToRecycleName:
-    21300000: CookSpriteSheet_0
+    21300000: Btn_Ground
     21300002: CookSpriteSheet_1
     21300004: CookSpriteSheet_2
     21300006: CookSpriteSheet_3
     21300008: CookSpriteSheet_4
     21300010: CookSpriteSheet_5
     21300012: CookSpriteSheet_6
-    21300014: CookSpriteSheet_7
+    21300014: Btn_High
     21300016: CookSpriteSheet_8
     21300018: CookSpriteSheet_9
-    21300020: CookSpriteSheet_10
+    21300020: Btn_Disable
     21300022: CookSpriteSheet_11
     21300024: CookSpriteSheet_12
     21300026: CookSpriteSheet_13
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CookSpriteSheet_0
+      name: Btn_Ground
       rect:
         serializedVersion: 2
         x: 67
@@ -289,11 +289,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CookSpriteSheet_7
+      name: Btn_High
       rect:
         serializedVersion: 2
         x: 67
-        y: 881
+        y: 880
         width: 611
         height: 60
       alignment: 0
@@ -349,11 +349,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: CookSpriteSheet_10
+      name: Btn_Disable
       rect:
         serializedVersion: 2
-        x: 67
-        y: 793
+        x: 68
+        y: 796
         width: 611
         height: 60
       alignment: 0
@@ -552,10 +552,10 @@ TextureImporter:
       name: CookSpriteSheet_20
       rect:
         serializedVersion: 2
-        x: 492
-        y: 662
-        width: 60
-        height: 60
+        x: 494
+        y: 664
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -652,10 +652,10 @@ TextureImporter:
       name: CookSpriteSheet_25
       rect:
         serializedVersion: 2
-        x: 492
-        y: 582
-        width: 60
-        height: 60
+        x: 494
+        y: 584
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -752,10 +752,10 @@ TextureImporter:
       name: CookSpriteSheet_39
       rect:
         serializedVersion: 2
-        x: 492
-        y: 502
-        width: 60
-        height: 60
+        x: 494
+        y: 504
+        width: 56
+        height: 56
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

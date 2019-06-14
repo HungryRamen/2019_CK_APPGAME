@@ -17,7 +17,8 @@ namespace SheetLoad
             {
                 TextType textType = TextLoad(jsonData[i]["Command"].ToString(), i, "DialogStroy");
                 textType.TalkerName = jsonData[i]["TalkerName"].ToString();
-                textType.ID = jsonData[i]["CharID"].ToString();
+                textType.CharId = jsonData[i]["CharID"].ToString();
+                textType.Index = Convert.ToInt32(jsonData[i]["Index"].ToString());
                 string key = jsonData[i]["ID"].ToString();
                 if (!DataJsonSet.TextDictionary.ContainsKey(key))
                 {

@@ -24,7 +24,7 @@ namespace Util
         {
             if (foodMgr.GetState() == ESpriteState.Enable) //우클릭 && 현재상태
             {
-                imageDrag.ChangeImage(mainSprite[1].sprite);
+                imageDrag.ChangeImage(mainSprite[1].sprite,true);
             }
         }
 

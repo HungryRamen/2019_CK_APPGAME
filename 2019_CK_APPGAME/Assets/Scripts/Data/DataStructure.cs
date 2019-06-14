@@ -9,7 +9,7 @@ namespace SheetData
         public static Dictionary<string, List<TextType>> TextDictionary = new Dictionary<string, List<TextType>>(); //스토리장면을 관리하는 딕셔너리
         public static Dictionary<string, List<CharImageType>> CharImageDictionary = new Dictionary<string, List<CharImageType>>();  //캐릭터ID & 이미지를 관리하는 딕셔너리
         public static Dictionary<string, List<DayEventsType>> DayEventsDictionary = new Dictionary<string, List<DayEventsType>>();  //캐릭터ID X일차관리 딕셔너리
-        public static Dictionary<string, List<TextTypeRaction>> TextReactionDictionary = new Dictionary<string, List<TextTypeRaction>>(); //음식 리액션 장면을 관리하는 딕셔너리
+        public static Dictionary<string, List<TextTypeRaction>> TextReactionDictionary = new Dictionary<string, List<TextTypeRaction>>(); //리액션 장면을 관리하는 딕셔너리
         public static Dictionary<string, List<TriggerType>> TriggerDictionary = new Dictionary<string, List<TriggerType>>(); //트리거를 관리하는 딕셔너리
         public static Dictionary<string, LoadDataType> FoodDataDictionary = new Dictionary<string, LoadDataType>(); // 음식 데이터를 관리하는 딕셔너리
         public static Dictionary<string, LoadDataType> CookDataDictionary = new Dictionary<string, LoadDataType>(); // 조리 방법 데이터를 관리하는 딕셔너리
@@ -86,19 +86,19 @@ namespace SheetData
     public class TextType              //TextListQueue 구현용 자료구조
     {
         public Queue<DlgCmd> textQueue;    //대사큐
-        string id;              // 접근 ID
+        string charId;              // 접근 ID
         string talkerName;          //대화자
         int index;                  //순서 절댓값
 
         public TextType()
         {
-            id = "";
+            charId = "";
             talkerName = "";
             index = -1;
             textQueue = new Queue<DlgCmd>();
         }
 
-        public string ID { get => id; set => id = value; }
+        public string CharId { get => charId; set => charId = value; }
         public string TalkerName { get => talkerName; set => talkerName = value; }
         public int Index { get => index; set => index = value; }
     }

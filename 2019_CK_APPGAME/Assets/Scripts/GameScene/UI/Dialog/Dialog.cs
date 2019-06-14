@@ -57,6 +57,8 @@ namespace GameScene
             exceptionIndex = textListQueue.TextTypeIndex;
             dialogTextUI[0].text = UIMgr.GetUIMgr().textStringBuilder.ToString();
             dialogTextUI[1].text = textListQueue.textTypeList[textListQueue.TextTypeIndex].TalkerName;
+            //textListQueue.textTypeList[textListQueue.TextTypeIndex].
+            UIMgr.GetUIMgr().NpcTalkCheck(textListQueue.textTypeList[textListQueue.TextTypeIndex].CharId);
             textQueue = new Queue<DlgCmd>(textListQueue.textTypeList[textListQueue.TextTypeIndex++].textQueue);
             UIMgr.GetUIMgr().NextTextCount();
             TextDequeue();

@@ -29,6 +29,7 @@ namespace DialogCommand
                 commandDictionary.Add("스테이터스업데이트", new DlgCmd_StatusUpdate());
                 commandDictionary.Add("플레이어이름", new DlgCmd_PlayerName());
                 commandDictionary.Add("재료해금", new DlgCmd_FoodMaterialUnLock());
+                commandDictionary.Add("음료", new DlgCmd_Drink());
             }
         }
 
