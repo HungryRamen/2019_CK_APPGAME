@@ -22,11 +22,24 @@ namespace SheetLoad
             SheetDataTypeList.Add(new SheetLoad_CookData());
             SheetDataTypeList.Add(new SheetLoad_Recipe());
             SheetDataTypeList.Add(new SheetLoad_Status());
-            SheetDataTypeList.Add(new SheetLoad_Dlg());
-            SheetDataTypeList.Add(new SheetLoad_DialogReaction());
+            //SheetDataTypeList.Add(new SheetLoad_Dlg());
+            //SheetDataTypeList.Add(new SheetLoad_DialogReaction());
             SheetDataTypeList.Add(new SheetLoad_DialogCombination());
+            SheetDataTypeList.Add(new SheetLoad_SoundEvents());
+            SheetDataTypeList.Add(new SheetLoad_SoundFoodEvents());
             DataAllLoad();
             IntegrityAllCheck();
+            ErrorOutput();
+            SoundMgr.SoundMasterOn();
+            float[] sounds;
+            SaveDataUtil.SoundLoad(out sounds);
+            for (int i = 0; i < sounds.Length; i++)
+                SoundMgr.SoundMasterValueChange(i, sounds[i]);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");
+        }
+
+        private void Update()
+        {
             ErrorOutput();
         }
 

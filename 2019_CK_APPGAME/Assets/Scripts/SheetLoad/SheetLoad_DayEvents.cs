@@ -20,7 +20,12 @@ namespace SheetLoad
                 {
                     DataJsonSet.DayEventsDictionary.Add(key, new List<DayEventsType>());
                 }
-                DataJsonSet.DayEventsDictionary[key].Add(new DayEventsType(Convert.ToInt32(jsonData[i]["StoryState"].ToString()), jsonData[i]["CharID"].ToString(), jsonData[i]["DialogID"].ToString(), jsonData[i]["TriggerID"].ToString()));
+                DataJsonSet.DayEventsDictionary[key].Add(new DayEventsType(Convert.ToInt32(jsonData[i]["StoryState"].ToString()),
+                    jsonData[i]["CharID"].ToString(),
+                    jsonData[i]["DialogID"].ToString(),
+                    jsonData[i]["TriggerID"].ToString(),
+                    Convert.ToInt32(jsonData[i]["StartIndex"].ToString()),
+                    Convert.ToInt32(jsonData[i]["EndIndex"].ToString())));
             }
         }
         public override void IntegrityCheck()
@@ -28,14 +33,14 @@ namespace SheetLoad
             JsonData jsonData = SundryUtil.JsonDataLoad("/DayEvents");
             for (int i = 0; i < jsonData.Count; i++)
             {
-                if (!CharData.CharDataSet.charDataDictionary.ContainsKey(jsonData[i]["CharID"].ToString()))
-                {
-                    SundryUtil.ErrorAdd(i, "DayEvents - CharID");
-                }
-                if (!DataJsonSet.TextDictionary.ContainsKey(jsonData[i]["DialogID"].ToString()))
-                {
-                    SundryUtil.ErrorAdd(i, "DayEvents - DialogID");
-                }
+                //if (!CharData.CharDataSet.charDataDictionary.ContainsKey(jsonData[i]["CharID"].ToString()))
+                //{
+                //    SundryUtil.ErrorAdd(i, "DayEvents - CharID");
+                //}
+                //if (!DataJsonSet.TextDictionary.ContainsKey(jsonData[i]["DialogID"].ToString()))
+                //{
+                //    SundryUtil.ErrorAdd(i, "DayEvents - DialogID");
+                //}
                 if (!DataJsonSet.TriggerDictionary.ContainsKey(jsonData[i]["TriggerID"].ToString()))
                 {
                     SundryUtil.ErrorAdd(i, "DayEvents - TriggerID");

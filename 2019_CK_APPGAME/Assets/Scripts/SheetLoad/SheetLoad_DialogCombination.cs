@@ -21,11 +21,11 @@ namespace SheetLoad
                 textTypeReaction.Index = Convert.ToInt32(jsonData[i]["Index"].ToString());
                 string key = jsonData[i]["ID"].ToString();
                 textTypeReaction.CharId = key.Substring(0, 4);
-                if (!DataJsonSet.TextReactionDictionary.ContainsKey(key))
+                if (!DataJsonSet.TextCombinationReactionDictionary.ContainsKey(key))
                 {
-                    DataJsonSet.TextReactionDictionary.Add(key, new List<TextTypeRaction>());
+                    DataJsonSet.TextCombinationReactionDictionary.Add(key, new List<TextTypeRaction>());
                 }
-                DataJsonSet.TextReactionDictionary[key].Add(textTypeReaction);
+                DataJsonSet.TextCombinationReactionDictionary[key].Add(textTypeReaction);
             }
         }
 

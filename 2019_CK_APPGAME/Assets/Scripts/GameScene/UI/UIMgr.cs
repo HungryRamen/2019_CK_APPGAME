@@ -16,6 +16,12 @@ namespace GameScene
         RIGHT
     }
 
+    enum EStatus
+    {
+        Down,
+        Up,
+    }
+
     public class UIMgr : MonoBehaviour
     {
         public int textIndex;
@@ -49,6 +55,8 @@ namespace GameScene
 
         private bool isStatusLayerInteraction;
 
+        private int[] cookCurrentStatus = new int[5];
+
         private int[] currentStatus = new int[5];
 
         private float[] singleStatus = new float[5];
@@ -58,8 +66,6 @@ namespace GameScene
         private Queue<DayEventsType> eventsQueue = new Queue<DayEventsType>();
 
         public DayEventsType nowEvent;
-
-        public bool isAutoPlay;
 
         private Dictionary<string, string> textTypeDictionary = new Dictionary<string, string>();
 
@@ -76,6 +82,8 @@ namespace GameScene
         private Coroutine runningCoroutine;
 
         private Coroutine talkCoroutine;
+
+        private Coroutine cookingCoroutine;
 
         public GameObject uiBlack;
 
@@ -99,6 +107,10 @@ namespace GameScene
 
         private GameObject statusName;
 
+        private GameObject helpLayer;
+
+        private GameObject cookingLayer;
+
         private Dictionary<string, FoodMaterialButtonMgr> foodMaterialButtonDic = new Dictionary<string, FoodMaterialButtonMgr>();
 
         private Dictionary<string, Image> cookButtonDic = new Dictionary<string, Image>();
@@ -113,45 +125,23 @@ namespace GameScene
 
         private List<Sprite> talkAnimationSpriteList = new List<Sprite>();
 
+        private List<Sprite> cookingAnimationSpriteList = new List<Sprite>();
+
         private Dictionary<CursorImageData.EMouseState, Sprite> drinkSpriteDic = new Dictionary<CursorImageData.EMouseState, Sprite>();
+
+        private Dictionary<EStatus, Sprite> statusSpriteDic = new Dictionary<EStatus, Sprite>();
 
         private GameObject cookImageObject;
 
         private StringBuilder logStringBuilder = new StringBuilder();
 
-        static int talkSpriteIndex = 0;
+        private int talkSpriteIndex = 0;
 
-        //추후 사운드 매니저 혹은 리스트로 관리
+        private int cookSpriteIndex = 0;
 
-        [FMODUnity.EventRef]
-        public string eventPath;    // 재생할 이벤트 주소
-        public FMOD.Studio.EventInstance restaurant;           // 이벤트 주소로 생성할 임시객체
-        public FMOD.Studio.ParameterInstance CookType;      // 이벤트 파라미터 변수
-        public FMOD.Studio.ParameterInstance Perspective;      // 이벤트 파라미터 변수
+        private string talkerName;
 
-        [FMODUnity.EventRef]
-        public string eventPath2;    // 재생할 이벤트 주소
-        public FMOD.Studio.EventInstance voice;           // 이벤트 주소로 생성할 임시객체
-        public FMOD.Studio.ParameterInstance accent;      // 이벤트 파라미터 변수
-
-
-        [FMODUnity.EventRef]
-        public string eventPath3;    // 재생할 이벤트 주소
-        public FMOD.Studio.EventInstance entry;           // 이벤트 주소로 생성할 임시객체
-        public FMOD.Studio.ParameterInstance DoorState;      // 이벤트 파라미터 변수
-
-        [FMODUnity.EventRef]
-        public string eventPath4;    // 재생할 이벤트 주소
-        public FMOD.Studio.EventInstance unlock;           // 이벤트 주소로 생성할 임시객체
-
-        [FMODUnity.EventRef]
-        public string eventPath5;    // 재생할 이벤트 주소
-        public FMOD.Studio.EventInstance finish;           // 이벤트 주소로 생성할 임시객체
-
-        [FMODUnity.EventRef]
-        public string eventPath6;    // 재생할 이벤트 주소
-        public FMOD.Studio.EventInstance serve;           // 이벤트 주소로 생성할 임시객체
-
+        public bool isTextCancel;
         private void Awake()
         {
             uiCook = GameObject.FindWithTag("CookUI");
@@ -170,6 +160,8 @@ namespace GameScene
             uiLogScrollBar = GameObject.FindWithTag("LogScrollBar");
             uiLogContent = GameObject.FindWithTag("LogContent");
             statusName = GameObject.FindWithTag("StatusName");
+            cookingLayer = GameObject.FindWithTag("Cooking");
+            helpLayer = GameObject.FindWithTag("HelpLayer");
             logScrollBar = uiLogScrollBar.GetComponent<Scrollbar>();
             FoodMaterialButtonMgr[] temp = foodMaterialButton.GetComponentsInChildren<FoodMaterialButtonMgr>();
             for (int i = 0; i < temp.Length; i++)
@@ -187,9 +179,14 @@ namespace GameScene
             btnDrinks = GameObject.FindWithTag("DrinksBtn");
 
             Sprite[] talkSprites = Resources.LoadAll<Sprite>("UI/Dialog/DialogSpriteSheet");
-            for(int i = 0; i <4;i++)
+            for (int i = 0; i < 4; i++)
             {
                 talkAnimationSpriteList.Add(talkSprites[i]);
+            }
+
+            for(int i =1;i< 4;i++)
+            {
+                cookingAnimationSpriteList.Add(Resources.Load<Sprite>(string.Format("{0}{1}", "UI/Text/Cooking", i.ToString())));
             }
 
             Sprite[] statusSprites = Resources.LoadAll<Sprite>("UI/Text/TextSpriteSheet");
@@ -204,19 +201,27 @@ namespace GameScene
             drinkSpriteDic.Add(CursorImageData.EMouseState.DK3, Resources.Load<Sprite>("UI/Dialog/DK3"));
             drinkSpriteDic.Add(CursorImageData.EMouseState.DK4, Resources.Load<Sprite>("UI/Dialog/DK4"));
             drinkSpriteDic.Add(CursorImageData.EMouseState.DK5, Resources.Load<Sprite>("UI/Dialog/DK5"));
+
+            statusSprites = Resources.LoadAll<Sprite>("UI/Dialog/SpriteSheet3");
+            statusSpriteDic.Add(EStatus.Down, statusSprites[0]);
+            statusSpriteDic.Add(EStatus.Up, statusSprites[1]);
+
             DialogLoadClassifcation(RunTimeData.RunTimeDataSet.day);
+
             uiCook.SetActive(false);
             uiBlack.SetActive(false);
             btnCook.SetActive(false);
             btnEnd.SetActive(false);
             materialImgLeft.SetActive(false);
             materialImgRight.SetActive(false);
+            cookingLayer.SetActive(false);
+            if (RunTimeData.RunTimeDataSet.day != "1")
+                helpLayer.SetActive(false);
             for (int i = 0; i < charImg.Length; i++)
             {
                 charImg[i].SetActive(false);
             }
 
-            isAutoPlay = true;
             textStringBuilder = new StringBuilder();
             textIndex = 0;
             logTextIndex = 0;
@@ -226,19 +231,11 @@ namespace GameScene
             bChAppend = false;
             isBackGroundClick = false;
             isStatusLayerInteraction = false;
+            isTextCancel = false;
             runningCoroutine = null;
             talkCoroutine = null;
             textTypeDictionary.Add("color", "size");
             textTypeDictionary.Add("size", "color");
-            if (RunTimeData.RunTimeDataSet.lockMaterials.Count == 0)     //땜빵 코드 추후에 수정 int 비트플래그로 하도록하자
-            {
-                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM05");
-                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM07");
-                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM11");
-                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM12");
-                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM13");
-                RunTimeData.RunTimeDataSet.lockMaterials.Add("FM14");
-            }
             //Texture2D[] spritesTemp = Resources.LoadAll<Texture2D>("UI/Dialog/DialogSpriteSheet");
 
             //Cursor.SetCursor(spritesTemp[0], Vector2.zero, CursorMode.Auto);
@@ -247,25 +244,27 @@ namespace GameScene
         private void Start()
         {
             btnDrinks.SetActive(false);
-            restaurant = FMODUnity.RuntimeManager.CreateInstance(eventPath);   // 이벤트 주소를 참조하여 객체 생성
-            restaurant.getParameter("CookType", out CookType);         // 임시객체의 파라미터와 파라미터 변수 연동
-            restaurant.getParameter("Perspective", out Perspective);         // 임시객체의 파라미터와 파라미터 변수 연동
-            restaurant.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
-            restaurant.start();            // 객체 활성화(재생)
 
-            entry = FMODUnity.RuntimeManager.CreateInstance(eventPath3);   // 이벤트 주소를 참조하여 객체 생성
-            entry.getParameter("DoorState", out DoorState);         // 임시객체의 파라미터와 파라미터 변수 연동
-            entry.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
-            entry.start();            // 객체 활성화(재생)
+            SoundMgr.SoundOnStart(ESoundType.RestaurantAmb);
+            SoundMgr.SoundOnStart(ESoundType.RestaurantMusic);
+
+            SoundMgr.SoundOnStart(ESoundType.NPCEntry);
+            SoundMgr.SoundOnStart(ESoundType.Fridge);
+
+        }
+
+        public void HelpLayerOnOff()
+        {
+            helpLayer.SetActive(!helpLayer.activeSelf);
         }
 
         public void NpcEntry()
         {
             float temp;
-            DoorState.getValue(out temp);
+            SoundMgr.playSoundDic[ESoundType.NPCEntry].states[0].getValue(out temp);
             if (temp == 1)
-                DoorState.setValue(0);
-            DoorState.setValue(1);
+                SoundMgr.playSoundDic[ESoundType.NPCEntry].states[0].setValue(0);
+            SoundMgr.playSoundDic[ESoundType.NPCEntry].states[0].setValue(1);
         }
 
         public void MaterialEnterOn(string tag)
@@ -296,6 +295,10 @@ namespace GameScene
         {
             if (RunTimeData.RunTimeDataSet.lockMaterials.Contains(fmID))
                 RunTimeData.RunTimeDataSet.lockMaterials.Remove(fmID);
+        }
+
+        public void AutoOnOff()
+        {
         }
 
         public void DragImagCheck(string fm, Sprite materialSprite)
@@ -405,7 +408,7 @@ namespace GameScene
             MaterialOff("FMRight");
         }
 
-        public void MaterialOff(string tag)
+        public void MaterialOff(string tag) //
         {
             foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //전부 disable
             {
@@ -446,6 +449,23 @@ namespace GameScene
                 //    }
                 //}
                 RecipeIDCheck(CookImageCheck(cookImageObject.GetComponent<Image>().sprite));
+            }
+            CookStatusReset();
+        }
+
+        private void CookStatusReset()
+        {
+            cookCurrentStatus = CharDataSet.charDataDictionary[nowEvent.CharID].Status;
+            CookStatusFillChange();
+        }
+
+        private void CookStatusFillChange()
+        {
+            for (int i = 0; i < statusArr.Length; i++)
+            {
+                Image[] img = statusArr[i].GetComponentsInChildren<Image>();
+                img[2].fillAmount = 1.0f - cookCurrentStatus[i] / 100.0f;
+                img[1].fillAmount = cookCurrentStatus[i] / 100.0f;
             }
         }
 
@@ -559,6 +579,8 @@ namespace GameScene
         // 대사 분류
         private void DialogLoadClassifcation(string day)
         {
+            DataJsonSet.TextDictionary.Clear();
+            SheetLoad.SheetLoad_Dlg dlg = new SheetLoad.SheetLoad_Dlg();
             foreach (DayEventsType events in DataJsonSet.DayEventsDictionary[day])
             {
                 if (CharDataSet.charDataDictionary.ContainsKey(events.CharID))
@@ -566,6 +588,7 @@ namespace GameScene
                     if (CharDataSet.charDataDictionary[events.CharID].StoryState == events.StoryState)
                     {
                         eventsQueue.Enqueue(events);
+                        dlg.SheetDialogLoad(events.StartIndex,events.EndIndex);
                     }
                 }
             }
@@ -573,25 +596,63 @@ namespace GameScene
 
         public void FoodSet()
         {
-            string foodID = CookImageCheck(cookImageObject.GetComponent<Image>().sprite);
-            for (int i = 0; i < DataJsonSet.RecipeDictionary[foodID].Count; i++)
+            string cookID = CookImageCheck(cookImageObject.GetComponent<Image>().sprite);
+            for (int i = 0; i < DataJsonSet.RecipeDictionary[cookID].Count; i++)
             {
-                if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[foodID][i]].FoodMaterialID == foodMaterialSelectID[0])
+                if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookID][i]].FoodMaterialID == foodMaterialSelectID[0])
                 {
-                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[foodID][i]].FoodSubMaterialID == foodMaterialSelectID[1])
+                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookID][i]].FoodSubMaterialID == foodMaterialSelectID[1])
                     {
-                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[foodID][i];
+                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[cookID][i];
                     }
                 }
-                else if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[foodID][i]].FoodSubMaterialID == foodMaterialSelectID[0])
+                else if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookID][i]].FoodSubMaterialID == foodMaterialSelectID[0])
                 {
-                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[foodID][i]].FoodMaterialID == foodMaterialSelectID[1])
+                    if (DataJsonSet.RecipeDataDictionary[DataJsonSet.RecipeDictionary[cookID][i]].FoodMaterialID == foodMaterialSelectID[1])
                     {
-                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[foodID][i];
+                        CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID = DataJsonSet.RecipeDictionary[cookID][i];
                     }
                 }
             }
-            RunTimeData.RunTimeDataSet.cookID = foodID;
+            RunTimeData.RunTimeDataSet.cookID = cookID;
+            CookStatusCheck(DataJsonSet.StatusDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].Status);
+        }
+
+        private void CookStatusCheck(int[] changeStatus)
+        {
+            for (int i = 0; i < changeStatus.Length; i++)
+            {
+                int height = cookCurrentStatus[i] + changeStatus[i];
+                if (height < 0)
+                    height = 0;
+                else if (height > 100)
+                    height = 100;
+                if (cookCurrentStatus[i] < height)
+                {
+                    CookStatusHeightFill(i, EStatus.Up, cookCurrentStatus[i], height);
+                }
+                else if (cookCurrentStatus[i] > height)
+                {
+                    CookStatusHeightFill(i, EStatus.Down, cookCurrentStatus[i], height);
+                }
+            }
+        }
+
+        private void CookStatusHeightFill(int index, EStatus eStatus, int currentFill, int totalFill)
+        {
+            Image[] img = statusArr[index].GetComponentsInChildren<Image>();
+            img[0].sprite = statusSpriteDic[eStatus];
+            switch (eStatus)
+            {
+                case EStatus.Down:
+                    img[1].fillAmount = totalFill / 100.0f;
+                    img[2].fillAmount = 1.0f - currentFill / 100.0f;
+                    break;
+                case EStatus.Up:
+                    img[1].fillAmount = currentFill / 100.0f;
+                    img[2].fillAmount = 1.0f - totalFill / 100.0f;
+                    break;
+            }
         }
 
         private bool ButtonActiveCheck()
@@ -628,20 +689,47 @@ namespace GameScene
 
         public void ChangeUI()
         {
-            if (uiCook.activeSelf && foodMaterialSelectID[0] != null && foodMaterialSelectID[1] != null)
+            if (uiCook.activeSelf && foodMaterialSelectID[0] != null && foodMaterialSelectID[1] != null) //이 부분 제거되고 버튼 활성화 된경우닌까
             {
-                Perspective.setValue(0);
-                CookType.setValue((int)CookIDToEnum(RunTimeData.RunTimeDataSet.cookID));
+                SoundMgr.playSoundDic[ESoundType.RestaurantMusic].states[0].setValue(0);
+                SoundMgr.playSoundDic[ESoundType.RestaurantAmb].states[0].setValue((int)CookIDToEnum(RunTimeData.RunTimeDataSet.cookID));
                 uiDialog.SetActive(!uiDialog.activeSelf);
                 uiCook.SetActive(!uiCook.activeSelf);
                 btnCook.SetActive(!btnCook.activeSelf);
+                CookStatusReset();
                 FoodStatusUp();
+                CookingOn();
+                MaterialClear();
             }
             else if (!uiCook.activeSelf)
             {
-                Perspective.setValue(1);
+                SoundMgr.playSoundDic[ESoundType.RestaurantMusic].states[0].setValue(1);
                 uiDialog.SetActive(!uiDialog.activeSelf);
                 uiCook.SetActive(!uiCook.activeSelf);
+            }
+        }
+
+        private void CookingOn()
+        {
+            cookingLayer.SetActive(true);
+            cookingCoroutine = StartCoroutine(CookingImageChange());
+        }
+
+        private void CookingOff()
+        {
+            cookingLayer.SetActive(false);
+            StopCoroutine(cookingCoroutine);
+        }
+
+        private IEnumerator CookingImageChange()
+        {
+            cookSpriteIndex = 0;
+            while(true)
+            {
+                cookingLayer.GetComponent<Image>().sprite = cookingAnimationSpriteList[cookSpriteIndex++];
+                if (cookSpriteIndex >= cookingAnimationSpriteList.Count)
+                    cookSpriteIndex = 0;
+                yield return new WaitForSeconds(0.3f);
             }
         }
 
@@ -651,12 +739,15 @@ namespace GameScene
             {
                 uiLog.SetActive(false);
                 uiLogPanel.transform.SetParent(uiLogOff.transform, false);
+                SoundMgr.Stop(ESoundType.PopUp);
 
             }
             else if (!uiLog.activeSelf)
             {
+                SoundMgr.SoundOnRelease(ESoundType.Log);
                 uiLog.SetActive(true);
                 uiLogPanel.transform.SetParent(uiLog.transform, false);
+                SoundMgr.SoundOnStart(ESoundType.PopUp);
                 logScrollBar.value = 0;
             }
 
@@ -669,8 +760,10 @@ namespace GameScene
 
         public void RestroomSceneLoad()
         {
+            SoundMgr.SoundClear();
             RunTimeData.RunTimeDataSet.DayPlus();
-            UnityEngine.SceneManagement.SceneManager.LoadScene("RestroomScene");
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
+            obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("RestroomScene"));
         }
 
         public void NpcImageLoad(string id, int state)
@@ -684,9 +777,9 @@ namespace GameScene
             }
         }
 
-        public void NpcJoin(string id, int state)
+        public void NpcSoundJoin(string id, int state)
         {
-            NpcEntry();
+            isTextCancel = false;
             if (charImg[(int)CHARIMG.CENTER].activeSelf)
             {
                 NpcImageOverwrite(charImg[(int)CHARIMG.LEFT], charImg[(int)CHARIMG.CENTER]);
@@ -696,6 +789,13 @@ namespace GameScene
             {
                 NpcImageSet(charImg[(int)CHARIMG.CENTER], id, state);
             }
+        }
+
+        public void NpcJoin(string id, int state)
+        {
+            isTextCancel = true;
+            NpcEntry();
+            StartCoroutine(SoundMgr.NpcJoinCheck(() => NpcSoundJoin(id, state)));
         }
 
         public void NpcExit(string id)
@@ -723,17 +823,28 @@ namespace GameScene
 
         public void NpcTalkCheck(string charID)
         {
-            for(int i = 1; i <charImg.Length;i++)
+            for (int i = 1; i < charImg.Length; i++)
             {
+                string chID = "CH01";
+                if (charID == "한 별")
+                    chID = "CH01";
+                else if (charID == "송아연")
+                    chID = "CH02";
+                else if (charID == "우주인")
+                    chID = "CH03";
+                else if (charID == "소니아 로즈메리")
+                    chID = "CH05";
+                else if (charID == "데이브 러셀")
+                    chID = "CH06";
                 Image[] temp = charImg[i].GetComponentsInChildren<Image>();
-                if (charImg[i].name == charID && charImg[i].activeSelf)
+                if (charImg[i].name == chID && charImg[i].activeSelf)
                 {
                     temp[1].color = Color.white;
                     if (talkCoroutine != null)
                         StopCoroutine(talkCoroutine);
                     talkCoroutine = StartCoroutine(TalkAnimation(temp[1]));
                 }
-                else if(charImg[i].activeSelf)
+                else if (charImg[i].activeSelf)
                     temp[1].color = new Color(1.0f, 1.0f, 1.0f, 0.0f);
             }
         }
@@ -805,11 +916,19 @@ namespace GameScene
 
         public void ChAppend(char ch)
         {
-            voice = FMODUnity.RuntimeManager.CreateInstance(eventPath2);   // 이벤트 주소를 참조하여 객체 생성
-            //restaurant.getParameter("cooktype", out cooktype);         // 임시객체의 파라미터와 파라미터 변수 연동
-            voice.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
-            voice.start();            // 객체 활성화(재생)
-            voice.release();
+            ESoundType eSoundType = ESoundType.CH00;
+            if (talkerName == "한 별")
+                eSoundType = ESoundType.CH01;
+            else if (talkerName == "송아연")
+                eSoundType = ESoundType.CH02;
+            else if (talkerName == "우주인")
+                eSoundType = ESoundType.CH03;
+            else if (talkerName == "소니아 로즈메리")
+                eSoundType = ESoundType.CH05;
+            else if (talkerName == "데이브 러셀")
+                eSoundType = ESoundType.CH06;
+
+            SoundMgr.SoundOnRelease(eSoundType);
             textStringBuilder.Insert(textIndex++, ch);
             logStringBuilder.Insert(logTextIndex++, ch);
             textOverFlowIndex++;
@@ -826,23 +945,36 @@ namespace GameScene
 
         public void TextStackPush(List<TextTypeRaction> copy)
         {
+            if (copy == null)
+                return;
+            else if (copy.Count == 0)
+                return;
             TextStackType temp = new TextStackType();
             temp.textTypeList = new List<TextType>();
-            for (int i = 0; i < copy.Count; i++)
+            for(int i = 0; i <copy.Count;i++)
             {
-                if (nowEvent.StoryState == copy[i].StoryState)
-                    temp.textTypeList.Add(copy[i]);
+                temp.textTypeList.Add(copy[i]);
+
             }
+
+            //for (int i = 0; i < copy.Count; i++) //스토리 변수 확인
+            //{
+            //    if (nowEvent.StoryState == copy[i].StoryState)
+            //        temp.textTypeList.Add(copy[i]);
+            //}
             textStack.Push(temp);
 
         }
 
         public void FoodPopUp()
         {
-            finish = FMODUnity.RuntimeManager.CreateInstance(eventPath5);   // 이벤트 주소를 참조하여 객체 생성
-            finish.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
-            finish.start();            // 객체 활성화(재생)
-            finish.release();            // 객체 활성화(재생)
+            SoundMgr.SoundOnRelease(ESoundType.FinishSFX);
+            CookingOff();
+            SoundFoodDataType temp = DataJsonSet.SoundFoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID];
+            if(!temp.IsLoop)
+                SoundMgr.SoundOnRelease((ESoundType)temp.Index);
+            else
+                SoundMgr.SoundOnStart((ESoundType)temp.Index);
             BlackOnOff();
             Image[] img = uiBlack.GetComponentsInChildren<Image>();
             img[2].sprite = Resources.Load<Sprite>(DataJsonSet.FoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].ImageLocation);
@@ -855,10 +987,7 @@ namespace GameScene
 
         public void MaterialPopUp(string fmID)
         {
-            unlock = FMODUnity.RuntimeManager.CreateInstance(eventPath4);   // 이벤트 주소를 참조하여 객체 생성
-            unlock.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
-            unlock.start();            // 객체 활성화(재생)
-            unlock.release();            // 객체 활성화(재생)
+            SoundMgr.SoundOnRelease(ESoundType.Unlock);
             BlackOnOff();
             Image[] img = uiBlack.GetComponentsInChildren<Image>();
             img[2].sprite = Resources.Load<Sprite>(DataJsonSet.MaterialDataDictionary[fmID].ImageLocation);
@@ -871,11 +1000,17 @@ namespace GameScene
 
         public void BlackOnOff()
         {
-            serve = FMODUnity.RuntimeManager.CreateInstance(eventPath6);   // 이벤트 주소를 참조하여 객체 생성
-            serve.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(Camera.main.transform));       // 어디서 사운드가 들리는지 설정
-            serve.start();            // 객체 활성화(재생)
-            serve.release();            // 객체 활성화(재생)
-            CookType.setValue(0);
+            if(!uiBlack.activeSelf)
+            {
+                SoundMgr.SoundOnStart(ESoundType.PopUp);
+            }
+            else if(uiBlack.activeSelf)
+            {
+                SoundMgr.Stop(ESoundType.PopUp);
+                SoundMgr.Stop();
+            }
+            SoundMgr.SoundOnRelease(ESoundType.Plate);
+            SoundMgr.playSoundDic[ESoundType.RestaurantAmb].states[0].setValue(0);
             uiBlack.SetActive(!uiBlack.activeSelf);
         }
 
@@ -908,6 +1043,7 @@ namespace GameScene
             textIndex = 0;
             logTextIndex = 0;
             textOverFlowIndex = 0;
+            talkerName = textStack.Peek().textTypeList[textStack.Peek().TextTypeIndex].TalkerName;
             return textStack.Peek();
         }
 
@@ -979,13 +1115,15 @@ namespace GameScene
                     check = 0;
                 else if (check > 100)
                     check = 100;
-                StartCoroutine(StatusLerp(check, 1.0f, i));
+                if (CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] != System.Convert.ToInt32(check))
+                    StartCoroutine(StatusLerp(check, 1.0f, i));
             }
         }
 
 
         private IEnumerator StatusLerp(float arrive, float speed, int index)
         {
+            SoundMgr.SoundOnRelease(ESoundType.StatusUpdate);
             while (Mathf.Abs(arrive - singleStatus[index]) > 1f)
             {
                 singleStatus[index] = Mathf.Lerp(singleStatus[index], arrive, speed * Time.deltaTime);
@@ -1001,8 +1139,9 @@ namespace GameScene
 
         private void StatusFillUpdate(int index)
         {
-            Image img = statusArr[index].GetComponentInChildren<Image>();
-            img.fillAmount = 1.0f - singleStatus[index] / 100.0f;
+            Image[] img = statusArr[index].GetComponentsInChildren<Image>();
+            img[2].fillAmount = 1.0f - singleStatus[index] / 100.0f;
+            img[1].fillAmount = singleStatus[index] / 100.0f;
         }
 
         public void IndexJump(int index)
@@ -1010,19 +1149,29 @@ namespace GameScene
             for (int i = 0; i < textStack.Peek().textTypeList.Count; i++)
             {
                 if (textStack.Peek().textTypeList[i].Index == index)
+                {
                     textStack.Peek().TextTypeIndex = i;
+                    break;
+                }
             }
-            if (textStack.Peek().textTypeList.Count > index)
-                textStack.Peek().TextTypeIndex = index;
+            //if (textStack.Peek().textTypeList.Count < index)
+            //    textStack.Peek().TextTypeIndex = index;
             foreach (GameObject obj in SelectBtnList)
             {
                 if (obj.name == "Check")
                 {
                     Destroy(obj, 1.0f);
-
+                    if (SelectBtnList.Count == 1)
+                    {
+                        SelectBtnList.Clear();
+                        return;
+                    }
                 }
                 else
                 {
+                    obj.GetComponent<ButtonTrigger>().enabled = false;
+                    obj.GetComponent<SelectTrigger>().enabled = false;
+                    obj.GetComponent<Button>().enabled = false;
                     StartCoroutine(StatusExit(obj, 1.5f));
                 }
             }
@@ -1055,6 +1204,7 @@ namespace GameScene
             SelectBtnList[count].transform.localPosition = new Vector2(655, -50 + (-80 * count));
             SelectBtnList[count].GetComponentInChildren<Text>().text = btnText;
             SelectBtnList[count].GetComponent<ButtonTrigger>().OnEvent.AddListener(() => IndexJump(index));
+            SoundMgr.SoundOnRelease(ESoundType.Selectionln);
         }
 
         public bool ScreenReaction()
@@ -1076,6 +1226,8 @@ namespace GameScene
 
         public void DrinkButtonOn()
         {
+            SoundMgr.playSoundDic[ESoundType.Fridge].states[0].setValue(0);
+            SoundMgr.playSoundDic[ESoundType.Fridge].states[0].setValue(1);
             btnDrinks.SetActive(true);
         }
 
@@ -1087,12 +1239,13 @@ namespace GameScene
                 {
                     charImg[i].GetComponentInChildren<Image>().sprite = drinkSpriteDic[CursorImageData.currentState];
                     CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID = CursorImageData.GetCursor();
+                    DrinkSound();
                     CursorImageData.SetCursor(null);
                     StartCoroutine(ObjectFade.ObjectSpriteFadeIn(charImg[i].GetComponentInChildren<Image>().transform.gameObject, fadeTime));
                     break;
                 }
             }
-            btnDrinks.SetActive(false);
+            DrinkButtonOff();
         }
 
         public void DrinkButtonDragConfirmed()
@@ -1105,25 +1258,62 @@ namespace GameScene
                     bCheck = false;
                     charImg[i].GetComponentInChildren<Image>().sprite = drinkSpriteDic[CursorImageData.currentState];
                     CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID = CursorImageData.GetCursor();
+                    DrinkSound();
                     StartCoroutine(ObjectFade.ObjectSpriteFadeIn(charImg[i].GetComponentInChildren<Image>().transform.gameObject, fadeTime));
                     break;
                 }
             }
-            btnDrinks.SetActive(bCheck);
+            if (bCheck)
+                return;
+            DrinkButtonOff();
+        }
+
+        private void DrinkButtonOff()
+        {
+            SoundMgr.playSoundDic[ESoundType.Fridge].states[0].setValue(2);
+            btnDrinks.SetActive(false);
+        }
+
+        private void DrinkSound()
+        {
+            if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK1")
+            {
+                SoundMgr.SoundOnRelease(ESoundType.DK01);
+            }
+            else if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK2")
+            {
+                SoundMgr.SoundOnRelease(ESoundType.DK02);
+            }
+            else if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK3")
+            {
+                SoundMgr.SoundOnRelease(ESoundType.DK03);
+            }
+            else if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK4")
+            {
+                SoundMgr.SoundOnRelease(ESoundType.DK04);
+            }
+            else if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK5")
+            {
+                SoundMgr.SoundOnRelease(ESoundType.DK05);
+            }
         }
 
         public void StatusLayerUpDown()
         {
+            SoundMgr.SoundOn(ESoundType.Status);
             if (runningCoroutine != null)
                 StopCoroutine(runningCoroutine);
             if (isStatusLayerInteraction)
             {
                 runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpY(statusLayer.transform, 810.0f, 5.0f));
+                SoundMgr.playSoundDic[ESoundType.Status].states[0].setValue(1);
             }
             else
             {
                 runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpY(statusLayer.transform, 270.0f, 5.0f));
+                SoundMgr.playSoundDic[ESoundType.Status].states[0].setValue(0);
             }
+            SoundMgr.Release(ESoundType.Status);
             isStatusLayerInteraction = !isStatusLayerInteraction;
         }
         public void StatusLayerDown()

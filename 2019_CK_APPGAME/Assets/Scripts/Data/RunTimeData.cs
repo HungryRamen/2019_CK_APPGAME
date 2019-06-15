@@ -12,6 +12,8 @@ namespace RunTimeData
 
         public static string cookID = "";
 
+        public static bool isSaveLoad = false;
+
         public static void DayPlus()
         {
             day = (Convert.ToInt32(day) + 1).ToString();

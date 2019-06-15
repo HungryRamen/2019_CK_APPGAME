@@ -1,0 +1,22 @@
+{
+  "CH01" : {
+    "StartIndex" : 0,
+    "EndIndex" : 159
+  },
+  "CH02" : {
+    "StartIndex" : 160,
+    "EndIndex" : 278
+  },
+  "CH03" : {
+    "StartIndex" : 279,
+    "EndIndex" : 308
+  },
+  "CH05" : {
+    "StartIndex" : 309,
+    "EndIndex" : 420
+  },
+  "CH06" : {
+    "StartIndex" : 421,
+    "EndIndex" : 533
+  }
+}

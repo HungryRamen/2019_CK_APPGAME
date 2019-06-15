@@ -11,8 +11,8 @@ TextureImporter:
     21300012: SpriteSheet3_25
     21300014: SpriteSheet3_26
     21300016: SpriteSheet3_27
-    21300018: SpriteSheet3_28
-    21300020: SpriteSheet3_29
+    21300018: 01
+    21300020: 02
     21300022: SpriteSheet3_30
     21300024: SpriteSheet3_31
   externalObjects: {}
@@ -237,7 +237,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet3_28
+      name: 01
       rect:
         serializedVersion: 2
         x: 1846
@@ -257,7 +257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheet3_29
+      name: 02
       rect:
         serializedVersion: 2
         x: 1881

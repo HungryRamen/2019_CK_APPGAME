@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+
 namespace Util
 {
 
@@ -15,21 +17,31 @@ namespace Util
         public MyEventType OnEvent;
         public void OnPointerEnter(PointerEventData eventData)
         {
-            SoundMgr.BtState.setValue(0);
-            SoundMgr.SoundOn();
+            SoundMgr.SoundOn(SheetData.ESoundType.PublicButton);
+            SoundMgr.playSoundDic[SheetData.ESoundType.PublicButton].states[0].setValue(0);
+            SoundMgr.Release(SheetData.ESoundType.PublicButton);
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            SoundMgr.BtState.setValue(1);
-            SoundMgr.SoundOn();
+            SoundMgr.SoundOn(SheetData.ESoundType.PublicButton);
+            SoundMgr.playSoundDic[SheetData.ESoundType.PublicButton].states[0].setValue(1);
+            SoundMgr.Release(SheetData.ESoundType.PublicButton);
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            SoundMgr.BtState.setValue(2);
-            SoundMgr.SoundOn();
-            OnEvent.Invoke();
+            SoundMgr.SoundOn(SheetData.ESoundType.PublicButton);
+            SoundMgr.playSoundDic[SheetData.ESoundType.PublicButton].states[0].setValue(2);
+            SoundMgr.Release(SheetData.ESoundType.PublicButton);
+            if(GetComponent<Button>() != null)
+            {
+                if(GetComponent<Button>().interactable)
+                    OnEvent.Invoke();
+            }
+            else if(GetComponent<Button>() == null)
+                OnEvent.Invoke();
+
         }
     }
 }

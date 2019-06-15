@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DialogCommand;
+using System.Collections;
 
 namespace GameScene
 {
@@ -28,7 +29,7 @@ namespace GameScene
 
         private void Start()
         {
-            NextText();
+            //NextText();
         }
 
         private void Update()
@@ -41,6 +42,7 @@ namespace GameScene
             if (bTextFullLoad && UIMgr.GetUIMgr().ScreenReaction())
             {
                 UIMgr.GetUIMgr().LogTextAppend(dialogTextUI[1].text);
+                Util.SoundMgr.SoundOnRelease(ESoundType.Next);
                 NextText();
             }
             else if (!bTextFullLoad)
@@ -49,7 +51,6 @@ namespace GameScene
             }
             dialogTextUI[0].text = UIMgr.GetUIMgr().textStringBuilder.ToString();
         }
-
         private void NextText()
         {
             bTextFullLoad = false;
@@ -58,9 +59,9 @@ namespace GameScene
             dialogTextUI[0].text = UIMgr.GetUIMgr().textStringBuilder.ToString();
             dialogTextUI[1].text = textListQueue.textTypeList[textListQueue.TextTypeIndex].TalkerName;
             //textListQueue.textTypeList[textListQueue.TextTypeIndex].
-            UIMgr.GetUIMgr().NpcTalkCheck(textListQueue.textTypeList[textListQueue.TextTypeIndex].CharId);
+            UIMgr.GetUIMgr().NpcTalkCheck(textListQueue.textTypeList[textListQueue.TextTypeIndex].TalkerName);
             textQueue = new Queue<DlgCmd>(textListQueue.textTypeList[textListQueue.TextTypeIndex++].textQueue);
-            UIMgr.GetUIMgr().NextTextCount();
+            //UIMgr.GetUIMgr().NextTextCount();
             TextDequeue();
         }
 
@@ -79,7 +80,7 @@ namespace GameScene
         {
             try
             {
-                if (UIMgr.GetUIMgr().uiLog.activeSelf == true)  //로그창을 보고있으면 멈춘다.
+                if (UIMgr.GetUIMgr().uiLog.activeSelf == true || UIMgr.GetUIMgr().isTextCancel == true)  //로그창을 보고있으면 멈춘다.
                     return;
                 if (bPass)
                 {
@@ -110,7 +111,7 @@ namespace GameScene
             while (textQueue.Count > 0)
             {
                 textQueue.Dequeue().CommandPerform(false);
-                if (UIMgr.GetUIMgr().bChAppend)
+                if (UIMgr.GetUIMgr().bChAppend || UIMgr.GetUIMgr().isTextCancel)
                 {
                     break;
                 }

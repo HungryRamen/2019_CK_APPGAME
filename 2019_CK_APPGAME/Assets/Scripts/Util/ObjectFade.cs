@@ -37,6 +37,7 @@ namespace Util
             Color tempColor = fadeObj.GetComponent<RawImage>().color;
             float startColor = tempColor.a;
             float elapsedTime = 0f;
+            GameScene.UIMgr.GetUIMgr().isTextCancel = true;
             while (tempColor.a > 0f)
             {
                 elapsedTime += Time.deltaTime / totalTime;
@@ -45,6 +46,7 @@ namespace Util
                 yield return null;
             }
             GameScene.UIMgr.GetUIMgr().NpcEntry(); //이 부분 추후 수정
+            GameScene.UIMgr.GetUIMgr().isTextCancel = false;
             fadeObj.SetActive(false);
         }
 

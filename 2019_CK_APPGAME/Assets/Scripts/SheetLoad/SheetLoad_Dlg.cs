@@ -15,7 +15,8 @@ namespace SheetLoad
             JsonData jsonData = SundryUtil.JsonDataLoad("/DialogStory");
             for (int i = 0; i < jsonData.Count; i++)
             {
-                TextType textType = TextLoad(jsonData[i]["Command"].ToString(), i, "DialogStroy");
+
+                TextType textType = TextLoad(jsonData[i]["Command"].ToString(), i, "DialogStory");
                 textType.TalkerName = jsonData[i]["TalkerName"].ToString();
                 textType.CharId = jsonData[i]["CharID"].ToString();
                 textType.Index = Convert.ToInt32(jsonData[i]["Index"].ToString());
@@ -25,6 +26,26 @@ namespace SheetLoad
                     DataJsonSet.TextDictionary.Add(key, new List<TextType>());
                 }
                 DataJsonSet.TextDictionary[key].Add(textType);
+
+            }
+        }
+
+        public void SheetDialogLoad(int startIndex,int endIndex)
+        {
+            JsonData jsonData = SundryUtil.JsonDataLoad("/DialogStory");
+            for (int i = startIndex - 1; i <= endIndex - 1; i++)
+            {
+                string key = jsonData[i]["ID"].ToString();
+                TextType textType = TextLoad(jsonData[i]["Command"].ToString(), i, "DialogStory");
+                textType.TalkerName = jsonData[i]["TalkerName"].ToString();
+                textType.CharId = jsonData[i]["CharID"].ToString();
+                textType.Index = Convert.ToInt32(jsonData[i]["Index"].ToString());
+                if (!DataJsonSet.TextDictionary.ContainsKey(key))
+                {
+                    DataJsonSet.TextDictionary.Add(key, new List<TextType>());
+                }
+                DataJsonSet.TextDictionary[key].Add(textType);
+
             }
         }
 
@@ -53,14 +74,14 @@ namespace SheetLoad
                         }
                         else
                         {
-                            DlgCmdDictionary.commandDictionary[array[0]].CommandAdd(array[1],listIndex);
+                            DlgCmdDictionary.commandDictionary[array[0]].CommandAdd(array[1], listIndex);
                             textType.textQueue.Enqueue(DlgCmdDictionary.commandDictionary[array[0]].Copy());
                         }
                         i += num - i;
                     }
                     else
                     {
-                        DlgCmdDictionary.commandDictionary["ch"].CommandAdd(str[i].ToString(),listIndex);
+                        DlgCmdDictionary.commandDictionary["ch"].CommandAdd(str[i].ToString(), listIndex);
                         textType.textQueue.Enqueue(DlgCmdDictionary.commandDictionary["ch"].Copy());
                     }
                 }

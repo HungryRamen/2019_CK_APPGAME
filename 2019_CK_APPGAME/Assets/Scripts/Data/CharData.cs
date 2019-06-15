@@ -28,31 +28,19 @@ namespace CharData
             {
                 status[i] = 0;
             }
-            //combinationCheck.Add("FD_IDDK_ID");
-            //combinationCheck.Add("FD_IDDK_ID2");
         }
 
         public CharDataStructure(JsonData jsonData,string key)
         {
-            storyState = Convert.ToInt32(jsonData[key]["StoryState"].ToString());
-            for (int i = 0; i < jsonData[key]["Status"].Count; i++)
+            storyState = Convert.ToInt32(jsonData["dataDic"][key]["StoryState"].ToString());
+            for (int i = 0; i < jsonData["dataDic"][key]["Status"].Count; i++)
             {
-                status[i] = Convert.ToInt32(jsonData[key]["Status"][i].ToString());
+                status[i] = Convert.ToInt32(jsonData["dataDic"][key]["Status"][i].ToString());
             }
-            for(int i = 0; i <jsonData[key]["combinationCheck"].Count; i++)
+            for(int i = 0; i <jsonData["dataDic"][key]["combinationCheck"].Count; i++)
             {
-                combinationCheck.Add(jsonData[key]["combinationCheck"][i].ToString());
+                combinationCheck.Add(jsonData["dataDic"][key]["combinationCheck"][i].ToString());
             }
-        }
-
-        public CharDataStructure(CharDataStructure copy)
-        {
-            storyState = copy.storyState;
-            for(int i = 0; i < copy.status.Length; i++)
-            {
-                status[i] = copy.status[i];
-            }
-            combinationCheck = new List<string>(copy.combinationCheck);
         }
     }
 }

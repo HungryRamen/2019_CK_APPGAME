@@ -10,7 +10,7 @@
     "Index" : 2,
     "ID" : "FD02",
     "ImageLocation" : "FoodImg/FD_02",
-    "Name" : "닭도리탕",
+    "Name" : "닭도리탕/닭볶음탕",
     "Description" : "닭고기를 먹기 좋은 크기로 잘라 매콤한 양념과 함께 조린 요리."
   },
   "2" : {
@@ -25,21 +25,21 @@
     "ID" : "FD04",
     "ImageLocation" : "FoodImg/FD_04",
     "Name" : "치킨&소스",
-    "Description" : "튀긴 치킨. 별도로 소스를 작은 접시에 담아서 그려주세요"
+    "Description" : "바삭하고 맛있는 국민 배달음식. 매일 먹던 그 요리다."
   },
   "4" : {
     "Index" : 5,
     "ID" : "FD05",
     "ImageLocation" : "FoodImg/FD_05",
     "Name" : "스노윙 치킨",
-    "Description" : "치킨 위에 눈을 퍼부운 비주얼. 폭설이 몰아치는 듯한 느낌의 장식들(이글루, 눈사람, 침엽수 등)"
+    "Description" : "역대급 한파에 시달리고 있는 치킨의 모습이다."
   },
   "5" : {
     "Index" : 6,
     "ID" : "FD06",
     "ImageLocation" : "FoodImg/FD_06",
     "Name" : "생선 소금구이",
-    "Description" : "평범한 생선 소금구이. 시간이 된다면 생선구이 정식처럼 된장국+반찬+밥도 같이 나와도 좋겠습니다."
+    "Description" : "담백하고 소박한, 부담되지 않는 음식. 평범하지만, 편안한 음식이다."
   },
   "6" : {
     "Index" : 7,
@@ -74,55 +74,139 @@
     "ID" : "FD11",
     "ImageLocation" : "FoodImg/FD_11",
     "Name" : "김치찌개",
-    "Description" : "김치와 고기를 각종 채소와 함께 끓여낸 찌개.\n매콤새콤한 한국인의 소울푸드"
+    "Description" : "김치와 고기를 각종 채소와 함께 끓여낸 찌개.\n매콤새콤한 한국인의 소울푸드."
   },
   "11" : {
+    "Index" : 12,
+    "ID" : "FD12",
+    "ImageLocation" : "FoodImg/FD_12",
+    "Name" : "돼지국밥",
+    "Description" : "배를 든든하게 채워주는 근면성실의 음식. 마! 그돈이면 국밥 두그릇은 사먹겠다! 오늘도 국밥 내일도 국밥."
+  },
+  "12" : {
+    "Index" : 13,
+    "ID" : "FD13",
+    "ImageLocation" : "FoodImg/FD_13",
+    "Name" : "오븐 통삼겹 구이",
+    "Description" : "부드러운 속살에 풍부한 고기맛의 먹음직스러운 요리. 단백질이 풍부하지만, 운동을 해야 근육이 될 것이다."
+  },
+  "13" : {
+    "Index" : 14,
+    "ID" : "FD14",
+    "ImageLocation" : "FoodImg/FD_14",
+    "Name" : "수박 스테이크",
+    "Description" : "부드럽고 따뜻하고 행복한 단맛의 요리. 파인애플 게섯거라."
+  },
+  "14" : {
     "Index" : 15,
     "ID" : "FD15",
     "ImageLocation" : "FoodImg/FD_15",
     "Name" : "수박화채",
     "Description" : "동그랗게 파내느라 힘들었습니다."
   },
-  "12" : {
+  "15" : {
+    "Index" : 16,
+    "ID" : "FD16",
+    "ImageLocation" : "FoodImg/FD_16",
+    "Name" : "수박국밥",
+    "Description" : "수분이 풍부한 수박으로 만든 해장국밥. \"이론상\"으로는 완벽한 음식."
+  },
+  "16" : {
+    "Index" : 17,
+    "ID" : "FD17",
+    "ImageLocation" : "FoodImg/FD_17",
+    "Name" : "수박튀김",
+    "Description" : "수분덩이리인 수박을 튀길 생각을 하다니. 실험 정신은 높게 쳐드리겠습니다."
+  },
+  "17" : {
     "Index" : 18,
     "ID" : "FD18",
     "ImageLocation" : "FoodImg/FD_18",
     "Name" : "수박케이크",
-    "Description" : "포인트는 수박의 색(빨강/초록)과 생크림의 대조"
+    "Description" : "케익에 과일이 적어서 아쉽다는 분들을 위해 빵대신 과일을 가지고 케익을 만들었습니다."
   },
-  "13" : {
+  "18" : {
+    "Index" : 19,
+    "ID" : "FD19",
+    "ImageLocation" : "FoodImg/FD_19",
+    "Name" : "과녁으로 희생당한 수박",
+    "Description" : "수박에게 명복을 빌어주세요."
+  },
+  "19" : {
+    "Index" : 20,
+    "ID" : "FD20",
+    "ImageLocation" : "FoodImg/FD_20",
+    "Name" : "가죽 신발 튀김",
+    "Description" : "튀김은 신발을 튀겨도 맛있다."
+  },
+  "20" : {
+    "Index" : 21,
+    "ID" : "FD21",
+    "ImageLocation" : "FoodImg/FD_21",
+    "Name" : "가죽신발 총알팝콘",
+    "Description" : "바삭한 탄피와 톡톡 터지는 화약이 졸음을 깨우고 정신을 빠릿하게 해 준다. 체하지 않게 꼭꼭 씹어 먹자."
+  },
+  "21" : {
     "Index" : 22,
     "ID" : "FD22",
     "ImageLocation" : "FoodImg/FD_22",
     "Name" : "김치케이크",
     "Description" : "???: 김치와 케이크는 어울리는 조합입니다."
   },
-  "14" : {
+  "22" : {
+    "Index" : 23,
+    "ID" : "FD23",
+    "ImageLocation" : "FoodImg/FD_23",
+    "Name" : "물김치",
+    "Description" : "너무 맵다고요? 물에 씻어드렸습니다."
+  },
+  "23" : {
     "Index" : 24,
     "ID" : "FD24",
     "ImageLocation" : "FoodImg/FD_24",
     "Name" : "미네랄 워터",
     "Description" : "H2O"
   },
-  "15" : {
+  "24" : {
     "Index" : 25,
     "ID" : "FD25",
     "ImageLocation" : "FoodImg/FD_25",
     "Name" : "눈 튀김",
-    "Description" : "눈사람 얼굴을 튀긴 이미지 귀엽고 좋아용 ㅋㅋ"
+    "Description" : "바삭한 튀김을 씹으면, 시원하고 부드러운 눈이 사르르 녹는다. 끊임없이 먹을 수 있을것만 같은 음식."
   },
-  "16" : {
+  "25" : {
     "Index" : 26,
     "ID" : "FD26",
     "ImageLocation" : "FoodImg/FD_26",
     "Name" : "조화를 이룬 튀김",
-    "Description" : "눈 튀김을 용암에 퐁듀처럼 찍어먹거나 부먹하는 음식. 용암이 뜨거워서 비명지르는 표정의 눈사람 있어도 재밌겠네요."
+    "Description" : "좋게 말하면 음과 양의 조화를 이룬 탕평의 음식. 나쁘게 말하면 극단과 극단이 만난 음식. 체하지 않게 조심!"
   },
-  "17" : {
+  "26" : {
     "Index" : 27,
     "ID" : "FD27",
     "ImageLocation" : "FoodImg/FD_27",
     "Name" : "수증기",
     "Description" : "한잔 하시고 진정하세요."
+  },
+  "27" : {
+    "Index" : 28,
+    "ID" : "FD28",
+    "ImageLocation" : "FoodImg/FD_28",
+    "Name" : "건전지 고추볶음",
+    "Description" : "매콤하고 짜릿한 채소 볶음. 철분이 풍부하다."
+  },
+  "28" : {
+    "Index" : 29,
+    "ID" : "FD29",
+    "ImageLocation" : "FoodImg/FD_29",
+    "Name" : "방사성 총알구이",
+    "Description" : "짜릿하고 치명적인 맛. 현실을 비관하면서 질겅질겅 씹어 먹을 안주가 필요하다면, 이 요리가 제격이다."
+  },
+  "29" : {
+    "Index" : 30,
+    "ID" : "FD30",
+    "ImageLocation" : "FoodImg/FD_30",
+    "Name" : "고기로 속을 채운 건전지 구이",
+    "Description" : "이것은 전기로 구운 고기인가 구인 전기인가 구운 건전지인가."
   }
 }

@@ -27,6 +27,9 @@ TagManager:
   - LogPanel
   - DrinksBtn
   - StatusName
+  - Cooking
+  - HelpLayer
+  - AutoButton
   layers:
   - Default
   - TransparentFX

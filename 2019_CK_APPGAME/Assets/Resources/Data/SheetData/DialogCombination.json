@@ -4,27 +4,27 @@
     "ID" : "CH01_FD02_DK1T",
     "TalkerName" : "한 별",
     "StoryState" : 0,
-    "Command" : "테스트 성공"
+    "Command" : "테스트 성공{종료}"
   },
   "1" : {
     "Index" : 0,
     "ID" : "CH01_FD02_DK1T",
     "TalkerName" : "한 별",
     "StoryState" : 1,
-    "Command" : "테스트 성공"
+    "Command" : "테스트 성공{종료}"
   },
   "2" : {
     "Index" : 0,
     "ID" : "CH01_FD02_DK1F",
     "TalkerName" : "한 별",
     "StoryState" : 0,
-    "Command" : "테스트 성공"
+    "Command" : "테스트 성공{종료}"
   },
   "3" : {
     "Index" : 0,
     "ID" : "CH01_FD02_DK1F",
     "TalkerName" : "한 별",
     "StoryState" : 1,
-    "Command" : "테스트 성공"
+    "Command" : "테스트 성공{종료}"
   }
 }

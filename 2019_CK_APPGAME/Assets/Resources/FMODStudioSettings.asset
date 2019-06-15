@@ -60,8 +60,8 @@ MonoBehaviour:
   MasterBanks:
   - Master Bank
   Banks:
-  - RestRoom
+  - Calender
   - Public
   - Restaurant
-  - Load
+  - Main
   LiveUpdatePort: 9264
