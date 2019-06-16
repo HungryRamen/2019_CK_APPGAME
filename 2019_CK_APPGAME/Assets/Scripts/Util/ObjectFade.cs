@@ -92,7 +92,7 @@ namespace Util
                 fadeObj.GetComponent<Image>().color = tempColor;
                 yield return null;
             }
-            fadeObj.SetActive(false);
+            //fadeObj.SetActive(false);
         }
 
         public static IEnumerator ObjectSpriteFadeOutChange(GameObject fadeObj, float totalTime = 1f)

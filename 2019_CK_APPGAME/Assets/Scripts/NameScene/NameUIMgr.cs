@@ -10,7 +10,9 @@ public class NameUIMgr : MonoBehaviour
     public Text nameText;
     private void Awake()
     {
+        RunTimeDataSet.day = "1";
         RunTimeDataSet.lockMaterials.Clear();
+        RunTimeDataSet.lockMaterials.Add("FM04");
         RunTimeDataSet.lockMaterials.Add("FM05");
         RunTimeDataSet.lockMaterials.Add("FM07");
         RunTimeDataSet.lockMaterials.Add("FM11");

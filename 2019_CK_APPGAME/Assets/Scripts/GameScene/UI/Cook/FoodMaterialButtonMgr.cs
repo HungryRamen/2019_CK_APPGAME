@@ -18,8 +18,10 @@ namespace GameScene
         private ESpriteState currentState = ESpriteState.Enable;
         private Image imageMain;
         private RectTransform[] material;
+        bool isWakeCheck = false;
         private void Awake()
         {
+            isWakeCheck = true;
             imageMain = GetComponent<Image>();
             Sprite[] temp = Resources.LoadAll<Sprite>("UI/Dialog/SpriteSheet2");
             material = GetComponentsInChildren<RectTransform>();
@@ -35,6 +37,22 @@ namespace GameScene
                     return;
                 }
             }
+            SetState(ESpriteState.Enable);
+        }
+
+        public void Restart()
+        {
+            if (!isWakeCheck)
+                return;
+            for (int i = 0; i < RunTimeData.RunTimeDataSet.lockMaterials.Count; i++)
+            {
+                if (name == RunTimeData.RunTimeDataSet.lockMaterials[i])
+                {
+                    SetState(ESpriteState.None);
+                    return;
+                }
+            }
+            currentState = ESpriteState.Enable;
             SetState(ESpriteState.Enable);
         }
 

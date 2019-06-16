@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 using SheetData;
+using System.Text;
 namespace Util
 {
     public static class SundryUtil //기타 유틸
@@ -41,6 +42,29 @@ namespace Util
                 num = temp.IndexOf("::");
             }
             return queue;
+        }
+
+        public static void ErrorOutput()
+        {
+#if UNITY_EDITOR
+            for (int i = 0; i < SundryUtil.errorList.Count; i++)
+            {
+                Debug.LogFormat("WorkSheetName: {0}\nSheetIndex: {1}", SundryUtil.errorList[i].WorkSheetName, SundryUtil.errorList[i].Index);
+            }
+#else
+            string path = Application.dataPath + "/Error/";
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
+            FileStream fs = new FileStream(path + "Error.txt", FileMode.Create, FileAccess.Write);
+            StreamWriter wr = new StreamWriter(fs, Encoding.UTF8);
+            for (int i = 0; i < SundryUtil.errorList.Count; i++)
+            {
+                wr.WriteLine("WorkSheetName: {0}", SundryUtil.errorList[i].WorkSheetName);
+                wr.WriteLine("SheetIndex: {0}", SundryUtil.errorList[i].Index);
+            }
+            wr.Close();
+            fs.Close();
+#endif
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Util
 {
 
 
-    public class DrinkTrigger : MonoBehaviour , IPointerClickHandler,IBeginDragHandler, IEndDragHandler, IDragHandler
+    public class DrinkTrigger : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerDownHandler, IPointerUpHandler
     {
         public ImageDrag imageDrag;
 
@@ -21,7 +21,7 @@ namespace Util
         public void OnBeginDrag(PointerEventData eventData)
         {
             CursorImageData.SetCursor(name);
-            imageDrag.ChangeImage(CursorImageData.cursorSpriteDic[CursorImageData.currentState],false);
+            imageDrag.ChangeImage(CursorImageData.cursorSpriteDic[CursorImageData.currentState], false);
 
         }
         public void OnDrag(PointerEventData eventData)
@@ -44,5 +44,12 @@ namespace Util
             }
         }
 
+        public void OnPointerDown(PointerEventData eventData)
+        {
+        }
+
+        public void OnPointerUp(PointerEventData eventData)
+        {
+        }
     }
 }

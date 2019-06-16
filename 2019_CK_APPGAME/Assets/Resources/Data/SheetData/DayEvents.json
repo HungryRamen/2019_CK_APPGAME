@@ -146,7 +146,7 @@
   "16" : {
     "Day" : 5,
     "CharID" : "CH03",
-    "StoryState" : 0,
+    "StoryState" : 1,
     "DialogID" : "CH03_TEST02",
     "TriggerID" : "CH03_T01",
     "StartIndex" : 1507,
@@ -299,7 +299,7 @@
   "33" : {
     "Day" : 7,
     "CharID" : "CH03",
-    "StoryState" : 0,
+    "StoryState" : 1,
     "DialogID" : "CH03_TEST03",
     "TriggerID" : "CH03_T01",
     "StartIndex" : 1508,
@@ -308,7 +308,7 @@
   "34" : {
     "Day" : 8,
     "CharID" : "CH03",
-    "StoryState" : 0,
+    "StoryState" : 1,
     "DialogID" : "CH03_TEST04",
     "TriggerID" : "CH03_T01",
     "StartIndex" : 1509,
@@ -398,7 +398,7 @@
   "44" : {
     "Day" : 9,
     "CharID" : "CH03",
-    "StoryState" : 0,
+    "StoryState" : 1,
     "DialogID" : "CH03_TEST05",
     "TriggerID" : "CH03_T01",
     "StartIndex" : 1510,

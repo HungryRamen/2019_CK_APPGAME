@@ -35,8 +35,9 @@ namespace SheetLoad
             JsonData jsonData = SundryUtil.JsonDataLoad("/DialogStory");
             for (int i = startIndex - 1; i <= endIndex - 1; i++)
             {
+
                 string key = jsonData[i]["ID"].ToString();
-                TextType textType = TextLoad(jsonData[i]["Command"].ToString(), i, "DialogStory");
+                TextType textType = TextLoad(jsonData[i]["Command"].ToString(), i + 1, "DialogStory");
                 textType.TalkerName = jsonData[i]["TalkerName"].ToString();
                 textType.CharId = jsonData[i]["CharID"].ToString();
                 textType.Index = Convert.ToInt32(jsonData[i]["Index"].ToString());
@@ -90,6 +91,7 @@ namespace SheetLoad
             catch (NullReferenceException message)
             {
                 UnityEngine.Debug.Log(message);
+                SundryUtil.ErrorAdd(listIndex, workSheetName);
                 return textType;
             }
         }

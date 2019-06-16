@@ -29,18 +29,13 @@ namespace SheetLoad
             SheetDataTypeList.Add(new SheetLoad_SoundFoodEvents());
             DataAllLoad();
             IntegrityAllCheck();
-            ErrorOutput();
+            SundryUtil.ErrorOutput();
             SoundMgr.SoundMasterOn();
             float[] sounds;
             SaveDataUtil.SoundLoad(out sounds);
             for (int i = 0; i < sounds.Length; i++)
                 SoundMgr.SoundMasterValueChange(i, sounds[i]);
             UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");
-        }
-
-        private void Update()
-        {
-            ErrorOutput();
         }
 
         private void DataAllLoad()
@@ -57,29 +52,6 @@ namespace SheetLoad
             {
                 SheetDataTypeList[i].IntegrityCheck();
             }
-        }
-
-        private void ErrorOutput()
-        {
-#if UNITY_EDITOR
-            for (int i = 0; i < SundryUtil.errorList.Count; i++)
-            {
-                Debug.LogFormat("WorkSheetName: {0}\nSheetIndex: {1}", SundryUtil.errorList[i].WorkSheetName, SundryUtil.errorList[i].Index);
-            }
-#else
-            string path = Application.dataPath + "/Error/";
-            if (!Directory.Exists(path))
-                Directory.CreateDirectory(path);
-            FileStream fs = new FileStream(path + "Error.txt", FileMode.Create, FileAccess.Write);
-            StreamWriter wr = new StreamWriter(fs, Encoding.UTF8);
-            for (int i = 0; i < SundryUtil.errorList.Count; i++)
-            {
-                wr.WriteLine("WorkSheetName: {0}", SundryUtil.errorList[i].WorkSheetName);
-                wr.WriteLine("SheetIndex: {0}", SundryUtil.errorList[i].Index);
-            }
-            wr.Close();
-            fs.Close();
-#endif
         }
     }
 }

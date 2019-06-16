@@ -22,15 +22,17 @@ public class SaveUIMgr : MonoBehaviour
 
     public void SaveLoad(string indexPath)
     {
+        bool bCheck = true;
         if(RunTimeData.RunTimeDataSet.isSaveLoad)  // true = Save
         {
             Util.SaveDataUtil.Save(indexPath);
         }
         else if(!RunTimeData.RunTimeDataSet.isSaveLoad) // false = Load
         {
-            Util.SaveDataUtil.Load(indexPath);
+            bCheck = Util.SaveDataUtil.Load(indexPath);
         }
-        Return();
+        if(bCheck)
+            Return();
     }
 
     public void Return()

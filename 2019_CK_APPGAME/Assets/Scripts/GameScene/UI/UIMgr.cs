@@ -294,7 +294,13 @@ namespace GameScene
         public void MaterialUnLock(string fmID)
         {
             if (RunTimeData.RunTimeDataSet.lockMaterials.Contains(fmID))
+            {
                 RunTimeData.RunTimeDataSet.lockMaterials.Remove(fmID);
+                foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //일단 전부 disable
+                {
+                    obj.Restart();
+                }
+            }
         }
 
         public void AutoOnOff()
@@ -581,16 +587,25 @@ namespace GameScene
         {
             DataJsonSet.TextDictionary.Clear();
             SheetLoad.SheetLoad_Dlg dlg = new SheetLoad.SheetLoad_Dlg();
-            foreach (DayEventsType events in DataJsonSet.DayEventsDictionary[day])
+            try
             {
-                if (CharDataSet.charDataDictionary.ContainsKey(events.CharID))
+
+                foreach (DayEventsType events in DataJsonSet.DayEventsDictionary[day])
                 {
-                    if (CharDataSet.charDataDictionary[events.CharID].StoryState == events.StoryState)
+                    if (CharDataSet.charDataDictionary.ContainsKey(events.CharID))
                     {
-                        eventsQueue.Enqueue(events);
-                        dlg.SheetDialogLoad(events.StartIndex,events.EndIndex);
+                        if (CharDataSet.charDataDictionary[events.CharID].StoryState == events.StoryState)
+                        {
+                            eventsQueue.Enqueue(events);
+                            dlg.SheetDialogLoad(events.StartIndex, events.EndIndex);
+                        }
                     }
                 }
+            }
+            catch(System.Exception e)
+            {
+                Debug.Log(e);
+                SundryUtil.ErrorOutput();
             }
         }
 
@@ -1016,6 +1031,8 @@ namespace GameScene
 
         public void LogTextAppend(string talkerName)
         {
+            if (talkerName == "" || talkerName == null)
+                return;
             //logStringBuilder.AppendFormat("{0} : {1}\n", talkerName,textStringBuilder);
             //uiLog.GetComponentInChildren<Text>().text = logStringBuilder.ToString();
             GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/LogText"));
