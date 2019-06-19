@@ -1,0 +1,3740 @@
+{
+  "0" : {
+    "ID" : "CH01_FD01",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}아 닭꼬치네요."
+  },
+  "1" : {
+    "ID" : "CH01_FD01",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "항상 생각하는건데, 왜 굳이 닭을 작게 토막내고 또 꼬챙이에 끼워서 굽는걸까요?"
+  },
+  "2" : {
+    "ID" : "CH01_FD01",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "다른 방법으로도 충분히 굽거나 불맛을 줄 수 있을 텐데, 무슨 차이가 있는지 모르겠어요."
+  },
+  "3" : {
+    "ID" : "CH01_FD01",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그런데 또 막상 먹으면 그냥 구운거하고는 맛이 다르단 말이죠?"
+  },
+  "4" : {
+    "ID" : "CH01_FD01",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "먹는 방법 때문에 그런걸까…"
+  },
+  "5" : {
+    "ID" : "CH01_FD01",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "…"
+  },
+  "6" : {
+    "ID" : "CH01_FD01",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::3}…음! 맛있네요!{스테이터스업데이트}"
+  },
+  "7" : {
+    "ID" : "CH01_FD01",
+    "Index" : 8,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::}간도 적당하고, 담백해서 맛있어요!{종료}"
+  },
+  "8" : {
+    "ID" : "CH01_FD02",
+    "Index" : 0,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "많이 맵지는 않죠? 저 매운걸 잘 못 먹는 편이거든요."
+  },
+  "9" : {
+    "ID" : "CH01_FD02",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그나저나 이 요리 이름을 뭐라고 부르시나요? 닭도리탕이랑 닭볶음탕 중에.{선택지::닭볶음탕::2}{선택지::닭도리탕::8}"
+  },
+  "10" : {
+    "ID" : "CH01_FD02",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그거 때문이죠? 일제의 잔재로 생긴 이름이라는거. 저도 중학생 때인가 학교에서도 배웠던거 같아요."
+  },
+  "11" : {
+    "ID" : "CH01_FD02",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그런데 닭도리탕이 일제 때문에 생긴 잘못된 말이 아니라 순 우리말이라는 이야기도 있더라고요."
+  },
+  "12" : {
+    "ID" : "CH01_FD02",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "도려내다'나 '도리다','도려치다' 라는 단어가 사용된 거라고 하면서, 일제합병기 이전에 조선시대 문헌에서도 '닭도리탕'이라는 이름이 나온다고 하더라고요."
+  },
+  "13" : {
+    "ID" : "CH01_FD02",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "생각해 보면, 닭'볶음'탕이라고 하기에는, 요리 과정에서 닭을 볶는 과정도 없지 않나요?"
+  },
+  "14" : {
+    "ID" : "CH01_FD02",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "전 닭도리탕이라고 하고 다니는 편인데.. 사실 어떻게 쓰든 무슨 상관인가 싶기도 해요. 이곳저곳에서 다 닭볶음탕이라고 하기도 하고... 어쩌면 제가 틀린 거일수도 있잖아요?"
+  },
+  "15" : {
+    "ID" : "CH01_FD02",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "아무튼, 말은 그만하고 이제 먹어 볼까요?{점프::10}"
+  },
+  "16" : {
+    "ID" : "CH01_FD02",
+    "Index" : 8,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "저도 닭도리탕이라고 말해요."
+  },
+  "17" : {
+    "ID" : "CH01_FD02",
+    "Index" : 9,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "일본어로 새를 뜻하는 '도리'에서 비롯된 잘못된 말이라고 말하기도 하지만, 오히려 닭도리탕은 순 우리말이 맞다고 하는 주장도 있거든요. 그리고 근거도 나쁘지 않았구요.{점프::4}"
+  },
+  "18" : {
+    "ID" : "CH01_FD02",
+    "Index" : 10,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "…......{스테이터스업데이트}"
+  },
+  "19" : {
+    "ID" : "CH01_FD02",
+    "Index" : 11,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "스읍......하아...."
+  },
+  "20" : {
+    "ID" : "CH01_FD02",
+    "Index" : 12,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "좀…쓰읍…맵네요…하하… 이 정도면 괜찮..쓰읍..괜찮아요"
+  },
+  "21" : {
+    "ID" : "CH01_FD02",
+    "Index" : 13,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "어후 땀까지 나네"
+  },
+  "22" : {
+    "ID" : "CH01_FD02",
+    "Index" : 14,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "하아....좀 어지럽지만 확실히 스트레스는 풀리는 느낌이에요.{종료}"
+  },
+  "23" : {
+    "ID" : "CH01_FD03",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::5}엇… 이게 뭐죠…"
+  },
+  "24" : {
+    "ID" : "CH01_FD03",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "보기만 해도 매워보이는데… 먹어도 괜찮은거에요?"
+  },
+  "25" : {
+    "ID" : "CH01_FD03",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "……"
+  },
+  "26" : {
+    "ID" : "CH01_FD03",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::4}{색상::red}{화면흔들기::1}으아악! 매워!!{색상::}{흔들기끝}"
+  },
+  "27" : {
+    "ID" : "CH01_FD03",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "으… 맛은 있는데 너무 매워요….{스테이터스업데이트}"
+  },
+  "28" : {
+    "ID" : "CH01_FD03",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01:::5}…"
+  },
+  "29" : {
+    "ID" : "CH01_FD03",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}이걸 다 먹으려면 물 두 통은 필요할 것 같아요.{종료}"
+  },
+  "30" : {
+    "ID" : "CH01_FD04",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}아, 치킨이군요."
+  },
+  "31" : {
+    "ID" : "CH01_FD04",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "…음~{스테이터스업데이트}"
+  },
+  "32" : {
+    "ID" : "CH01_FD04",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "치킨은 참 너무 자주 시켜먹는게 아닌가 싶기도 하지만, 먹을 때마다 맛있기는 하네요.{종료}"
+  },
+  "33" : {
+    "ID" : "CH01_FD05",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::3}와! 귀엽네요!"
+  },
+  "34" : {
+    "ID" : "CH01_FD05",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}그러고 보면 항상 치킨은 뭔가 변화를 내려고 노력하는거 같아요."
+  },
+  "35" : {
+    "ID" : "CH01_FD05",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "몇 년 전이었나.. 어디에서 여름맞이 \"냉치킨\"을 팔았었는데 말이죠…"
+  },
+  "36" : {
+    "ID" : "CH01_FD05",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "물론 망했던걸로 기억하는데… 이건 어떤지 먹어볼까요?"
+  },
+  "37" : {
+    "ID" : "CH01_FD05",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "…{스테이터스업데이트}"
+  },
+  "38" : {
+    "ID" : "CH01_FD05",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "맛은 있는데… 역시 뭔가 치킨이 차갑다는건 이상하네요."
+  },
+  "39" : {
+    "ID" : "CH01_FD05",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "상성이 안맞는다고 해야하나…{종료}"
+  },
+  "40" : {
+    "ID" : "CH01_FD06",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}음… 이건 의외로 오랜만에 먹는 음식이네요."
+  },
+  "41" : {
+    "ID" : "CH01_FD06",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "고향에서 지낼 적에는 가끔 어머니께서 해주시기도 했는데,"
+  },
+  "42" : {
+    "ID" : "CH01_FD06",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "생선을 사오기도 귀찮고, 집에 냄새가 베기도 해서 요리해 먹지를 않았거든요."
+  },
+  "43" : {
+    "ID" : "CH01_FD06",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "…{스테이터스업데이트}"
+  },
+  "44" : {
+    "ID" : "CH01_FD06",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "담백하니 맛도 좋네요.{종료}"
+  },
+  "45" : {
+    "ID" : "CH01_FD07",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}아, 잘먹을게요."
+  },
+  "46" : {
+    "ID" : "CH01_FD07",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "전 매운걸 잘 못 먹는 편인데, 이건 적당히 매콤하니 괜찮네요. 고마워요.{스테이터스업데이트}{종료}"
+  },
+  "47" : {
+    "ID" : "CH01_FD08",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::6}윽......!"
+  },
+  "48" : {
+    "ID" : "CH01_FD08",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "이걸 먹으라고요...?"
+  },
+  "49" : {
+    "ID" : "CH01_FD08",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "….............................."
+  },
+  "50" : {
+    "ID" : "CH01_FD08",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "….............................."
+  },
+  "51" : {
+    "ID" : "CH01_FD08",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "읍....! 으읍......! 큽!...!!{스테이터스업데이트}"
+  },
+  "52" : {
+    "ID" : "CH01_FD08",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "으윽...."
+  },
+  "53" : {
+    "ID" : "CH01_FD08",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}저..전 이정도만 먹어도 충분할 것 같아요.{종료}"
+  },
+  "54" : {
+    "ID" : "CH01_FD09",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::3}와! 이거 그거네요!"
+  },
+  "55" : {
+    "ID" : "CH01_FD09",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "영국보다 한국에서 더 유명한 영국음식!"
+  },
+  "56" : {
+    "ID" : "CH01_FD09",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}그런데 상상한 것 보다 괜찮게 생겼네요. 역시 인터넷에 있던 사진은 과장된 거였던가 봐요."
+  },
+  "57" : {
+    "ID" : "CH01_FD09",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "음…."
+  },
+  "58" : {
+    "ID" : "CH01_FD09",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::5}흐음…..{스테이터스업데이트}"
+  },
+  "59" : {
+    "ID" : "CH01_FD09",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "음…… 뭐라고 해야 할까… 생선 맛이 나는데… 파이인데…"
+  },
+  "60" : {
+    "ID" : "CH01_FD09",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "맛이 없는 것도 아니고 있는 것도 아니고…"
+  },
+  "61" : {
+    "ID" : "CH01_FD09",
+    "Index" : 8,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}뭐, 그래도 먹을만 하네요! 좋은 경험이에요.{종료}"
+  },
+  "62" : {
+    "ID" : "CH01_FD10",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::3}와! 스테이크네요?"
+  },
+  "63" : {
+    "ID" : "CH01_FD10",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}고마워요. 잘 먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "64" : {
+    "ID" : "CH01_FD11",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}아, 김치찌개군요."
+  },
+  "65" : {
+    "ID" : "CH01_FD11",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}고마워요. 잘 먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "66" : {
+    "ID" : "CH01_FD12",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}고마워요. 잘 먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "67" : {
+    "ID" : "CH01_FD13",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}오븐으로 한 요리인가요?"
+  },
+  "68" : {
+    "ID" : "CH01_FD13",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "우리나라는 오븐으로 요리를 해 먹는 경우가 거의 없으니 뭐랄까.."
+  },
+  "69" : {
+    "ID" : "CH01_FD13",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "되게 희귀한 음식이네요 이건."
+  },
+  "70" : {
+    "ID" : "CH01_FD13",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "음… 맛도 괜찮네요.{스테이터스업데이트}"
+  },
+  "71" : {
+    "ID" : "CH01_FD13",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "고마워요. 잘 먹을게요.{종료}"
+  },
+  "72" : {
+    "ID" : "CH01_FD14",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}수박을 구워 먹는 날이 오게 될 줄이야…"
+  },
+  "73" : {
+    "ID" : "CH01_FD14",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "이거, 구운 수박을 보니 이 질문을 할 수 밖에 없네요."
+  },
+  "74" : {
+    "ID" : "CH01_FD14",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "구운 파인애플 좋아하세요?{선택지::네::11}{선택지::아니요. 그런걸 왜 먹죠?::21}"
+  },
+  "75" : {
+    "ID" : "CH01_FD14",
+    "Index" : 11,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}맛잘알이시네요.{점프::51}"
+  },
+  "76" : {
+    "ID" : "CH01_FD14",
+    "Index" : 21,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::5}흠…"
+  },
+  "77" : {
+    "ID" : "CH01_FD14",
+    "Index" : 22,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그러면 구운 수박은 좋아하세요?{선택지::네…::31}{선택지::그것도 좀…::41}"
+  },
+  "78" : {
+    "ID" : "CH01_FD14",
+    "Index" : 31,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "흠…"
+  },
+  "79" : {
+    "ID" : "CH01_FD14",
+    "Index" : 32,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}그러면 인정해 드릴게요.{점프::51}"
+  },
+  "80" : {
+    "ID" : "CH01_FD14",
+    "Index" : 41,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::5}그렇다면 저에게 왜 이런 음식을 주신 거죠?"
+  },
+  "81" : {
+    "ID" : "CH01_FD14",
+    "Index" : 42,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "……"
+  },
+  "82" : {
+    "ID" : "CH01_FD14",
+    "Index" : 43,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}농담이에요."
+  },
+  "83" : {
+    "ID" : "CH01_FD14",
+    "Index" : 51,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "전 구운 파인애플 좋아해요."
+  },
+  "84" : {
+    "ID" : "CH01_FD14",
+    "Index" : 52,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::3}어디 구운 수박은 어떤 맛일까…음..음음…{스테이터스업데이트}"
+  },
+  "85" : {
+    "ID" : "CH01_FD14",
+    "Index" : 53,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}음… 뭐랄까, 파인애플하고는 되게 다르네요."
+  },
+  "86" : {
+    "ID" : "CH01_FD14",
+    "Index" : 54,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "단맛이 덜해서 그런가, 좀 더…고기랑 비슷한 것 같기도 하고.."
+  },
+  "87" : {
+    "ID" : "CH01_FD14",
+    "Index" : 55,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "아무튼, 먹을만 한 것 같아요.{종료}"
+  },
+  "88" : {
+    "ID" : "CH01_FD15",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}수박 화채라…"
+  },
+  "89" : {
+    "ID" : "CH01_FD15",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "혼자서 해 먹기는 조금 부담되는 음식이죠. 친구들하고 종종 해 먹고는 했는데…"
+  },
+  "90" : {
+    "ID" : "CH01_FD15",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "되게 오랜만이네요. 잘 먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "91" : {
+    "ID" : "CH01_FD16",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05}이건…"
+  },
+  "92" : {
+    "ID" : "CH01_FD16",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "…......"
+  },
+  "93" : {
+    "ID" : "CH01_FD16",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06}윽…"
+  },
+  "94" : {
+    "ID" : "CH01_FD16",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "따뜻한 국물에 차가운 수박… 아삭한 식감과 부드러운 밥… 짭잘한 국물에 달달한 과육…"
+  },
+  "95" : {
+    "ID" : "CH01_FD16",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "이건…{스테이터스업데이트}"
+  },
+  "96" : {
+    "ID" : "CH01_FD16",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "한번쯤 먹어보는 것도 만화에 참고가 될 것같기는 하지만"
+  },
+  "97" : {
+    "ID" : "CH01_FD16",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "다음부터는 이 요리는 안 주셔도 될 것 같아요.{종료}"
+  },
+  "98" : {
+    "ID" : "CH01_FD17",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::3}오 이건 신기하네요."
+  },
+  "99" : {
+    "ID" : "CH01_FD17",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "바로 먹어볼까..음…"
+  },
+  "100" : {
+    "ID" : "CH01_FD17",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::5}음…{스테이터스업데이트}"
+  },
+  "101" : {
+    "ID" : "CH01_FD17",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}바삭한 튀김을 베어물면 아삭하고 달콤한 과육이 있는 것 까지는 괜찮은데"
+  },
+  "102" : {
+    "ID" : "CH01_FD17",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "수박의 과즙 때문에 튀김옷이 젖어버리는 부분 부터가 고비네요."
+  },
+  "103" : {
+    "ID" : "CH01_FD17",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그 부분만 넘기면 그럭저거 괜찮은 음식인 것 같아요.{종료}"
+  },
+  "104" : {
+    "ID" : "CH01_FD18",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}하하, 케이크라니{스테이터스업데이트}"
+  },
+  "105" : {
+    "ID" : "CH01_FD18",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "뭐, 꼭 생일에만 먹으라는 법은 없으니까요. 잘먹겠습니다.{종료}"
+  },
+  "106" : {
+    "ID" : "CH01_FD19",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}음…{스테이터스업데이트}"
+  },
+  "107" : {
+    "ID" : "CH01_FD19",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::5}상당히…심오한…철학적인 수박 자르는 법이네요…"
+  },
+  "108" : {
+    "ID" : "CH01_FD19",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "정확히 무슨 의도였는지는 모르겠지만..."
+  },
+  "109" : {
+    "ID" : "CH01_FD19",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{플레이어이름}씨의 예술성을 존중 해 드릴게요.{종료}"
+  },
+  "110" : {
+    "ID" : "CH01_FD20",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}가죽 신발 튀김…!"
+  },
+  "111" : {
+    "ID" : "CH01_FD20",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::5}음..음… 그렇군…{스테이터스업데이트}"
+  },
+  "112" : {
+    "ID" : "CH01_FD20",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}맛은 있는데, 먹다 보면 가죽을 너무 오래 씹게 되네요."
+  },
+  "113" : {
+    "ID" : "CH01_FD20",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "싸구려 술집의 오징어 튀김 안주 같은 느낌…?"
+  },
+  "114" : {
+    "ID" : "CH01_FD20",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그래도 그거랑은 다르게 맛있으니까, 잘 먹을게요.{종료}"
+  },
+  "115" : {
+    "ID" : "CH01_FD21",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}이 팝콘은 그래도 영화관 팝콘보다는 훨씬 알차 보이네요."
+  },
+  "116" : {
+    "ID" : "CH01_FD21",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "영화관 팝콘을 먹을 때면, 재료값이 얼마나 든다고 이리 비싼가… 하는 생각이 들잖아요."
+  },
+  "117" : {
+    "ID" : "CH01_FD21",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그럼, 잘먹겠습니다.{스테이터스업데이트}{종료}"
+  },
+  "118" : {
+    "ID" : "CH01_FD22",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::6}…..."
+  },
+  "119" : {
+    "ID" : "CH01_FD22",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "대체 어쩌다 달달한 생크림하고 김치를 함께 요리할 생각을 하신 거죠?"
+  },
+  "120" : {
+    "ID" : "CH01_FD22",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::5}그래도 일단은 먹어 볼게요."
+  },
+  "121" : {
+    "ID" : "CH01_FD22",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "…..."
+  },
+  "122" : {
+    "ID" : "CH01_FD22",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "…..."
+  },
+  "123" : {
+    "ID" : "CH01_FD22",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::1}…...{스테이터스업데이트}"
+  },
+  "124" : {
+    "ID" : "CH01_FD22",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}흠… 생각보다 먹을만 하네요?"
+  },
+  "125" : {
+    "ID" : "CH01_FD22",
+    "Index" : 8,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "자칫 느끼해질 수 있는 맛을 김치가 잡아주는 것 같아요.{종료}"
+  },
+  "126" : {
+    "ID" : "CH01_FD23",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}하하… 제가 매운걸 못먹긴 해도 김치는 괜찮은데….{스테이터스업데이트}"
+  },
+  "127" : {
+    "ID" : "CH01_FD23",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "그래도 해 주신 거니까 감사히 잘 먹을게요.{종료}"
+  },
+  "128" : {
+    "ID" : "CH01_FD24",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}음…! 컵에 물이 반이나…."
+  },
+  "129" : {
+    "ID" : "CH01_FD24",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "...반보다 더 들어있네요.{스테이터스업데이트}"
+  },
+  "130" : {
+    "ID" : "CH01_FD24",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{종료}"
+  },
+  "131" : {
+    "ID" : "CH01_FD25",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}후후.. 사실 전 이거와 비슷한 음식을 예전에 본 적이 있습니다."
+  },
+  "132" : {
+    "ID" : "CH01_FD25",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "아이스크림 튀김을 먹어봤거든요."
+  },
+  "133" : {
+    "ID" : "CH01_FD25",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::7}무슨 과학적인 원리로 튀김못만 튀겨지고 아이스크림은 안 녹는다고 했는데.. 그거까지는 기억이 안나네요"
+  },
+  "134" : {
+    "ID" : "CH01_FD25",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}이건 아이스크림 튀김하고 어떻게 다른지 한번 먹어 볼게요."
+  },
+  "135" : {
+    "ID" : "CH01_FD25",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "음…! 괜찮네요.{스테이터스업데이트}"
+  },
+  "136" : {
+    "ID" : "CH01_FD25",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "아이스크림 튀김은 기름기 가득한 튀김에 달달한 아이스크림까지 있어서 정말 간식이다 하는 느낌이고 조금은 부담스러웠는데,"
+  },
+  "137" : {
+    "ID" : "CH01_FD25",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "이건 좀 더 담백하고 가볍게 먹을 수 있어서, 더 좋은 것 같아요.{종료}"
+  },
+  "138" : {
+    "ID" : "CH01_FD26",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::5}음… 일단 먹어 볼까요…"
+  },
+  "139" : {
+    "ID" : "CH01_FD26",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "음…."
+  },
+  "140" : {
+    "ID" : "CH01_FD26",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::4}스으읍…."
+  },
+  "141" : {
+    "ID" : "CH01_FD26",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::7}…으음?"
+  },
+  "142" : {
+    "ID" : "CH01_FD26",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::6}…으윽….!!"
+  },
+  "143" : {
+    "ID" : "CH01_FD26",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::1}…..."
+  },
+  "144" : {
+    "ID" : "CH01_FD26",
+    "Index" : 7,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::2}…...{스테이터스업데이트}"
+  },
+  "145" : {
+    "ID" : "CH01_FD26",
+    "Index" : 8,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}뭐… 먹을만 하네요. 자세한건 노코멘트 할게요…{종료}"
+  },
+  "146" : {
+    "ID" : "CH01_FD27",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}한별이 알려주는 오늘의 리빙포인트"
+  },
+  "147" : {
+    "ID" : "CH01_FD27",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "건조한 날에 가습기가 없다면,"
+  },
+  "148" : {
+    "ID" : "CH01_FD27",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "젖은 수건을 널어 놓으면 된다!!{스테이터스업데이트}{종료}"
+  },
+  "149" : {
+    "ID" : "CH01_FD28",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}오우, 이건…"
+  },
+  "150" : {
+    "ID" : "CH01_FD28",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "채소 볶음이니 건강에 좋을 거 같다고 하기엔 다른 재료가 뭔가…."
+  },
+  "151" : {
+    "ID" : "CH01_FD28",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "음… 그래도 잘 먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "152" : {
+    "ID" : "CH01_FD29",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::3}와! 되게 신기하게 생긴 요리네요."
+  },
+  "153" : {
+    "ID" : "CH01_FD29",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "바로 한번 먹어볼게요! 음…"
+  },
+  "154" : {
+    "ID" : "CH01_FD29",
+    "Index" : 3,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::6}…..."
+  },
+  "155" : {
+    "ID" : "CH01_FD29",
+    "Index" : 4,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::1}…...{스테이터스업데이트}"
+  },
+  "156" : {
+    "ID" : "CH01_FD29",
+    "Index" : 5,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}겉모습만으로 무언가를 판단해서는 안되지만,"
+  },
+  "157" : {
+    "ID" : "CH01_FD29",
+    "Index" : 6,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "겉모습이 중요한 정보를 주기도 한다는 사실을 배울 수 있었네요.{종료}"
+  },
+  "158" : {
+    "ID" : "CH01_FD30",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}재미있는 요리네요.{스테이터스업데이트}"
+  },
+  "159" : {
+    "ID" : "CH01_FD30",
+    "Index" : 2,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{종료}"
+  },
+  "160" : {
+    "ID" : "CH02_FD01",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}고기를 꼬치에 하나하나 끼워넣는게 번거로우셨을텐데…{스테이터스업데이트}"
+  },
+  "161" : {
+    "ID" : "CH02_FD01",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "맛있게 먹을게요.{종료}"
+  },
+  "162" : {
+    "ID" : "CH02_FD02",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}아, 닭볶음탕…이네요. 잘먹겠습니다.{스테이터스업데이트}{종료}"
+  },
+  "163" : {
+    "ID" : "CH02_FD03",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}음... 신기한 음식이네요."
+  },
+  "164" : {
+    "ID" : "CH02_FD03",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}......{스테이터스업데이트}"
+  },
+  "165" : {
+    "ID" : "CH02_FD03",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}헤헤… 매콤하니 맛있네요. 잘먹을게요.{종료}"
+  },
+  "166" : {
+    "ID" : "CH02_FD04",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::4}앗. 치킨… 얼마 전에도 먹었었는데."
+  },
+  "167" : {
+    "ID" : "CH02_FD04",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "…"
+  },
+  "168" : {
+    "ID" : "CH02_FD04",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::2}앗 죄송해유! 그게 아니라…"
+  },
+  "169" : {
+    "ID" : "CH02_FD04",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}치..치킨은 언제 먹어도 맛있거든요. 잘먹을게유{스테이터스업데이트}{종료}"
+  },
+  "170" : {
+    "ID" : "CH02_FD05",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}헤헤… 눈사람이 귀엽네요.{스테이터스업데이트}"
+  },
+  "171" : {
+    "ID" : "CH02_FD05",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{종료}"
+  },
+  "172" : {
+    "ID" : "CH02_FD06",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}잘먹겠습니다."
+  },
+  "173" : {
+    "ID" : "CH02_FD06",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "…..."
+  },
+  "174" : {
+    "ID" : "CH02_FD06",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "…....{스테이터스업데이트}"
+  },
+  "175" : {
+    "ID" : "CH02_FD06",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::2}…...!! 앗! 그…"
+  },
+  "176" : {
+    "ID" : "CH02_FD06",
+    "Index" : 5,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}제가… 생선 눈알을 빼먹는 습관이 있는디…"
+  },
+  "177" : {
+    "ID" : "CH02_FD06",
+    "Index" : 6,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::5}별로… 이상하지는 않…않죠?"
+  },
+  "178" : {
+    "ID" : "CH02_FD06",
+    "Index" : 7,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::7}잘먹을게요…{종료}"
+  },
+  "179" : {
+    "ID" : "CH02_FD07",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}헤헤… 저 내장탕 되게 좋아하는데…"
+  },
+  "180" : {
+    "ID" : "CH02_FD07",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "주변에 식당도 없고 같이 갈만한 사람이나 기회도 없어서 그동안 못먹었거든요."
+  },
+  "181" : {
+    "ID" : "CH02_FD07",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "잘먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "182" : {
+    "ID" : "CH02_FD08",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}…...."
+  },
+  "183" : {
+    "ID" : "CH02_FD08",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}그… 매운탕 같은 건가요?"
+  },
+  "184" : {
+    "ID" : "CH02_FD08",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "…..."
+  },
+  "185" : {
+    "ID" : "CH02_FD08",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::6}웁…..!!"
+  },
+  "186" : {
+    "ID" : "CH02_FD08",
+    "Index" : 5,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "................{스테이터스업데이트}"
+  },
+  "187" : {
+    "ID" : "CH02_FD08",
+    "Index" : 6,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}죄…죄송해요. 조금…좀 너무 비려서…"
+  },
+  "188" : {
+    "ID" : "CH02_FD08",
+    "Index" : 7,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "다음에는 평범한 매운탕으로 부탁드릴게요.{종료}"
+  },
+  "189" : {
+    "ID" : "CH02_FD09",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}헤헤… 생선이 머리만 빼꼼 내밀고 있는게 귀엽내요.{스테이터스업데이트}"
+  },
+  "190" : {
+    "ID" : "CH02_FD09",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{종료}"
+  },
+  "191" : {
+    "ID" : "CH02_FD10",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}오랜만에 먹는 스테이크네요.{스테이터스업데이트}"
+  },
+  "192" : {
+    "ID" : "CH02_FD10",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{종료}"
+  },
+  "193" : {
+    "ID" : "CH02_FD11",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}잘먹을게요."
+  },
+  "194" : {
+    "ID" : "CH02_FD11",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "...{스테이터스업데이트}"
+  },
+  "195" : {
+    "ID" : "CH02_FD11",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}김치찌개는 항상 이 새콤한 국물 맛이 매력적인 것 같아요."
+  },
+  "196" : {
+    "ID" : "CH02_FD11",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "맛있네요.{종료}"
+  },
+  "197" : {
+    "ID" : "CH02_FD12",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}헤헤…"
+  },
+  "198" : {
+    "ID" : "CH02_FD12",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "저 돼지국밥 되게 좋아하거든요. 고향에서도 자주 사먹었어요.{스테이터스업데이트}"
+  },
+  "199" : {
+    "ID" : "CH02_FD12",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{종료}"
+  },
+  "200" : {
+    "ID" : "CH02_FD13",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}으음… 장조림이나 수육 같은 요리인가요?"
+  },
+  "201" : {
+    "ID" : "CH02_FD13",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::7}음..음… 좀 더 담백하고 뭐랄까… 깊은 맛이네요.{스테이터스업데이트}"
+  },
+  "202" : {
+    "ID" : "CH02_FD13",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "오븐으로 고기 요리를 자주 하는 편은 아닌데… 나중에 저도 한번 도전해 봐야 겠어요.{종료}"
+  },
+  "203" : {
+    "ID" : "CH02_FD14",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::2}앗…"
+  },
+  "204" : {
+    "ID" : "CH02_FD14",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}그…제가 구운 파인애플이나 그런걸 별로 안좋아해서…"
+  },
+  "205" : {
+    "ID" : "CH02_FD14",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "그래도 한번 먹어 볼게요. 수박이니까 다를 수도 있죠."
+  },
+  "206" : {
+    "ID" : "CH02_FD14",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "…...{이미지::CH02::6}우웁…!!{스테이터스업데이트}"
+  },
+  "207" : {
+    "ID" : "CH02_FD14",
+    "Index" : 5,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}으음…음.."
+  },
+  "208" : {
+    "ID" : "CH02_FD14",
+    "Index" : 6,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "죄송해요. 생각보다 먹을 만 하긴 한데… 그래도 역시 수박은 차가운게 좀 더…"
+  },
+  "209" : {
+    "ID" : "CH02_FD14",
+    "Index" : 7,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "… 아.. 아무것도 아니에요. 신경쓰지 마세요.{종료}"
+  },
+  "210" : {
+    "ID" : "CH02_FD15",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}와아- 동글동글하네…"
+  },
+  "211" : {
+    "ID" : "CH02_FD15",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "고향에서 가족들하고 여름이면 가끔 해먹고는 했거든요."
+  },
+  "212" : {
+    "ID" : "CH02_FD15",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "이렇게 동그랗게 파내느라 고생하셨겠네요."
+  },
+  "213" : {
+    "ID" : "CH02_FD15",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "…음~ 맛있네요.{스테이터스업데이트}"
+  },
+  "214" : {
+    "ID" : "CH02_FD15",
+    "Index" : 5,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "잘먹을게요.{종료}"
+  },
+  "215" : {
+    "ID" : "CH02_FD16",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::2}..!"
+  },
+  "216" : {
+    "ID" : "CH02_FD16",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::5}하하…그…제가 국밥도 좋아하고 수박도 좋아하긴 하는데…"
+  },
+  "217" : {
+    "ID" : "CH02_FD16",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "으음…"
+  },
+  "218" : {
+    "ID" : "CH02_FD16",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}…..."
+  },
+  "219" : {
+    "ID" : "CH02_FD16",
+    "Index" : 5,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::6}우웁….{스테이터스업데이트}"
+  },
+  "220" : {
+    "ID" : "CH02_FD16",
+    "Index" : 6,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}죄송해요. 숙취에 좋을 것 같긴 한데… 조합이 좀… 저에겐 너무 새롭네요…{종료}"
+  },
+  "221" : {
+    "ID" : "CH02_FD17",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}수박을…튀긴…건가요?"
+  },
+  "222" : {
+    "ID" : "CH02_FD17",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "생각보다 튀김옷이 견고하네요. 물기 때문에 눅눅할 것 같았는데…"
+  },
+  "223" : {
+    "ID" : "CH02_FD17",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}음…{스테이터스업데이트}"
+  },
+  "224" : {
+    "ID" : "CH02_FD17",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::5}생각보다 맛도 나쁘지 않네요. 잘먹을게요.{종료}"
+  },
+  "225" : {
+    "ID" : "CH02_FD18",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}수박으로 만든 케이크…"
+  },
+  "226" : {
+    "ID" : "CH02_FD18",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "떡으로 만들거나, 초코파이로 만들거나, 아이스크림으로 만들기도 하고…"
+  },
+  "227" : {
+    "ID" : "CH02_FD18",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "그런데 수박으로 만든건 처음 보네요."
+  },
+  "228" : {
+    "ID" : "CH02_FD18",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{스테이터스업데이트}{종료}"
+  },
+  "229" : {
+    "ID" : "CH02_FD19",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::2}…...."
+  },
+  "230" : {
+    "ID" : "CH02_FD19",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "혹시…. 실수로 떨어트리신걸 그냥 주시거나 한건…아니죠?"
+  },
+  "231" : {
+    "ID" : "CH02_FD19",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "…..."
+  },
+  "232" : {
+    "ID" : "CH02_FD19",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "자..잘……. 잘먹겠습니다…....{스테이터스업데이트}{종료}"
+  },
+  "233" : {
+    "ID" : "CH02_FD20",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}진짜 신발을 튀기신 건가요?"
+  },
+  "234" : {
+    "ID" : "CH02_FD20",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}음..{스테이터스업데이트}"
+  },
+  "235" : {
+    "ID" : "CH02_FD20",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}맛은 생각보다 이상하지는 않네요."
+  },
+  "236" : {
+    "ID" : "CH02_FD20",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "말린 오징어 구이를 한번 더 튀긴듯한 느낌이에요."
+  },
+  "237" : {
+    "ID" : "CH02_FD20",
+    "Index" : 5,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "물론 오징어 맛 대신 가죽 신발 맛이 나지만요.{종료}"
+  },
+  "238" : {
+    "ID" : "CH02_FD21",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}재미있게 생긴 음식이네요…"
+  },
+  "239" : {
+    "ID" : "CH02_FD21",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}음..{스테이터스업데이트}"
+  },
+  "240" : {
+    "ID" : "CH02_FD21",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}먹어 봐도 씹는 식감이나 화약이 톡톡 쏘는게 재미있네요."
+  },
+  "241" : {
+    "ID" : "CH02_FD21",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}잘 먹을게요.{종료}"
+  },
+  "242" : {
+    "ID" : "CH02_FD22",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::2}김치랑… 케이크인가요?"
+  },
+  "243" : {
+    "ID" : "CH02_FD22",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}그러고 보니 아버지께선 케이크를 먹을 때면 항상 느끼하다고 하시곤 했는데"
+  },
+  "244" : {
+    "ID" : "CH02_FD22",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "어쩌면 이 음식이 해답일지도 모르겠네요."
+  },
+  "245" : {
+    "ID" : "CH02_FD22",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "맛이 궁금해지는걸요."
+  },
+  "246" : {
+    "ID" : "CH02_FD22",
+    "Index" : 5,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}음….흐음…{스테이터스업데이트}"
+  },
+  "247" : {
+    "ID" : "CH02_FD22",
+    "Index" : 6,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::7}식감이나 맛이 완전히 달라서 좀 어색하기는 하지만…"
+  },
+  "248" : {
+    "ID" : "CH02_FD22",
+    "Index" : 7,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "생각보다 맛이 이상하지는 않네요."
+  },
+  "249" : {
+    "ID" : "CH02_FD22",
+    "Index" : 8,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "고구마도 김치랑 같이 먹기도 하니까 비슷한 느낌인 거 같아요.{종료}"
+  },
+  "250" : {
+    "ID" : "CH02_FD24",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}{플레이어이름}씨. 물을 사서 드시는 편인가요? 아니면 수돗물을 끓여 드시나요?{선택지::끓여 먹어요::11}{선택지::사 먹어요::21}"
+  },
+  "251" : {
+    "ID" : "CH02_FD24",
+    "Index" : 11,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "생각보다 자주 끓여야 해서 귀찮으실텐데, 적응되서 괜찮으신가봐요.{점프::31}"
+  },
+  "252" : {
+    "ID" : "CH02_FD24",
+    "Index" : 21,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "역시 사 오는게 편하기는 하죠. 옮길 때는 좀 힘들지만요.{점프::31}"
+  },
+  "253" : {
+    "ID" : "CH02_FD24",
+    "Index" : 31,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}전 고향에 있을 때는 항상 어머니가 수돗물을 받아서 옥수수 차를 끓이셨는데,"
+  },
+  "254" : {
+    "ID" : "CH02_FD24",
+    "Index" : 32,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "대학에 오고 나서부터는 그냥 사서 마시고 있어요."
+  },
+  "255" : {
+    "ID" : "CH02_FD24",
+    "Index" : 33,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}생각보다 물을 자주 끓여야 하기도 하고,"
+  },
+  "256" : {
+    "ID" : "CH02_FD24",
+    "Index" : 34,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "목마를 때에 마침 물이 다 떨어지면 다 끓을때까지 기다리기 귀찮기도 해서.. 그냥 사 마시게 되더라고요."
+  },
+  "257" : {
+    "ID" : "CH02_FD24",
+    "Index" : 35,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::5}잘 마실게요.{스테이터스업데이트}{종료}"
+  },
+  "258" : {
+    "ID" : "CH02_FD25",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::2}눈을 튀긴건가요?"
+  },
+  "259" : {
+    "ID" : "CH02_FD25",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "그 뜨거운 기름에서 녹지 않다니 신기하네요…"
+  },
+  "260" : {
+    "ID" : "CH02_FD25",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}음…흐음.. 아직도 눈은 시원하네…{스테이터스업데이트}"
+  },
+  "261" : {
+    "ID" : "CH02_FD25",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}신기하고 맛있는 요리네요"
+  },
+  "262" : {
+    "ID" : "CH02_FD25",
+    "Index" : 5,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "잘 먹을게요.{종료}"
+  },
+  "263" : {
+    "ID" : "CH02_FD26",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::2}이렇게나 뜨거운데 눈이 녹지 않고 있을 수 있다니…"
+  },
+  "264" : {
+    "ID" : "CH02_FD26",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}맛은…음…"
+  },
+  "265" : {
+    "ID" : "CH02_FD26",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::3}생각보다 매콤하고 맛있네요!{스테이터스업데이트}"
+  },
+  "266" : {
+    "ID" : "CH02_FD26",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "그냥 눈 튀김만 있었다면 좀 심심했을거 같은데, 이 매운 소스가 정말 잘 어울리는 거 같아요."
+  },
+  "267" : {
+    "ID" : "CH02_FD26",
+    "Index" : 5,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "특히, 매운 혀에 차가운 눈이 닿을 때 그 시원함이 정말 매력적이에요.{종료}"
+  },
+  "268" : {
+    "ID" : "CH02_FD27",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}전… 습한 것 보다는 건조한게 더 좋아요."
+  },
+  "269" : {
+    "ID" : "CH02_FD27",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "특히 여름에 날씨도 더운데 습하기까지 하면 너무 힘들죠…"
+  },
+  "270" : {
+    "ID" : "CH02_FD27",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}그래도 너무 건조하다보면 입술이 트기도 하니까,"
+  },
+  "271" : {
+    "ID" : "CH02_FD27",
+    "Index" : 4,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "아무래도 뭐든지 적당한게 좋은 것 같아요.{스테이터스업데이트}{종료}"
+  },
+  "272" : {
+    "ID" : "CH02_FD28",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}저희 어머니는 고추랑 멸치를 볶아서 반찬을 자주 해주시고는 했어요."
+  },
+  "273" : {
+    "ID" : "CH02_FD28",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "이건 그거랑 비슷하면서도 좀 다르네요."
+  },
+  "274" : {
+    "ID" : "CH02_FD28",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{스테이터스업데이트}{종료}"
+  },
+  "275" : {
+    "ID" : "CH02_FD29",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::2}…......."
+  },
+  "276" : {
+    "ID" : "CH02_FD29",
+    "Index" : 2,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::6}……"
+  },
+  "277" : {
+    "ID" : "CH02_FD29",
+    "Index" : 3,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::5}자..잘 먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "278" : {
+    "ID" : "CH02_FD30",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::0}잘 먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "279" : {
+    "ID" : "CH03_FD01",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "280" : {
+    "ID" : "CH03_FD02",
+    "Index" : 1,
+    "TalkerName" : "우 주 인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "281" : {
+    "ID" : "CH03_FD03",
+    "Index" : 1,
+    "TalkerName" : "인 주 우",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "282" : {
+    "ID" : "CH03_FD04",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "283" : {
+    "ID" : "CH03_FD05",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "284" : {
+    "ID" : "CH03_FD06",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "285" : {
+    "ID" : "CH03_FD07",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "286" : {
+    "ID" : "CH03_FD08",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "287" : {
+    "ID" : "CH03_FD09",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "288" : {
+    "ID" : "CH03_FD10",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "289" : {
+    "ID" : "CH03_FD11",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "290" : {
+    "ID" : "CH03_FD12",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "291" : {
+    "ID" : "CH03_FD13",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "292" : {
+    "ID" : "CH03_FD14",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "293" : {
+    "ID" : "CH03_FD15",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "294" : {
+    "ID" : "CH03_FD16",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "295" : {
+    "ID" : "CH03_FD17",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "296" : {
+    "ID" : "CH03_FD18",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "297" : {
+    "ID" : "CH03_FD19",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "298" : {
+    "ID" : "CH03_FD20",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "299" : {
+    "ID" : "CH03_FD21",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "300" : {
+    "ID" : "CH03_FD22",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "301" : {
+    "ID" : "CH03_FD23",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "302" : {
+    "ID" : "CH03_FD24",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "303" : {
+    "ID" : "CH03_FD25",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "304" : {
+    "ID" : "CH03_FD26",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "305" : {
+    "ID" : "CH03_FD27",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "306" : {
+    "ID" : "CH03_FD28",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "307" : {
+    "ID" : "CH03_FD29",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "308" : {
+    "ID" : "CH03_FD30",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "309" : {
+    "ID" : "CH05_FD01",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}이건 제법 친숙한 음식이구나."
+  },
+  "310" : {
+    "ID" : "CH05_FD01",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "가정식으로 많이 먹지는 않지만, 여관이나 주점에 가면 자주 볼 수 있는 요리지."
+  },
+  "311" : {
+    "ID" : "CH05_FD01",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "음…{스테이터스업데이트}"
+  },
+  "312" : {
+    "ID" : "CH05_FD01",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::2}맛있구나. 잘 먹으마.{종료}"
+  },
+  "313" : {
+    "ID" : "CH05_FD02",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}매운 양념을 한 닭 요리로구나."
+  },
+  "314" : {
+    "ID" : "CH05_FD02",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "내가 사는 곳에서 이런 색의 국물 요리가 있다면 분명 토마토 스프겠지만"
+  },
+  "315" : {
+    "ID" : "CH05_FD02",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "이곳이라면 매운 양념이 분명할테지"
+  },
+  "316" : {
+    "ID" : "CH05_FD02",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "…음 많이 맵지는 않구나. 적당해.{스테이터스 업데이트}"
+  },
+  "317" : {
+    "ID" : "CH05_FD02",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "318" : {
+    "ID" : "CH05_FD03",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}음… 이건 역시 상당히 맵구나.{스테이터스업데이트}"
+  },
+  "319" : {
+    "ID" : "CH05_FD03",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "난 매운 음식을 잘 먹는 편이긴 하다만"
+  },
+  "320" : {
+    "ID" : "CH05_FD03",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "너무 매운걸 먹고 나면 꼭 위가 쓰려서…"
+  },
+  "321" : {
+    "ID" : "CH05_FD03",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "오늘은 돌아가면 위장 표션으 제조해 마셔야 겠네.{종료}"
+  },
+  "322" : {
+    "ID" : "CH05_FD04",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}항상 너희 세계의 튀김은 참 이 '튀김옷'이 흥미롭구나."
+  },
+  "323" : {
+    "ID" : "CH05_FD04",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "내가 사는 곳에서도 튀김이 없는 것은 아니다만… 너도 알다시피 기름이 많이 들지 않니?"
+  },
+  "324" : {
+    "ID" : "CH05_FD04",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "서민들은 튀긴다기보다는, 기름을 많이 넣고 볶는 느낌으로 요리를 하게 되니 말이다."
+  },
+  "325" : {
+    "ID" : "CH05_FD04",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "더군다나 튀김옷이라는 개념도 잘 없어서, 이런 음식은 보기 힘들지."
+  },
+  "326" : {
+    "ID" : "CH05_FD04",
+    "Index" : 5,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "…음 맛있구나.{스테이터스업데이트}"
+  },
+  "327" : {
+    "ID" : "CH05_FD04",
+    "Index" : 6,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "328" : {
+    "ID" : "CH05_FD05",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}이걸 보니 마법 대학에서 마법 연구를 하던 때가 생각나는구나."
+  },
+  "329" : {
+    "ID" : "CH05_FD05",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "닭을 기르는 농부들을 위해 양계장의 온도 조절을 해주는 마법을 실험중이었는데,"
+  },
+  "330" : {
+    "ID" : "CH05_FD05",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "마법진을 그릴 때 사용한 겨우살이 숯가루의 비율이 잘못되서 그만 닭을 모두 얼려버리고 말았지."
+  },
+  "331" : {
+    "ID" : "CH05_FD05",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "음…{스테이터스업데이트}"
+  },
+  "332" : {
+    "ID" : "CH05_FD05",
+    "Index" : 5,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "맛도…그 때를 떠올리게 하는 맛이구나…"
+  },
+  "333" : {
+    "ID" : "CH05_FD05",
+    "Index" : 6,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "나쁘지는 않아. 잘 먹으마.{종료}"
+  },
+  "334" : {
+    "ID" : "CH05_FD06",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}바닷가 근처에 살 떄는 이걸 참 많이 먹고는 했지."
+  },
+  "335" : {
+    "ID" : "CH05_FD06",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "맛있구나. 잘 먹으마.{스테이터스업데이트}{종료}"
+  },
+  "336" : {
+    "ID" : "CH05_FD07",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}흠..흥미롭구나."
+  },
+  "337" : {
+    "ID" : "CH05_FD07",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "우리 세계의 어부들은, 큰 생선을 잡아도 내장은 그냥 전부 버리거든."
+  },
+  "338" : {
+    "ID" : "CH05_FD07",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "이 요리 레시피를 전해주면 큰 도움이 될거 같다는 생각이 드는구나."
+  },
+  "339" : {
+    "ID" : "CH05_FD07",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "…음 맛도 괜찮군. 흥미로워.{스테이터스업데이트}"
+  },
+  "340" : {
+    "ID" : "CH05_FD07",
+    "Index" : 5,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "341" : {
+    "ID" : "CH05_FD08",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::4}…"
+  },
+  "342" : {
+    "ID" : "CH05_FD08",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "흐음…흥미롭구나…"
+  },
+  "343" : {
+    "ID" : "CH05_FD08",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "…...{스테이터스업데이트}"
+  },
+  "344" : {
+    "ID" : "CH05_FD08",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "그래. 이런 음식을 보게 되는 것도 이 식당의 묘미 중 하나지…{종료}"
+  },
+  "345" : {
+    "ID" : "CH05_FD09",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}아, 이건 예전에 해안가에 살 때 비슷한 요리를 먹어본 적이 있지."
+  },
+  "346" : {
+    "ID" : "CH05_FD09",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "음… 그래. 네 요리가 그 때 먹은 것보다 좀 더 맛이 좋구나.{스테이터스업데이트}"
+  },
+  "347" : {
+    "ID" : "CH05_FD09",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "348" : {
+    "ID" : "CH05_FD10",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}궁정 마법사나 귀족 밑에서 일할 때는 질리도록 먹곤 했지."
+  },
+  "349" : {
+    "ID" : "CH05_FD10",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "마법 의식에 필요한 재료를 모으느라 돈을 가끼게 된 후부터는 스테이크보단 스튜를 더 많이 먹게 됬단다."
+  },
+  "350" : {
+    "ID" : "CH05_FD10",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "…음. 오랜만에 먹으니 맛이 좋구나.{스테이터스업데이트}"
+  },
+  "351" : {
+    "ID" : "CH05_FD10",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "352" : {
+    "ID" : "CH05_FD11",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}아, 오랜만이구나. 이 김치 스튜."
+  },
+  "353" : {
+    "ID" : "CH05_FD11",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "가끔 매콤한 음식이 생각나면, 직접 해 보려고 하기도 하지만…"
+  },
+  "354" : {
+    "ID" : "CH05_FD11",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "비슷한 양념과 채소를 넣어도 이 새콤한 맛을 흉내내기는 어렵더구나."
+  },
+  "355" : {
+    "ID" : "CH05_FD11",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "음… 좋군.{스테이터스업데이트}"
+  },
+  "356" : {
+    "ID" : "CH05_FD11",
+    "Index" : 5,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "맛있게 잘 먹으마.{종료}"
+  },
+  "357" : {
+    "ID" : "CH05_FD12",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}음.. 국물에 밥을 말아 먹는 풍습은 참 괜찮은 것 같구나."
+  },
+  "358" : {
+    "ID" : "CH05_FD12",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "내가 사는 곳은 아무래도 빵이 주식이다 보니, 이런 느낌의 음식을 찾아보기 힘들지."
+  },
+  "359" : {
+    "ID" : "CH05_FD12",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "맛있게 잘 먹으마.{스테이터스업데이트}{종료}"
+  },
+  "360" : {
+    "ID" : "CH05_FD13",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}고기가 알맞게 잘 구워졌구나."
+  },
+  "361" : {
+    "ID" : "CH05_FD13",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "맛있게 잘 먹으마.{스테이터스업데이트}{종료}"
+  },
+  "362" : {
+    "ID" : "CH05_FD14",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::1}음! 이건 새롭구나. 채소나 과일을 스테이크처럼 구울 생각은 많이 해보지 못했는데 말이다."
+  },
+  "363" : {
+    "ID" : "CH05_FD14",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}음… 그렇군… 씹을 때마다 따뜻한 과즙이 흘러나오는게 흥미롭구나.{스테이터스업데이트}"
+  },
+  "364" : {
+    "ID" : "CH05_FD14",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "맛있게 잘 먹으마.{스테이터스업데이트}{종료}"
+  },
+  "365" : {
+    "ID" : "CH05_FD15",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}…음!{스테이터스업데이트}"
+  },
+  "366" : {
+    "ID" : "CH05_FD15",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "이…뭐라고 해야하나… 과즙? 국물?의 맛이 특이하구나."
+  },
+  "367" : {
+    "ID" : "CH05_FD15",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "이런 비슷한 음료를 맛본 적은 거의 없는데…"
+  },
+  "368" : {
+    "ID" : "CH05_FD15",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "재미있구나. 맛있게 잘 먹으마.{종료}"
+  },
+  "369" : {
+    "ID" : "CH05_FD16",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}…"
+  },
+  "370" : {
+    "ID" : "CH05_FD16",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "…...{스테이터스업데이트}"
+  },
+  "371" : {
+    "ID" : "CH05_FD16",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "그래…가끔은 이런 색다른 경험도 나쁘지 않지.{종료}"
+  },
+  "372" : {
+    "ID" : "CH05_FD17",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::2}과일을 튀겨내다니 흥미롭구나."
+  },
+  "373" : {
+    "ID" : "CH05_FD17",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}음…{스테이터스업데이트}"
+  },
+  "374" : {
+    "ID" : "CH05_FD17",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "바삭한 식감 뒤에 따라오는 아삭한 수박과 따듯한 과즙이… 뭔가 따로 노는 느낌이긴 하다만"
+  },
+  "375" : {
+    "ID" : "CH05_FD17",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "나쁘지는 않아. 잘 먹으마.{종료}"
+  },
+  "376" : {
+    "ID" : "CH05_FD18",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::1}OH, 케익이구나."
+  },
+  "377" : {
+    "ID" : "CH05_FD18",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}이렇게 하얀 크림으로 만든 달콤한 케익은 예전에 왕궁 행사에서 먹은 걸 빼면 처음이네"
+  },
+  "378" : {
+    "ID" : "CH05_FD18",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "맛있게 잘 먹으마.{스테이터스업데이트}{종료}"
+  },
+  "379" : {
+    "ID" : "CH05_FD19",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}…"
+  },
+  "380" : {
+    "ID" : "CH05_FD19",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "그러고 보면, 살상용 마법을 가르치는 곳에선 이것처럼 수박이나 과일을 두고 마법 사용을 연습시키기도 했지."
+  },
+  "381" : {
+    "ID" : "CH05_FD19",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "…{스테이터스업데이트}"
+  },
+  "382" : {
+    "ID" : "CH05_FD19",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "뭐, 맛은 맛있는 수박 맛이구나.{종료}"
+  },
+  "383" : {
+    "ID" : "CH05_FD20",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}가죽 세공품을 튀긴 음식이라…"
+  },
+  "384" : {
+    "ID" : "CH05_FD20",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "음… 상당히 오래 씹게 되는구나.{스테이터스업데이트}"
+  },
+  "385" : {
+    "ID" : "CH05_FD20",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "천천히 시간을 보내며 먹기엔 나쁘지 않겠어"
+  },
+  "386" : {
+    "ID" : "CH05_FD20",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "387" : {
+    "ID" : "CH05_FD21",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::1}흠…흥미롭구나."
+  },
+  "388" : {
+    "ID" : "CH05_FD21",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "먹을 때 마다 톡톡 터지는 맛이 색다르네.{스테이터스업데이트}"
+  },
+  "389" : {
+    "ID" : "CH05_FD21",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "390" : {
+    "ID" : "CH05_FD22",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}흠…"
+  },
+  "391" : {
+    "ID" : "CH05_FD22",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "…...{스테이터스업데이트}"
+  },
+  "392" : {
+    "ID" : "CH05_FD22",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "음, 생각보다 맛 자체는 나쁘지는 않은데"
+  },
+  "393" : {
+    "ID" : "CH05_FD22",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "아무래도 달고 짜고, 부드럽고 아삭하고… 식감이..적응하기는 힘들구나"
+  },
+  "394" : {
+    "ID" : "CH05_FD22",
+    "Index" : 5,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "뭐, 그래도 맛있게 먹으마.{종료}"
+  },
+  "395" : {
+    "ID" : "CH05_FD23",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}하얀 김치구나."
+  },
+  "396" : {
+    "ID" : "CH05_FD23",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "음.. 확실히 매운맛이 덜하고 담백하네.{스테이터스업데이트}"
+  },
+  "397" : {
+    "ID" : "CH05_FD23",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "398" : {
+    "ID" : "CH05_FD24",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}아, 물. 있을때는 별 생각 없지만, 막상 없어지만 힘들어지는 물건이지."
+  },
+  "399" : {
+    "ID" : "CH05_FD24",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "가뭄 때문에 물이 부족할 때면, 식수를 구하려고 온갖 마법을 동원하고는 했단다."
+  },
+  "400" : {
+    "ID" : "CH05_FD24",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 마시마.{{스테이터스업데이트{종료}"
+  },
+  "401" : {
+    "ID" : "CH05_FD25",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::1}눈을 튀겼다고?"
+  },
+  "402" : {
+    "ID" : "CH05_FD25",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "눈덩이에 열상 보호 마법이라도 걸어서 만든 거니?"
+  },
+  "403" : {
+    "ID" : "CH05_FD25",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}좋은 재주를 가졌구나."
+  },
+  "404" : {
+    "ID" : "CH05_FD25",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "음…담백하고 괜찮구나.{스테이터스업데이트}"
+  },
+  "405" : {
+    "ID" : "CH05_FD25",
+    "Index" : 5,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "406" : {
+    "ID" : "CH05_FD26",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::1}눈을 튀겼다고?"
+  },
+  "407" : {
+    "ID" : "CH05_FD26",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "대체 무슨 마법을 사용해야 눈이 녹지 않는거니?"
+  },
+  "408" : {
+    "ID" : "CH05_FD26",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}좋은 재주를 가졌구나."
+  },
+  "409" : {
+    "ID" : "CH05_FD26",
+    "Index" : 4,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "음…맵고 뜨거운 소스와 시원한 튀김 내용물이 생각보다 잘 어울리는구나.{스테이터스업데이트}"
+  },
+  "410" : {
+    "ID" : "CH05_FD26",
+    "Index" : 5,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{종료}"
+  },
+  "411" : {
+    "ID" : "CH05_FD27",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05:::0}난 거처에 연구서와 책들을 진열해 놓는데,"
+  },
+  "412" : {
+    "ID" : "CH05_FD27",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "습한 날이면 책들이 많이 상한단다."
+  },
+  "413" : {
+    "ID" : "CH05_FD27",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "그래서 항상 서재를 건조하게 유지하려고 고생하고 있지.{스테이터스업데이트}{종료}"
+  },
+  "414" : {
+    "ID" : "CH05_FD28",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}흠…{스테이터스업데이트}"
+  },
+  "415" : {
+    "ID" : "CH05_FD28",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "굉장히 식감이 특이하구나. 마치 금속을 씹는 것 같아."
+  },
+  "416" : {
+    "ID" : "CH05_FD28",
+    "Index" : 3,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "나쁘지는 않아. 잘 먹으마.{종료}"
+  },
+  "417" : {
+    "ID" : "CH05_FD29",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}흠… 내 연금술 실험실에저 자주 보는 색의 소스구나."
+  },
+  "418" : {
+    "ID" : "CH05_FD29",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "어떤 효능이 있는지는 모르겠지만…맛은 나쁘지 않네.{스테이터스업데이트}{종료}"
+  },
+  "419" : {
+    "ID" : "CH05_FD30",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}고기를 채워넣은 이 재료가 특이하구나."
+  },
+  "420" : {
+    "ID" : "CH05_FD30",
+    "Index" : 2,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "잘 먹으마.{스테이터스업데이트}{종료}"
+  },
+  "421" : {
+    "ID" : "CH06_FD01",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}음… 맛있네요.{스테이터스업데이트}"
+  },
+  "422" : {
+    "ID" : "CH06_FD01",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "닭꼬치는 아무래도 먹는 방법이 재미있어서, 기분 전환이 되는 것 같아요.{종료}"
+  },
+  "423" : {
+    "ID" : "CH06_FD02",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}적당히 맵고 맜있네요.{스테이터스업데이트}"
+  },
+  "424" : {
+    "ID" : "CH06_FD02",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "잘먹을게요.{종료}"
+  },
+  "425" : {
+    "ID" : "CH06_FD03",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}음… 맵긴 해도 먹을만 한…큽..쿨럭…!{스테이터스업데이트}"
+  },
+  "426" : {
+    "ID" : "CH06_FD03",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::4}으윽…"
+  },
+  "427" : {
+    "ID" : "CH06_FD03",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}이건 너무 맵네요."
+  },
+  "428" : {
+    "ID" : "CH06_FD03",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "통각 센서를 해킹해서 종료시켜놔야 먹을 수 있을 정도에요.{종료}"
+  },
+  "429" : {
+    "ID" : "CH06_FD04",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}아, 치킨. 왠만해서는 실패하기 어려운 음식이죠."
+  },
+  "430" : {
+    "ID" : "CH06_FD04",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "…역시 맛있네요.{스테이터스업데이트}"
+  },
+  "431" : {
+    "ID" : "CH06_FD04",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "잘 먹을게요.{종료}"
+  },
+  "432" : {
+    "ID" : "CH06_FD05",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::3}하하, 이건 정말 '스노윙'치킨이네요"
+  },
+  "433" : {
+    "ID" : "CH06_FD05",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}재미있네요. 맛있게 먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "434" : {
+    "ID" : "CH06_FD06",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}아, 이건 생선을 통째로 구운 거네요"
+  },
+  "435" : {
+    "ID" : "CH06_FD06",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "전 보통 특정 부위를 잘라내서 요리한 생선구이를 주로 먹었거든요. 연어 스테이크같은거."
+  },
+  "436" : {
+    "ID" : "CH06_FD06",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "음…{스테이터스업데이트}"
+  },
+  "437" : {
+    "ID" : "CH06_FD06",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "뼈를 발라내는게 귀찮기는 해도, 이건 이것대로 맛있네요. 잘 먹을게요.{종료}"
+  },
+  "438" : {
+    "ID" : "CH06_FD07",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지:;CH06::3}생선 내장으로 한 요리인가요?"
+  },
+  "439" : {
+    "ID" : "CH06_FD07",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}음. 세상에는 참 다양한 요리가 있네요."
+  },
+  "440" : {
+    "ID" : "CH06_FD07",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{스테이터스업데이트}{종료}"
+  },
+  "441" : {
+    "ID" : "CH06_FD08",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::2}…..."
+  },
+  "442" : {
+    "ID" : "CH06_FD08",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}…..."
+  },
+  "443" : {
+    "ID" : "CH06_FD08",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::4}……으웩……{스테이터스업데이트}"
+  },
+  "444" : {
+    "ID" : "CH06_FD08",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::1}음…이건…좀…{종료}"
+  },
+  "445" : {
+    "ID" : "CH06_FD09",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::3}하하, 재미있게 생긴 요리네요."
+  },
+  "446" : {
+    "ID" : "CH06_FD09",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}생선을 꼭 통째로 넣을 필요가 있었나 싶네요."
+  },
+  "447" : {
+    "ID" : "CH06_FD09",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "음… 맛은 나쁘지 않네{스테이터스업데이트}"
+  },
+  "448" : {
+    "ID" : "CH06_FD09",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "잘먹을게요.{종료}"
+  },
+  "449" : {
+    "ID" : "CH06_FD10",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}잘먹겠습니다.{스테이터스업데이트}{종료}"
+  },
+  "450" : {
+    "ID" : "CH06_FD11",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}음, 맛있네요.{스테이터스업데이트}"
+  },
+  "451" : {
+    "ID" : "CH06_FD11",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "새콤한 김치 맛이 좀 어색하게 느껴지기는 한데, 크게 샌경쓰이지는 않아요.{종료}"
+  },
+  "452" : {
+    "ID" : "CH06_FD12",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}잘먹겠습니다.{스테이터스업데이트}{종료}"
+  },
+  "453" : {
+    "ID" : "CH06_FD13",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}잘먹겠습니다.{스테이터스업데이트}{종료}"
+  },
+  "454" : {
+    "ID" : "CH06_FD14",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}음.. 역시 구우니까 좀 더 단맛이 올라오는거 같네요.{스테이터스업데이트}"
+  },
+  "455" : {
+    "ID" : "CH06_FD14",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "파인애플이랑 달리 수박은 단맛이 덜해서 시즈닝도 잘 어울리고요."
+  },
+  "456" : {
+    "ID" : "CH06_FD14",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "그래도 역시 수박은 시원한 맛에 먹는게 아닌가 싶긴 해요.,{종료}"
+  },
+  "457" : {
+    "ID" : "CH06_FD15",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}이야, 이거 동글동글하게 파내기 힘드셨겠어요."
+  },
+  "458" : {
+    "ID" : "CH06_FD15",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "잘먹을게요.{종료}"
+  },
+  "459" : {
+    "ID" : "CH06_FD16",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::4}…......{스테이터스업데이트}"
+  },
+  "460" : {
+    "ID" : "CH06_FD16",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}뜨거운 국물 속에서 건져낸 수박의 아삭한 식감…"
+  },
+  "461" : {
+    "ID" : "CH06_FD16",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "그리고 거기에 뭍어있는 밥풀들, 짭잘한 양념.."
+  },
+  "462" : {
+    "ID" : "CH06_FD16",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "이건… 제가 감당하기 힘든 요리네요.{종료}"
+  },
+  "463" : {
+    "ID" : "CH06_FD17",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}음..이견 뭔가 미묘하네요.{스테이터스업데이트}"
+  },
+  "464" : {
+    "ID" : "CH06_FD17",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "바삭한 튀김 튀에 아삭한 식감이.. 뭐랄까… 너무나 이질적이에요."
+  },
+  "465" : {
+    "ID" : "CH06_FD17",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "아, 물론 맛이 없는건 아니에요."
+  },
+  "466" : {
+    "ID" : "CH06_FD17",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "이대로 두면 눅눅해질테니 어서 먹어야겠네요.{종료}"
+  },
+  "467" : {
+    "ID" : "CH06_FD18",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}수박에 크림이라 흠…"
+  },
+  "468" : {
+    "ID" : "CH06_FD18",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{스테이터스업데이트}"
+  },
+  "469" : {
+    "ID" : "CH06_FD18",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "역시, 수박이 과즙이 너무 많아서 크림 식감이 이상해지네요.{종료}"
+  },
+  "470" : {
+    "ID" : "CH06_FD19",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}마치 미술관에 전시해 놓은 현대미술 조형품처럼 생겼네요."
+  },
+  "471" : {
+    "ID" : "CH06_FD19",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}정말 그런 의도로 만드신건가요? 수박에 과녁까지 그려놓으시고."
+  },
+  "472" : {
+    "ID" : "CH06_FD19",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "과녁 놀이를 하다가 부서진 수박을 그냥 가져오신건 아니겠죠?{스테이터스업데이트}{종료}"
+  },
+  "473" : {
+    "ID" : "CH06_FD20",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::3}신발을 튀긴 건가요? 이거…먹어도…되는거죠?"
+  },
+  "474" : {
+    "ID" : "CH06_FD20",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}음…{스테이터스업데이트}"
+  },
+  "475" : {
+    "ID" : "CH06_FD20",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::4}…...!!"
+  },
+  "476" : {
+    "ID" : "CH06_FD20",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}으.. 미안합니다. 제 취향은 아니네요.{종료}"
+  },
+  "477" : {
+    "ID" : "CH06_FD21",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}음…{스테이터스업데이트}"
+  },
+  "478" : {
+    "ID" : "CH06_FD21",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "안에 들어있는 총알은 맛있는데, 역시 신발은 제 입맛에는 좀.."
+  },
+  "479" : {
+    "ID" : "CH06_FD21",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "그러다 보니 피자 먹고 꽁다리 버리는 것 처럼 총알만 주워먹게 되네요{종료}"
+  },
+  "480" : {
+    "ID" : "CH06_FD22",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}케익에 김치라… 어쩌면 잘 어울릴 것 같기도 한데…"
+  },
+  "481" : {
+    "ID" : "CH06_FD22",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "한번 먹어 볼게요…{스테이터스업데이트}"
+  },
+  "482" : {
+    "ID" : "CH06_FD22",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::4}으악.. 이건…"
+  },
+  "483" : {
+    "ID" : "CH06_FD22",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}따로따로 번갈아 먹으면 모를 것 같은데 같이 놓으니까"
+  },
+  "484" : {
+    "ID" : "CH06_FD22",
+    "Index" : 5,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "김치에 하얀 크림이 뭍어있는게 느낌이 좀 이상하네요.{종료}"
+  },
+  "485" : {
+    "ID" : "CH06_FD23",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}새하얀 김치…"
+  },
+  "486" : {
+    "ID" : "CH06_FD23",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "어찌보면.. 배추 피클같은거겠죠 이거?"
+  },
+  "487" : {
+    "ID" : "CH06_FD23",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "잘먹을게요.{스테이터스업데이트}{종료}"
+  },
+  "488" : {
+    "ID" : "CH06_FD24",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}여름엔 더워서 땀을 많이 흘리고, 가을 겨울엔 건조하니까"
+  },
+  "489" : {
+    "ID" : "CH06_FD24",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "물을 많이 챙겨드시도록 하세요.{스테이터스업데이트}{종료}"
+  },
+  "490" : {
+    "ID" : "CH06_FD25",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}눈이 녹을텐데 튀김옷이 멀쩡하네요."
+  },
+  "491" : {
+    "ID" : "CH06_FD25",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "재주가 좋으신데요?"
+  },
+  "492" : {
+    "ID" : "CH06_FD25",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "음…{스테이터스업데이트}"
+  },
+  "493" : {
+    "ID" : "CH06_FD25",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "식감도 나쁘지 않고 괜찮은데, 좀 뭐랄까..사실 밋밋하네요."
+  },
+  "494" : {
+    "ID" : "CH06_FD25",
+    "Index" : 5,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "그래도 담백하니 부담스럽지 않게 먹기에는 좋은 것 같아요.{종료}"
+  },
+  "495" : {
+    "ID" : "CH06_FD26",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::2}음! 맛잇네요.{스테이터스업데이트}"
+  },
+  "496" : {
+    "ID" : "CH06_FD26",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}매콤한 양념도 좋고, 튀김 안에 눈이 사르르 녹으면서 매운 맛을 식혀주는 것도 좋아서"
+  },
+  "497" : {
+    "ID" : "CH06_FD26",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "이건 정말 끝없이 계속 먹을 수 있을 거 같아요.{종료}"
+  },
+  "498" : {
+    "ID" : "CH06_FD27",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}섬세한 전자기기는 습기가 과하면 망가질 수 있어요."
+  },
+  "499" : {
+    "ID" : "CH06_FD27",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "특히 습한 장마철에는 주의하는게 좋아요.{스테이터스업데이트}{종료}"
+  },
+  "500" : {
+    "ID" : "CH06_FD28",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}채소 볶음이군요."
+  },
+  "501" : {
+    "ID" : "CH06_FD28",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "건전지만 먹으려고 하면 뭔가 건강에 안 좋을 거 같은 느낌이 드는데"
+  },
+  "502" : {
+    "ID" : "CH06_FD28",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "이렇게 먹으니 훨씬 좋네요.{스테이터스업데이트}"
+  },
+  "503" : {
+    "ID" : "CH06_FD28",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "잘먹겠습니다.{종료}"
+  },
+  "504" : {
+    "ID" : "CH06_FD29",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}음, 맛 괜찮은데요?{스테이터스업데이트}"
+  },
+  "505" : {
+    "ID" : "CH06_FD29",
+    "Index" : 2,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "이런 음식은 보통 다 먹고 나면 좀 더 먹고 싶어지는데"
+  },
+  "506" : {
+    "ID" : "CH06_FD29",
+    "Index" : 3,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "그렇다고 엄청 많이 만들어서 먹다 보면 물린단 말이죠."
+  },
+  "507" : {
+    "ID" : "CH06_FD29",
+    "Index" : 4,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "서빙되는 양도 음식의 맛에 영향을 끼치는 것 같아요.{종료}"
+  },
+  "508" : {
+    "ID" : "CH06_FD30",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{스테이터스업데이트}{종료}"
+  },
+  "509" : {
+    "ID" : "CH01_DK01",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}고마워요.{종료}"
+  },
+  "510" : {
+    "ID" : "CH01_DK02",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}고마워요.{종료}"
+  },
+  "511" : {
+    "ID" : "CH01_DK03",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}고마워요.{종료}"
+  },
+  "512" : {
+    "ID" : "CH01_DK04",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}고마워요.{종료}"
+  },
+  "513" : {
+    "ID" : "CH01_DK05",
+    "Index" : 1,
+    "TalkerName" : "한 별",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH01::0}고마워요.{종료}"
+  },
+  "514" : {
+    "ID" : "CH02_DK01",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}감사합니다.{종료}"
+  },
+  "515" : {
+    "ID" : "CH02_DK02",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}감사합니다.{종료}"
+  },
+  "516" : {
+    "ID" : "CH02_DK03",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}감사합니다.{종료}"
+  },
+  "517" : {
+    "ID" : "CH02_DK04",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}감사합니다.{종료}"
+  },
+  "518" : {
+    "ID" : "CH02_DK05",
+    "Index" : 1,
+    "TalkerName" : "송아연",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH02::1}감사합니다.{종료}"
+  },
+  "519" : {
+    "ID" : "CH03_DK01",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "520" : {
+    "ID" : "CH03_DK02",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "521" : {
+    "ID" : "CH03_DK03",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "522" : {
+    "ID" : "CH03_DK04",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "523" : {
+    "ID" : "CH03_DK05",
+    "Index" : 1,
+    "TalkerName" : "우주인",
+    "StoryState" : 0,
+    "Command" : "NULL{종료}"
+  },
+  "524" : {
+    "ID" : "CH05_DK01",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}고마워.{종료}"
+  },
+  "525" : {
+    "ID" : "CH05_DK02",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}고마워.{종료}"
+  },
+  "526" : {
+    "ID" : "CH05_DK03",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}고마워.{종료}"
+  },
+  "527" : {
+    "ID" : "CH05_DK04",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}고마워.{종료}"
+  },
+  "528" : {
+    "ID" : "CH05_DK05",
+    "Index" : 1,
+    "TalkerName" : "소니아 로즈메리",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH05::0}고마워.{종료}"
+  },
+  "529" : {
+    "ID" : "CH06_DK01",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}고맙습니다.{종료}"
+  },
+  "530" : {
+    "ID" : "CH06_DK02",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}고맙습니다.{종료}"
+  },
+  "531" : {
+    "ID" : "CH06_DK03",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}고맙습니다.{종료}"
+  },
+  "532" : {
+    "ID" : "CH06_DK04",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}고맙습니다.{종료}"
+  },
+  "533" : {
+    "ID" : "CH06_DK05",
+    "Index" : 1,
+    "TalkerName" : "데이브 러셀",
+    "StoryState" : 0,
+    "Command" : "{이미지::CH06::0}고맙습니다.{종료}"
+  }
+}

@@ -41,26 +41,26 @@ namespace Util
 
         public void OnPointerEnter(PointerEventData eventData)
         {
-            SoundMgr.SoundOn(SheetData.ESoundType.FMButton);
-            SoundMgr.playSoundDic[SheetData.ESoundType.FMButton].states[0].setValue(0);
-            SoundMgr.Release(SheetData.ESoundType.FMButton);
+            SoundMgr.SoundOn(SheetData.ESoundSet.FMButton);
+            SoundMgr.playSoundDic[SheetData.ESoundSet.FMButton].states[0].setValue(0);
+            SoundMgr.Release(SheetData.ESoundSet.FMButton);
             onCheck = true;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            SoundMgr.SoundOn(SheetData.ESoundType.FMButton);
-            SoundMgr.playSoundDic[SheetData.ESoundType.FMButton].states[0].setValue(1);
-            SoundMgr.Release(SheetData.ESoundType.FMButton);
+            SoundMgr.SoundOn(SheetData.ESoundSet.FMButton);
+            SoundMgr.playSoundDic[SheetData.ESoundSet.FMButton].states[0].setValue(1);
+            SoundMgr.Release(SheetData.ESoundSet.FMButton);
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Right && foodMgr.GetState() == ESpriteState.Enable && onCheck) //우클릭 && 현재상태
             {
-                SoundMgr.SoundOn(SheetData.ESoundType.FMButton);
-                SoundMgr.playSoundDic[SheetData.ESoundType.FMButton].states[0].setValue(2);
-                SoundMgr.Release(SheetData.ESoundType.FMButton);
+                SoundMgr.SoundOn(SheetData.ESoundSet.FMButton);
+                SoundMgr.playSoundDic[SheetData.ESoundSet.FMButton].states[0].setValue(2);
+                SoundMgr.Release(SheetData.ESoundSet.FMButton);
                 UIMgr.GetUIMgr().MaterialRightClickSelect(name, mainSprite[1].sprite);
             }
         }

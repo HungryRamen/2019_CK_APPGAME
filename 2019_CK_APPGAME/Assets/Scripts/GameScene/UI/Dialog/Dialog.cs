@@ -42,7 +42,7 @@ namespace GameScene
             if (bTextFullLoad && UIMgr.GetUIMgr().ScreenReaction())
             {
                 UIMgr.GetUIMgr().LogTextAppend(dialogTextUI[1].text);
-                Util.SoundMgr.SoundOnRelease(ESoundType.Next);
+                Util.SoundMgr.SoundOnRelease(ESoundSet.Next);
                 NextText();
             }
             else if (!bTextFullLoad)

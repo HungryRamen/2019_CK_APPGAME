@@ -48,6 +48,7 @@ namespace Util
                 temp.color = color;
                 yield return null;
             }
+            SoundMgr.SoundClear();
             GameObject obj2 = Instantiate(Resources.Load<GameObject>("Prefebs/FadeCopy"));
             SetPos(obj2.transform);
             obj.transform.SetParent(null);

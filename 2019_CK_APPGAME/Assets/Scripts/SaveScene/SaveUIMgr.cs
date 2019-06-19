@@ -8,7 +8,7 @@ public class SaveUIMgr : MonoBehaviour
     public GameObject[] datas;
     private void Awake()
     {
-        Util.SoundMgr.SoundOnRelease(SheetData.ESoundType.Page);
+        Util.SoundMgr.SoundOnRelease(SheetData.ESoundSet.Page);
         for (int i = 0; i < datas.Length; i++)
         {
             string day;

@@ -14,6 +14,17 @@ namespace RunTimeData
 
         public static bool isSaveLoad = false;
 
+        public static Dictionary<SheetData.ESoundType,float> soundVolumeDic = new Dictionary<SheetData.ESoundType, float>();
+
+        public static void SoundVolumeOn(float[] value)
+        {
+            soundVolumeDic.Add(SheetData.ESoundType.None, 1.0f);
+            for(int i = 0; i < value.Length;i++)
+            {
+                soundVolumeDic.Add((SheetData.ESoundType)i, value[i]);
+            }
+        }
+
         public static void DayPlus()
         {
             day = (Convert.ToInt32(day) + 1).ToString();

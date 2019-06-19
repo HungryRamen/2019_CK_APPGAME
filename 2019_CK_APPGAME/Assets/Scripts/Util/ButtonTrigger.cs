@@ -17,23 +17,23 @@ namespace Util
         public MyEventType OnEvent;
         public void OnPointerEnter(PointerEventData eventData)
         {
-            SoundMgr.SoundOn(SheetData.ESoundType.PublicButton);
-            SoundMgr.playSoundDic[SheetData.ESoundType.PublicButton].states[0].setValue(0);
-            SoundMgr.Release(SheetData.ESoundType.PublicButton);
+            SoundMgr.SoundOn(SheetData.ESoundSet.PublicButton);
+            SoundMgr.playSoundDic[SheetData.ESoundSet.PublicButton].states[0].setValue(0);
+            SoundMgr.Release(SheetData.ESoundSet.PublicButton);
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            SoundMgr.SoundOn(SheetData.ESoundType.PublicButton);
-            SoundMgr.playSoundDic[SheetData.ESoundType.PublicButton].states[0].setValue(1);
-            SoundMgr.Release(SheetData.ESoundType.PublicButton);
+            SoundMgr.SoundOn(SheetData.ESoundSet.PublicButton);
+            SoundMgr.playSoundDic[SheetData.ESoundSet.PublicButton].states[0].setValue(1);
+            SoundMgr.Release(SheetData.ESoundSet.PublicButton);
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            SoundMgr.SoundOn(SheetData.ESoundType.PublicButton);
-            SoundMgr.playSoundDic[SheetData.ESoundType.PublicButton].states[0].setValue(2);
-            SoundMgr.Release(SheetData.ESoundType.PublicButton);
+            SoundMgr.SoundOn(SheetData.ESoundSet.PublicButton);
+            SoundMgr.playSoundDic[SheetData.ESoundSet.PublicButton].states[0].setValue(2);
+            SoundMgr.Release(SheetData.ESoundSet.PublicButton);
             if(GetComponent<Button>() != null)
             {
                 if(GetComponent<Button>().interactable)

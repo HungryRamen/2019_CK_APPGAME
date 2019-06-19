@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using SheetData;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ namespace Util
         private void Awake()
         {
             transform.SetParent(GameObject.FindWithTag("UIMgr").transform);
+            SoundMgr.SoundOnStart(ESoundSet.PopUp);
             transform.localPosition = Vector2.zero;
             transform.localScale = Vector2.one;
             sliders = GetComponentsInChildren<Slider>();
@@ -28,24 +30,23 @@ namespace Util
         {
             for (int i = 0; i < sliders.Length; i++)
             {
-                SoundMgr.SoundMasterValueChange(i, sliders[i].value);
+                SoundMgr.SoundMasterValueChange((ESoundType)i, sliders[i].value);
             }
-
         }
 
         public void AmountBGMChange()
         {
-            SoundMgr.SoundMasterValueChange(0, sliders[0].value);
+            SoundMgr.SoundMasterValueChange(ESoundType.BGM, sliders[0].value);
         }
 
         public void AmountAMBChange()
         {
-            SoundMgr.SoundMasterValueChange(1, sliders[1].value);
+            SoundMgr.SoundMasterValueChange(ESoundType.AMB, sliders[1].value);
         }
 
         public void AmountSFXChange()
         {
-            SoundMgr.SoundMasterValueChange(2, sliders[2].value);
+            SoundMgr.SoundMasterValueChange(ESoundType.SFX, sliders[2].value);
         }
 
         private void ConfigChage()
@@ -60,12 +61,14 @@ namespace Util
         public void PreferencesOff()
         {
             ConfigChage();
+            SoundMgr.Stop(ESoundSet.PopUp);
             Destroy(gameObject);
         }
 
         public void GameEnd()
         {
             ConfigChage();
+            SoundMgr.Stop(ESoundSet.PopUp);
             GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
             obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => Quit());
         }
@@ -73,7 +76,7 @@ namespace Util
         public void MainGo()
         {
             ConfigChage();
-            SoundMgr.SoundClear();
+            SoundMgr.Stop(ESoundSet.PopUp);
             GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
             obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene"));
         }

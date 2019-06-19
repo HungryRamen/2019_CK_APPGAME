@@ -4,7 +4,7 @@ using FMOD.Studio;
 
 namespace SheetData
 {
-    public enum ESoundType
+    public enum ESoundSet
     {
         Narration,
         PublicButton,
@@ -52,7 +52,14 @@ namespace SheetData
         MainAmb,
         CalenderAmb,
         Change,
-        Normal,
+    }
+
+    public enum ESoundType
+    {
+        BGM,
+        AMB,
+        SFX,
+        None,
     }
     public static class DataJsonSet
     {
@@ -68,7 +75,7 @@ namespace SheetData
         public static Dictionary<string, StatusDataType> StatusDataDictionary = new Dictionary<string, StatusDataType>(); //음식 스테이터스 딕셔너리
         public static Dictionary<string, List<string>> RecipeDictionary = new Dictionary<string, List<string>>(); // 레시피 딕셔너리
         public static Dictionary<string, RecipeDataType> RecipeDataDictionary = new Dictionary<string, RecipeDataType>(); // 레시피 조합 딕셔너리
-        public static Dictionary<ESoundType, SoundDataType> SoundDataDictionary = new Dictionary<ESoundType, SoundDataType>();  // 사운드 딕셔너리
+        public static Dictionary<ESoundSet, SoundDataType> SoundDataDictionary = new Dictionary<ESoundSet, SoundDataType>();  // 사운드 딕셔너리
         public static Dictionary<string, SoundFoodDataType> SoundFoodDataDictionary = new Dictionary<string, SoundFoodDataType>(); // 음식 사운드 딕셔너리
     }
 
@@ -265,8 +272,8 @@ namespace SheetData
     {
         string path;
         public List<string> parameterName = new List<string>();
-
-        public SoundDataType(string p, string t1, string t2, string t3)
+        public ESoundType eSoundType;
+        public SoundDataType(string p, string t1, string t2, string t3,string type)
         {
             path = p;
             if (t1 != "NULL")
@@ -275,6 +282,14 @@ namespace SheetData
                 parameterName.Add(t2);
             if (t3 != "NULL")
                 parameterName.Add(t3);
+            eSoundType = ESoundType.None;
+            if (type == "SFX")
+                eSoundType = ESoundType.SFX;
+            else if (type == "AMB")
+                eSoundType = ESoundType.AMB;
+            else if (type == "BGM")
+                eSoundType = ESoundType.BGM;
+
         }
 
         public string Path { get => path; set => path = value; }

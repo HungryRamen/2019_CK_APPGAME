@@ -119,7 +119,7 @@ namespace Util
         }
         public static void Save(string indexPath)
         {
-            SoundMgr.SoundOnRelease(SheetData.ESoundType.Save);
+            SoundMgr.SoundOnRelease(SheetData.ESoundSet.Save);
             SaveData saveData = new SaveData();
             saveData.day = RunTimeData.RunTimeDataSet.day;
             saveData.dateTime = System.DateTime.Now.ToString();

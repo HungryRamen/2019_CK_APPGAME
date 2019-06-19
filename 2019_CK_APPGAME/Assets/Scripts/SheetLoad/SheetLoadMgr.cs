@@ -30,11 +30,9 @@ namespace SheetLoad
             DataAllLoad();
             IntegrityAllCheck();
             SundryUtil.ErrorOutput();
-            SoundMgr.SoundMasterOn();
             float[] sounds;
             SaveDataUtil.SoundLoad(out sounds);
-            for (int i = 0; i < sounds.Length; i++)
-                SoundMgr.SoundMasterValueChange(i, sounds[i]);
+            RunTimeData.RunTimeDataSet.SoundVolumeOn(sounds);
             UnityEngine.SceneManagement.SceneManager.LoadScene("TitleScene");
         }
 

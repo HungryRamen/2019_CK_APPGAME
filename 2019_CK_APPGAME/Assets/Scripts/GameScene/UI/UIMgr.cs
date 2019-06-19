@@ -245,11 +245,11 @@ namespace GameScene
         {
             btnDrinks.SetActive(false);
 
-            SoundMgr.SoundOnStart(ESoundType.RestaurantAmb);
-            SoundMgr.SoundOnStart(ESoundType.RestaurantMusic);
+            SoundMgr.SoundOnStart(ESoundSet.RestaurantAmb);
+            SoundMgr.SoundOnStart(ESoundSet.RestaurantMusic);
 
-            SoundMgr.SoundOnStart(ESoundType.NPCEntry);
-            SoundMgr.SoundOnStart(ESoundType.Fridge);
+            SoundMgr.SoundOnStart(ESoundSet.NPCEntry);
+            SoundMgr.SoundOnStart(ESoundSet.Fridge);
 
         }
 
@@ -261,10 +261,10 @@ namespace GameScene
         public void NpcEntry()
         {
             float temp;
-            SoundMgr.playSoundDic[ESoundType.NPCEntry].states[0].getValue(out temp);
+            SoundMgr.playSoundDic[ESoundSet.NPCEntry].states[0].getValue(out temp);
             if (temp == 1)
-                SoundMgr.playSoundDic[ESoundType.NPCEntry].states[0].setValue(0);
-            SoundMgr.playSoundDic[ESoundType.NPCEntry].states[0].setValue(1);
+                SoundMgr.playSoundDic[ESoundSet.NPCEntry].states[0].setValue(0);
+            SoundMgr.playSoundDic[ESoundSet.NPCEntry].states[0].setValue(1);
         }
 
         public void MaterialEnterOn(string tag)
@@ -706,8 +706,8 @@ namespace GameScene
         {
             if (uiCook.activeSelf && foodMaterialSelectID[0] != null && foodMaterialSelectID[1] != null) //이 부분 제거되고 버튼 활성화 된경우닌까
             {
-                SoundMgr.playSoundDic[ESoundType.RestaurantMusic].states[0].setValue(0);
-                SoundMgr.playSoundDic[ESoundType.RestaurantAmb].states[0].setValue((int)CookIDToEnum(RunTimeData.RunTimeDataSet.cookID));
+                SoundMgr.playSoundDic[ESoundSet.RestaurantMusic].states[0].setValue(0);
+                SoundMgr.playSoundDic[ESoundSet.RestaurantAmb].states[0].setValue((int)CookIDToEnum(RunTimeData.RunTimeDataSet.cookID));
                 uiDialog.SetActive(!uiDialog.activeSelf);
                 uiCook.SetActive(!uiCook.activeSelf);
                 btnCook.SetActive(!btnCook.activeSelf);
@@ -718,7 +718,8 @@ namespace GameScene
             }
             else if (!uiCook.activeSelf)
             {
-                SoundMgr.playSoundDic[ESoundType.RestaurantMusic].states[0].setValue(1);
+                SoundMgr.playSoundDic[ESoundSet.RestaurantMusic].states[0].setValue(1);
+                SoundMgr.playSoundDic[ESoundSet.RestaurantAmb].states[1].setValue(1);
                 uiDialog.SetActive(!uiDialog.activeSelf);
                 uiCook.SetActive(!uiCook.activeSelf);
             }
@@ -754,15 +755,15 @@ namespace GameScene
             {
                 uiLog.SetActive(false);
                 uiLogPanel.transform.SetParent(uiLogOff.transform, false);
-                SoundMgr.Stop(ESoundType.PopUp);
+                SoundMgr.Stop(ESoundSet.PopUp);
 
             }
             else if (!uiLog.activeSelf)
             {
-                SoundMgr.SoundOnRelease(ESoundType.Log);
+                SoundMgr.SoundOnRelease(ESoundSet.Log);
                 uiLog.SetActive(true);
                 uiLogPanel.transform.SetParent(uiLog.transform, false);
-                SoundMgr.SoundOnStart(ESoundType.PopUp);
+                SoundMgr.SoundOnStart(ESoundSet.PopUp);
                 logScrollBar.value = 0;
             }
 
@@ -775,7 +776,7 @@ namespace GameScene
 
         public void RestroomSceneLoad()
         {
-            SoundMgr.SoundClear();
+            SoundMgr.playSoundDic[ESoundSet.RestaurantMusic].states[1].setValue(1);
             RunTimeData.RunTimeDataSet.DayPlus();
             GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
             obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("RestroomScene"));
@@ -931,17 +932,17 @@ namespace GameScene
 
         public void ChAppend(char ch)
         {
-            ESoundType eSoundType = ESoundType.CH00;
+            ESoundSet eSoundType = ESoundSet.CH00;
             if (talkerName == "한 별")
-                eSoundType = ESoundType.CH01;
+                eSoundType = ESoundSet.CH01;
             else if (talkerName == "송아연")
-                eSoundType = ESoundType.CH02;
+                eSoundType = ESoundSet.CH02;
             else if (talkerName == "우주인")
-                eSoundType = ESoundType.CH03;
+                eSoundType = ESoundSet.CH03;
             else if (talkerName == "소니아 로즈메리")
-                eSoundType = ESoundType.CH05;
+                eSoundType = ESoundSet.CH05;
             else if (talkerName == "데이브 러셀")
-                eSoundType = ESoundType.CH06;
+                eSoundType = ESoundSet.CH06;
 
             SoundMgr.SoundOnRelease(eSoundType);
             textStringBuilder.Insert(textIndex++, ch);
@@ -983,13 +984,13 @@ namespace GameScene
 
         public void FoodPopUp()
         {
-            SoundMgr.SoundOnRelease(ESoundType.FinishSFX);
+            SoundMgr.SoundOnRelease(ESoundSet.FinishSFX);
             CookingOff();
             SoundFoodDataType temp = DataJsonSet.SoundFoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID];
             if(!temp.IsLoop)
-                SoundMgr.SoundOnRelease((ESoundType)temp.Index);
+                SoundMgr.SoundOnRelease((ESoundSet)temp.Index);
             else
-                SoundMgr.SoundOnStart((ESoundType)temp.Index);
+                SoundMgr.SoundOnStart((ESoundSet)temp.Index);
             BlackOnOff();
             Image[] img = uiBlack.GetComponentsInChildren<Image>();
             img[2].sprite = Resources.Load<Sprite>(DataJsonSet.FoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].ImageLocation);
@@ -998,11 +999,12 @@ namespace GameScene
             Text[] text = uiBlack.GetComponentsInChildren<Text>();
             text[0].text = DataJsonSet.FoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].Name;
             text[1].text = DataJsonSet.FoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].Description;
+            SoundMgr.playSoundDic[ESoundSet.RestaurantAmb].states[0].setValue(5);
         }
 
         public void MaterialPopUp(string fmID)
         {
-            SoundMgr.SoundOnRelease(ESoundType.Unlock);
+            SoundMgr.SoundOnRelease(ESoundSet.Unlock);
             BlackOnOff();
             Image[] img = uiBlack.GetComponentsInChildren<Image>();
             img[2].sprite = Resources.Load<Sprite>(DataJsonSet.MaterialDataDictionary[fmID].ImageLocation);
@@ -1017,15 +1019,14 @@ namespace GameScene
         {
             if(!uiBlack.activeSelf)
             {
-                SoundMgr.SoundOnStart(ESoundType.PopUp);
+                SoundMgr.SoundOnStart(ESoundSet.PopUp);
             }
             else if(uiBlack.activeSelf)
             {
-                SoundMgr.Stop(ESoundType.PopUp);
+                SoundMgr.Stop(ESoundSet.PopUp);
                 SoundMgr.Stop();
+                SoundMgr.SoundOnRelease(ESoundSet.Plate);
             }
-            SoundMgr.SoundOnRelease(ESoundType.Plate);
-            SoundMgr.playSoundDic[ESoundType.RestaurantAmb].states[0].setValue(0);
             uiBlack.SetActive(!uiBlack.activeSelf);
         }
 
@@ -1091,6 +1092,7 @@ namespace GameScene
                         }
                     }
                 }
+                SoundMgr.playSoundDic[ESoundSet.RestaurantAmb].states[0].setValue(0);
                 for (int i = 0; i < currentStatus.Length; i++)
                 {
                     currentStatus[i] = 0;
@@ -1140,7 +1142,7 @@ namespace GameScene
 
         private IEnumerator StatusLerp(float arrive, float speed, int index)
         {
-            SoundMgr.SoundOnRelease(ESoundType.StatusUpdate);
+            SoundMgr.SoundOnRelease(ESoundSet.StatusUpdate);
             while (Mathf.Abs(arrive - singleStatus[index]) > 1f)
             {
                 singleStatus[index] = Mathf.Lerp(singleStatus[index], arrive, speed * Time.deltaTime);
@@ -1221,7 +1223,7 @@ namespace GameScene
             SelectBtnList[count].transform.localPosition = new Vector2(655, -50 + (-80 * count));
             SelectBtnList[count].GetComponentInChildren<Text>().text = btnText;
             SelectBtnList[count].GetComponent<ButtonTrigger>().OnEvent.AddListener(() => IndexJump(index));
-            SoundMgr.SoundOnRelease(ESoundType.Selectionln);
+            SoundMgr.SoundOnRelease(ESoundSet.Selectionln);
         }
 
         public bool ScreenReaction()
@@ -1243,8 +1245,8 @@ namespace GameScene
 
         public void DrinkButtonOn()
         {
-            SoundMgr.playSoundDic[ESoundType.Fridge].states[0].setValue(0);
-            SoundMgr.playSoundDic[ESoundType.Fridge].states[0].setValue(1);
+            SoundMgr.playSoundDic[ESoundSet.Fridge].states[0].setValue(0);
+            SoundMgr.playSoundDic[ESoundSet.Fridge].states[0].setValue(1);
             btnDrinks.SetActive(true);
         }
 
@@ -1287,7 +1289,7 @@ namespace GameScene
 
         private void DrinkButtonOff()
         {
-            SoundMgr.playSoundDic[ESoundType.Fridge].states[0].setValue(2);
+            SoundMgr.playSoundDic[ESoundSet.Fridge].states[0].setValue(2);
             btnDrinks.SetActive(false);
         }
 
@@ -1295,42 +1297,42 @@ namespace GameScene
         {
             if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK1")
             {
-                SoundMgr.SoundOnRelease(ESoundType.DK01);
+                SoundMgr.SoundOnRelease(ESoundSet.DK01);
             }
             else if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK2")
             {
-                SoundMgr.SoundOnRelease(ESoundType.DK02);
+                SoundMgr.SoundOnRelease(ESoundSet.DK02);
             }
             else if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK3")
             {
-                SoundMgr.SoundOnRelease(ESoundType.DK03);
+                SoundMgr.SoundOnRelease(ESoundSet.DK03);
             }
             else if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK4")
             {
-                SoundMgr.SoundOnRelease(ESoundType.DK04);
+                SoundMgr.SoundOnRelease(ESoundSet.DK04);
             }
             else if (CharDataSet.charDataDictionary[nowEvent.CharID].DrinkID == "DK5")
             {
-                SoundMgr.SoundOnRelease(ESoundType.DK05);
+                SoundMgr.SoundOnRelease(ESoundSet.DK05);
             }
         }
 
         public void StatusLayerUpDown()
         {
-            SoundMgr.SoundOn(ESoundType.Status);
+            SoundMgr.SoundOn(ESoundSet.Status);
             if (runningCoroutine != null)
                 StopCoroutine(runningCoroutine);
             if (isStatusLayerInteraction)
             {
                 runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpY(statusLayer.transform, 810.0f, 5.0f));
-                SoundMgr.playSoundDic[ESoundType.Status].states[0].setValue(1);
+                SoundMgr.playSoundDic[ESoundSet.Status].states[0].setValue(1);
             }
             else
             {
                 runningCoroutine = StartCoroutine(ObjectLerf.LocalLerpY(statusLayer.transform, 270.0f, 5.0f));
-                SoundMgr.playSoundDic[ESoundType.Status].states[0].setValue(0);
+                SoundMgr.playSoundDic[ESoundSet.Status].states[0].setValue(0);
             }
-            SoundMgr.Release(ESoundType.Status);
+            SoundMgr.Release(ESoundSet.Status);
             isStatusLayerInteraction = !isStatusLayerInteraction;
         }
         public void StatusLayerDown()

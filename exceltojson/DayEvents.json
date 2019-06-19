@@ -1,0 +1,443 @@
+{
+  "0" : {
+    "Day" : 1,
+    "CharID" : "CH01",
+    "StoryState" : 1,
+    "DialogID" : "CH01_SD01",
+    "TriggerID" : "CH01_T00",
+    "StartIndex" : 1,
+    "EndIndex" : 53
+  },
+  "1" : {
+    "Day" : 1,
+    "CharID" : "CH05",
+    "StoryState" : 1,
+    "DialogID" : "CH05_SD01",
+    "TriggerID" : "CH05_T01",
+    "StartIndex" : 624,
+    "EndIndex" : 670
+  },
+  "2" : {
+    "Day" : 2,
+    "CharID" : "CH02",
+    "StoryState" : 1,
+    "DialogID" : "CH02_SD01",
+    "TriggerID" : "CH02_T01",
+    "StartIndex" : 393,
+    "EndIndex" : 417
+  },
+  "3" : {
+    "Day" : 2,
+    "CharID" : "CH01",
+    "StoryState" : 1,
+    "DialogID" : "CH01_SD02",
+    "TriggerID" : "CH01_T01",
+    "StartIndex" : 54,
+    "EndIndex" : 114
+  },
+  "4" : {
+    "Day" : 2,
+    "CharID" : "CH05",
+    "StoryState" : 1,
+    "DialogID" : "CH05_SD02",
+    "TriggerID" : "CH05_T02",
+    "StartIndex" : 671,
+    "EndIndex" : 748
+  },
+  "5" : {
+    "Day" : 3,
+    "CharID" : "CH03",
+    "StoryState" : 1,
+    "DialogID" : "CH03_SD01",
+    "TriggerID" : "CH03_T01",
+    "StartIndex" : 1470,
+    "EndIndex" : 1506
+  },
+  "6" : {
+    "Day" : 3,
+    "CharID" : "CH02",
+    "StoryState" : 2,
+    "DialogID" : "CH02_SD02",
+    "TriggerID" : "CH02_T02",
+    "StartIndex" : 418,
+    "EndIndex" : 445
+  },
+  "7" : {
+    "Day" : 3,
+    "CharID" : "CH02",
+    "StoryState" : 3,
+    "DialogID" : "CH02_SD03",
+    "TriggerID" : "CH02_T03",
+    "StartIndex" : 446,
+    "EndIndex" : 475
+  },
+  "8" : {
+    "Day" : 4,
+    "CharID" : "CH01",
+    "StoryState" : 1,
+    "DialogID" : "CH01_SD03",
+    "TriggerID" : "CH01_T02",
+    "StartIndex" : 115,
+    "EndIndex" : 160
+  },
+  "9" : {
+    "Day" : 4,
+    "CharID" : "CH01",
+    "StoryState" : 2,
+    "DialogID" : "CH01_SD04",
+    "TriggerID" : "CH01_T03",
+    "StartIndex" : 161,
+    "EndIndex" : 198
+  },
+  "10" : {
+    "Day" : 4,
+    "CharID" : "CH01",
+    "StoryState" : 3,
+    "DialogID" : "CH01_SD05",
+    "TriggerID" : "CH01_T04",
+    "StartIndex" : 199,
+    "EndIndex" : 238
+  },
+  "11" : {
+    "Day" : 4,
+    "CharID" : "CH05",
+    "StoryState" : 2,
+    "DialogID" : "CH05_SD03",
+    "TriggerID" : "CH05_T03",
+    "StartIndex" : 749,
+    "EndIndex" : 784
+  },
+  "12" : {
+    "Day" : 4,
+    "CharID" : "CH05",
+    "StoryState" : 3,
+    "DialogID" : "CH05_SD04",
+    "TriggerID" : "CH05_T04",
+    "StartIndex" : 785,
+    "EndIndex" : 816
+  },
+  "13" : {
+    "Day" : 4,
+    "CharID" : "CH06",
+    "StoryState" : 1,
+    "DialogID" : "CH06_SD01",
+    "TriggerID" : "CH06_T01",
+    "StartIndex" : 1033,
+    "EndIndex" : 1062
+  },
+  "14" : {
+    "Day" : 5,
+    "CharID" : "CH06",
+    "StoryState" : 2,
+    "DialogID" : "CH06_SD02",
+    "TriggerID" : "CH06_T02",
+    "StartIndex" : 1063,
+    "EndIndex" : 1125
+  },
+  "15" : {
+    "Day" : 5,
+    "CharID" : "CH06",
+    "StoryState" : 3,
+    "DialogID" : "CH06_SD03",
+    "TriggerID" : "CH06_T03",
+    "StartIndex" : 1126,
+    "EndIndex" : 1189
+  },
+  "16" : {
+    "Day" : 5,
+    "CharID" : "CH03",
+    "StoryState" : 1,
+    "DialogID" : "CH03_TEST02",
+    "TriggerID" : "CH03_T01",
+    "StartIndex" : 1507,
+    "EndIndex" : 1507
+  },
+  "17" : {
+    "Day" : 5,
+    "CharID" : "CH02",
+    "StoryState" : 4,
+    "DialogID" : "CH02_SD04",
+    "TriggerID" : "CH02_T04",
+    "StartIndex" : 476,
+    "EndIndex" : 507
+  },
+  "18" : {
+    "Day" : 5,
+    "CharID" : "CH02",
+    "StoryState" : 5,
+    "DialogID" : "CH02_SD05",
+    "TriggerID" : "CH02_T05",
+    "StartIndex" : 508,
+    "EndIndex" : 541
+  },
+  "19" : {
+    "Day" : 6,
+    "CharID" : "CH06",
+    "StoryState" : 4,
+    "DialogID" : "CH06_SD04",
+    "TriggerID" : "CH06_T04",
+    "StartIndex" : 1190,
+    "EndIndex" : 1239
+  },
+  "20" : {
+    "Day" : 6,
+    "CharID" : "CH06",
+    "StoryState" : 5,
+    "DialogID" : "CH06_SD05",
+    "TriggerID" : "CH06_T05",
+    "StartIndex" : 1240,
+    "EndIndex" : 1291
+  },
+  "21" : {
+    "Day" : 6,
+    "CharID" : "CH06",
+    "StoryState" : 6,
+    "DialogID" : "CH06_SD06",
+    "TriggerID" : "CH06_T06",
+    "StartIndex" : 1292,
+    "EndIndex" : 1343
+  },
+  "22" : {
+    "Day" : 6,
+    "CharID" : "CH01",
+    "StoryState" : 1,
+    "DialogID" : "CH01_SD06",
+    "TriggerID" : "CH01_T05",
+    "StartIndex" : 239,
+    "EndIndex" : 286
+  },
+  "23" : {
+    "Day" : 6,
+    "CharID" : "CH01",
+    "StoryState" : 2,
+    "DialogID" : "CH01_SD07",
+    "TriggerID" : "CH01_T06",
+    "StartIndex" : 287,
+    "EndIndex" : 335
+  },
+  "24" : {
+    "Day" : 6,
+    "CharID" : "CH02",
+    "StoryState" : 6,
+    "DialogID" : "CH02_SD06",
+    "TriggerID" : "CH02_T06",
+    "StartIndex" : 542,
+    "EndIndex" : 562
+  },
+  "25" : {
+    "Day" : 7,
+    "CharID" : "CH05",
+    "StoryState" : 4,
+    "DialogID" : "CH05_SD05",
+    "TriggerID" : "CH05_T05",
+    "StartIndex" : 817,
+    "EndIndex" : 848
+  },
+  "26" : {
+    "Day" : 7,
+    "CharID" : "CH05",
+    "StoryState" : 5,
+    "DialogID" : "CH05_SD06",
+    "TriggerID" : "CH05_T06",
+    "StartIndex" : 849,
+    "EndIndex" : 881
+  },
+  "27" : {
+    "Day" : 7,
+    "CharID" : "CH05",
+    "StoryState" : 6,
+    "DialogID" : "CH05_SD07",
+    "TriggerID" : "CH05_T07",
+    "StartIndex" : 882,
+    "EndIndex" : 919
+  },
+  "28" : {
+    "Day" : 7,
+    "CharID" : "CH05",
+    "StoryState" : 7,
+    "DialogID" : "CH05_SD08",
+    "TriggerID" : "CH05_T08",
+    "StartIndex" : 920,
+    "EndIndex" : 958
+  },
+  "29" : {
+    "Day" : 7,
+    "CharID" : "CH02",
+    "StoryState" : 7,
+    "DialogID" : "CH02_SD07",
+    "TriggerID" : "CH02_T07",
+    "StartIndex" : 563,
+    "EndIndex" : 583
+  },
+  "30" : {
+    "Day" : 7,
+    "CharID" : "CH02",
+    "StoryState" : 8,
+    "DialogID" : "CH02_SD08",
+    "TriggerID" : "CH02_T08",
+    "StartIndex" : 584,
+    "EndIndex" : 597
+  },
+  "31" : {
+    "Day" : 7,
+    "CharID" : "CH02",
+    "StoryState" : 9,
+    "DialogID" : "CH02_SD09",
+    "TriggerID" : "CH02_T09",
+    "StartIndex" : 598,
+    "EndIndex" : 611
+  },
+  "32" : {
+    "Day" : 7,
+    "CharID" : "CH02",
+    "StoryState" : 10,
+    "DialogID" : "CH02_SD10",
+    "TriggerID" : "CH02_T10",
+    "StartIndex" : 612,
+    "EndIndex" : 623
+  },
+  "33" : {
+    "Day" : 7,
+    "CharID" : "CH03",
+    "StoryState" : 1,
+    "DialogID" : "CH03_TEST03",
+    "TriggerID" : "CH03_T01",
+    "StartIndex" : 1508,
+    "EndIndex" : 1508
+  },
+  "34" : {
+    "Day" : 8,
+    "CharID" : "CH03",
+    "StoryState" : 1,
+    "DialogID" : "CH03_TEST04",
+    "TriggerID" : "CH03_T01",
+    "StartIndex" : 1509,
+    "EndIndex" : 1509
+  },
+  "35" : {
+    "Day" : 8,
+    "CharID" : "CH01",
+    "StoryState" : 1,
+    "DialogID" : "CH01_SD08",
+    "TriggerID" : "CH01_T07",
+    "StartIndex" : 336,
+    "EndIndex" : 357
+  },
+  "36" : {
+    "Day" : 8,
+    "CharID" : "CH01",
+    "StoryState" : 2,
+    "DialogID" : "CH01_SD09",
+    "TriggerID" : "CH01_T08",
+    "StartIndex" : 358,
+    "EndIndex" : 374
+  },
+  "37" : {
+    "Day" : 8,
+    "CharID" : "CH01",
+    "StoryState" : 3,
+    "DialogID" : "CH01_SD10",
+    "TriggerID" : "CH01_T09",
+    "StartIndex" : 375,
+    "EndIndex" : 392
+  },
+  "38" : {
+    "Day" : 8,
+    "CharID" : "CH06",
+    "StoryState" : 7,
+    "DialogID" : "CH06_SD07",
+    "TriggerID" : "CH06_T07",
+    "StartIndex" : 1344,
+    "EndIndex" : 1364
+  },
+  "39" : {
+    "Day" : 8,
+    "CharID" : "CH06",
+    "StoryState" : 8,
+    "DialogID" : "CH06_SD08",
+    "TriggerID" : "CH06_T08",
+    "StartIndex" : 1365,
+    "EndIndex" : 1385
+  },
+  "40" : {
+    "Day" : 9,
+    "CharID" : "CH05",
+    "StoryState" : 8,
+    "DialogID" : "CH05_SD09",
+    "TriggerID" : "CH05_T09",
+    "StartIndex" : 959,
+    "EndIndex" : 976
+  },
+  "41" : {
+    "Day" : 9,
+    "CharID" : "CH05",
+    "StoryState" : 9,
+    "DialogID" : "CH05_SD10",
+    "TriggerID" : "CH05_T10",
+    "StartIndex" : 977,
+    "EndIndex" : 992
+  },
+  "42" : {
+    "Day" : 9,
+    "CharID" : "CH05",
+    "StoryState" : 10,
+    "DialogID" : "CH05_SD11",
+    "TriggerID" : "CH05_T11",
+    "StartIndex" : 993,
+    "EndIndex" : 1014
+  },
+  "43" : {
+    "Day" : 9,
+    "CharID" : "CH05",
+    "StoryState" : 11,
+    "DialogID" : "CH05_SD12",
+    "TriggerID" : "CH05_T12",
+    "StartIndex" : 1015,
+    "EndIndex" : 1032
+  },
+  "44" : {
+    "Day" : 9,
+    "CharID" : "CH03",
+    "StoryState" : 1,
+    "DialogID" : "CH03_TEST05",
+    "TriggerID" : "CH03_T01",
+    "StartIndex" : 1510,
+    "EndIndex" : 1510
+  },
+  "45" : {
+    "Day" : 9,
+    "CharID" : "CH06",
+    "StoryState" : 9,
+    "DialogID" : "CH06_SD09",
+    "TriggerID" : "CH06_T09",
+    "StartIndex" : 1386,
+    "EndIndex" : 1408
+  },
+  "46" : {
+    "Day" : 9,
+    "CharID" : "CH06",
+    "StoryState" : 10,
+    "DialogID" : "CH06_SD10",
+    "TriggerID" : "CH06_T10",
+    "StartIndex" : 1409,
+    "EndIndex" : 1425
+  },
+  "47" : {
+    "Day" : 9,
+    "CharID" : "CH06",
+    "StoryState" : 11,
+    "DialogID" : "CH06_SD11",
+    "TriggerID" : "CH06_T11",
+    "StartIndex" : 1426,
+    "EndIndex" : 1446
+  },
+  "48" : {
+    "Day" : 9,
+    "CharID" : "CH06",
+    "StoryState" : 12,
+    "DialogID" : "CH06_SD12",
+    "TriggerID" : "CH06_T12",
+    "StartIndex" : 1447,
+    "EndIndex" : 1469
+  }
+}
