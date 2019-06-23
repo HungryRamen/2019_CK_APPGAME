@@ -12,7 +12,7 @@
   "1" : {
     "ID" : "CH01_T01",
     "Trigger" : "5::T",
-    "Status1" : 5,
+    "Status1" : 10,
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
@@ -22,7 +22,7 @@
   "2" : {
     "ID" : "CH01_T01",
     "Trigger" : "1::T",
-    "Status1" : 5,
+    "Status1" : 10,
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
@@ -32,7 +32,7 @@
   "3" : {
     "ID" : "CH01_T01",
     "Trigger" : "Defualt",
-    "Status1" : 5,
+    "Status1" : 10,
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
@@ -44,8 +44,8 @@
     "Trigger" : "3::T\n4::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -20,
+    "Status3" : -20,
+    "Status4" : -40,
     "Status5" : 0,
     "StoryState" : 2
   },
@@ -54,8 +54,8 @@
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -20,
+    "Status3" : -20,
+    "Status4" : -40,
     "Status5" : 0,
     "StoryState" : 1
   },
@@ -64,8 +64,8 @@
     "Trigger" : "3::T\n4::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -10,
+    "Status3" : -20,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 2
   },
@@ -74,8 +74,8 @@
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -10,
+    "Status3" : -20,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 1
   },
@@ -84,7 +84,7 @@
     "Trigger" : "3::T\n4::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
+    "Status3" : -20,
     "Status4" : 0,
     "Status5" : 0,
     "StoryState" : 2
@@ -94,7 +94,7 @@
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
+    "Status3" : -20,
     "Status4" : 0,
     "Status5" : 0,
     "StoryState" : 1
@@ -102,31 +102,31 @@
   "10" : {
     "ID" : "CH01_T05",
     "Trigger" : "4::T\n5::T",
-    "Status1" : -10,
+    "Status1" : -20,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -20,
-    "Status5" : -30,
+    "Status3" : -20,
+    "Status4" : -40,
+    "Status5" : -60,
     "StoryState" : 3
   },
   "11" : {
     "ID" : "CH01_T05",
     "Trigger" : "4::T",
-    "Status1" : -10,
+    "Status1" : -20,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -20,
-    "Status5" : -30,
+    "Status3" : -20,
+    "Status4" : -40,
+    "Status5" : -60,
     "StoryState" : 2
   },
   "12" : {
     "ID" : "CH01_T05",
     "Trigger" : "Defualt",
-    "Status1" : -10,
+    "Status1" : -20,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -20,
-    "Status5" : -30,
+    "Status3" : -20,
+    "Status4" : -40,
+    "Status5" : -60,
     "StoryState" : 1
   },
   "13" : {
@@ -134,9 +134,9 @@
     "Trigger" : "4::T\n5::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -10,
-    "Status5" : -10,
+    "Status3" : -20,
+    "Status4" : -20,
+    "Status5" : -20,
     "StoryState" : 3
   },
   "14" : {
@@ -144,9 +144,9 @@
     "Trigger" : "4::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -10,
-    "Status5" : -10,
+    "Status3" : -20,
+    "Status4" : -20,
+    "Status5" : -20,
     "StoryState" : 2
   },
   "15" : {
@@ -154,16 +154,16 @@
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -10,
-    "Status5" : -10,
+    "Status3" : -20,
+    "Status4" : -20,
+    "Status5" : -20,
     "StoryState" : 1
   },
   "16" : {
     "ID" : "CH01_T07",
     "Trigger" : "Defualt",
     "Status1" : 0,
-    "Status2" : 20,
+    "Status2" : 40,
     "Status3" : 0,
     "Status4" : 0,
     "Status5" : 0,
@@ -172,21 +172,21 @@
   "17" : {
     "ID" : "CH01_T08",
     "Trigger" : "Defualt",
-    "Status1" : 15,
+    "Status1" : 30,
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -20,
+    "Status5" : -40,
     "StoryState" : "NULL"
   },
   "18" : {
     "ID" : "CH01_T09",
     "Trigger" : "Defualt",
-    "Status1" : 15,
+    "Status1" : 30,
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : 20,
+    "Status5" : 40,
     "StoryState" : "NULL"
   },
   "19" : {
@@ -215,7 +215,7 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -10,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 4
   },
@@ -225,7 +225,7 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -10,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 5
   },
@@ -235,7 +235,7 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -10,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 4
   },
@@ -245,7 +245,7 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -10,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 5
   },
@@ -254,79 +254,79 @@
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -5,
-    "Status4" : -10,
+    "Status3" : -10,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 6
   },
   "26" : {
     "ID" : "CH02_T05",
     "Trigger" : "Defualt",
-    "Status1" : -3,
-    "Status2" : -3,
-    "Status3" : -5,
-    "Status4" : -10,
+    "Status1" : -6,
+    "Status2" : -6,
+    "Status3" : -10,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 6
   },
   "27" : {
     "ID" : "CH02_T06",
     "Trigger" : "3::T\n4::T",
-    "Status1" : -5,
-    "Status2" : -5,
-    "Status3" : -5,
-    "Status4" : -5,
-    "Status5" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
+    "Status3" : -10,
+    "Status4" : -10,
+    "Status5" : -10,
     "StoryState" : 10
   },
   "28" : {
     "ID" : "CH02_T06",
     "Trigger" : "1::T\n3::T",
-    "Status1" : -5,
-    "Status2" : -5,
-    "Status3" : -5,
-    "Status4" : -5,
-    "Status5" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
+    "Status3" : -10,
+    "Status4" : -10,
+    "Status5" : -10,
     "StoryState" : 9
   },
   "29" : {
     "ID" : "CH02_T06",
     "Trigger" : "2::T\n3::T",
-    "Status1" : -5,
-    "Status2" : -5,
-    "Status3" : -5,
-    "Status4" : -5,
-    "Status5" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
+    "Status3" : -10,
+    "Status4" : -10,
+    "Status5" : -10,
     "StoryState" : 9
   },
   "30" : {
     "ID" : "CH02_T06",
     "Trigger" : "1::T",
-    "Status1" : -5,
-    "Status2" : -5,
-    "Status3" : -5,
-    "Status4" : -5,
-    "Status5" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
+    "Status3" : -10,
+    "Status4" : -10,
+    "Status5" : -10,
     "StoryState" : 8
   },
   "31" : {
     "ID" : "CH02_T06",
     "Trigger" : "2::T",
-    "Status1" : -5,
-    "Status2" : -5,
-    "Status3" : -5,
-    "Status4" : -5,
-    "Status5" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
+    "Status3" : -10,
+    "Status4" : -10,
+    "Status5" : -10,
     "StoryState" : 8
   },
   "32" : {
     "ID" : "CH02_T06",
     "Trigger" : "Defualt",
-    "Status1" : -5,
-    "Status2" : -5,
-    "Status3" : -5,
-    "Status4" : -5,
-    "Status5" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
+    "Status3" : -10,
+    "Status4" : -10,
+    "Status5" : -10,
     "StoryState" : 7
   },
   "33" : {
@@ -382,21 +382,21 @@
   "38" : {
     "ID" : "CH05_T02",
     "Trigger" : "5::T",
-    "Status1" : -15,
-    "Status2" : -15,
-    "Status3" : -8,
+    "Status1" : -30,
+    "Status2" : -30,
+    "Status3" : -16,
     "Status4" : 0,
-    "Status5" : -5,
+    "Status5" : -10,
     "StoryState" : 2
   },
   "39" : {
     "ID" : "CH05_T02",
     "Trigger" : "Defualt",
-    "Status1" : -15,
-    "Status2" : -15,
-    "Status3" : -8,
+    "Status1" : -30,
+    "Status2" : -30,
+    "Status3" : -16,
     "Status4" : 0,
-    "Status5" : -5,
+    "Status5" : -10,
     "StoryState" : 3
   },
   "40" : {
@@ -404,9 +404,9 @@
     "Trigger" : "3::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -12,
-    "Status4" : -10,
-    "Status5" : -5,
+    "Status3" : -24,
+    "Status4" : -20,
+    "Status5" : -10,
     "StoryState" : 4
   },
   "41" : {
@@ -414,9 +414,9 @@
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -12,
-    "Status4" : -10,
-    "Status5" : -5,
+    "Status3" : -24,
+    "Status4" : -20,
+    "Status5" : -10,
     "StoryState" : 5
   },
   "42" : {
@@ -425,7 +425,7 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -10,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 6
   },
@@ -435,7 +435,7 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -10,
+    "Status4" : -20,
     "Status5" : 0,
     "StoryState" : 7
   },
@@ -445,8 +445,8 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -15,
-    "Status5" : -10,
+    "Status4" : -30,
+    "Status5" : -20,
     "StoryState" : 8
   },
   "45" : {
@@ -455,8 +455,8 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -15,
-    "Status5" : -10,
+    "Status4" : -30,
+    "Status5" : -20,
     "StoryState" : 8
   },
   "46" : {
@@ -465,8 +465,8 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -15,
-    "Status5" : -10,
+    "Status4" : -30,
+    "Status5" : -20,
     "StoryState" : 9
   },
   "47" : {
@@ -474,9 +474,9 @@
     "Trigger" : "5::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -15,
-    "Status5" : -10,
+    "Status3" : -20,
+    "Status4" : -30,
+    "Status5" : -20,
     "StoryState" : 8
   },
   "48" : {
@@ -484,9 +484,9 @@
     "Trigger" : "4::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -15,
-    "Status5" : -10,
+    "Status3" : -20,
+    "Status4" : -30,
+    "Status5" : -20,
     "StoryState" : 8
   },
   "49" : {
@@ -494,69 +494,69 @@
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : -10,
-    "Status4" : -15,
-    "Status5" : -10,
+    "Status3" : -20,
+    "Status4" : -30,
+    "Status5" : -20,
     "StoryState" : 9
   },
   "50" : {
     "ID" : "CH05_T07",
     "Trigger" : "1::T",
-    "Status1" : -10,
+    "Status1" : -20,
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -5,
+    "Status5" : -10,
     "StoryState" : 10
   },
   "51" : {
     "ID" : "CH05_T07",
     "Trigger" : "5::T",
-    "Status1" : -10,
+    "Status1" : -20,
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -5,
+    "Status5" : -10,
     "StoryState" : 10
   },
   "52" : {
     "ID" : "CH05_T07",
     "Trigger" : "Defualt",
-    "Status1" : -1,
+    "Status1" : -20,
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -5,
+    "Status5" : -10,
     "StoryState" : 11
   },
   "53" : {
     "ID" : "CH05_T08",
     "Trigger" : "1::T",
-    "Status1" : -10,
+    "Status1" : -20,
     "Status2" : 0,
-    "Status3" : -10,
+    "Status3" : -20,
     "Status4" : 0,
-    "Status5" : -5,
+    "Status5" : -10,
     "StoryState" : 10
   },
   "54" : {
     "ID" : "CH05_T08",
     "Trigger" : "5::T",
-    "Status1" : -10,
+    "Status1" : -20,
     "Status2" : 0,
-    "Status3" : -10,
+    "Status3" : -20,
     "Status4" : 0,
-    "Status5" : -5,
+    "Status5" : -10,
     "StoryState" : 10
   },
   "55" : {
     "ID" : "CH05_T08",
     "Trigger" : "Defualt",
-    "Status1" : -10,
+    "Status1" : -20,
     "Status2" : 0,
-    "Status3" : -10,
+    "Status3" : -20,
     "Status4" : 0,
-    "Status5" : -5,
+    "Status5" : -10,
     "StoryState" : 11
   },
   "56" : {
@@ -624,9 +624,9 @@
     "Trigger" : "1::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : 10,
+    "Status3" : 20,
     "Status4" : 0,
-    "Status5" : -8,
+    "Status5" : -16,
     "StoryState" : 5
   },
   "63" : {
@@ -634,9 +634,9 @@
     "Trigger" : "2::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : 10,
+    "Status3" : 20,
     "Status4" : 0,
-    "Status5" : -8,
+    "Status5" : -16,
     "StoryState" : 6
   },
   "64" : {
@@ -644,9 +644,9 @@
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : 10,
+    "Status3" : 20,
     "Status4" : 0,
-    "Status5" : -8,
+    "Status5" : -16,
     "StoryState" : 4
   },
   "65" : {
@@ -654,7 +654,7 @@
     "Trigger" : "1::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : 5,
+    "Status3" : 10,
     "Status4" : 0,
     "Status5" : 0,
     "StoryState" : 5
@@ -664,7 +664,7 @@
     "Trigger" : "2::T",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : 5,
+    "Status3" : 10,
     "Status4" : 0,
     "Status5" : 0,
     "StoryState" : 6
@@ -674,7 +674,7 @@
     "Trigger" : "Defualt",
     "Status1" : 0,
     "Status2" : 0,
-    "Status3" : 5,
+    "Status3" : 10,
     "Status4" : 0,
     "Status5" : 0,
     "StoryState" : 4
@@ -682,61 +682,61 @@
   "68" : {
     "ID" : "CH06_T04",
     "Trigger" : "1::T",
-    "Status1" : -5,
-    "Status2" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -8,
+    "Status5" : -16,
     "StoryState" : 7
   },
   "69" : {
     "ID" : "CH06_T04",
     "Trigger" : "Defualt",
-    "Status1" : -5,
-    "Status2" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -8,
+    "Status5" : -16,
     "StoryState" : 8
   },
   "70" : {
     "ID" : "CH06_T05",
     "Trigger" : "1::T",
-    "Status1" : -5,
-    "Status2" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -8,
+    "Status5" : -16,
     "StoryState" : 7
   },
   "71" : {
     "ID" : "CH06_T05",
     "Trigger" : "Defualt",
-    "Status1" : -5,
-    "Status2" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -8,
+    "Status5" : -16,
     "StoryState" : 8
   },
   "72" : {
     "ID" : "CH06_T06",
     "Trigger" : "1::T",
-    "Status1" : -5,
-    "Status2" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -8,
+    "Status5" : -16,
     "StoryState" : 7
   },
   "73" : {
     "ID" : "CH06_T06",
     "Trigger" : "Defualt",
-    "Status1" : -5,
-    "Status2" : -5,
+    "Status1" : -10,
+    "Status2" : -10,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -8,
+    "Status5" : -16,
     "StoryState" : 8
   },
   "74" : {
@@ -745,8 +745,8 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -5,
-    "Status5" : -10,
+    "Status4" : -10,
+    "Status5" : -20,
     "StoryState" : 9
   },
   "75" : {
@@ -755,8 +755,8 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -5,
-    "Status5" : -10,
+    "Status4" : -10,
+    "Status5" : -20,
     "StoryState" : 9
   },
   "76" : {
@@ -765,8 +765,8 @@
     "Status1" : 0,
     "Status2" : 0,
     "Status3" : 0,
-    "Status4" : -5,
-    "Status5" : -1,
+    "Status4" : -10,
+    "Status5" : -20,
     "StoryState" : 10
   },
   "77" : {
@@ -776,7 +776,7 @@
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -10,
+    "Status5" : -20,
     "StoryState" : 11
   },
   "78" : {
@@ -786,7 +786,7 @@
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -10,
+    "Status5" : -20,
     "StoryState" : 11
   },
   "79" : {
@@ -796,7 +796,7 @@
     "Status2" : 0,
     "Status3" : 0,
     "Status4" : 0,
-    "Status5" : -10,
+    "Status5" : -20,
     "StoryState" : 12
   },
   "80" : {

@@ -3,7 +3,7 @@
     "ID" : "FD01",
     "status1" : 0,
     "status2" : 0,
-    "status3" : 15,
+    "status3" : 30,
     "status4" : 0,
     "status5" : 0
   },
@@ -11,109 +11,109 @@
     "ID" : "FD02",
     "status1" : 0,
     "status2" : 0,
-    "status3" : 5,
-    "status4" : 10,
+    "status3" : 10,
+    "status4" : 20,
     "status5" : 0
   },
   "2" : {
     "ID" : "FD03",
     "status1" : 0,
     "status2" : 0,
-    "status3" : -10,
-    "status4" : 20,
-    "status5" : 5
+    "status3" : -20,
+    "status4" : 40,
+    "status5" : 10
   },
   "3" : {
     "ID" : "FD04",
-    "status1" : 10,
+    "status1" : 20,
     "status2" : 0,
     "status3" : 0,
-    "status4" : -5,
-    "status5" : -5
+    "status4" : -10,
+    "status5" : -10
   },
   "4" : {
     "ID" : "FD05",
-    "status1" : 5,
+    "status1" : 10,
     "status2" : 0,
-    "status3" : -5,
+    "status3" : -10,
     "status4" : 0,
     "status5" : 0
   },
   "5" : {
     "ID" : "FD06",
     "status1" : 0,
-    "status2" : 10,
-    "status3" : 10,
+    "status2" : 20,
+    "status3" : 20,
     "status4" : 0,
-    "status5" : -10
+    "status5" : -20
   },
   "6" : {
     "ID" : "FD07",
     "status1" : 0,
-    "status2" : -5,
+    "status2" : -10,
     "status3" : 0,
-    "status4" : 10,
+    "status4" : 20,
     "status5" : 0
   },
   "7" : {
     "ID" : "FD08",
-    "status1" : -10,
-    "status2" : -5,
-    "status3" : -5,
+    "status1" : -20,
+    "status2" : -10,
+    "status3" : -10,
     "status4" : 0,
-    "status5" : 5
+    "status5" : 10
   },
   "8" : {
     "ID" : "FD09",
     "status1" : 0,
-    "status2" : -5,
+    "status2" : -10,
     "status3" : 0,
-    "status4" : 5,
+    "status4" : 10,
     "status5" : 0
   },
   "9" : {
     "ID" : "FD10",
     "status1" : 0,
-    "status2" : 5,
-    "status3" : 10,
+    "status2" : 10,
+    "status3" : 20,
     "status4" : 0,
     "status5" : 0
   },
   "10" : {
     "ID" : "FD11",
     "status1" : 0,
-    "status2" : 5,
-    "status3" : 5,
-    "status4" : 10,
+    "status2" : 10,
+    "status3" : 10,
+    "status4" : 20,
     "status5" : 0
   },
   "11" : {
     "ID" : "FD12",
     "status1" : 0,
     "status2" : 0,
-    "status3" : 5,
-    "status4" : 10,
-    "status5" : -10
+    "status3" : 10,
+    "status4" : 20,
+    "status5" : -20
   },
   "12" : {
     "ID" : "FD13",
     "status1" : 0,
-    "status2" : 5,
-    "status3" : 10,
-    "status4" : -10,
+    "status2" : 10,
+    "status3" : 20,
+    "status4" : -20,
     "status5" : 0
   },
   "13" : {
     "ID" : "FD14",
-    "status1" : 10,
-    "status2" : 5,
+    "status1" : 20,
+    "status2" : 10,
     "status3" : 0,
     "status4" : 0,
     "status5" : 0
   },
   "14" : {
     "ID" : "FD15",
-    "status1" : 15,
+    "status1" : 30,
     "status2" : 0,
     "status3" : 0,
     "status4" : 0,
@@ -121,19 +121,19 @@
   },
   "15" : {
     "ID" : "FD16",
-    "status1" : -10,
-    "status2" : -10,
-    "status3" : 5,
+    "status1" : -20,
+    "status2" : -20,
+    "status3" : 10,
     "status4" : 0,
-    "status5" : 5
+    "status5" : 10
   },
   "16" : {
     "ID" : "FD17",
-    "status1" : 5,
+    "status1" : 10,
     "status2" : 0,
     "status3" : 0,
     "status4" : 0,
-    "status5" : 10
+    "status5" : 20
   },
   "17" : {
     "ID" : "FD18",
@@ -146,10 +146,10 @@
   "18" : {
     "ID" : "FD19",
     "status1" : 0,
-    "status2" : -15,
+    "status2" : -30,
     "status3" : 0,
     "status4" : 0,
-    "status5" : 5
+    "status5" : 10
   },
   "19" : {
     "ID" : "FD20",
@@ -157,79 +157,79 @@
     "status2" : 0,
     "status3" : 0,
     "status4" : 0,
-    "status5" : 15
+    "status5" : 30
   },
   "20" : {
     "ID" : "FD21",
     "status1" : 0,
     "status2" : 0,
-    "status3" : -10,
-    "status4" : 15,
+    "status3" : -20,
+    "status4" : 30,
     "status5" : 0
   },
   "21" : {
     "ID" : "FD22",
     "status1" : 0,
-    "status2" : -5,
-    "status3" : -5,
+    "status2" : -10,
+    "status3" : -10,
     "status4" : 0,
-    "status5" : 5
+    "status5" : 10
   },
   "22" : {
     "ID" : "FD23",
     "status1" : 0,
-    "status2" : 10,
+    "status2" : 20,
     "status3" : 0,
-    "status4" : -5,
-    "status5" : -5
+    "status4" : -10,
+    "status5" : -10
   },
   "23" : {
     "ID" : "FD24",
     "status1" : 0,
-    "status2" : 10,
+    "status2" : 20,
     "status3" : 0,
-    "status4" : -10,
+    "status4" : -20,
     "status5" : 0
   },
   "24" : {
     "ID" : "FD25",
-    "status1" : 5,
-    "status2" : 5,
+    "status1" : 10,
+    "status2" : 10,
     "status3" : 0,
-    "status4" : -15,
+    "status4" : -30,
     "status5" : 0
   },
   "25" : {
     "ID" : "FD26",
     "status1" : 0,
-    "status2" : 5,
-    "status3" : -10,
+    "status2" : 10,
+    "status3" : -20,
     "status4" : 0,
-    "status5" : 5
+    "status5" : 10
   },
   "26" : {
     "ID" : "FD27",
     "status1" : 0,
-    "status2" : 20,
+    "status2" : 40,
     "status3" : 0,
-    "status4" : -20,
-    "status5" : -10
+    "status4" : -40,
+    "status5" : -20
   },
   "27" : {
     "ID" : "FD28",
     "status1" : 0,
     "status2" : 0,
     "status3" : 0,
-    "status4" : 5,
-    "status5" : 10
+    "status4" : 10,
+    "status5" : 20
   },
   "28" : {
     "ID" : "FD29",
-    "status1" : -15,
+    "status1" : -30,
     "status2" : 0,
-    "status3" : -10,
-    "status4" : -5,
-    "status5" : 10
+    "status3" : -20,
+    "status4" : -10,
+    "status5" : 20
   },
   "29" : {
     "ID" : "FD30",
@@ -237,6 +237,6 @@
     "status2" : 0,
     "status3" : 0,
     "status4" : 0,
-    "status5" : 10
+    "status5" : 20
   }
 }
