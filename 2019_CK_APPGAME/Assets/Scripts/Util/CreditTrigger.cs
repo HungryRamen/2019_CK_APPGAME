@@ -30,7 +30,10 @@ public class CreditTrigger : MonoBehaviour, IPointerClickHandler, IPointerDownHa
     {
         transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y + 250.0f * Time.deltaTime);
         if (transform.localPosition.y > 4320.0f)
+        {
             OnEvent.Invoke();
+            OnEvent = null;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)

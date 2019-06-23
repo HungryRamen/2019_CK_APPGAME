@@ -18,6 +18,7 @@ namespace NameScene
             RunTimeDataSet.lockMaterials.Add("FM04");
             RunTimeDataSet.lockMaterials.Add("FM05");
             RunTimeDataSet.lockMaterials.Add("FM07");
+            RunTimeDataSet.lockMaterials.Add("FM10");
             RunTimeDataSet.lockMaterials.Add("FM11");
             RunTimeDataSet.lockMaterials.Add("FM12");
             RunTimeDataSet.lockMaterials.Add("FM13");

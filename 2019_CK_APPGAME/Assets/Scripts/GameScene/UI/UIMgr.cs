@@ -372,6 +372,10 @@ namespace GameScene
                 foodMaterialSelectID[0] = fm;
                 foodMaterialSelectOn[0] = false;
                 RecipeIDCheck(fm);
+                if(materialImgRight.activeSelf)
+                {
+                    FoodSet();
+                }
             }
         }
 
@@ -727,6 +731,7 @@ namespace GameScene
             }
             else if (!uiCook.activeSelf)
             {
+                CookStatusReset();
                 SoundMgr.playSoundDic[ESoundSet.RestaurantMusic].states[0].setValue(1);
                 SoundMgr.playSoundDic[ESoundSet.RestaurantAmb].states[1].setValue(1);
                 uiDialog.SetActive(!uiDialog.activeSelf);
@@ -1046,11 +1051,12 @@ namespace GameScene
                 SoundMgr.SoundOnRelease(ESoundSet.Plate);
             }
             uiBlack.SetActive(!uiBlack.activeSelf);
+            isTextCancel = uiBlack.activeSelf;
         }
 
         public void LogTextAppend(string talkerName, string logText, bool isAlpha = false)
         {
-            if (talkerName == "" || talkerName == null)
+            if (talkerName == "" || talkerName == null || logText.Length == 0)
                 return;
             StringBuilder text = new StringBuilder();
             if (talkerName != tempTalkerName)
@@ -1083,7 +1089,7 @@ namespace GameScene
             {
                 nowEvent = eventsQueue.Dequeue();
                 statusName.GetComponent<Image>().sprite = statusNameDic[nowEvent.CharID];
-                StatusUpdate();
+                StatusCharChange(nowEvent.CharID);
                 TextStackType temp = new TextStackType();
                 temp.textTypeList = new List<TextType>(DataJsonSet.TextDictionary[nowEvent.DialogID]);
                 textStack.Push(temp);
@@ -1153,6 +1159,18 @@ namespace GameScene
                 {
                     currentStatus[i] += status[i];
                 }
+            }
+        }
+
+        private void StatusCharChange(string chID)
+        {
+            for(int i =0; i< currentStatus.Length;i++)
+            {
+                currentStatus[i] = 0;
+                singleStatus[i] = CharDataSet.charDataDictionary[chID].Status[i];
+                Image[] img = statusArr[i].GetComponentsInChildren<Image>();
+                img[2].fillAmount = 1.0f - singleStatus[i] / 100.0f;
+                img[1].fillAmount = singleStatus[i] / 100.0f;
             }
         }
 

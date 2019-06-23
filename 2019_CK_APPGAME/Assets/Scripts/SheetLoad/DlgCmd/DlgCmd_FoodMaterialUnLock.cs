@@ -17,6 +17,12 @@
 
         public override void CommandPerform(bool bPass)
         {
+            GameScene.UIMgr.GetUIMgr().isTextCancel = false;
+            Util.StaticCoroutine.DoCoroutine(Util.ActionDelay.Delay(0.5f, () => Action()));
+        }
+
+        public void Action()
+        {
             GameScene.UIMgr.GetUIMgr().MaterialUnLock(fmID);
             GameScene.UIMgr.GetUIMgr().MaterialPopUp(fmID);
         }

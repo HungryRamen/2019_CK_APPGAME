@@ -11,6 +11,12 @@ namespace DialogCommand
 
         public override void CommandPerform(bool bPass)
         {
+            GameScene.UIMgr.GetUIMgr().isTextCancel = false;
+            Util.StaticCoroutine.DoCoroutine(Util.ActionDelay.Delay(0.5f, () => Action()));
+        }
+
+        public void Action()
+        {
             GameScene.UIMgr.GetUIMgr().FoodPopUp();
             string chID = GameScene.UIMgr.GetUIMgr().nowEvent.CharID;
             string foodID = CharData.CharDataSet.charDataDictionary[chID].EatFoodID;
