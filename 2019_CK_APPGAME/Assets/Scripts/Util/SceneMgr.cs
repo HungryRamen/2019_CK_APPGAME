@@ -32,6 +32,43 @@ namespace Util
             t.SetParent(GameObject.FindWithTag("UIMgr").transform);
             t.localPosition = Vector2.zero;
         }
+
+        public void FadeImage(float time,System.Action func = null)
+        {
+            StartCoroutine(FadeImageIn(gameObject, time, func));
+        }
+        IEnumerator FadeImageIn(GameObject obj, float time, System.Action func)
+        {
+            Image temp = obj.GetComponent<Image>();
+            Color color = temp.color;
+            while (temp.color.a < 1.0f)
+            {
+                color.a += Time.deltaTime / time;
+                if (color.a >= 1.0f)
+                    color.a = 1.0f;
+                temp.color = color;
+                yield return null;
+            }
+            func.Invoke();
+            StartCoroutine(FadeImageOut(obj, time));
+        }
+        IEnumerator FadeImageOut(GameObject obj, float time)
+        {
+            Image temp = obj.GetComponent<Image>();
+            temp.color = Color.black;
+            Color color = temp.color;
+            while (temp.color.a > 0.0f)
+            {
+                color.a -= Time.deltaTime / time;
+                if (color.a <= 0.0f)
+                    color.a = 0.0f;
+                temp.color = color;
+                yield return null;
+            }
+            Destroy(obj);
+        }
+
+
         public void LoadScene(float time, System.Action func = null)
         {
             StartCoroutine(SceneFadeIn(gameObject, 1.5f, func));
@@ -53,7 +90,7 @@ namespace Util
             SetPos(obj2.transform);
             obj.transform.SetParent(null);
             DontDestroyOnLoad(obj);
-            func();
+            func.Invoke();
         }
         IEnumerator SceneFadeOut(GameObject obj, float time)
         {

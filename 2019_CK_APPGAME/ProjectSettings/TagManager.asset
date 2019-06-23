@@ -30,7 +30,7 @@ TagManager:
   - Cooking
   - HelpLayer
   - AutoButton
-  - Credit
+  - CookConfirmed
   layers:
   - Default
   - TransparentFX

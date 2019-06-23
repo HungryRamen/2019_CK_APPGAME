@@ -522,6 +522,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &72476746
 GameObject:
   m_ObjectHideFlags: 0
@@ -627,6 +632,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &84541570
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +979,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &220138697
 GameObject:
   m_ObjectHideFlags: 0
@@ -1153,6 +1168,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &232983259
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,6 +1767,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &467720431
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,6 +1877,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &484740512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,6 +2188,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &597315355
 GameObject:
   m_ObjectHideFlags: 0
@@ -2715,6 +2750,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &704555905
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,6 +3334,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!224 &916790548 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2208419892791219382, guid: 212a838e3f90a12479856b1b4765acaf,
@@ -3642,6 +3687,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &1165434312
 GameObject:
   m_ObjectHideFlags: 0
@@ -3984,6 +4034,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &1283330134
 GameObject:
   m_ObjectHideFlags: 0
@@ -4089,6 +4144,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &1308984372
 GameObject:
   m_ObjectHideFlags: 0
@@ -4352,6 +4412,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &1473023201
 GameObject:
   m_ObjectHideFlags: 0
@@ -4691,6 +4756,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &1591769109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4873,6 +4943,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &1649836265
 GameObject:
   m_ObjectHideFlags: 0
@@ -4884,7 +4959,6 @@ GameObject:
   - component: {fileID: 1649836266}
   - component: {fileID: 1649836270}
   - component: {fileID: 1649836269}
-  - component: {fileID: 1649836268}
   - component: {fileID: 1649836267}
   - component: {fileID: 1649836271}
   m_Layer: 5
@@ -4941,49 +5015,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1649836268
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1649836265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300006, guid: bff109351c32e414d99030404b4f1bf9,
-      type: 3}
-    m_PressedSprite: {fileID: 21300008, guid: bff109351c32e414d99030404b4f1bf9, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1649836269}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 21300006, guid: bff109351c32e414d99030404b4f1bf9, type: 3}
+  PressedSprite: {fileID: 21300008, guid: bff109351c32e414d99030404b4f1bf9, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!114 &1649836269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5217,6 +5253,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &1740245707
 GameObject:
   m_ObjectHideFlags: 0
@@ -5401,6 +5442,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &1753104555
 GameObject:
   m_ObjectHideFlags: 0
@@ -5664,6 +5710,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &1870306875
 GameObject:
   m_ObjectHideFlags: 0
@@ -6274,6 +6325,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1 &2126493177
 GameObject:
   m_ObjectHideFlags: 0
@@ -6475,6 +6531,11 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
 --- !u!1001 &2208419893150157218
 PrefabInstance:
   m_ObjectHideFlags: 0

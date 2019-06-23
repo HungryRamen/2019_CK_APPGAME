@@ -19,12 +19,17 @@ namespace GameScene
 
         private int exceptionIndex;
 
+        private float elapsedDelayTime;
+
+        public float elapsedMaxTime;
+
         private void Awake()
         {
             bTextFullLoad = true;
             dialogTextUI = GetComponentsInChildren<Text>();
             elapsedTextTime = 0f;
-
+            elapsedMaxTime = 0.8f;
+            elapsedDelayTime = elapsedMaxTime;
         }
 
         private void Start()
@@ -39,9 +44,9 @@ namespace GameScene
 
         private void DialogOutput()
         {
-            if (bTextFullLoad && UIMgr.GetUIMgr().ScreenReaction())
+            if (bTextFullLoad && UIMgr.GetUIMgr().ScreenReaction() && elapsedDelayTime > elapsedMaxTime && UIMgr.GetUIMgr().statusCoroutine == null)
             {
-                UIMgr.GetUIMgr().LogTextAppend(dialogTextUI[1].text);
+                UIMgr.GetUIMgr().LogTextAppend(dialogTextUI[1].text, UIMgr.GetUIMgr().logStringBuilder.ToString());
                 Util.SoundMgr.SoundOnRelease(ESoundSet.Next);
                 NextText();
             }
@@ -50,6 +55,7 @@ namespace GameScene
                 TextOutput(UIMgr.GetUIMgr().ScreenReaction());
             }
             dialogTextUI[0].text = UIMgr.GetUIMgr().textStringBuilder.ToString();
+            elapsedDelayTime += Time.deltaTime;
         }
         private void NextText()
         {
@@ -74,6 +80,7 @@ namespace GameScene
             elapsedTextTime = 0f;
             UIMgr.GetUIMgr().bChAppend = false;
             bTextFullLoad = true;
+            elapsedDelayTime = 0.0f;
         }
 
         private void TextOutput(bool bPass)
@@ -100,7 +107,7 @@ namespace GameScene
             }
             catch (System.Exception e)
             {
-                Debug.LogFormat("DialogID : {0}\nRelativeIndex : {1}\nException : {2}",UIMgr.GetUIMgr().nowEvent.DialogID, exceptionIndex, e);
+                Debug.LogFormat("DialogID : {0}\nRelativeIndex : {1}\nException : {2}", UIMgr.GetUIMgr().nowEvent.DialogID, exceptionIndex, e);
             }
         }
 

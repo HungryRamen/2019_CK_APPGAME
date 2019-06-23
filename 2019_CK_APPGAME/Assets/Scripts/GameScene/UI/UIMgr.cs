@@ -85,6 +85,8 @@ namespace GameScene
 
         private Coroutine cookingCoroutine;
 
+        public Coroutine statusCoroutine;
+
         public GameObject uiBlack;
 
         public GameObject uiLog;
@@ -133,13 +135,17 @@ namespace GameScene
 
         private GameObject cookImageObject;
 
-        private StringBuilder logStringBuilder = new StringBuilder();
+        public StringBuilder logStringBuilder = new StringBuilder();
 
         private int talkSpriteIndex = 0;
 
         private int cookSpriteIndex = 0;
 
         private string talkerName;
+
+        private string tempTalkerName;
+
+        private GameObject cookConfiremd;
 
         public bool isTextCancel;
         private void Awake()
@@ -162,6 +168,7 @@ namespace GameScene
             statusName = GameObject.FindWithTag("StatusName");
             cookingLayer = GameObject.FindWithTag("Cooking");
             helpLayer = GameObject.FindWithTag("HelpLayer");
+            cookConfiremd = GameObject.FindWithTag("CookConfirmed");
             logScrollBar = uiLogScrollBar.GetComponent<Scrollbar>();
             FoodMaterialButtonMgr[] temp = foodMaterialButton.GetComponentsInChildren<FoodMaterialButtonMgr>();
             for (int i = 0; i < temp.Length; i++)
@@ -184,7 +191,7 @@ namespace GameScene
                 talkAnimationSpriteList.Add(talkSprites[i]);
             }
 
-            for(int i =1;i< 4;i++)
+            for (int i = 1; i < 4; i++)
             {
                 cookingAnimationSpriteList.Add(Resources.Load<Sprite>(string.Format("{0}{1}", "UI/Text/Cooking", i.ToString())));
             }
@@ -215,6 +222,7 @@ namespace GameScene
             materialImgLeft.SetActive(false);
             materialImgRight.SetActive(false);
             cookingLayer.SetActive(false);
+            cookConfiremd.SetActive(false);
             if (RunTimeData.RunTimeDataSet.day != "1")
                 helpLayer.SetActive(false);
             for (int i = 0; i < charImg.Length; i++)
@@ -234,6 +242,7 @@ namespace GameScene
             isTextCancel = false;
             runningCoroutine = null;
             talkCoroutine = null;
+            tempTalkerName = null;
             textTypeDictionary.Add("color", "size");
             textTypeDictionary.Add("size", "color");
             //Texture2D[] spritesTemp = Resources.LoadAll<Texture2D>("UI/Dialog/DialogSpriteSheet");
@@ -296,10 +305,8 @@ namespace GameScene
             if (RunTimeData.RunTimeDataSet.lockMaterials.Contains(fmID))
             {
                 RunTimeData.RunTimeDataSet.lockMaterials.Remove(fmID);
-                foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //일단 전부 disable
-                {
-                    obj.Restart();
-                }
+                foodMaterialButtonDic[fmID].UnLock();
+                CookChangeSelect("C2");
             }
         }
 
@@ -416,6 +423,7 @@ namespace GameScene
 
         public void MaterialOff(string tag) //
         {
+            cookConfiremd.SetActive(false);
             foreach (FoodMaterialButtonMgr obj in foodMaterialButtonDic.Values)    //전부 disable
             {
                 obj.SetState(ESpriteState.Disable);
@@ -602,7 +610,7 @@ namespace GameScene
                     }
                 }
             }
-            catch(System.Exception e)
+            catch (System.Exception e)
             {
                 Debug.Log(e);
                 SundryUtil.ErrorOutput();
@@ -630,6 +638,7 @@ namespace GameScene
                 }
             }
             RunTimeData.RunTimeDataSet.cookID = cookID;
+            cookConfiremd.SetActive(true);
             CookStatusCheck(DataJsonSet.StatusDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID].Status);
         }
 
@@ -704,7 +713,7 @@ namespace GameScene
 
         public void ChangeUI()
         {
-            if (uiCook.activeSelf && foodMaterialSelectID[0] != null && foodMaterialSelectID[1] != null) //이 부분 제거되고 버튼 활성화 된경우닌까
+            if (uiCook.activeSelf)
             {
                 SoundMgr.playSoundDic[ESoundSet.RestaurantMusic].states[0].setValue(0);
                 SoundMgr.playSoundDic[ESoundSet.RestaurantAmb].states[0].setValue((int)CookIDToEnum(RunTimeData.RunTimeDataSet.cookID));
@@ -740,7 +749,7 @@ namespace GameScene
         private IEnumerator CookingImageChange()
         {
             cookSpriteIndex = 0;
-            while(true)
+            while (true)
             {
                 cookingLayer.GetComponent<Image>().sprite = cookingAnimationSpriteList[cookSpriteIndex++];
                 if (cookSpriteIndex >= cookingAnimationSpriteList.Count)
@@ -764,9 +773,18 @@ namespace GameScene
                 uiLog.SetActive(true);
                 uiLogPanel.transform.SetParent(uiLog.transform, false);
                 SoundMgr.SoundOnStart(ESoundSet.PopUp);
-                logScrollBar.value = 0;
+                StartCoroutine(ScrollBarZero());
             }
+        }
 
+        IEnumerator ScrollBarZero()
+        {
+            yield return null;
+            logScrollBar.value = 0;
+            yield return null;
+            logScrollBar.value = 0;
+            yield return null;
+            logScrollBar.value = 0;
         }
 
         public void FoodStatusUp()
@@ -967,7 +985,7 @@ namespace GameScene
                 return;
             TextStackType temp = new TextStackType();
             temp.textTypeList = new List<TextType>();
-            for(int i = 0; i <copy.Count;i++)
+            for (int i = 0; i < copy.Count; i++)
             {
                 temp.textTypeList.Add(copy[i]);
 
@@ -987,7 +1005,7 @@ namespace GameScene
             SoundMgr.SoundOnRelease(ESoundSet.FinishSFX);
             CookingOff();
             SoundFoodDataType temp = DataJsonSet.SoundFoodDataDictionary[CharDataSet.charDataDictionary[nowEvent.CharID].EatFoodID];
-            if(!temp.IsLoop)
+            if (!temp.IsLoop)
                 SoundMgr.SoundOnRelease((ESoundSet)temp.Index);
             else
                 SoundMgr.SoundOnStart((ESoundSet)temp.Index);
@@ -1017,11 +1035,11 @@ namespace GameScene
 
         public void BlackOnOff()
         {
-            if(!uiBlack.activeSelf)
+            if (!uiBlack.activeSelf)
             {
                 SoundMgr.SoundOnStart(ESoundSet.PopUp);
             }
-            else if(uiBlack.activeSelf)
+            else if (uiBlack.activeSelf)
             {
                 SoundMgr.Stop(ESoundSet.PopUp);
                 SoundMgr.Stop();
@@ -1030,14 +1048,28 @@ namespace GameScene
             uiBlack.SetActive(!uiBlack.activeSelf);
         }
 
-        public void LogTextAppend(string talkerName)
+        public void LogTextAppend(string talkerName, string logText, bool isAlpha = false)
         {
             if (talkerName == "" || talkerName == null)
                 return;
+            StringBuilder text = new StringBuilder();
+            if (talkerName != tempTalkerName)
+            {
+                if (talkerName != null)
+                {
+                    text.AppendLine();
+                }
+                text.AppendFormat("- {0}\n", talkerName);
+                tempTalkerName = talkerName;
+
+            }
             //logStringBuilder.AppendFormat("{0} : {1}\n", talkerName,textStringBuilder);
             //uiLog.GetComponentInChildren<Text>().text = logStringBuilder.ToString();
             GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/LogText"));
-            obj.GetComponent<Text>().text = string.Format("{0} : {1}", talkerName, logStringBuilder);
+            text.Append(logText);
+            obj.GetComponent<Text>().text = text.ToString();
+            if (isAlpha)
+                obj.GetComponent<Text>().color = new Color(1.0f, 1.0f, 1.0f, 0.75f);
             obj.transform.SetParent(uiLogContent.transform, false);
         }
 
@@ -1135,7 +1167,7 @@ namespace GameScene
                 else if (check > 100)
                     check = 100;
                 if (CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] != System.Convert.ToInt32(check))
-                    StartCoroutine(StatusLerp(check, 1.0f, i));
+                    statusCoroutine = StartCoroutine(StatusLerp(check, 1.0f, i));
             }
         }
 
@@ -1154,6 +1186,8 @@ namespace GameScene
             StatusFillUpdate(index);
             if (isStatusLayerInteraction)
                 StatusLayerUpDown();
+            if (statusCoroutine != null)
+                statusCoroutine = null;
         }
 
         private void StatusFillUpdate(int index)
@@ -1177,8 +1211,12 @@ namespace GameScene
             //    textStack.Peek().TextTypeIndex = index;
             foreach (GameObject obj in SelectBtnList)
             {
-                if (obj.name == "Check")
+                ButtonTrigger temp = obj.GetComponent<ButtonTrigger>();
+                if (temp.isOnClick)
                 {
+                    temp.interactable = false;
+                    temp.ChangeSprite(temp.HighligtedSprite);
+                    LogTextAppend(RunTimeData.RunTimeDataSet.userName, temp.GetComponentInChildren<Text>().text, true);
                     Destroy(obj, 1.0f);
                     if (SelectBtnList.Count == 1)
                     {
@@ -1188,9 +1226,7 @@ namespace GameScene
                 }
                 else
                 {
-                    obj.GetComponent<ButtonTrigger>().enabled = false;
-                    obj.GetComponent<SelectTrigger>().enabled = false;
-                    obj.GetComponent<Button>().enabled = false;
+                    temp.InteractableOff();
                     StartCoroutine(StatusExit(obj, 1.5f));
                 }
             }
@@ -1198,7 +1234,6 @@ namespace GameScene
 
         private IEnumerator StatusExit(GameObject obj, float speed)
         {
-            obj.GetComponent<Button>().interactable = false;
             Vector2 v = new Vector2(1400, obj.transform.localPosition.y);
             while (obj.transform.localPosition.x < 1280)
             {

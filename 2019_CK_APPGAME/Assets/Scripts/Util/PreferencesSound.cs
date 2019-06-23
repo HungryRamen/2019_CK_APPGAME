@@ -13,9 +13,9 @@ namespace Util
         private void Awake()
         {
             transform.SetParent(GameObject.FindWithTag("UIMgr").transform);
-            SoundMgr.SoundOnStart(ESoundSet.PopUp);
             transform.localPosition = Vector2.zero;
             transform.localScale = Vector2.one;
+            SoundMgr.SoundOnStart(ESoundSet.PopUp);
             sliders = GetComponentsInChildren<Slider>();
             float[] sounds;
             SaveDataUtil.SoundLoad(out sounds);

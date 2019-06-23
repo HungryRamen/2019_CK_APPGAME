@@ -4,133 +4,119 @@ using UnityEngine;
 using UnityEngine.UI;
 using Util;
 
-public class TitleUIMgr : MonoBehaviour
+namespace TitleScene
 {
-    public GameObject ButtonObj;
-    public GameObject SoundObj;
-    public GameObject CreditObj;
-    public Button[] Buttons;
-    public Slider[] sliders;
-    private Coroutine scrollCorutine;
-    //x -250
-    private void Awake()
+
+    public class TitleUIMgr : MonoBehaviour
     {
-        CreditObj = GameObject.FindWithTag("Credit");
-        sliders = GetComponentsInChildren<Slider>();
-        float[] sounds;
-        SaveDataUtil.SoundLoad(out sounds);
-        for (int i = 0; i < sounds.Length; i++)
+        public GameObject ButtonObj;
+        public GameObject SoundObj;
+        public ButtonTrigger[] Buttons;
+        public Slider[] sliders;
+        //x -250
+        private void Awake()
         {
-            sliders[i].value = sounds[i];
+            sliders = GetComponentsInChildren<Slider>();
+            float[] sounds;
+            SaveDataUtil.SoundLoad(out sounds);
+            for (int i = 0; i < sounds.Length; i++)
+            {
+                sliders[i].value = sounds[i];
+            }
+            for (int i = 0; i < sliders.Length; i++)
+            {
+                SoundMgr.SoundMasterValueChange((SheetData.ESoundType)i, sliders[i].value);
+            }
+            SoundMgr.SoundOnStart(SheetData.ESoundSet.MainAmb);
+            SoundMgr.SoundOnStart(SheetData.ESoundSet.Mainmusic);
+            SoundObj.SetActive(false);
         }
-        for (int i = 0; i < sliders.Length; i++)
+        public void CreditOn()
         {
-            SoundMgr.SoundMasterValueChange((SheetData.ESoundType)i, sliders[i].value);
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
+            obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("CreditScene"));
         }
-        SoundMgr.SoundOnStart(SheetData.ESoundSet.MainAmb);
-        SoundMgr.SoundOnStart(SheetData.ESoundSet.Mainmusic);
-        SoundObj.SetActive(false);
-        CreditObj.SetActive(false);
-    }
-    public void CreditOn()
-    {
-        CreditObj.SetActive(true);
-        scrollCorutine = StartCoroutine(ScrollCredit(CreditObj.transform, 250.0f));
-    }
 
-    public void CreditOff()
-    {
-        CreditObj.SetActive(false);
-        if (scrollCorutine != null)
-            StopCoroutine(scrollCorutine);
-    }
-
-    IEnumerator ScrollCredit(Transform t,float speed)
-    {
-        t.localPosition = Vector2.zero;
-        while(t.localPosition.y < 4320.0f)
+        private void Start()
         {
-            yield return null;
-            t.localPosition = new Vector2(t.localPosition.x, t.localPosition.y + speed * Time.deltaTime);
+            Buttons = ButtonObj.GetComponentsInChildren<ButtonTrigger>();
+            if (!SaveDataUtil.LoadCheckTitle())
+                Buttons[1].InteractableOff();
         }
-        t.gameObject.SetActive(false);
-    }
 
-    private void Start()
-    {
-        Buttons = ButtonObj.GetComponentsInChildren<Button>();
-        Buttons[1].interactable = SaveDataUtil.LoadCheckTitle();
-    }
-
-    public void AmountBGMChange()
-    {
-        SoundMgr.SoundMasterValueChange(SheetData.ESoundType.BGM, sliders[0].value);
-    }
-
-    public void AmountAMBChange()
-    {
-        SoundMgr.SoundMasterValueChange(SheetData.ESoundType.AMB, sliders[1].value);
-    }
-
-    public void AmountSFXChange()
-    {
-        SoundMgr.SoundMasterValueChange(SheetData.ESoundType.SFX, sliders[2].value);
-    }
-
-    public void SoundSetting()
-    {
-        ButtonObj.transform.localPosition = new Vector2(-250.0f, 0.0f);
-        SoundObj.SetActive(true);
-        for (int i = 0; i < Buttons.Length; i++)
+        public void AmountBGMChange()
         {
-            Buttons[i].interactable = false;
+            SoundMgr.SoundMasterValueChange(SheetData.ESoundType.BGM, sliders[0].value);
         }
-    }
 
-    public void SoundSettingExit()
-    {
-        ButtonObj.transform.localPosition = Vector2.zero;
-        SoundObj.SetActive(false);
-        for (int i = 0; i < Buttons.Length; i++)
+        public void AmountAMBChange()
         {
-            Buttons[i].interactable = true;
+            SoundMgr.SoundMasterValueChange(SheetData.ESoundType.AMB, sliders[1].value);
         }
-        Buttons[1].interactable = SaveDataUtil.LoadCheckTitle();
-        ConfigChage();
-    }
-    public void GameSceneLoad()
-    {
-        GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
-        obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("OpeningScene"));
-    }
 
-    public void SaveSceneLoad()
-    {
-        GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
-        obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("SaveScene"));
-    }
+        public void AmountSFXChange()
+        {
+            SoundMgr.SoundMasterValueChange(SheetData.ESoundType.SFX, sliders[2].value);
+        }
 
-    public void Quit()
-    {
-        GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
-        obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => Exit());
+        public void SoundSetting()
+        {
+            ButtonObj.transform.localPosition = new Vector2(-250.0f, 0.0f);
+            SoundObj.SetActive(true);
+            for (int i = 0; i < Buttons.Length; i++)
+            {
+                Buttons[i].InteractableOff();
+            }
+            Buttons[Buttons.Length - 1].gameObject.SetActive(false);
+        }
 
-    }
-    private void ConfigChage()
-    {
-        float[] sounds = new float[3] {
+        public void SoundSettingExit()
+        {
+            ButtonObj.transform.localPosition = Vector2.zero;
+            SoundObj.SetActive(false);
+            Buttons[Buttons.Length - 1].gameObject.SetActive(true);
+            for (int i = 0; i < Buttons.Length; i++)
+            {
+                Buttons[i].InteractableOn();
+            }
+            if (!SaveDataUtil.LoadCheckTitle())
+                Buttons[1].InteractableOff();
+            ConfigChage();
+        }
+        public void GameSceneLoad()
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
+            obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("OpeningScene"));
+        }
+
+        public void SaveSceneLoad()
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
+            obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("SaveScene"));
+        }
+
+        public void Quit()
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
+            obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => Exit());
+
+        }
+        private void ConfigChage()
+        {
+            float[] sounds = new float[3] {
                 sliders[0].value,
                 sliders[1].value,
                 sliders[2].value };
-        SaveDataUtil.SoundSave(sounds);
-    }
+            SaveDataUtil.SoundSave(sounds);
+        }
 
-    public void Exit()
-    {
+        public void Exit()
+        {
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif
+        }
     }
 }

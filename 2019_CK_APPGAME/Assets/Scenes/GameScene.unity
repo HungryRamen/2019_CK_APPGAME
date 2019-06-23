@@ -291,8 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 2101694763}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -861,7 +860,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 6
-  m_Spacing: 30
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -1153,8 +1152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 121428331}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -1420,8 +1418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 79384068}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -1521,7 +1518,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &356216941
 CanvasRenderer:
@@ -1919,7 +1916,6 @@ GameObject:
   - component: {fileID: 405127651}
   - component: {fileID: 405127654}
   - component: {fileID: 405127653}
-  - component: {fileID: 405127652}
   - component: {fileID: 405127655}
   - component: {fileID: 405127656}
   m_Layer: 5
@@ -1948,49 +1944,6 @@ RectTransform:
   m_AnchoredPosition: {x: 406, y: 52}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &405127652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 405127650}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300008, guid: 79f9ec29ab085b04797ce89b8358304b,
-      type: 3}
-    m_PressedSprite: {fileID: 21300010, guid: 79f9ec29ab085b04797ce89b8358304b, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 405127653}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &405127653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2056,6 +2009,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 21300008, guid: 79f9ec29ab085b04797ce89b8358304b, type: 3}
+  PressedSprite: {fileID: 21300010, guid: 79f9ec29ab085b04797ce89b8358304b, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!114 &405127656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2121,8 +2080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 283611074}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -2457,7 +2415,6 @@ GameObject:
   - component: {fileID: 447768900}
   - component: {fileID: 447768903}
   - component: {fileID: 447768902}
-  - component: {fileID: 447768901}
   - component: {fileID: 447768904}
   - component: {fileID: 447768905}
   m_Layer: 5
@@ -2486,48 +2443,6 @@ RectTransform:
   m_AnchoredPosition: {x: 724, y: -393}
   m_SizeDelta: {x: 230, y: 172}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &447768901
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447768899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 447768902}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &447768902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2593,6 +2508,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 21300022, guid: bff109351c32e414d99030404b4f1bf9, type: 3}
+  PressedSprite: {fileID: 21300024, guid: bff109351c32e414d99030404b4f1bf9, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!114 &447768905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2695,7 +2616,6 @@ GameObject:
   - component: {fileID: 469790389}
   - component: {fileID: 469790392}
   - component: {fileID: 469790391}
-  - component: {fileID: 469790390}
   - component: {fileID: 469790393}
   - component: {fileID: 469790394}
   m_Layer: 5
@@ -2704,7 +2624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &469790389
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2724,49 +2644,6 @@ RectTransform:
   m_AnchoredPosition: {x: 385, y: -454}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &469790390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 469790388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300044, guid: 26ec86d5741ff5d439ac041cce2e2e89,
-      type: 3}
-    m_PressedSprite: {fileID: 21300072, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 469790391}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &469790391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2821,6 +2698,12 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 21300044, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  PressedSprite: {fileID: 21300072, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!114 &469790394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3603,6 +3486,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!1 &587620118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3807,6 +3696,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!1 &590993595
 GameObject:
   m_ObjectHideFlags: 0
@@ -4071,6 +3966,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 0}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!1 &627764985
 GameObject:
   m_ObjectHideFlags: 0
@@ -4124,8 +4025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 1754808812}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -4437,7 +4337,6 @@ GameObject:
   - component: {fileID: 706594366}
   - component: {fileID: 706594369}
   - component: {fileID: 706594368}
-  - component: {fileID: 706594367}
   - component: {fileID: 706594370}
   - component: {fileID: 706594371}
   m_Layer: 5
@@ -4466,48 +4365,6 @@ RectTransform:
   m_AnchoredPosition: {x: 883, y: 515}
   m_SizeDelta: {x: 50, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &706594367
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706594365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300000, guid: 6a26d731304a8e540a0a4169592ce213, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 706594368}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &706594368
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4528,7 +4385,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 5bf57a66c2f45bc4d9febf7ba7a9596e, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4573,6 +4430,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 21300016, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  PressedSprite: {fileID: 21300022, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!114 &706594371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5406,35 +5269,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 917395418}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: ea0f9dda20329154aa9909a85951a437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 917395421}
-  m_OnClick:
+  OnEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 416749739}
@@ -5448,8 +5286,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+    m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 21300018, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  PressedSprite: {fileID: 21300024, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!114 &917395421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5470,7 +5314,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300004, guid: 607317bd579541c42871c3a94ccbdd84, type: 3}
+  m_Sprite: {fileID: 21300010, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5853,7 +5697,6 @@ GameObject:
   - component: {fileID: 1035171617}
   - component: {fileID: 1035171619}
   - component: {fileID: 1035171618}
-  - component: {fileID: 1035171621}
   - component: {fileID: 1035171620}
   - component: {fileID: 1035171622}
   m_Layer: 5
@@ -5947,48 +5790,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
---- !u!114 &1035171621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035171616}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 21300010, guid: ef8eab8ccb985e9408226455f9b65a94, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1035171618}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 0}
+  PressedSprite: {fileID: 21300010, guid: ef8eab8ccb985e9408226455f9b65a94, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!114 &1035171622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6141,8 +5948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 506963152}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -6211,8 +6017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 1469159305}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -6330,8 +6135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 1667318024}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -6449,8 +6253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 2110856522}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -7003,8 +6806,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 1903934112}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -7196,8 +6998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 1333131888}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -7935,8 +7736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 1986258277}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -8393,7 +8193,6 @@ GameObject:
   - component: {fileID: 1572446960}
   - component: {fileID: 1572446963}
   - component: {fileID: 1572446962}
-  - component: {fileID: 1572446961}
   - component: {fileID: 1572446964}
   - component: {fileID: 1572446965}
   m_Layer: 5
@@ -8422,49 +8221,6 @@ RectTransform:
   m_AnchoredPosition: {x: 724, y: -393}
   m_SizeDelta: {x: 252, y: 233}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1572446961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1572446959}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300082, guid: 26ec86d5741ff5d439ac041cce2e2e89,
-      type: 3}
-    m_PressedSprite: {fileID: 21300084, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1572446962}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1572446962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8530,6 +8286,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 21300082, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  PressedSprite: {fileID: 21300084, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!114 &1572446965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8724,7 +8486,6 @@ GameObject:
   - component: {fileID: 1636767734}
   - component: {fileID: 1636767737}
   - component: {fileID: 1636767736}
-  - component: {fileID: 1636767735}
   - component: {fileID: 1636767738}
   - component: {fileID: 1636767739}
   m_Layer: 5
@@ -8753,49 +8514,6 @@ RectTransform:
   m_AnchoredPosition: {x: 385, y: -334}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1636767735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636767733}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.9245283, g: 0.9245283, b: 0.9245283, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300046, guid: 26ec86d5741ff5d439ac041cce2e2e89,
-      type: 3}
-    m_PressedSprite: {fileID: 21300074, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1636767736}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1636767736
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8861,6 +8579,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 21300046, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  PressedSprite: {fileID: 21300074, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!114 &1636767739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8884,12 +8608,11 @@ GameObject:
   - component: {fileID: 1661289228}
   - component: {fileID: 1661289231}
   - component: {fileID: 1661289230}
-  - component: {fileID: 1661289229}
   - component: {fileID: 1661289232}
   - component: {fileID: 1661289233}
   m_Layer: 5
   m_Name: Confirmed
-  m_TagString: Untagged
+  m_TagString: CookConfirmed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8913,49 +8636,6 @@ RectTransform:
   m_AnchoredPosition: {x: 718, y: -97}
   m_SizeDelta: {x: 325, y: 144}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1661289229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661289227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300006, guid: 607317bd579541c42871c3a94ccbdd84,
-      type: 3}
-    m_PressedSprite: {fileID: 21300012, guid: 607317bd579541c42871c3a94ccbdd84, type: 3}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1661289230}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1661289230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9021,6 +8701,12 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: Util.ButtonTrigger+MyEventType, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  targetGraphic: {fileID: 0}
+  HighligtedSprite: {fileID: 21300006, guid: 607317bd579541c42871c3a94ccbdd84, type: 3}
+  PressedSprite: {fileID: 21300012, guid: 607317bd579541c42871c3a94ccbdd84, type: 3}
+  DisabledSprite: {fileID: 0}
+  interactable: 0
+  isOnClick: 0
 --- !u!114 &1661289233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10008,8 +9694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 707710277}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0
@@ -10226,8 +9911,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1203145235}
   m_HandleRect: {fileID: 1203145234}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.99999994
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -10437,8 +10122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccd18656e4776e74e916a77dee6dbdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainSprite:
-  - {fileID: 0}
+  mainSprite: {fileID: 1407267770}
   foodMgr: {fileID: 0}
   imageDrag: {fileID: 0}
   onCheck: 0

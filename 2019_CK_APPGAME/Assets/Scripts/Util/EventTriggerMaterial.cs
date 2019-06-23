@@ -9,13 +9,12 @@ namespace Util
 {
     public class EventTriggerMaterial : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IPointerUpHandler
     {
-        public Image[] mainSprite;
+        public Image mainSprite;
         public FoodMaterialButtonMgr foodMgr;
         public ImageDrag imageDrag;
         public bool onCheck = false;
         private void Awake()
         {
-            mainSprite = GetComponentsInChildren<Image>();
             foodMgr = GetComponent<FoodMaterialButtonMgr>();
             imageDrag = GameObject.FindWithTag("Drag").GetComponent<ImageDrag>();
         }
@@ -24,7 +23,7 @@ namespace Util
         {
             if (foodMgr.GetState() == ESpriteState.Enable) //우클릭 && 현재상태
             {
-                imageDrag.ChangeImage(mainSprite[1].sprite,true);
+                imageDrag.ChangeImage(mainSprite.sprite,true);
             }
         }
 
@@ -36,7 +35,7 @@ namespace Util
         public void OnEndDrag(PointerEventData eventData)
         {
             imageDrag.OffImage();
-            UIMgr.GetUIMgr().DragImagCheck(name, mainSprite[1].sprite);
+            UIMgr.GetUIMgr().DragImagCheck(name, mainSprite.sprite);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -61,7 +60,7 @@ namespace Util
                 SoundMgr.SoundOn(SheetData.ESoundSet.FMButton);
                 SoundMgr.playSoundDic[SheetData.ESoundSet.FMButton].states[0].setValue(2);
                 SoundMgr.Release(SheetData.ESoundSet.FMButton);
-                UIMgr.GetUIMgr().MaterialRightClickSelect(name, mainSprite[1].sprite);
+                UIMgr.GetUIMgr().MaterialRightClickSelect(name, mainSprite.sprite);
             }
         }
 

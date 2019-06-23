@@ -29,7 +29,14 @@ namespace RestRoomScene
 
         public void GameSceneLoad()
         {
-            GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
+            GameObject obj;
+            if (RunTimeData.RunTimeDataSet.day == "10")
+            {
+                obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
+                obj.GetComponent<Util.SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("CreditScene"));
+                return;
+            }
+            obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
             obj.GetComponent<Util.SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene"));
         }
     }
