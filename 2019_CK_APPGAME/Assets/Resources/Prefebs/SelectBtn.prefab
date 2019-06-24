@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6762513833644676901}
   - component: {fileID: 6762513833644676922}
   - component: {fileID: 734549357037079892}
+  - component: {fileID: 5202107088443057432}
   m_Layer: 0
   m_Name: SelectBtn
   m_TagString: Untagged
@@ -99,6 +100,18 @@ MonoBehaviour:
   DisabledSprite: {fileID: 21300020, guid: 26ec86d5741ff5d439ac041cce2e2e89, type: 3}
   interactable: 0
   isOnClick: 0
+--- !u!114 &5202107088443057432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6762513833644676921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60111aa0562737647b6638fc339323ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6762513834329011453
 GameObject:
   m_ObjectHideFlags: 0

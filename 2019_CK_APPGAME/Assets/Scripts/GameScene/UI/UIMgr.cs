@@ -973,7 +973,7 @@ namespace GameScene
             textOverFlowIndex++;
             if (ch == '\n')
                 textOverFlowIndex = 0;
-            else if (textOverFlowIndex >= 26)
+            else if (textOverFlowIndex >= 33)
             {
                 textStringBuilder.Insert(textIndex++, '\n');
                 textOverFlowIndex = 0;
