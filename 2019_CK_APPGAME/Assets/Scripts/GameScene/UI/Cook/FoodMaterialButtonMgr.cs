@@ -18,8 +18,10 @@ namespace GameScene
         private ESpriteState currentState = ESpriteState.Enable;
         private Image imageMain;
         private RectTransform[] material;
+        private bool isAwake = false;
         private void Awake()
         {
+            isAwake = true;
             imageMain = GetComponent<Image>();
             Sprite[] temp = Resources.LoadAll<Sprite>("UI/Dialog/SpriteSheet2");
             material = GetComponentsInChildren<RectTransform>();
@@ -49,11 +51,14 @@ namespace GameScene
                 material[1].gameObject.SetActive(true);
         }
 
-        public void UnLock()
+        public bool UnLock()
         {
+            if (!isAwake)
+                return false;
             currentState = ESpriteState.Enable;
             imageMain.sprite = sprites[(int)currentState];
             material[1].gameObject.SetActive(true);
+            return true;
         }
 
         public ESpriteState GetState()

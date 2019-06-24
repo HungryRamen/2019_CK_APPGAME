@@ -200,7 +200,7 @@
     "Index" : 6,
     "TalkerName" : "한 별",
     "StoryState" : 0,
-    "Command" : "{이미지::CH01:::5}…"
+    "Command" : "{이미지::CH01::5}…"
   },
   "29" : {
     "ID" : "CH01_FD03",
@@ -2881,7 +2881,7 @@
     "Index" : 1,
     "TalkerName" : "소니아 로즈메리",
     "StoryState" : 0,
-    "Command" : "{이미지::CH05:::0}난 거처에 연구서와 책들을 진열해 놓는데,"
+    "Command" : "{이미지::CH05::0}난 거처에 연구서와 책들을 진열해 놓는데,"
   },
   "412" : {
     "ID" : "CH05_FD27",

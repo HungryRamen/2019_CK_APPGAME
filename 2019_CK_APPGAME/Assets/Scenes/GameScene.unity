@@ -2328,6 +2328,12 @@ MonoBehaviour:
   btnEnd: {fileID: 0}
   fadeTime: 0
   charImg: []
+  statusArr:
+  - {fileID: 405373365}
+  - {fileID: 1817441657}
+  - {fileID: 1166879278}
+  - {fileID: 1048989046}
+  - {fileID: 1766806767}
   uiBlack: {fileID: 1562075252}
   uiLog: {fileID: 710155488}
   isTextCancel: 0
@@ -9952,7 +9958,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1203145234}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.99999994
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

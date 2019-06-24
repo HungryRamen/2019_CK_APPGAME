@@ -61,6 +61,8 @@ namespace GameScene
 
         private float[] singleStatus = new float[5];
 
+        private int[] totalStatus = new int[5];
+
         private Stack<TextStackType> textStack = new Stack<TextStackType>();
 
         private Queue<DayEventsType> eventsQueue = new Queue<DayEventsType>();
@@ -75,7 +77,7 @@ namespace GameScene
 
         private GameObject statusLayer;
 
-        private GameObject[] statusArr;
+        public GameObject[] statusArr;
 
         private List<GameObject> SelectBtnList = new List<GameObject>();
 
@@ -182,7 +184,6 @@ namespace GameScene
             }
             charImg = GameObject.FindGameObjectsWithTag("CharImg");
             charImgLayer = GameObject.FindGameObjectsWithTag("CharImgLayer");
-            statusArr = GameObject.FindGameObjectsWithTag("Status");
             btnDrinks = GameObject.FindWithTag("DrinksBtn");
 
             Sprite[] talkSprites = Resources.LoadAll<Sprite>("UI/Dialog/DialogSpriteSheet");
@@ -305,8 +306,8 @@ namespace GameScene
             if (RunTimeData.RunTimeDataSet.lockMaterials.Contains(fmID))
             {
                 RunTimeData.RunTimeDataSet.lockMaterials.Remove(fmID);
-                foodMaterialButtonDic[fmID].UnLock();
-                CookChangeSelect("C2");
+                if(foodMaterialButtonDic[fmID].UnLock())
+                    CookChangeSelect("C2");
             }
         }
 
@@ -1137,7 +1138,7 @@ namespace GameScene
             {
                 for (int i = 0; i < singleStatus.Length; i++)
                 {
-                    CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] = System.Convert.ToInt32(singleStatus[i]);
+                    CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] = totalStatus[i];
                 }
                 foreach (TriggerType temp in DataJsonSet.TriggerDictionary[nowEvent.TriggerID])
                 {
@@ -1146,14 +1147,11 @@ namespace GameScene
                         if (temp.StoryState != -1)
                         {
                             CharDataSet.charDataDictionary[nowEvent.CharID].StoryState = temp.StoryState;
+                            break;
                         }
                     }
                 }
                 SoundMgr.playSoundDic[ESoundSet.RestaurantAmb].states[0].setValue(0);
-                for (int i = 0; i < currentStatus.Length; i++)
-                {
-                    currentStatus[i] = 0;
-                }
                 if (eventsQueue.Count == 0)
                 {
                     btnEnd.SetActive(true);
@@ -1186,7 +1184,8 @@ namespace GameScene
             for (int i = 0; i < currentStatus.Length; i++)
             {
                 singleStatus[i] = CharDataSet.charDataDictionary[nowEvent.CharID].Status[i];
-                float check = CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] + currentStatus[i];
+                totalStatus[i] = CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] + currentStatus[i];
+                float check = totalStatus[i];
                 if (check < 0)
                     check = 0;
                 else if (check > 100)
@@ -1259,7 +1258,10 @@ namespace GameScene
 
         public void IsGroundClickOn()
         {
-            isBackGroundClick = true;
+            if(SelectBtnList.Count == 0)
+                isBackGroundClick = true;
+            else
+                StartCoroutine(ActionDelay.Delay(0.5f, () => IsGroundClickOn()));
         }
 
         private IEnumerator StatusExit(GameObject obj, float speed)

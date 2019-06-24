@@ -20,8 +20,14 @@ namespace Util
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            CursorImageData.SetCursor(name);
-            imageDrag.ChangeImage(CursorImageData.cursorSpriteDic[CursorImageData.currentState], false);
+            if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                SoundMgr.SoundOn(SheetData.ESoundSet.DKButton);
+                SoundMgr.playSoundDic[SheetData.ESoundSet.DKButton].states[0].setValue(1);
+                SoundMgr.Release(SheetData.ESoundSet.DKButton);
+                CursorImageData.SetCursor(name);
+                imageDrag.ChangeImage(CursorImageData.cursorSpriteDic[CursorImageData.currentState], false);
+            }
 
         }
         public void OnDrag(PointerEventData eventData)
@@ -30,15 +36,24 @@ namespace Util
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            UIMgr.GetUIMgr().DrinkButtonDragConfirmed();
-            CursorImageData.SetCursor(CursorImageData.EMouseState.None);
-            imageDrag.OffImage();
+            if (eventData.button == PointerEventData.InputButton.Left)
+            {
+                SoundMgr.SoundOn(SheetData.ESoundSet.DKButton);
+                SoundMgr.playSoundDic[SheetData.ESoundSet.DKButton].states[0].setValue(2);
+                SoundMgr.Release(SheetData.ESoundSet.DKButton);
+                UIMgr.GetUIMgr().DrinkButtonDragConfirmed();
+                CursorImageData.SetCursor(CursorImageData.EMouseState.None);
+                imageDrag.OffImage();
+            }
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
             if (eventData.button == PointerEventData.InputButton.Right)
             {
+                SoundMgr.SoundOn(SheetData.ESoundSet.DKButton);
+                SoundMgr.playSoundDic[SheetData.ESoundSet.DKButton].states[0].setValue(2);
+                SoundMgr.Release(SheetData.ESoundSet.DKButton);
                 CursorImageData.SetCursor(name);
                 UIMgr.GetUIMgr().DrinkButtonConfirmed();
             }
@@ -46,6 +61,12 @@ namespace Util
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            if(eventData.button == PointerEventData.InputButton.Right)
+            {
+                SoundMgr.SoundOn(SheetData.ESoundSet.DKButton);
+                SoundMgr.playSoundDic[SheetData.ESoundSet.DKButton].states[0].setValue(1);
+                SoundMgr.Release(SheetData.ESoundSet.DKButton);
+            }
         }
 
         public void OnPointerUp(PointerEventData eventData)

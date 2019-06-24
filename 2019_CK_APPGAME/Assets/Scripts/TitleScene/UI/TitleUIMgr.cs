@@ -91,6 +91,7 @@ namespace TitleScene
 
         public void SaveSceneLoad()
         {
+            RunTimeData.RunTimeDataSet.isSaveLoad = false;
             GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
             RunTimeData.RunTimeDataSet.sceneChange = "TitleScene";
             obj.GetComponent<SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("SaveScene"));
