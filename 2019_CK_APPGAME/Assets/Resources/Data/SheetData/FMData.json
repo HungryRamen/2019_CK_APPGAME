@@ -4,97 +4,97 @@
     "ID" : "FM01",
     "ImageLocation" : "MaterialImg/FM01_Chicken",
     "Name" : "닭고기",
-    "Description" : "Test"
+    "Description" : "둠칫둠칫"
   },
   "1" : {
     "Index" : 1,
     "ID" : "FM02",
     "ImageLocation" : "MaterialImg/FM02_Fish",
     "Name" : "생선",
-    "Description" : "Test"
+    "Description" : "둠칫둠칫"
   },
   "2" : {
     "Index" : 2,
     "ID" : "FM03",
     "ImageLocation" : "MaterialImg/FM03_Beastmeat",
     "Name" : "짐승고기",
-    "Description" : "Test"
+    "Description" : "둠칫둠칫"
   },
   "3" : {
     "Index" : 3,
     "ID" : "FM04",
     "ImageLocation" : "MaterialImg/FM04_Watermelon",
     "Name" : "수박",
-    "Description" : "Test"
+    "Description" : "수분이 많고 달콤한 과일. 다양한 방법으로 요리해 보자."
   },
   "4" : {
     "Index" : 4,
     "ID" : "FM05",
     "ImageLocation" : "MaterialImg/FM05_Shoes",
     "Name" : "가죽신발",
-    "Description" : "Test"
+    "Description" : "가죽은 동물의 일부라는걸 기억하세요. 즉, 고기라는 말이죠!"
   },
   "5" : {
     "Index" : 5,
     "ID" : "FM06",
     "ImageLocation" : "MaterialImg/FM06_Kimchi",
     "Name" : "김치",
-    "Description" : "Test"
+    "Description" : "매운발효배추. 온갖 요리에 활용해 봅시다."
   },
   "6" : {
     "Index" : 6,
     "ID" : "FM07",
     "ImageLocation" : "MaterialImg/FM07_Snowman",
     "Name" : "눈사람 고기",
-    "Description" : "Test"
+    "Description" : "눈사람 행성의 눈사람 고기. 눈과 얼음으로 이루어져 있다."
   },
   "7" : {
     "Index" : 7,
     "ID" : "FM08",
     "ImageLocation" : "MaterialImg/FM08_Pepper",
     "Name" : "청양고추",
-    "Description" : "Test"
+    "Description" : "매운 맛을 내는 대표적인 향신료"
   },
   "8" : {
     "Index" : 8,
     "ID" : "FM09",
     "ImageLocation" : "MaterialImg/FM09_Salt",
     "Name" : "소금",
-    "Description" : "Test"
+    "Description" : "적절히 간을 맞춥시다."
   },
   "9" : {
     "Index" : 9,
     "ID" : "FM10",
     "ImageLocation" : "MaterialImg/FM10_Bonesoup",
     "Name" : "사골육수",
-    "Description" : "Test"
+    "Description" : "뼈를 푹 고아낸 육수. 시원한 국물을 내기에 좋다."
   },
   "10" : {
     "Index" : 10,
     "ID" : "FM11",
     "ImageLocation" : "MaterialImg/FM11_Lava",
     "Name" : "용암",
-    "Description" : "Test"
+    "Description" : "펄펄 끓는 매운 육수. 위가 상하지 않게 주의하자."
   },
   "11" : {
     "Index" : 11,
     "ID" : "FM12",
     "ImageLocation" : "MaterialImg/FM12_Bullet",
     "Name" : ".44 매그넘 총알",
-    "Description" : "Test"
+    "Description" : "심심풀이로 하나씩 집어먹기 좋은 식재료."
   },
   "12" : {
     "Index" : 12,
     "ID" : "FM13",
     "ImageLocation" : "MaterialImg/FM13_Cookie",
     "Name" : "쿠키 고기",
-    "Description" : "Test"
+    "Description" : "마법사가 빚어낸 하수인. 지금은 움직이지 않아서 그냥 쿠키가 되었다."
   },
   "13" : {
     "Index" : 13,
     "ID" : "FM14",
     "ImageLocation" : "MaterialImg/FM14_Battery",
     "Name" : "핵융합 폐기 건전지",
-    "Description" : "Test"
+    "Description" : "초소형 핵융합 발전장치를 탑재한 미래의 건전지. 방사성 물질에 주의하자."
   }
 }

@@ -16,6 +16,7 @@ namespace RunTimeData
 
         public static Dictionary<SheetData.ESoundType,float> soundVolumeDic = new Dictionary<SheetData.ESoundType, float>();
 
+        public static string sceneChange;
         public static void SoundVolumeOn(float[] value)
         {
             soundVolumeDic.Add(SheetData.ESoundType.None, 1.0f);

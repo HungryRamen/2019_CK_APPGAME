@@ -10,6 +10,7 @@ namespace SaveScene
     public class SaveUIMgr : MonoBehaviour
     {
         public GameObject[] datas;
+        private bool isCheck = true;
         private void Awake()
         {
             Util.SoundMgr.SoundOnRelease(SheetData.ESoundSet.Page);
@@ -26,24 +27,29 @@ namespace SaveScene
 
         public void SaveLoad(string indexPath)
         {
-            bool bCheck = true;
+            isCheck = true;
             if (RunTimeData.RunTimeDataSet.isSaveLoad)  // true = Save
             {
                 Util.SaveDataUtil.Save(indexPath);
             }
             else if (!RunTimeData.RunTimeDataSet.isSaveLoad) // false = Load
             {
-                bCheck = Util.SaveDataUtil.Load(indexPath);
+                isCheck = Util.SaveDataUtil.Load(indexPath);
             }
-            if (bCheck)
-                Return();
+            if (isCheck)
+                Restroom();
+        }
+
+        public void Restroom()
+        {
+            GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
+            obj.GetComponent<Util.SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("RestroomScene"));
         }
 
         public void Return()
         {
             GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
-            obj.GetComponent<Util.SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("RestroomScene"));
-
+            obj.GetComponent<Util.SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene(RunTimeData.RunTimeDataSet.sceneChange));
         }
     }
 }

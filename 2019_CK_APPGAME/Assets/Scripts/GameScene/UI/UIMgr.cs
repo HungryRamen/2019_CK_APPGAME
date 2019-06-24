@@ -1090,6 +1090,17 @@ namespace GameScene
                 nowEvent = eventsQueue.Dequeue();
                 statusName.GetComponent<Image>().sprite = statusNameDic[nowEvent.CharID];
                 StatusCharChange(nowEvent.CharID);
+                foreach (TriggerType temp2 in DataJsonSet.TriggerDictionary[nowEvent.TriggerID])
+                {
+                    if (temp2.IsTrigger(nowEvent.CharID))
+                    {
+                        for (int i = 0; i < temp2.Status.Length; i++)
+                        {
+                            currentStatus[i] += temp2.Status[i];
+                        }
+                    }
+                }
+                StatusLayerDown();
                 TextStackType temp = new TextStackType();
                 temp.textTypeList = new List<TextType>(DataJsonSet.TextDictionary[nowEvent.DialogID]);
                 textStack.Push(temp);
@@ -1101,6 +1112,18 @@ namespace GameScene
             textOverFlowIndex = 0;
             talkerName = textStack.Peek().textTypeList[textStack.Peek().TextTypeIndex].TalkerName;
             return textStack.Peek();
+        }
+
+        private void StatusCharChange(string chID)
+        {
+            for (int i = 0; i < currentStatus.Length; i++)
+            {
+                currentStatus[i] = 0;
+                singleStatus[i] = CharDataSet.charDataDictionary[chID].Status[i];
+                Image[] img = statusArr[i].GetComponentsInChildren<Image>();
+                img[2].fillAmount = 1.0f - singleStatus[i] / 100.0f;
+                img[1].fillAmount = singleStatus[i] / 100.0f;
+            }
         }
 
         public void End()
@@ -1120,10 +1143,6 @@ namespace GameScene
                 {
                     if (temp.IsTrigger(nowEvent.CharID))
                     {
-                        for (int i = 0; i < temp.Status.Length; i++)
-                        {
-                            CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] += temp.Status[i];
-                        }
                         if (temp.StoryState != -1)
                         {
                             CharDataSet.charDataDictionary[nowEvent.CharID].StoryState = temp.StoryState;
@@ -1162,18 +1181,6 @@ namespace GameScene
             }
         }
 
-        private void StatusCharChange(string chID)
-        {
-            for(int i =0; i< currentStatus.Length;i++)
-            {
-                currentStatus[i] = 0;
-                singleStatus[i] = CharDataSet.charDataDictionary[chID].Status[i];
-                Image[] img = statusArr[i].GetComponentsInChildren<Image>();
-                img[2].fillAmount = 1.0f - singleStatus[i] / 100.0f;
-                img[1].fillAmount = singleStatus[i] / 100.0f;
-            }
-        }
-
         public void StatusUpdate()
         {
             for (int i = 0; i < currentStatus.Length; i++)
@@ -1186,6 +1193,7 @@ namespace GameScene
                     check = 100;
                 if (CharDataSet.charDataDictionary[nowEvent.CharID].Status[i] != System.Convert.ToInt32(check))
                     statusCoroutine = StartCoroutine(StatusLerp(check, 1.0f, i));
+                currentStatus[i] = 0;
             }
         }
 
@@ -1225,8 +1233,6 @@ namespace GameScene
                     break;
                 }
             }
-            //if (textStack.Peek().textTypeList.Count < index)
-            //    textStack.Peek().TextTypeIndex = index;
             foreach (GameObject obj in SelectBtnList)
             {
                 ButtonTrigger temp = obj.GetComponent<ButtonTrigger>();
@@ -1236,6 +1242,7 @@ namespace GameScene
                     temp.ChangeSprite(temp.HighligtedSprite);
                     LogTextAppend(RunTimeData.RunTimeDataSet.userName, temp.GetComponentInChildren<Text>().text, true);
                     Destroy(obj, 1.0f);
+                    StartCoroutine(ActionDelay.Delay(0.5f, () => IsGroundClickOn()));
                     if (SelectBtnList.Count == 1)
                     {
                         SelectBtnList.Clear();
@@ -1248,6 +1255,11 @@ namespace GameScene
                     StartCoroutine(StatusExit(obj, 1.5f));
                 }
             }
+        }
+
+        public void IsGroundClickOn()
+        {
+            isBackGroundClick = true;
         }
 
         private IEnumerator StatusExit(GameObject obj, float speed)

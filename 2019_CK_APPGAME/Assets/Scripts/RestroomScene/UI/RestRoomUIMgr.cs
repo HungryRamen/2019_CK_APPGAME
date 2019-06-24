@@ -23,6 +23,7 @@ namespace RestRoomScene
         public void SaveSceneLoad(bool bSaveLoad)
         {
             RunTimeData.RunTimeDataSet.isSaveLoad = bSaveLoad;
+            RunTimeData.RunTimeDataSet.sceneChange = "RestroomScene";
             GameObject obj = Instantiate(Resources.Load<GameObject>("Prefebs/Fade"));
             obj.GetComponent<Util.SceneMgr>().LoadScene(1.0f, () => UnityEngine.SceneManagement.SceneManager.LoadScene("SaveScene"));
         }
