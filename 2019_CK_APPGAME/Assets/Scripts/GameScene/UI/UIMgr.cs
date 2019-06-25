@@ -1239,9 +1239,8 @@ namespace GameScene
                 {
                     temp.interactable = false;
                     temp.ChangeSprite(temp.HighligtedSprite);
-                    LogTextAppend(RunTimeData.RunTimeDataSet.userName, temp.GetComponentInChildren<Text>().text, true);
                     Destroy(obj, 1.0f);
-                    StartCoroutine(ActionDelay.Delay(0.5f, () => IsGroundClickOn()));
+                    StartCoroutine(ActionDelay.Delay(0.5f, () => IsGroundClickOn(temp.GetComponentInChildren<Text>().text)));
                     if (SelectBtnList.Count == 1)
                     {
                         SelectBtnList.Clear();
@@ -1256,12 +1255,21 @@ namespace GameScene
             }
         }
 
-        public void IsGroundClickOn()
+        public void IsGroundClickOn(string text)
         {
             if(SelectBtnList.Count == 0)
+            {
                 isBackGroundClick = true;
+                StartCoroutine(LogDelay(text));
+            }
             else
-                StartCoroutine(ActionDelay.Delay(0.5f, () => IsGroundClickOn()));
+                StartCoroutine(ActionDelay.Delay(0.5f, () => IsGroundClickOn(text)));
+        }
+
+        private IEnumerator LogDelay(string text)
+        {
+            yield return null;
+            LogTextAppend(RunTimeData.RunTimeDataSet.userName, text, true);
         }
 
         private IEnumerator StatusExit(GameObject obj, float speed)
