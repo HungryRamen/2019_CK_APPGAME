@@ -686,7 +686,7 @@ namespace GameScene
 
         private bool ButtonActiveCheck()
         {
-            return btnCook.activeSelf || btnEnd.activeSelf || btnDrinks.activeSelf;
+            return btnCook.activeSelf || btnEnd.activeSelf || btnDrinks.activeSelf || uiLog.activeSelf || uiBlack.activeSelf;
         }
 
         public static UIMgr GetUIMgr()
